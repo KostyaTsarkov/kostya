@@ -109,7 +109,7 @@ createScripts(){
   EOF
 
   cat > /tmp/scripts/source.sh << EOF
-  sudo su -c "export JAVA_HOME=/usr/lib/jvm/java-7-openjdk-amd64" hadoop
+  sudo su -c "export JAVA_HOME=/usr/lib/jvm/java-11-openjdk-amd64" hadoop
   sudo su -c "export HADOOP_HOME=/usr/local/hadoop" hadoop
   sudo su -c "export HADOOP_CONF_DIR=\$HADOOP_HOME/etc/hadoop " hadoop
   sudo su -c "export HADOOP_MAPRED_HOME=\$HADOOP_HOME" hadoop
@@ -125,7 +125,7 @@ createScripts(){
   EOF
 
   cat > /tmp/scripts/start-hadoop.sh << EOF
-  sudo su -c "export JAVA_HOME=/usr/lib/jvm/java-7-openjdk-amd64" hadoop
+  sudo su -c "export JAVA_HOME=/usr/lib/jvm/java-11-openjdk-amd64" hadoop
   sudo su -c "export HADOOP_HOME=/usr/local/hadoop" hadoop
   sudo su -c "export HADOOP_CONF_DIR=\$HADOOP_HOME/etc/hadoop " hadoop
   sudo su -c "export HADOOP_MAPRED_HOME=\$HADOOP_HOME" hadoop
@@ -135,7 +135,7 @@ createScripts(){
   sudo su -c "export PATH=\$PATH:\$JAVA_HOME/bin:\$HADOOP_HOME/sbin:\$HADOOP_HOME/bin" hadoop
   EOF
 
-  echo 'sed -i "s/export JAVA_HOME=\${JAVA_HOME}/export JAVA_HOME=\/usr\/lib\/jvm\/java-7-openjdk-amd64/g" /usr/local/hadoop/etc/hadoop/hadoop-env.sh' > /tmp/scripts/update-java-home.sh
+  echo 'sed -i "s/export JAVA_HOME=\${JAVA_HOME}/export JAVA_HOME=\/usr\/lib\/jvm\/java-11-openjdk-amd64/g" /usr/local/hadoop/etc/hadoop/hadoop-env.sh' > /tmp/scripts/update-java-home.sh
   echo 'chown -R hadoop:hadoop /usr/local/hadoop' >> /tmp/scripts/update-java-home.sh
 
   echo 'echo "Executing: hadoop namenode -format: "' > /tmp/scripts/initial_setup.sh
