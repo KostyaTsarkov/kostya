@@ -123,6 +123,24 @@ chown -R hadoop:hadoop /home/hadoop/
 sudo su -c "source /home/hadoop/.bashrc" hadoop
 EOF
 
+cat > /tmp/scripts/hadoop.service << EOF
+Unit]
+Description=Hdfs service
+After=network.target
+
+[Service]
+Type=forking
+User=hadoop
+Group=hadoop
+ExecStart=/usr/local/hadoop/sbin/start-all.sh
+ExecStop=/usr/local/hadoop/sbin/stop-all.sh
+ExecReload=/bin/kill -HUP $MAINPID
+Restart=on-failure
+
+[Install]
+WantedBy=multi-user.target
+EOF
+
 cat > /tmp/scripts/start-hadoop.sh << EOF
 sudo su -c "export JAVA_HOME=/usr/lib/jvm/java-11-openjdk-amd64" hadoop
 sudo su -c "export HADOOP_HOME=/usr/local/hadoop" hadoop
@@ -242,6 +260,7 @@ pct push $hosts /tmp/scripts/source.sh /root/source.sh
 pct push $hosts /tmp/scripts/ssh.sh /root/ssh.sh
 pct push $hosts /tmp/scripts/update-java-home.sh /root/update-java-home.sh
 done
+pct push $VID1 /tmp/scripts/hadoop.service /etc/systemd/system/hadoop.service
 pct push $VID1 /tmp/scripts/start-hadoop.sh /root/start-hadoop.sh
 }
 
@@ -310,6 +329,11 @@ do
 pct exec $hosts -- bash /root/source.sh
 pct exec $hosts -- chown -R hadoop:hadoop /usr/local/hadoop
 done
+}
+
+setAutoStart(){
+pct exec $VID1 -- systemctl daemon-reload
+systemctl enable hadoop
 }
 
 startHadoop(){
