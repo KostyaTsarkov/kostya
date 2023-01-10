@@ -353,7 +353,7 @@ echo "With the inital login namenode will be formatted and hadoop"
 echo "daemons will be started."
 }
 
-mkdirs
+#mkdirs
 setNames
 launchContainers
 installUpdates
