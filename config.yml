@@ -1,0 +1,7 @@
+---
+inventory:
+    plugin: SimpleInventory
+    options:
+        host_file: "/Users/kcarkov/env_nornir/inventory/hosts.yml"
+        group_file: "/Users/kcarkov/env_nornir/inventory/groups.yml"
+        defaults_file: "/Users/kcarkov/env_nornir/inventory/defaults.yml"
