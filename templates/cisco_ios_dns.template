@@ -1,0 +1,3 @@
+ip domain lookup source-interface {{host.src_interface}}
+ip domain name {{host.domain}}
+ip name-server {{host.dns_servers}}

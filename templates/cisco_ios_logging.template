@@ -1,0 +1,4 @@
+logging console {{ host.logging_console }}
+{% for i in host.logging_hosts %}
+    logging host {{ i }}
+{% endfor %}
