@@ -4,9 +4,9 @@ set -ex
 #UBUNTU_VERSION="14.04"
 
 mkdirs(){
-#lxc delete hadoop-master --force
-#lxc delete hadoop-slave-1 --force
-#lxc delete hadoop-slave-2 --force
+pct destroy 401 -f
+pct destroy 402 -f
+pct destroy 403 -f
 rm -rf /tmp/*
 for dir in scripts ssh apps conf
 do
@@ -18,19 +18,30 @@ setNames(){
 export N1="hadoop-master"
 export N2="hadoop-slave-1"
 export N3="hadoop-slave-2"
-export VID1=353
-export VID2=354
-export VID3=355
+export CLONE=505
+export VID1=401
+export VID2=402
+export VID3=403
+export IP1=10.30.1.151/24
+export IP2=10.30.1.152/24
+export IP3=10.30.1.153/24
+export GW=10.30.1.254
+export VLAN=310
 export HDFS_PATH="/home/hadoop/hdfs"
+#export JAVA_PATH="/usr/lib/jvm/java-8-openjdk-amd64"
+#export JAVA_FILE="java-8-openjdk-amd64"
 }
 
 launchContainers(){
-#lxc launch ubuntu:$UBUNTU_VERSION $N1
-#lxc launch ubuntu:$UBUNTU_VERSION $N2
-#lxc launch ubuntu:$UBUNTU_VERSION $N3
-pct clone 505 $VID1 --hostname $N1
-pct clone 505 $VID2 --hostname $N2
-pct clone 505 $VID3 --hostname $N3
+pct clone $CLONE $VID1 --hostname $N1
+pct set $VID1 -net0 name=eth0,bridge=vmbr0,ip=$IP1,gw=$GW,tag=$VLAN
+pct start $VID1
+pct clone $CLONE $VID2 --hostname $N2
+pct set $VID2 -net0 name=eth0,bridge=vmbr0,ip=$IP2,gw=$GW,tag=$VLAN
+pct start $VID2
+pct clone $CLONE $VID3 --hostname $N3
+pct set $VID3 -net0 name=eth0,bridge=vmbr0,ip=$IP3,gw=$GW,tag=$VLAN
+pct start $VID3
 sleep 10
 }
 
@@ -50,6 +61,7 @@ done
 }
 
 getHadoop(){
+	# Extract all downloaded files
 wget https://dlcdn.apache.org/hadoop/common/hadoop-3.3.4/hadoop-3.3.4.tar.gz -O /tmp/apps/hadoop-3.3.4.tar.gz
 sleep 2
 for hosts in $VID1 $VID2 $VID3
@@ -62,13 +74,18 @@ done
 
 
 createScripts(){
+	#STEP 1: Creating a User
+	# Создание отдельного пользователя для Hadoop для разграничения 
+	# файловой системы Unix и файловой системы Hadoop.
+	# Настройка SSH необходима для выполнения различных операций на кластере.
 cat > /tmp/scripts/setup-user.sh << EOF
-export JAVA_HOME="/usr/lib/jvm/java-11-openjdk-amd64"
-export PATH="\$PATH:\$JAVA_HOME/bin"
+
 useradd -m -s /bin/bash -G sudo hadoop
-echo "hadoop\nhadoop" | passwd hadoop
+echo -e "hadoop\nhadoop" | passwd hadoop
+
 sudo su -c "ssh-keygen -q -t rsa -f /home/hadoop/.ssh/id_rsa -N ''" hadoop
 sudo su -c "cat /home/hadoop/.ssh/id_rsa.pub >> /home/hadoop/.ssh/authorized_keys" hadoop
+
 sudo su -c "mkdir -p /home/hadoop/hdfs/{namenode,datanode}" hadoop
 sudo su -c "chown -R hadoop:hadoop /home/hadoop" hadoop
 EOF
@@ -80,15 +97,17 @@ $HADOOP_SLAVE1_IP hadoop-slave-1
 $HADOOP_SLAVE2_IP hadoop-slave-2
 EOF
 
-cat > /tmp/scripts/ssh.sh<< EOF
+cat > /tmp/scripts/ssh.sh << EOF
 sudo su -c "ssh -o 'StrictHostKeyChecking no' hadoop-master 'echo 1 > /dev/null'" hadoop
 sudo su -c "ssh -o 'StrictHostKeyChecking no' hadoop-slave-1 'echo 1 > /dev/null'" hadoop
 sudo su -c "ssh -o 'StrictHostKeyChecking no' hadoop-slave-2 'echo 1 > /dev/null'" hadoop
 sudo su -c "ssh -o 'StrictHostKeyChecking no' 0.0.0.0 'echo 1 > /dev/null'" hadoop
 EOF
 
+echo 'export JAVA_PATH="dirname $(dirname $(readlink -f $(which java)))"' > /tmp/scripts/set_java_path.sh
+
 cat > /tmp/scripts/set_env.sh << EOF
-JAVA_HOME=/usr/lib/jvm/java-11-openjdk-amd64
+JAVA_HOME=$JAVA_PATH
 HADOOP_HOME=/usr/local/hadoop
 HADOOP_CONF_DIR=\$HADOOP_HOME/etc/hadoop
 HADOOP_MAPRED_HOME=\$HADOOP_HOME
@@ -108,7 +127,7 @@ hadoop-slave-2
 EOF
 
 cat > /tmp/scripts/source.sh << EOF
-sudo su -c "export JAVA_HOME=/usr/lib/jvm/java-11-openjdk-amd64" hadoop
+sudo su -c "export JAVA_HOME=$JAVA_PATH" hadoop
 sudo su -c "export HADOOP_HOME=/usr/local/hadoop" hadoop
 sudo su -c "export HADOOP_CONF_DIR=\$HADOOP_HOME/etc/hadoop " hadoop
 sudo su -c "export HADOOP_MAPRED_HOME=\$HADOOP_HOME" hadoop
@@ -124,7 +143,7 @@ sudo su -c "source /home/hadoop/.bashrc" hadoop
 EOF
 
 cat > /tmp/scripts/start-hadoop.sh << EOF
-sudo su -c "export JAVA_HOME=/usr/lib/jvm/java-11-openjdk-amd64" hadoop
+sudo su -c "export JAVA_HOME=$JAVA_PATH" hadoop
 sudo su -c "export HADOOP_HOME=/usr/local/hadoop" hadoop
 sudo su -c "export HADOOP_CONF_DIR=\$HADOOP_HOME/etc/hadoop " hadoop
 sudo su -c "export HADOOP_MAPRED_HOME=\$HADOOP_HOME" hadoop
@@ -134,7 +153,8 @@ sudo su -c "export YARN_HOME=\$HADOOP_HOME" hadoop
 sudo su -c "export PATH=\$PATH:\$JAVA_HOME/bin:\$HADOOP_HOME/sbin:\$HADOOP_HOME/bin" hadoop
 EOF
 
-echo 'sed -i "s/export JAVA_HOME=\${JAVA_HOME}/export JAVA_HOME=\/usr\/lib\/jvm\/java-11-openjdk-amd64/g" /usr/local/hadoop/etc/hadoop/hadoop-env.sh' > /tmp/scripts/update-java-home.sh
+#echo 'sed -i "s/export JAVA_HOME=\${JAVA_HOME}/export JAVA_HOME=$JAVA_PATH/g" /usr/local/hadoop/etc/hadoop/hadoop-env.sh' > /tmp/scripts/update-java-home.sh
+echo 'echo "export JAVA_HOME=$JAVA_PATH" >> /usr/local/hadoop/etc/hadoop/hadoop-env.sh' > /tmp/scripts/update-java-home.sh
 echo 'chown -R hadoop:hadoop /usr/local/hadoop' >> /tmp/scripts/update-java-home.sh
 
 echo 'echo "Executing: hadoop namenode -format: "' > /tmp/scripts/initial_setup.sh
@@ -236,6 +256,7 @@ moveScripts(){
 for hosts in $VID1 $VID2 $VID3
 do
 pct push $hosts /tmp/scripts/hosts /etc/hosts
+pct push $hosts /tmp/scripts/set_java_path.sh /root/set_java_path.sh
 pct push $hosts /tmp/scripts/setup-user.sh /root/setup-user.sh
 pct push $hosts /tmp/scripts/set_env.sh /root/set_env.sh
 pct push $hosts /tmp/scripts/source.sh /root/source.sh
@@ -255,6 +276,13 @@ pct push $hosts /tmp/conf/hdfs-site.xml /usr/local/hadoop/etc/hadoop/hdfs-site.x
 pct push $hosts /tmp/conf/mapred-site.xml /usr/local/hadoop/etc/hadoop/mapred-site.xml
 pct push $hosts /tmp/conf/yarn-site.xml /usr/local/hadoop/etc/hadoop/yarn-site.xml
 done
+}
+
+initJavaPath(){
+for hosts in $VID1 $VID2 $VID3
+do
+pct exec $hosts -- bash /root/set_java_path.sh
+done	
 }
 
 setupUsers(){
@@ -313,7 +341,8 @@ done
 }
 
 startHadoop(){
-pct exec $VID1 -- JAVA_HOME=/usr/lib/jvm/java-11-openjdk-amd64 bash /root/start-hadoop.sh
+#pct exec $VID1 -- JAVA_HOME=/usr/lib/jvm/java-11-openjdk-amd64 bash /root/start-hadoop.sh
+pct exec $VID1 -- JAVA_HOME=$JAVA_HOME bash /root/start-hadoop.sh
 }
 
 printInstructions(){
@@ -338,6 +367,7 @@ getHostInfo
 createScripts
 getHadoop
 moveScripts
+initJavaPath
 generateHadoopConfig
 moveHadoopConfs
 
