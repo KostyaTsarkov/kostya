@@ -1133,3 +1133,4 @@ nornir.core.exceptions.NornirSubTaskError: Subtask: 4 шаг. 1: Получае�
 
 2023-01-13 17:31:39,243 -  nornir.core -     INFO -        run() - Running task 'Настройка коммутаторов' with args {} on 2 hosts
 2023-01-13 17:35:52,348 -  nornir.core -     INFO -        run() - Running task 'Настройка коммутаторов' with args {} on 2 hosts
+2023-01-13 17:38:28,845 -  nornir.core -     INFO -        run() - Running task 'Настройка коммутаторов' with args {} on 2 hosts
