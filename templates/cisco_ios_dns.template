@@ -1,3 +1,5 @@
-ip domain lookup source-interface {{host.src_interface}}
-ip domain name {{host.domain}}
-ip name-server {{host.dns_servers}}
+ip domain lookup source-interface {{ host.src_interface }}
+ip domain name {{ host.domain }}
+{% for i in host.dns_servers %}
+    ip name-server {{ i }}
+{% endfor %}

@@ -1,8 +1,8 @@
 ! CONFIGURING NETWORK TIME PROTOCOL
 !
 ntp logging
-ntp source {{host.src_interface}}
-ntp server {{host.ntp_server}}
+ntp source {{ host.src_interface }}
+ntp server {{ host.ntp_server }}
 !
-clock timezone {{host.clock_tz}}
+clock timezone {{ host.clock_tz }}
 !

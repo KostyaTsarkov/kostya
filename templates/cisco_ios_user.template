@@ -1,5 +1,8 @@
-ip domain name {{ host.domain }}
 enable secret {{host.enable}}
 {% for i in host.user_info %}
     username {{ i.username }} privilege {{ i.privilege }} password {{ i.password }}
 {% endfor %}
+!
+service password-encryption
+!
+
