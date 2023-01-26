@@ -1,4 +1,26 @@
+! IMPLEMENTING LOGGING
+!
+service timestamps debug datetime localtime show-timezone year
+service timestamps log datetime localtime show-timezone year
+service sequence-numbers
+!
+logging count
+logging buffered {{ host.logging_buff }} 
+logging rate-limit 10 except warnings
 logging console {{ host.logging_console }}
+logging monitor {{ host.logging_monitor }}
+!
+line vty 0 {{ host.vty_num }}
+    logging synchronous
+!
+! SYSLOG
+!
 {% for i in host.logging_hosts %}
     logging host {{ i }}
 {% endfor %}
+logging source-interface {{ host.src_interface }}
+logging history size {{ host.logging_size }}
+logging history {{ host.logging_severity }}
+logging origin-id hostname
+logging facility local6
+!
