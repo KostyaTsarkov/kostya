@@ -1,0 +1,1293 @@
+2023-01-12 09:50:50,735 -  nornir.core -     INFO -        run() - Running task 'netmiko_send_command' with args {'command_string': 'sh ip int bri'} on 2 hosts
+2023-01-12 09:51:26,013 -  nornir.core -     INFO -        run() - Running task 'netmiko_send_command' with args {'command_string': 'sh ip int bri'} on 2 hosts
+2023-01-12 09:51:47,886 -  nornir.core -     INFO -        run() - Running task 'netmiko_send_command' with args {'command_string': 'sh ip int br'} on 2 hosts
+2023-01-12 09:51:59,475 -  nornir.core -     INFO -        run() - Running task 'netmiko_send_command' with args {'command_string': 'sh version'} on 2 hosts
+2023-01-12 09:52:07,431 -  nornir.core -     INFO -        run() - Running task 'netmiko_send_command' with args {'command_string': 'show version'} on 2 hosts
+2023-01-12 09:52:26,759 -  nornir.core -     INFO -        run() - Running task 'netmiko_send_command' with args {'command_string': 'show ip arp'} on 2 hosts
+2023-01-12 15:30:44,014 -  nornir.core -     INFO -        run() - Running task 'netmiko_send_command' with args {'command_string': 'show ip arp'} on 2 hosts
+2023-01-12 15:46:51,464 -  nornir.core -     INFO -        run() - Running task 'netmiko_send_command' with args {'command_string': 'show ip arp'} on 2 hosts
+2023-01-12 16:37:02,760 -  nornir.core -     INFO -        run() - Running task 'netmiko_send_command' with args {'command_string': 'show ip arp'} on 2 hosts
+2023-01-12 16:38:02,799 -  nornir.core -     INFO -        run() - Running task 'netmiko_send_command' with args {'command_string': 'show ver'} on 2 hosts
+2023-01-12 16:38:29,537 -  nornir.core -     INFO -        run() - Running task 'netmiko_send_command' with args {'command_string': 'show ip brief'} on 2 hosts
+2023-01-12 16:39:05,518 -  nornir.core -     INFO -        run() - Running task 'netmiko_send_command' with args {'command_string': 'show '} on 2 hosts
+2023-01-12 16:39:14,017 -  nornir.core -     INFO -        run() - Running task 'netmiko_send_command' with args {'command_string': 'show ip arp'} on 2 hosts
+2023-01-12 16:39:32,065 -  nornir.core -     INFO -        run() - Running task 'netmiko_send_command' with args {'command_string': 'show ip arp'} on 2 hosts
+2023-01-12 16:44:37,437 -  nornir.core -     INFO -        run() - Running task 'netmiko_send_command' with args {'command_string': 'show ip int brief'} on 2 hosts
+2023-01-13 09:02:01,685 -  nornir.core -     INFO -        run() - Running task 'netmiko_send_command' with args {'command_string': 'show ip int brief'} on 2 hosts
+2023-01-13 09:02:01,826 - nornir.core.task -    ERROR -      start() - Host 'SW-AMZ-KUZ': task 'netmiko_send_command' failed with traceback:
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/netmiko/base_connection.py", line 1046, in establish_connection
+    self.remote_conn_pre.connect(**ssh_connect_params)
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/paramiko/client.py", line 381, in connect
+    raise NoValidConnectionsError(errors)
+paramiko.ssh_exception.NoValidConnectionsError: [Errno None] Unable to connect to port 22 on 10.30.1.108
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/nornir_netmiko/tasks/netmiko_send_command.py", line 26, in netmiko_send_command
+    net_connect = task.host.get_connection(CONNECTION_NAME, task.nornir.config)
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/nornir/core/inventory.py", line 494, in get_connection
+    self.open_connection(
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/nornir/core/inventory.py", line 546, in open_connection
+    conn_obj.open(
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/nornir_netmiko/connections/netmiko.py", line 59, in open
+    connection = ConnectHandler(**parameters)
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/netmiko/ssh_dispatcher.py", line 365, in ConnectHandler
+    return ConnectionClass(*args, **kwargs)
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/netmiko/base_connection.py", line 439, in __init__
+    self._open()
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/netmiko/base_connection.py", line 444, in _open
+    self.establish_connection()
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/netmiko/base_connection.py", line 1068, in establish_connection
+    raise NetmikoTimeoutException(msg)
+netmiko.exceptions.NetmikoTimeoutException: TCP connection to device failed.
+
+Common causes of this problem are:
+1. Incorrect hostname or IP address.
+2. Wrong TCP port.
+3. Intermediate firewall blocking access.
+
+Device settings: cisco_ios 10.30.1.108:22
+
+
+
+2023-01-13 09:02:01,827 - nornir.core.task -    ERROR -      start() - Host 'SW-AMZ-SKLAD': task 'netmiko_send_command' failed with traceback:
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/netmiko/base_connection.py", line 1046, in establish_connection
+    self.remote_conn_pre.connect(**ssh_connect_params)
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/paramiko/client.py", line 381, in connect
+    raise NoValidConnectionsError(errors)
+paramiko.ssh_exception.NoValidConnectionsError: [Errno None] Unable to connect to port 22 on 10.30.1.105
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/nornir_netmiko/tasks/netmiko_send_command.py", line 26, in netmiko_send_command
+    net_connect = task.host.get_connection(CONNECTION_NAME, task.nornir.config)
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/nornir/core/inventory.py", line 494, in get_connection
+    self.open_connection(
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/nornir/core/inventory.py", line 546, in open_connection
+    conn_obj.open(
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/nornir_netmiko/connections/netmiko.py", line 59, in open
+    connection = ConnectHandler(**parameters)
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/netmiko/ssh_dispatcher.py", line 365, in ConnectHandler
+    return ConnectionClass(*args, **kwargs)
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/netmiko/base_connection.py", line 439, in __init__
+    self._open()
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/netmiko/base_connection.py", line 444, in _open
+    self.establish_connection()
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/netmiko/base_connection.py", line 1068, in establish_connection
+    raise NetmikoTimeoutException(msg)
+netmiko.exceptions.NetmikoTimeoutException: TCP connection to device failed.
+
+Common causes of this problem are:
+1. Incorrect hostname or IP address.
+2. Wrong TCP port.
+3. Intermediate firewall blocking access.
+
+Device settings: cisco_ios 10.30.1.105:22
+
+
+
+2023-01-13 10:11:06,275 -  nornir.core -     INFO -        run() - Running task 'netmiko_send_command' with args {'command_string': 'show ip int brief'} on 2 hosts
+2023-01-13 10:11:06,295 - nornir.core.task -    ERROR -      start() - Host 'SW-2': task 'netmiko_send_command' failed with traceback:
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/netmiko/base_connection.py", line 1046, in establish_connection
+    self.remote_conn_pre.connect(**ssh_connect_params)
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/paramiko/client.py", line 381, in connect
+    raise NoValidConnectionsError(errors)
+paramiko.ssh_exception.NoValidConnectionsError: [Errno None] Unable to connect to port 22 on 10.30.1.108
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/nornir_netmiko/tasks/netmiko_send_command.py", line 26, in netmiko_send_command
+    net_connect = task.host.get_connection(CONNECTION_NAME, task.nornir.config)
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/nornir/core/inventory.py", line 494, in get_connection
+    self.open_connection(
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/nornir/core/inventory.py", line 546, in open_connection
+    conn_obj.open(
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/nornir_netmiko/connections/netmiko.py", line 59, in open
+    connection = ConnectHandler(**parameters)
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/netmiko/ssh_dispatcher.py", line 365, in ConnectHandler
+    return ConnectionClass(*args, **kwargs)
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/netmiko/base_connection.py", line 439, in __init__
+    self._open()
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/netmiko/base_connection.py", line 444, in _open
+    self.establish_connection()
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/netmiko/base_connection.py", line 1068, in establish_connection
+    raise NetmikoTimeoutException(msg)
+netmiko.exceptions.NetmikoTimeoutException: TCP connection to device failed.
+
+Common causes of this problem are:
+1. Incorrect hostname or IP address.
+2. Wrong TCP port.
+3. Intermediate firewall blocking access.
+
+Device settings: cisco_ios 10.30.1.108:22
+
+
+
+2023-01-13 10:11:06,296 - nornir.core.task -    ERROR -      start() - Host 'SW-1': task 'netmiko_send_command' failed with traceback:
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/netmiko/base_connection.py", line 1046, in establish_connection
+    self.remote_conn_pre.connect(**ssh_connect_params)
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/paramiko/client.py", line 381, in connect
+    raise NoValidConnectionsError(errors)
+paramiko.ssh_exception.NoValidConnectionsError: [Errno None] Unable to connect to port 22 on 10.30.1.105
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/nornir_netmiko/tasks/netmiko_send_command.py", line 26, in netmiko_send_command
+    net_connect = task.host.get_connection(CONNECTION_NAME, task.nornir.config)
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/nornir/core/inventory.py", line 494, in get_connection
+    self.open_connection(
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/nornir/core/inventory.py", line 546, in open_connection
+    conn_obj.open(
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/nornir_netmiko/connections/netmiko.py", line 59, in open
+    connection = ConnectHandler(**parameters)
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/netmiko/ssh_dispatcher.py", line 365, in ConnectHandler
+    return ConnectionClass(*args, **kwargs)
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/netmiko/base_connection.py", line 439, in __init__
+    self._open()
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/netmiko/base_connection.py", line 444, in _open
+    self.establish_connection()
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/netmiko/base_connection.py", line 1068, in establish_connection
+    raise NetmikoTimeoutException(msg)
+netmiko.exceptions.NetmikoTimeoutException: TCP connection to device failed.
+
+Common causes of this problem are:
+1. Incorrect hostname or IP address.
+2. Wrong TCP port.
+3. Intermediate firewall blocking access.
+
+Device settings: cisco_ios 10.30.1.105:22
+
+
+
+2023-01-13 10:36:24,261 -  nornir.core -     INFO -        run() - Running task 'netmiko_send_command' with args {'command_string': 'show ip int brief'} on 2 hosts
+2023-01-13 10:36:24,277 - nornir.core.task -    ERROR -      start() - Host 'SW-1': task 'netmiko_send_command' failed with traceback:
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/netmiko/base_connection.py", line 1046, in establish_connection
+    self.remote_conn_pre.connect(**ssh_connect_params)
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/paramiko/client.py", line 381, in connect
+    raise NoValidConnectionsError(errors)
+paramiko.ssh_exception.NoValidConnectionsError: [Errno None] Unable to connect to port 22 on 10.30.1.105
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/nornir_netmiko/tasks/netmiko_send_command.py", line 26, in netmiko_send_command
+    net_connect = task.host.get_connection(CONNECTION_NAME, task.nornir.config)
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/nornir/core/inventory.py", line 494, in get_connection
+    self.open_connection(
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/nornir/core/inventory.py", line 546, in open_connection
+    conn_obj.open(
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/nornir_netmiko/connections/netmiko.py", line 59, in open
+    connection = ConnectHandler(**parameters)
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/netmiko/ssh_dispatcher.py", line 365, in ConnectHandler
+    return ConnectionClass(*args, **kwargs)
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/netmiko/base_connection.py", line 439, in __init__
+    self._open()
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/netmiko/base_connection.py", line 444, in _open
+    self.establish_connection()
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/netmiko/base_connection.py", line 1068, in establish_connection
+    raise NetmikoTimeoutException(msg)
+netmiko.exceptions.NetmikoTimeoutException: TCP connection to device failed.
+
+Common causes of this problem are:
+1. Incorrect hostname or IP address.
+2. Wrong TCP port.
+3. Intermediate firewall blocking access.
+
+Device settings: cisco_ios 10.30.1.105:22
+
+
+
+2023-01-13 10:36:24,278 - nornir.core.task -    ERROR -      start() - Host 'SW-2': task 'netmiko_send_command' failed with traceback:
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/netmiko/base_connection.py", line 1046, in establish_connection
+    self.remote_conn_pre.connect(**ssh_connect_params)
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/paramiko/client.py", line 381, in connect
+    raise NoValidConnectionsError(errors)
+paramiko.ssh_exception.NoValidConnectionsError: [Errno None] Unable to connect to port 22 on 10.30.1.108
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/nornir_netmiko/tasks/netmiko_send_command.py", line 26, in netmiko_send_command
+    net_connect = task.host.get_connection(CONNECTION_NAME, task.nornir.config)
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/nornir/core/inventory.py", line 494, in get_connection
+    self.open_connection(
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/nornir/core/inventory.py", line 546, in open_connection
+    conn_obj.open(
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/nornir_netmiko/connections/netmiko.py", line 59, in open
+    connection = ConnectHandler(**parameters)
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/netmiko/ssh_dispatcher.py", line 365, in ConnectHandler
+    return ConnectionClass(*args, **kwargs)
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/netmiko/base_connection.py", line 439, in __init__
+    self._open()
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/netmiko/base_connection.py", line 444, in _open
+    self.establish_connection()
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/netmiko/base_connection.py", line 1068, in establish_connection
+    raise NetmikoTimeoutException(msg)
+netmiko.exceptions.NetmikoTimeoutException: TCP connection to device failed.
+
+Common causes of this problem are:
+1. Incorrect hostname or IP address.
+2. Wrong TCP port.
+3. Intermediate firewall blocking access.
+
+Device settings: cisco_ios 10.30.1.108:22
+
+
+
+2023-01-13 10:37:41,747 -  nornir.core -     INFO -        run() - Running task 'netmiko_send_command' with args {'command_string': 'show ip int brief'} on 2 hosts
+2023-01-13 10:37:41,763 - nornir.core.task -    ERROR -      start() - Host 'SW-1': task 'netmiko_send_command' failed with traceback:
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/netmiko/base_connection.py", line 1046, in establish_connection
+    self.remote_conn_pre.connect(**ssh_connect_params)
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/paramiko/client.py", line 381, in connect
+    raise NoValidConnectionsError(errors)
+paramiko.ssh_exception.NoValidConnectionsError: [Errno None] Unable to connect to port 22 on 10.30.1.105
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/nornir_netmiko/tasks/netmiko_send_command.py", line 26, in netmiko_send_command
+    net_connect = task.host.get_connection(CONNECTION_NAME, task.nornir.config)
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/nornir/core/inventory.py", line 494, in get_connection
+    self.open_connection(
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/nornir/core/inventory.py", line 546, in open_connection
+    conn_obj.open(
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/nornir_netmiko/connections/netmiko.py", line 59, in open
+    connection = ConnectHandler(**parameters)
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/netmiko/ssh_dispatcher.py", line 365, in ConnectHandler
+    return ConnectionClass(*args, **kwargs)
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/netmiko/base_connection.py", line 439, in __init__
+    self._open()
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/netmiko/base_connection.py", line 444, in _open
+    self.establish_connection()
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/netmiko/base_connection.py", line 1068, in establish_connection
+    raise NetmikoTimeoutException(msg)
+netmiko.exceptions.NetmikoTimeoutException: TCP connection to device failed.
+
+Common causes of this problem are:
+1. Incorrect hostname or IP address.
+2. Wrong TCP port.
+3. Intermediate firewall blocking access.
+
+Device settings: cisco_ios 10.30.1.105:22
+
+
+
+2023-01-13 10:37:41,763 - nornir.core.task -    ERROR -      start() - Host 'SW-2': task 'netmiko_send_command' failed with traceback:
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/netmiko/base_connection.py", line 1046, in establish_connection
+    self.remote_conn_pre.connect(**ssh_connect_params)
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/paramiko/client.py", line 381, in connect
+    raise NoValidConnectionsError(errors)
+paramiko.ssh_exception.NoValidConnectionsError: [Errno None] Unable to connect to port 22 on 10.30.1.108
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/nornir_netmiko/tasks/netmiko_send_command.py", line 26, in netmiko_send_command
+    net_connect = task.host.get_connection(CONNECTION_NAME, task.nornir.config)
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/nornir/core/inventory.py", line 494, in get_connection
+    self.open_connection(
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/nornir/core/inventory.py", line 546, in open_connection
+    conn_obj.open(
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/nornir_netmiko/connections/netmiko.py", line 59, in open
+    connection = ConnectHandler(**parameters)
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/netmiko/ssh_dispatcher.py", line 365, in ConnectHandler
+    return ConnectionClass(*args, **kwargs)
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/netmiko/base_connection.py", line 439, in __init__
+    self._open()
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/netmiko/base_connection.py", line 444, in _open
+    self.establish_connection()
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/netmiko/base_connection.py", line 1068, in establish_connection
+    raise NetmikoTimeoutException(msg)
+netmiko.exceptions.NetmikoTimeoutException: TCP connection to device failed.
+
+Common causes of this problem are:
+1. Incorrect hostname or IP address.
+2. Wrong TCP port.
+3. Intermediate firewall blocking access.
+
+Device settings: cisco_ios 10.30.1.108:22
+
+
+
+2023-01-13 10:38:40,003 -  nornir.core -     INFO -        run() - Running task 'netmiko_send_command' with args {'command_string': 'show ip int brief'} on 2 hosts
+2023-01-13 10:38:40,016 - nornir.core.task -    ERROR -      start() - Host 'SW-2': task 'netmiko_send_command' failed with traceback:
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/netmiko/base_connection.py", line 1046, in establish_connection
+    self.remote_conn_pre.connect(**ssh_connect_params)
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/paramiko/client.py", line 381, in connect
+    raise NoValidConnectionsError(errors)
+paramiko.ssh_exception.NoValidConnectionsError: [Errno None] Unable to connect to port 22 on 10.30.1.108
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/nornir_netmiko/tasks/netmiko_send_command.py", line 26, in netmiko_send_command
+    net_connect = task.host.get_connection(CONNECTION_NAME, task.nornir.config)
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/nornir/core/inventory.py", line 494, in get_connection
+    self.open_connection(
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/nornir/core/inventory.py", line 546, in open_connection
+    conn_obj.open(
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/nornir_netmiko/connections/netmiko.py", line 59, in open
+    connection = ConnectHandler(**parameters)
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/netmiko/ssh_dispatcher.py", line 365, in ConnectHandler
+    return ConnectionClass(*args, **kwargs)
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/netmiko/base_connection.py", line 439, in __init__
+    self._open()
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/netmiko/base_connection.py", line 444, in _open
+    self.establish_connection()
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/netmiko/base_connection.py", line 1068, in establish_connection
+    raise NetmikoTimeoutException(msg)
+netmiko.exceptions.NetmikoTimeoutException: TCP connection to device failed.
+
+Common causes of this problem are:
+1. Incorrect hostname or IP address.
+2. Wrong TCP port.
+3. Intermediate firewall blocking access.
+
+Device settings: cisco_ios 10.30.1.108:22
+
+
+
+2023-01-13 10:38:40,018 - nornir.core.task -    ERROR -      start() - Host 'SW-1': task 'netmiko_send_command' failed with traceback:
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/netmiko/base_connection.py", line 1046, in establish_connection
+    self.remote_conn_pre.connect(**ssh_connect_params)
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/paramiko/client.py", line 381, in connect
+    raise NoValidConnectionsError(errors)
+paramiko.ssh_exception.NoValidConnectionsError: [Errno None] Unable to connect to port 22 on 10.30.1.105
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/nornir_netmiko/tasks/netmiko_send_command.py", line 26, in netmiko_send_command
+    net_connect = task.host.get_connection(CONNECTION_NAME, task.nornir.config)
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/nornir/core/inventory.py", line 494, in get_connection
+    self.open_connection(
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/nornir/core/inventory.py", line 546, in open_connection
+    conn_obj.open(
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/nornir_netmiko/connections/netmiko.py", line 59, in open
+    connection = ConnectHandler(**parameters)
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/netmiko/ssh_dispatcher.py", line 365, in ConnectHandler
+    return ConnectionClass(*args, **kwargs)
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/netmiko/base_connection.py", line 439, in __init__
+    self._open()
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/netmiko/base_connection.py", line 444, in _open
+    self.establish_connection()
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/netmiko/base_connection.py", line 1068, in establish_connection
+    raise NetmikoTimeoutException(msg)
+netmiko.exceptions.NetmikoTimeoutException: TCP connection to device failed.
+
+Common causes of this problem are:
+1. Incorrect hostname or IP address.
+2. Wrong TCP port.
+3. Intermediate firewall blocking access.
+
+Device settings: cisco_ios 10.30.1.105:22
+
+
+
+2023-01-13 10:50:01,597 -  nornir.core -     INFO -        run() - Running task 'netmiko_send_command' with args {'command_string': 'show ip int brief'} on 2 hosts
+2023-01-13 10:50:39,414 -  nornir.core -     INFO -        run() - Running task 'netmiko_send_command' with args {'command_string': 'show ip int brief'} on 2 hosts
+2023-01-13 11:08:53,805 -  nornir.core -     INFO -        run() - Running task 'netmiko_send_command' with args {'command_string': 'show ip int brief'} on 2 hosts
+2023-01-13 11:08:53,854 - nornir.core.task -    ERROR -      start() - Host 'SW-1': task 'netmiko_send_command' failed with traceback:
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/netmiko/base_connection.py", line 1046, in establish_connection
+    self.remote_conn_pre.connect(**ssh_connect_params)
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/paramiko/client.py", line 381, in connect
+    raise NoValidConnectionsError(errors)
+paramiko.ssh_exception.NoValidConnectionsError: [Errno None] Unable to connect to port 22 on 10.30.1.105
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/nornir_netmiko/tasks/netmiko_send_command.py", line 26, in netmiko_send_command
+    net_connect = task.host.get_connection(CONNECTION_NAME, task.nornir.config)
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/nornir/core/inventory.py", line 494, in get_connection
+    self.open_connection(
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/nornir/core/inventory.py", line 546, in open_connection
+    conn_obj.open(
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/nornir_netmiko/connections/netmiko.py", line 59, in open
+    connection = ConnectHandler(**parameters)
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/netmiko/ssh_dispatcher.py", line 365, in ConnectHandler
+    return ConnectionClass(*args, **kwargs)
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/netmiko/base_connection.py", line 439, in __init__
+    self._open()
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/netmiko/base_connection.py", line 444, in _open
+    self.establish_connection()
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/netmiko/base_connection.py", line 1068, in establish_connection
+    raise NetmikoTimeoutException(msg)
+netmiko.exceptions.NetmikoTimeoutException: TCP connection to device failed.
+
+Common causes of this problem are:
+1. Incorrect hostname or IP address.
+2. Wrong TCP port.
+3. Intermediate firewall blocking access.
+
+Device settings: cisco_ios 10.30.1.105:22
+
+
+
+2023-01-13 11:08:56,450 - nornir.core.task -    ERROR -      start() - Host 'SW-2': task 'netmiko_send_command' failed with traceback:
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/netmiko/base_connection.py", line 1046, in establish_connection
+    self.remote_conn_pre.connect(**ssh_connect_params)
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/paramiko/client.py", line 450, in connect
+    self._auth(
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/paramiko/client.py", line 781, in _auth
+    raise saved_exception
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/paramiko/client.py", line 768, in _auth
+    self._transport.auth_password(username, password)
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/paramiko/transport.py", line 1564, in auth_password
+    return self.auth_handler.wait_for_response(my_event)
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/paramiko/auth_handler.py", line 259, in wait_for_response
+    raise e
+paramiko.ssh_exception.AuthenticationException: Authentication failed.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/nornir_netmiko/tasks/netmiko_send_command.py", line 26, in netmiko_send_command
+    net_connect = task.host.get_connection(CONNECTION_NAME, task.nornir.config)
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/nornir/core/inventory.py", line 494, in get_connection
+    self.open_connection(
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/nornir/core/inventory.py", line 546, in open_connection
+    conn_obj.open(
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/nornir_netmiko/connections/netmiko.py", line 59, in open
+    connection = ConnectHandler(**parameters)
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/netmiko/ssh_dispatcher.py", line 365, in ConnectHandler
+    return ConnectionClass(*args, **kwargs)
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/netmiko/base_connection.py", line 439, in __init__
+    self._open()
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/netmiko/base_connection.py", line 444, in _open
+    self.establish_connection()
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/netmiko/base_connection.py", line 1083, in establish_connection
+    raise NetmikoAuthenticationException(msg)
+netmiko.exceptions.NetmikoAuthenticationException: Authentication to device failed.
+
+Common causes of this problem are:
+1. Invalid username and password
+2. Incorrect SSH-key file
+3. Connecting to the wrong device
+
+Device settings: cisco_ios 10.30.1.108:22
+
+
+Authentication failed.
+
+2023-01-13 11:12:10,281 -  nornir.core -     INFO -        run() - Running task 'netmiko_send_command' with args {'command_string': 'show ip int brief'} on 2 hosts
+2023-01-13 11:16:48,787 -  nornir.core -     INFO -        run() - Running task 'netmiko_send_command' with args {'command_string': 'show ip int brief'} on 2 hosts
+2023-01-13 11:16:50,195 -  nornir.core -     INFO -        run() - Running task 'netmiko_send_command' with args {'command_string': 'show ip int brief'} on 2 hosts
+2023-01-13 11:17:01,036 -  nornir.core -     INFO -        run() - Running task 'netmiko_send_command' with args {'command_string': 'show ip int brief'} on 2 hosts
+2023-01-13 11:17:03,475 - nornir.core.task -    ERROR -      start() - Host 'SW-1': task 'netmiko_send_command' failed with traceback:
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/netmiko/base_connection.py", line 1046, in establish_connection
+    self.remote_conn_pre.connect(**ssh_connect_params)
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/paramiko/client.py", line 450, in connect
+    self._auth(
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/paramiko/client.py", line 781, in _auth
+    raise saved_exception
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/paramiko/client.py", line 768, in _auth
+    self._transport.auth_password(username, password)
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/paramiko/transport.py", line 1564, in auth_password
+    return self.auth_handler.wait_for_response(my_event)
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/paramiko/auth_handler.py", line 259, in wait_for_response
+    raise e
+paramiko.ssh_exception.AuthenticationException: Authentication failed.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/nornir_netmiko/tasks/netmiko_send_command.py", line 26, in netmiko_send_command
+    net_connect = task.host.get_connection(CONNECTION_NAME, task.nornir.config)
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/nornir/core/inventory.py", line 494, in get_connection
+    self.open_connection(
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/nornir/core/inventory.py", line 546, in open_connection
+    conn_obj.open(
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/nornir_netmiko/connections/netmiko.py", line 59, in open
+    connection = ConnectHandler(**parameters)
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/netmiko/ssh_dispatcher.py", line 365, in ConnectHandler
+    return ConnectionClass(*args, **kwargs)
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/netmiko/base_connection.py", line 439, in __init__
+    self._open()
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/netmiko/base_connection.py", line 444, in _open
+    self.establish_connection()
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/netmiko/base_connection.py", line 1083, in establish_connection
+    raise NetmikoAuthenticationException(msg)
+netmiko.exceptions.NetmikoAuthenticationException: Authentication to device failed.
+
+Common causes of this problem are:
+1. Invalid username and password
+2. Incorrect SSH-key file
+3. Connecting to the wrong device
+
+Device settings: cisco_ios 10.30.1.105:22
+
+
+Authentication failed.
+
+2023-01-13 11:17:03,491 - nornir.core.task -    ERROR -      start() - Host 'SW-2': task 'netmiko_send_command' failed with traceback:
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/netmiko/base_connection.py", line 1046, in establish_connection
+    self.remote_conn_pre.connect(**ssh_connect_params)
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/paramiko/client.py", line 450, in connect
+    self._auth(
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/paramiko/client.py", line 781, in _auth
+    raise saved_exception
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/paramiko/client.py", line 768, in _auth
+    self._transport.auth_password(username, password)
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/paramiko/transport.py", line 1564, in auth_password
+    return self.auth_handler.wait_for_response(my_event)
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/paramiko/auth_handler.py", line 259, in wait_for_response
+    raise e
+paramiko.ssh_exception.AuthenticationException: Authentication failed.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/nornir_netmiko/tasks/netmiko_send_command.py", line 26, in netmiko_send_command
+    net_connect = task.host.get_connection(CONNECTION_NAME, task.nornir.config)
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/nornir/core/inventory.py", line 494, in get_connection
+    self.open_connection(
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/nornir/core/inventory.py", line 546, in open_connection
+    conn_obj.open(
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/nornir_netmiko/connections/netmiko.py", line 59, in open
+    connection = ConnectHandler(**parameters)
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/netmiko/ssh_dispatcher.py", line 365, in ConnectHandler
+    return ConnectionClass(*args, **kwargs)
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/netmiko/base_connection.py", line 439, in __init__
+    self._open()
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/netmiko/base_connection.py", line 444, in _open
+    self.establish_connection()
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/netmiko/base_connection.py", line 1083, in establish_connection
+    raise NetmikoAuthenticationException(msg)
+netmiko.exceptions.NetmikoAuthenticationException: Authentication to device failed.
+
+Common causes of this problem are:
+1. Invalid username and password
+2. Incorrect SSH-key file
+3. Connecting to the wrong device
+
+Device settings: cisco_ios 10.30.1.108:22
+
+
+Authentication failed.
+
+2023-01-13 11:18:31,098 -  nornir.core -     INFO -        run() - Running task 'netmiko_send_command' with args {'command_string': 'show ip int brief'} on 2 hosts
+2023-01-13 11:18:44,067 -  nornir.core -     INFO -        run() - Running task 'netmiko_send_command' with args {'command_string': 'show ip int brief'} on 2 hosts
+2023-01-13 11:18:46,623 - nornir.core.task -    ERROR -      start() - Host 'SW-1': task 'netmiko_send_command' failed with traceback:
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/netmiko/base_connection.py", line 1046, in establish_connection
+    self.remote_conn_pre.connect(**ssh_connect_params)
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/paramiko/client.py", line 450, in connect
+    self._auth(
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/paramiko/client.py", line 781, in _auth
+    raise saved_exception
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/paramiko/client.py", line 768, in _auth
+    self._transport.auth_password(username, password)
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/paramiko/transport.py", line 1564, in auth_password
+    return self.auth_handler.wait_for_response(my_event)
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/paramiko/auth_handler.py", line 259, in wait_for_response
+    raise e
+paramiko.ssh_exception.AuthenticationException: Authentication failed.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/nornir_netmiko/tasks/netmiko_send_command.py", line 26, in netmiko_send_command
+    net_connect = task.host.get_connection(CONNECTION_NAME, task.nornir.config)
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/nornir/core/inventory.py", line 494, in get_connection
+    self.open_connection(
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/nornir/core/inventory.py", line 546, in open_connection
+    conn_obj.open(
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/nornir_netmiko/connections/netmiko.py", line 59, in open
+    connection = ConnectHandler(**parameters)
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/netmiko/ssh_dispatcher.py", line 365, in ConnectHandler
+    return ConnectionClass(*args, **kwargs)
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/netmiko/base_connection.py", line 439, in __init__
+    self._open()
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/netmiko/base_connection.py", line 444, in _open
+    self.establish_connection()
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/netmiko/base_connection.py", line 1083, in establish_connection
+    raise NetmikoAuthenticationException(msg)
+netmiko.exceptions.NetmikoAuthenticationException: Authentication to device failed.
+
+Common causes of this problem are:
+1. Invalid username and password
+2. Incorrect SSH-key file
+3. Connecting to the wrong device
+
+Device settings: cisco_ios 10.30.1.105:22
+
+
+Authentication failed.
+
+2023-01-13 11:18:46,629 - nornir.core.task -    ERROR -      start() - Host 'SW-2': task 'netmiko_send_command' failed with traceback:
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/netmiko/base_connection.py", line 1046, in establish_connection
+    self.remote_conn_pre.connect(**ssh_connect_params)
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/paramiko/client.py", line 450, in connect
+    self._auth(
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/paramiko/client.py", line 781, in _auth
+    raise saved_exception
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/paramiko/client.py", line 768, in _auth
+    self._transport.auth_password(username, password)
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/paramiko/transport.py", line 1564, in auth_password
+    return self.auth_handler.wait_for_response(my_event)
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/paramiko/auth_handler.py", line 259, in wait_for_response
+    raise e
+paramiko.ssh_exception.AuthenticationException: Authentication failed.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/nornir_netmiko/tasks/netmiko_send_command.py", line 26, in netmiko_send_command
+    net_connect = task.host.get_connection(CONNECTION_NAME, task.nornir.config)
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/nornir/core/inventory.py", line 494, in get_connection
+    self.open_connection(
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/nornir/core/inventory.py", line 546, in open_connection
+    conn_obj.open(
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/nornir_netmiko/connections/netmiko.py", line 59, in open
+    connection = ConnectHandler(**parameters)
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/netmiko/ssh_dispatcher.py", line 365, in ConnectHandler
+    return ConnectionClass(*args, **kwargs)
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/netmiko/base_connection.py", line 439, in __init__
+    self._open()
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/netmiko/base_connection.py", line 444, in _open
+    self.establish_connection()
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/netmiko/base_connection.py", line 1083, in establish_connection
+    raise NetmikoAuthenticationException(msg)
+netmiko.exceptions.NetmikoAuthenticationException: Authentication to device failed.
+
+Common causes of this problem are:
+1. Invalid username and password
+2. Incorrect SSH-key file
+3. Connecting to the wrong device
+
+Device settings: cisco_ios 10.30.1.108:22
+
+
+Authentication failed.
+
+2023-01-13 11:18:52,078 -  nornir.core -     INFO -        run() - Running task 'netmiko_send_command' with args {'command_string': 'show ip int brief'} on 2 hosts
+2023-01-13 11:18:54,261 -  nornir.core -     INFO -        run() - Running task 'netmiko_send_command' with args {'command_string': 'show ip int brief'} on 2 hosts
+2023-01-13 11:18:55,023 -  nornir.core -     INFO -        run() - Running task 'netmiko_send_command' with args {'command_string': 'show ip int brief'} on 2 hosts
+2023-01-13 11:18:55,794 -  nornir.core -     INFO -        run() - Running task 'netmiko_send_command' with args {'command_string': 'show ip int brief'} on 2 hosts
+2023-01-13 11:18:56,448 -  nornir.core -     INFO -        run() - Running task 'netmiko_send_command' with args {'command_string': 'show ip int brief'} on 2 hosts
+2023-01-13 11:46:59,384 -  nornir.core -     INFO -        run() - Running task 'netmiko_send_command' with args {'command_string': 'show ip int brief'} on 2 hosts
+2023-01-13 11:47:12,010 -  nornir.core -     INFO -        run() - Running task 'netmiko_send_command' with args {'command_string': 'show ip int brief'} on 2 hosts
+2023-01-13 12:05:03,433 -  nornir.core -     INFO -        run() - Running task 'netmiko_send_command' with args {'command_string': 'show ip int brief'} on 2 hosts
+2023-01-13 12:05:03,456 - nornir.core.task -    ERROR -      start() - Host 'SW-2': task 'netmiko_send_command' failed with traceback:
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/nornir_netmiko/tasks/netmiko_send_command.py", line 32, in netmiko_send_command
+    result = net_connect.send_command(command_string, **kwargs)
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/netmiko/utilities.py", line 592, in wrapper_decorator
+    return func(self, *args, **kwargs)
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/netmiko/base_connection.py", line 1659, in send_command
+    search_pattern = self._prompt_handler(auto_find_prompt)
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/netmiko/base_connection.py", line 1544, in _prompt_handler
+    prompt = self.find_prompt()
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/netmiko/base_connection.py", line 1335, in find_prompt
+    self.write_channel(self.RETURN)
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/netmiko/base_connection.py", line 97, in wrapper_decorator
+    return_val = func(self, *args, **kwargs)
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/netmiko/base_connection.py", line 111, in wrapper_decorator
+    func(self, out_data)
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/netmiko/base_connection.py", line 537, in write_channel
+    self.channel.write_channel(out_data)
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/netmiko/channel.py", line 74, in write_channel
+    self.remote_conn.sendall(write_bytes(out_data, encoding=self.encoding))
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/paramiko/channel.py", line 846, in sendall
+    sent = self.send(s)
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/paramiko/channel.py", line 801, in send
+    return self._send(s, m)
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/paramiko/channel.py", line 1198, in _send
+    raise socket.error("Socket is closed")
+OSError: Socket is closed
+
+2023-01-13 12:05:03,456 - nornir.core.task -    ERROR -      start() - Host 'SW-1': task 'netmiko_send_command' failed with traceback:
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/nornir_netmiko/tasks/netmiko_send_command.py", line 32, in netmiko_send_command
+    result = net_connect.send_command(command_string, **kwargs)
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/netmiko/utilities.py", line 592, in wrapper_decorator
+    return func(self, *args, **kwargs)
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/netmiko/base_connection.py", line 1659, in send_command
+    search_pattern = self._prompt_handler(auto_find_prompt)
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/netmiko/base_connection.py", line 1544, in _prompt_handler
+    prompt = self.find_prompt()
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/netmiko/base_connection.py", line 1335, in find_prompt
+    self.write_channel(self.RETURN)
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/netmiko/base_connection.py", line 97, in wrapper_decorator
+    return_val = func(self, *args, **kwargs)
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/netmiko/base_connection.py", line 111, in wrapper_decorator
+    func(self, out_data)
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/netmiko/base_connection.py", line 537, in write_channel
+    self.channel.write_channel(out_data)
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/netmiko/channel.py", line 74, in write_channel
+    self.remote_conn.sendall(write_bytes(out_data, encoding=self.encoding))
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/paramiko/channel.py", line 846, in sendall
+    sent = self.send(s)
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/paramiko/channel.py", line 801, in send
+    return self._send(s, m)
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/paramiko/channel.py", line 1198, in _send
+    raise socket.error("Socket is closed")
+OSError: Socket is closed
+
+2023-01-13 12:05:22,419 -  nornir.core -     INFO -        run() - Running task 'netmiko_send_command' with args {'command_string': 'show ip int brief'} on 2 hosts
+2023-01-13 12:11:18,294 -  nornir.core -     INFO -        run() - Running task 'Configuring Switches' with args {} on 2 hosts
+2023-01-13 12:11:18,348 - nornir.core.task -    ERROR -      start() - Host 'SW-2': task 'Fourth step. 1: Read the device administrator configuration template' failed with traceback:
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/nornir_jinja2/plugins/tasks/template_file.py", line 42, in template_file
+    t = env.get_template(template)
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/jinja2/environment.py", line 1010, in get_template
+    return self._load_template(name, globals)
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/jinja2/environment.py", line 969, in _load_template
+    template = self.loader.load(self, name, self.make_globals(globals))
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/jinja2/loaders.py", line 126, in load
+    source, filename, uptodate = self.get_source(environment, name)
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/jinja2/loaders.py", line 218, in get_source
+    raise TemplateNotFound(template)
+jinja2.exceptions.TemplateNotFound: cisco_ios_user.template
+
+2023-01-13 12:11:18,350 - nornir.core.task -    ERROR -      start() - Host 'SW-2': task 'Configuring Switches' failed with traceback:
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/var/folders/9k/hzppltf9457f5jb13jkn56340000gq/T/ipykernel_42273/2221817111.py", line 4, in config_switches
+    ios_user_template = task.run(
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/nornir/core/task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: Fourth step. 1: Read the device administrator configuration template (failed)
+
+
+2023-01-13 12:11:18,351 - nornir.core.task -    ERROR -      start() - Host 'SW-1': task 'Fourth step. 1: Read the device administrator configuration template' failed with traceback:
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/nornir_jinja2/plugins/tasks/template_file.py", line 42, in template_file
+    t = env.get_template(template)
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/jinja2/environment.py", line 1010, in get_template
+    return self._load_template(name, globals)
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/jinja2/environment.py", line 969, in _load_template
+    template = self.loader.load(self, name, self.make_globals(globals))
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/jinja2/loaders.py", line 126, in load
+    source, filename, uptodate = self.get_source(environment, name)
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/jinja2/loaders.py", line 218, in get_source
+    raise TemplateNotFound(template)
+jinja2.exceptions.TemplateNotFound: cisco_ios_user.template
+
+2023-01-13 12:11:18,351 - nornir.core.task -    ERROR -      start() - Host 'SW-1': task 'Configuring Switches' failed with traceback:
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/var/folders/9k/hzppltf9457f5jb13jkn56340000gq/T/ipykernel_42273/2221817111.py", line 4, in config_switches
+    ios_user_template = task.run(
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/nornir/core/task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: Fourth step. 1: Read the device administrator configuration template (failed)
+
+
+2023-01-13 12:11:51,048 -  nornir.core -     INFO -        run() - Running task 'Configuring Switches' with args {} on 2 hosts
+2023-01-13 12:11:51,051 - nornir.core.task -    ERROR -      start() - Host 'SW-2': task 'Fourth step. 1: Read the device administrator configuration template' failed with traceback:
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/nornir_jinja2/plugins/tasks/template_file.py", line 42, in template_file
+    t = env.get_template(template)
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/jinja2/environment.py", line 1010, in get_template
+    return self._load_template(name, globals)
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/jinja2/environment.py", line 969, in _load_template
+    template = self.loader.load(self, name, self.make_globals(globals))
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/jinja2/loaders.py", line 126, in load
+    source, filename, uptodate = self.get_source(environment, name)
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/jinja2/loaders.py", line 218, in get_source
+    raise TemplateNotFound(template)
+jinja2.exceptions.TemplateNotFound: cisco_ios_user.template
+
+2023-01-13 12:11:51,052 - nornir.core.task -    ERROR -      start() - Host 'SW-2': task 'Configuring Switches' failed with traceback:
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/var/folders/9k/hzppltf9457f5jb13jkn56340000gq/T/ipykernel_42273/2221817111.py", line 4, in config_switches
+    ios_user_template = task.run(
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/nornir/core/task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: Fourth step. 1: Read the device administrator configuration template (failed)
+
+
+2023-01-13 12:11:51,053 - nornir.core.task -    ERROR -      start() - Host 'SW-1': task 'Fourth step. 1: Read the device administrator configuration template' failed with traceback:
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/nornir_jinja2/plugins/tasks/template_file.py", line 42, in template_file
+    t = env.get_template(template)
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/jinja2/environment.py", line 1010, in get_template
+    return self._load_template(name, globals)
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/jinja2/environment.py", line 969, in _load_template
+    template = self.loader.load(self, name, self.make_globals(globals))
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/jinja2/loaders.py", line 126, in load
+    source, filename, uptodate = self.get_source(environment, name)
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/jinja2/loaders.py", line 218, in get_source
+    raise TemplateNotFound(template)
+jinja2.exceptions.TemplateNotFound: cisco_ios_user.template
+
+2023-01-13 12:11:51,053 - nornir.core.task -    ERROR -      start() - Host 'SW-1': task 'Configuring Switches' failed with traceback:
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/var/folders/9k/hzppltf9457f5jb13jkn56340000gq/T/ipykernel_42273/2221817111.py", line 4, in config_switches
+    ios_user_template = task.run(
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/nornir/core/task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: Fourth step. 1: Read the device administrator configuration template (failed)
+
+
+2023-01-13 12:12:41,434 -  nornir.core -     INFO -        run() - Running task 'Configuring Switches' with args {} on 2 hosts
+2023-01-13 12:13:46,326 -  nornir.core -     INFO -        run() - Running task 'Configuring Switches' with args {} on 2 hosts
+2023-01-13 12:20:53,950 -  nornir.core -     INFO -        run() - Running task 'Configuring Switches' with args {} on 2 hosts
+2023-01-13 12:23:06,890 -  nornir.core -     INFO -        run() - Running task 'Configuring Switches' with args {} on 2 hosts
+2023-01-13 12:24:23,343 -  nornir.core -     INFO -        run() - Running task 'Настройка коммутаторов' with args {} on 2 hosts
+2023-01-13 14:21:07,563 -  nornir.core -     INFO -        run() - Running task 'Настройка коммутаторов' with args {} on 2 hosts
+2023-01-13 14:21:07,810 - nornir.core.task -    ERROR -      start() - Host 'SW-1': task '2 шаг. 1: Получаем шаблон конфигурации интерфейсов' failed with traceback:
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/nornir_jinja2/plugins/tasks/template_file.py", line 43, in template_file
+    text = t.render(host=task.host, **kwargs)
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/jinja2/environment.py", line 1301, in render
+    self.environment.handle_exception()
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/jinja2/environment.py", line 936, in handle_exception
+    raise rewrite_traceback_stack(source=source)
+  File "templates/cisco_ios_interface.template", line 1, in top-level template code
+    {% for i in host.interface_list %}
+jinja2.exceptions.UndefinedError: 'nornir.core.inventory.Host object' has no attribute 'interface_list'
+
+2023-01-13 14:21:07,813 - nornir.core.task -    ERROR -      start() - Host 'SW-1': task 'Настройка коммутаторов' failed with traceback:
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/var/folders/9k/hzppltf9457f5jb13jkn56340000gq/T/ipykernel_42273/1248244867.py", line 4, in config_switches
+    ios_interface_template = task.run(
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/nornir/core/task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: 2 шаг. 1: Получаем шаблон конфигурации интерфейсов (failed)
+
+
+2023-01-13 14:21:07,813 - nornir.core.task -    ERROR -      start() - Host 'SW-2': task '2 шаг. 1: Получаем шаблон конфигурации интерфейсов' failed with traceback:
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/nornir_jinja2/plugins/tasks/template_file.py", line 43, in template_file
+    text = t.render(host=task.host, **kwargs)
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/jinja2/environment.py", line 1301, in render
+    self.environment.handle_exception()
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/jinja2/environment.py", line 936, in handle_exception
+    raise rewrite_traceback_stack(source=source)
+  File "templates/cisco_ios_interface.template", line 1, in top-level template code
+    {% for i in host.interface_list %}
+jinja2.exceptions.UndefinedError: 'nornir.core.inventory.Host object' has no attribute 'interface_list'
+
+2023-01-13 14:21:07,813 - nornir.core.task -    ERROR -      start() - Host 'SW-2': task 'Настройка коммутаторов' failed with traceback:
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/var/folders/9k/hzppltf9457f5jb13jkn56340000gq/T/ipykernel_42273/1248244867.py", line 4, in config_switches
+    ios_interface_template = task.run(
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/nornir/core/task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: 2 шаг. 1: Получаем шаблон конфигурации интерфейсов (failed)
+
+
+2023-01-13 14:21:23,385 -  nornir.core -     INFO -        run() - Running task 'Настройка коммутаторов' with args {} on 2 hosts
+2023-01-13 14:23:49,862 -  nornir.core -     INFO -        run() - Running task 'Настройка коммутаторов' with args {} on 2 hosts
+2023-01-13 14:29:45,841 -  nornir.core -     INFO -        run() - Running task 'Настройка коммутаторов' with args {} on 2 hosts
+2023-01-13 14:29:54,663 -  nornir.core -     INFO -        run() - Running task 'Настройка коммутаторов' with args {} on 2 hosts
+2023-01-13 14:59:50,809 -  nornir.core -     INFO -        run() - Running task 'Настройка коммутаторов' with args {} on 2 hosts
+2023-01-13 14:59:52,813 - nornir.core.task -    ERROR -      start() - Host 'SW-2': task '3 шаг. 1: Получаем шаблон конфигурации ntp' failed with traceback:
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/nornir_jinja2/plugins/tasks/template_file.py", line 43, in template_file
+    text = t.render(host=task.host, **kwargs)
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/jinja2/environment.py", line 1301, in render
+    self.environment.handle_exception()
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/jinja2/environment.py", line 936, in handle_exception
+    raise rewrite_traceback_stack(source=source)
+  File "templates/cisco_ios_ntp.template", line 2, in top-level template code
+    ntp source {{interface_name}}
+jinja2.exceptions.UndefinedError: 'interface_name' is undefined
+
+2023-01-13 14:59:52,814 - nornir.core.task -    ERROR -      start() - Host 'SW-2': task 'Настройка коммутаторов' failed with traceback:
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/var/folders/9k/hzppltf9457f5jb13jkn56340000gq/T/ipykernel_42273/1334737579.py", line 35, in config_switches
+    ios_ntp_template = task.run(
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/nornir/core/task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: 3 шаг. 1: Получаем шаблон конфигурации ntp (failed)
+
+
+2023-01-13 14:59:52,870 - nornir.core.task -    ERROR -      start() - Host 'SW-1': task '3 шаг. 1: Получаем шаблон конфигурации ntp' failed with traceback:
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/nornir_jinja2/plugins/tasks/template_file.py", line 43, in template_file
+    text = t.render(host=task.host, **kwargs)
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/jinja2/environment.py", line 1301, in render
+    self.environment.handle_exception()
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/jinja2/environment.py", line 936, in handle_exception
+    raise rewrite_traceback_stack(source=source)
+  File "templates/cisco_ios_ntp.template", line 2, in top-level template code
+    ntp source {{interface_name}}
+jinja2.exceptions.UndefinedError: 'interface_name' is undefined
+
+2023-01-13 14:59:52,871 - nornir.core.task -    ERROR -      start() - Host 'SW-1': task 'Настройка коммутаторов' failed with traceback:
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/var/folders/9k/hzppltf9457f5jb13jkn56340000gq/T/ipykernel_42273/1334737579.py", line 35, in config_switches
+    ios_ntp_template = task.run(
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/nornir/core/task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: 3 шаг. 1: Получаем шаблон конфигурации ntp (failed)
+
+
+2023-01-13 17:10:01,680 -  nornir.core -     INFO -        run() - Running task 'Настройка коммутаторов' with args {} on 2 hosts
+2023-01-13 17:10:03,694 - nornir.core.task -    ERROR -      start() - Host 'SW-2': task '3 шаг. 1: Получаем шаблон конфигурации ntp' failed with traceback:
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/nornir_jinja2/plugins/tasks/template_file.py", line 43, in template_file
+    text = t.render(host=task.host, **kwargs)
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/jinja2/environment.py", line 1301, in render
+    self.environment.handle_exception()
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/jinja2/environment.py", line 936, in handle_exception
+    raise rewrite_traceback_stack(source=source)
+  File "templates/cisco_ios_ntp.template", line 2, in top-level template code
+    ntp source {{ntp_interface}}
+jinja2.exceptions.UndefinedError: 'ntp_interface' is undefined
+
+2023-01-13 17:10:03,695 - nornir.core.task -    ERROR -      start() - Host 'SW-2': task 'Настройка коммутаторов' failed with traceback:
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/var/folders/9k/hzppltf9457f5jb13jkn56340000gq/T/ipykernel_42273/1334737579.py", line 35, in config_switches
+    ios_ntp_template = task.run(
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/nornir/core/task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: 3 шаг. 1: Получаем шаблон конфигурации ntp (failed)
+
+
+2023-01-13 17:10:03,729 - nornir.core.task -    ERROR -      start() - Host 'SW-1': task '3 шаг. 1: Получаем шаблон конфигурации ntp' failed with traceback:
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/nornir_jinja2/plugins/tasks/template_file.py", line 43, in template_file
+    text = t.render(host=task.host, **kwargs)
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/jinja2/environment.py", line 1301, in render
+    self.environment.handle_exception()
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/jinja2/environment.py", line 936, in handle_exception
+    raise rewrite_traceback_stack(source=source)
+  File "templates/cisco_ios_ntp.template", line 2, in top-level template code
+    ntp source {{ntp_interface}}
+jinja2.exceptions.UndefinedError: 'ntp_interface' is undefined
+
+2023-01-13 17:10:03,729 - nornir.core.task -    ERROR -      start() - Host 'SW-1': task 'Настройка коммутаторов' failed with traceback:
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/var/folders/9k/hzppltf9457f5jb13jkn56340000gq/T/ipykernel_42273/1334737579.py", line 35, in config_switches
+    ios_ntp_template = task.run(
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/nornir/core/task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: 3 шаг. 1: Получаем шаблон конфигурации ntp (failed)
+
+
+2023-01-13 17:13:42,769 -  nornir.core -     INFO -        run() - Running task 'Настройка коммутаторов' with args {} on 2 hosts
+2023-01-13 17:13:44,972 - nornir.core.task -    ERROR -      start() - Host 'SW-2': task '3 шаг. 1: Получаем шаблон конфигурации ntp' failed with traceback:
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/nornir_jinja2/plugins/tasks/template_file.py", line 43, in template_file
+    text = t.render(host=task.host, **kwargs)
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/jinja2/environment.py", line 1301, in render
+    self.environment.handle_exception()
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/jinja2/environment.py", line 936, in handle_exception
+    raise rewrite_traceback_stack(source=source)
+  File "templates/cisco_ios_ntp.template", line 2, in top-level template code
+    ntp source {{host.ntp_interface}}
+jinja2.exceptions.UndefinedError: 'nornir.core.inventory.Host object' has no attribute 'ntp_interface'
+
+2023-01-13 17:13:44,973 - nornir.core.task -    ERROR -      start() - Host 'SW-2': task 'Настройка коммутаторов' failed with traceback:
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/var/folders/9k/hzppltf9457f5jb13jkn56340000gq/T/ipykernel_42273/1334737579.py", line 35, in config_switches
+    ios_ntp_template = task.run(
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/nornir/core/task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: 3 шаг. 1: Получаем шаблон конфигурации ntp (failed)
+
+
+2023-01-13 17:15:17,757 -  nornir.core -     INFO -        run() - Running task 'Настройка коммутаторов' with args {} on 2 hosts
+2023-01-13 17:28:30,883 -  nornir.core -     INFO -        run() - Running task 'Настройка коммутаторов' with args {} on 2 hosts
+2023-01-13 17:28:33,302 - nornir.core.task -    ERROR -      start() - Host 'SW-1': task '4 шаг. 1: Получаем шаблон конфигурации dns' failed with traceback:
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/nornir_jinja2/plugins/tasks/template_file.py", line 43, in template_file
+    text = t.render(host=task.host, **kwargs)
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/jinja2/environment.py", line 1301, in render
+    self.environment.handle_exception()
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/jinja2/environment.py", line 936, in handle_exception
+    raise rewrite_traceback_stack(source=source)
+  File "templates/cisco_ios_dns.template", line 3, in top-level template code
+    ip name-server {{ host.dns_servers }}
+jinja2.exceptions.UndefinedError: 'nornir.core.inventory.Host object' has no attribute 'dns_servers'
+
+2023-01-13 17:28:33,305 - nornir.core.task -    ERROR -      start() - Host 'SW-1': task 'Настройка коммутаторов' failed with traceback:
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/var/folders/9k/hzppltf9457f5jb13jkn56340000gq/T/ipykernel_42273/1947033630.py", line 48, in config_switches
+    ios_dns_template = task.run(
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/nornir/core/task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: 4 шаг. 1: Получаем шаблон конфигурации dns (failed)
+
+
+2023-01-13 17:28:33,305 - nornir.core.task -    ERROR -      start() - Host 'SW-2': task '4 шаг. 1: Получаем шаблон конфигурации dns' failed with traceback:
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/nornir_jinja2/plugins/tasks/template_file.py", line 43, in template_file
+    text = t.render(host=task.host, **kwargs)
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/jinja2/environment.py", line 1301, in render
+    self.environment.handle_exception()
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/jinja2/environment.py", line 936, in handle_exception
+    raise rewrite_traceback_stack(source=source)
+  File "templates/cisco_ios_dns.template", line 3, in top-level template code
+    ip name-server {{ host.dns_servers }}
+jinja2.exceptions.UndefinedError: 'nornir.core.inventory.Host object' has no attribute 'dns_servers'
+
+2023-01-13 17:28:33,305 - nornir.core.task -    ERROR -      start() - Host 'SW-2': task 'Настройка коммутаторов' failed with traceback:
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/var/folders/9k/hzppltf9457f5jb13jkn56340000gq/T/ipykernel_42273/1947033630.py", line 48, in config_switches
+    ios_dns_template = task.run(
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/nornir/core/task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: 4 шаг. 1: Получаем шаблон конфигурации dns (failed)
+
+
+2023-01-13 17:31:39,243 -  nornir.core -     INFO -        run() - Running task 'Настройка коммутаторов' with args {} on 2 hosts
+2023-01-13 17:35:52,348 -  nornir.core -     INFO -        run() - Running task 'Настройка коммутаторов' with args {} on 2 hosts
+2023-01-14 16:35:49,182 -  nornir.core -  WARNING -        run() - Task 'Configuration Switches' has not been run – 0 hosts selected
+2023-01-14 16:36:09,085 -  nornir.core -  WARNING -        run() - Task 'Configuration Switches' has not been run – 0 hosts selected
+2023-01-14 16:37:35,316 -  nornir.core -  WARNING -        run() - Task 'Configuration Switches' has not been run – 0 hosts selected
+2023-01-14 16:59:29,751 -  nornir.core -  WARNING -        run() - Task 'Configuration Switches' has not been run – 0 hosts selected
+2023-01-14 16:59:34,499 -  nornir.core -  WARNING -        run() - Task 'Configuration Switches' has not been run – 0 hosts selected
+2023-01-14 17:07:45,909 -  nornir.core -  WARNING -        run() - Task 'Configuration Switches' has not been run – 0 hosts selected
+2023-01-14 17:11:52,609 -  nornir.core -     INFO -        run() - Running task 'Configuration Switches' with args {} on 2 hosts
+2023-01-14 17:11:52,773 - nornir.core.task -    ERROR -      start() - Host 'SW-1': task 'Get interface template' failed with traceback:
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/usr/local/lib/python3.10/site-packages/nornir_jinja2/plugins/tasks/template_file.py", line 42, in template_file
+    t = env.get_template(template)
+  File "/usr/local/lib/python3.10/site-packages/jinja2/environment.py", line 1010, in get_template
+    return self._load_template(name, globals)
+  File "/usr/local/lib/python3.10/site-packages/jinja2/environment.py", line 969, in _load_template
+    template = self.loader.load(self, name, self.make_globals(globals))
+  File "/usr/local/lib/python3.10/site-packages/jinja2/loaders.py", line 126, in load
+    source, filename, uptodate = self.get_source(environment, name)
+  File "/usr/local/lib/python3.10/site-packages/jinja2/loaders.py", line 218, in get_source
+    raise TemplateNotFound(template)
+jinja2.exceptions.TemplateNotFound: ./templates/cisco_ios_interface.template
+
+2023-01-14 17:11:52,773 - nornir.core.task -    ERROR -      start() - Host 'SW-2': task 'Get interface template' failed with traceback:
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/usr/local/lib/python3.10/site-packages/nornir_jinja2/plugins/tasks/template_file.py", line 42, in template_file
+    t = env.get_template(template)
+  File "/usr/local/lib/python3.10/site-packages/jinja2/environment.py", line 1010, in get_template
+    return self._load_template(name, globals)
+  File "/usr/local/lib/python3.10/site-packages/jinja2/environment.py", line 969, in _load_template
+    template = self.loader.load(self, name, self.make_globals(globals))
+  File "/usr/local/lib/python3.10/site-packages/jinja2/loaders.py", line 126, in load
+    source, filename, uptodate = self.get_source(environment, name)
+  File "/usr/local/lib/python3.10/site-packages/jinja2/loaders.py", line 218, in get_source
+    raise TemplateNotFound(template)
+jinja2.exceptions.TemplateNotFound: ./templates/cisco_ios_interface.template
+
+2023-01-14 17:11:52,774 - nornir.core.task -    ERROR -      start() - Host 'SW-1': task 'Configuration Switches' failed with traceback:
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/var/folders/6g/17zjymm16d55c3wx8sww9_qh0000gn/T/ipykernel_1880/119639558.py", line 2, in config_sw
+    ios_interface_template = task.run(
+  File "/usr/local/lib/python3.10/site-packages/nornir/core/task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: Get interface template (failed)
+
+
+2023-01-14 17:11:52,774 - nornir.core.task -    ERROR -      start() - Host 'SW-2': task 'Configuration Switches' failed with traceback:
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/var/folders/6g/17zjymm16d55c3wx8sww9_qh0000gn/T/ipykernel_1880/119639558.py", line 2, in config_sw
+    ios_interface_template = task.run(
+  File "/usr/local/lib/python3.10/site-packages/nornir/core/task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: Get interface template (failed)
+
+
+2023-01-14 17:22:22,083 -  nornir.core -     INFO -        run() - Running task 'Configuration Switches' with args {} on 2 hosts
+2023-01-14 17:22:25,468 -  nornir.core -     INFO -        run() - Running task 'Configuration Switches' with args {} on 2 hosts
+2023-01-14 17:22:25,473 - nornir.core.task -    ERROR -      start() - Host 'SW-1': task 'Get interface template' failed with traceback:
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/usr/local/lib/python3.10/site-packages/nornir_jinja2/plugins/tasks/template_file.py", line 42, in template_file
+    t = env.get_template(template)
+  File "/usr/local/lib/python3.10/site-packages/jinja2/environment.py", line 1010, in get_template
+    return self._load_template(name, globals)
+  File "/usr/local/lib/python3.10/site-packages/jinja2/environment.py", line 969, in _load_template
+    template = self.loader.load(self, name, self.make_globals(globals))
+  File "/usr/local/lib/python3.10/site-packages/jinja2/loaders.py", line 126, in load
+    source, filename, uptodate = self.get_source(environment, name)
+  File "/usr/local/lib/python3.10/site-packages/jinja2/loaders.py", line 218, in get_source
+    raise TemplateNotFound(template)
+jinja2.exceptions.TemplateNotFound: ./templates/cisco_ios_interface.template
+
+2023-01-14 17:22:25,474 - nornir.core.task -    ERROR -      start() - Host 'SW-1': task 'Configuration Switches' failed with traceback:
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/var/folders/6g/17zjymm16d55c3wx8sww9_qh0000gn/T/ipykernel_1880/119639558.py", line 2, in config_sw
+    ios_interface_template = task.run(
+  File "/usr/local/lib/python3.10/site-packages/nornir/core/task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: Get interface template (failed)
+
+
+2023-01-14 17:22:25,475 - nornir.core.task -    ERROR -      start() - Host 'SW-2': task 'Get interface template' failed with traceback:
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/usr/local/lib/python3.10/site-packages/nornir_jinja2/plugins/tasks/template_file.py", line 42, in template_file
+    t = env.get_template(template)
+  File "/usr/local/lib/python3.10/site-packages/jinja2/environment.py", line 1010, in get_template
+    return self._load_template(name, globals)
+  File "/usr/local/lib/python3.10/site-packages/jinja2/environment.py", line 969, in _load_template
+    template = self.loader.load(self, name, self.make_globals(globals))
+  File "/usr/local/lib/python3.10/site-packages/jinja2/loaders.py", line 126, in load
+    source, filename, uptodate = self.get_source(environment, name)
+  File "/usr/local/lib/python3.10/site-packages/jinja2/loaders.py", line 218, in get_source
+    raise TemplateNotFound(template)
+jinja2.exceptions.TemplateNotFound: ./templates/cisco_ios_interface.template
+
+2023-01-14 17:22:25,475 - nornir.core.task -    ERROR -      start() - Host 'SW-2': task 'Configuration Switches' failed with traceback:
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/var/folders/6g/17zjymm16d55c3wx8sww9_qh0000gn/T/ipykernel_1880/119639558.py", line 2, in config_sw
+    ios_interface_template = task.run(
+  File "/usr/local/lib/python3.10/site-packages/nornir/core/task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: Get interface template (failed)
+
+
+2023-01-14 17:23:07,971 -  nornir.core -     INFO -        run() - Running task 'Configuration Switches' with args {} on 2 hosts
+2023-01-14 17:23:10,950 -  nornir.core -     INFO -        run() - Running task 'Configuration Switches' with args {} on 2 hosts
+2023-01-14 17:23:12,571 - nornir.core.task -    ERROR -      start() - Host 'SW-2': task 'Push interface config' failed with traceback:
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/usr/local/lib/python3.10/site-packages/nornir_netmiko/tasks/netmiko_send_config.py", line 42, in netmiko_send_config
+    raise ValueError("Must specify either config_commands or config_file")
+ValueError: Must specify either config_commands or config_file
+
+2023-01-14 17:23:12,572 - nornir.core.task -    ERROR -      start() - Host 'SW-2': task 'Configuration Switches' failed with traceback:
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/var/folders/6g/17zjymm16d55c3wx8sww9_qh0000gn/T/ipykernel_1880/2979488454.py", line 8, in config_sw
+    task.run(
+  File "/usr/local/lib/python3.10/site-packages/nornir/core/task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: Push interface config (failed)
+
+
+2023-01-14 17:23:12,585 - nornir.core.task -    ERROR -      start() - Host 'SW-1': task 'Push interface config' failed with traceback:
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/usr/local/lib/python3.10/site-packages/nornir_netmiko/tasks/netmiko_send_config.py", line 42, in netmiko_send_config
+    raise ValueError("Must specify either config_commands or config_file")
+ValueError: Must specify either config_commands or config_file
+
+2023-01-14 17:23:12,585 - nornir.core.task -    ERROR -      start() - Host 'SW-1': task 'Configuration Switches' failed with traceback:
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/var/folders/6g/17zjymm16d55c3wx8sww9_qh0000gn/T/ipykernel_1880/2979488454.py", line 8, in config_sw
+    task.run(
+  File "/usr/local/lib/python3.10/site-packages/nornir/core/task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: Push interface config (failed)
+
+
+2023-01-14 17:24:46,309 -  nornir.core -     INFO -        run() - Running task 'Configuration Switches' with args {} on 2 hosts

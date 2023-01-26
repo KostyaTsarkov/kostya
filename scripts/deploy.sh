@@ -3,49 +3,28 @@ set -ex
 
 #UBUNTU_VERSION="14.04"
 
-mkdirs(){
-pct destroy 401 -f
-pct destroy 402 -f
-pct destroy 403 -f
-rm -rf /tmp/*
-for dir in scripts ssh apps conf
-do
-mkdir -p /tmp/$dir
-done
-}
-
 setNames(){
 export N1="hadoop-master"
 export N2="hadoop-slave-1"
 export N3="hadoop-slave-2"
+export N4="hadoop-slave-3"
 export CLONE=505
 export VID1=401
 export VID2=402
 export VID3=403
-export IP1=10.30.1.151/24
-export IP2=10.30.1.152/24
-export IP3=10.30.1.153/24
+export VID4=404
+export IP4=10.30.1.154/24
 export GW=10.30.1.254
 export VLAN=310
 export HDFS_PATH="/home/hadoop/hdfs"
-<<<<<<< HEAD
-#export JAVA_PATH="/usr/lib/jvm/java-8-openjdk-amd64"
-=======
 export JAVA_PATH="/usr/lib/jvm/java-11-openjdk-amd64"
->>>>>>> 0c5b65988aaea55a449a13a480f0d57d8e54ba20
 #export JAVA_FILE="java-8-openjdk-amd64"
 }
 
 launchContainers(){
-pct clone $CLONE $VID1 --hostname $N1
-pct set $VID1 -net0 name=eth0,bridge=vmbr0,ip=$IP1,gw=$GW,tag=$VLAN
-pct start $VID1
-pct clone $CLONE $VID2 --hostname $N2
-pct set $VID2 -net0 name=eth0,bridge=vmbr0,ip=$IP2,gw=$GW,tag=$VLAN
-pct start $VID2
-pct clone $CLONE $VID3 --hostname $N3
-pct set $VID3 -net0 name=eth0,bridge=vmbr0,ip=$IP3,gw=$GW,tag=$VLAN
-pct start $VID3
+pct clone $CLONE $VID4 --hostname $N1
+pct set $VID4 -net0 name=eth0,bridge=vmbr0,ip=$IP4,gw=$GW,tag=$VLAN
+pct start $VID4
 sleep 10
 }
 
@@ -53,10 +32,11 @@ getHostInfo(){
 export HADOOP_MASTER_IP=`lxc-ls -f $VID1 | grep RUNNING | awk '{print $5}'`
 export HADOOP_SLAVE1_IP=`lxc-ls -f $VID2 | grep RUNNING | awk '{print $5}'`
 export HADOOP_SLAVE2_IP=`lxc-ls -f $VID3 | grep RUNNING | awk '{print $5}'`
+export HADOOP_SLAVE3_IP=`lxc-ls -f $VID4 | grep RUNNING | awk '{print $5}'`
 }
 
 installUpdates(){
-for hosts in $VID1 $VID2 $VID3
+for hosts in $VID4
 do
 pct exec $hosts -- apt-get update
 pct exec $hosts -- apt-get upgrade -y
@@ -68,7 +48,7 @@ getHadoop(){
 	# Extract all downloaded files
 wget https://dlcdn.apache.org/hadoop/common/hadoop-3.3.4/hadoop-3.3.4.tar.gz -O /tmp/apps/hadoop-3.3.4.tar.gz
 sleep 2
-for hosts in $VID1 $VID2 $VID3
+for hosts in $VID4
 do
 pct push $hosts /tmp/apps/hadoop-3.3.4.tar.gz /usr/local/hadoop-3.3.4.tar.gz
 pct exec $hosts -- tar -xf /usr/local/hadoop-3.3.4.tar.gz -C /usr/local/
@@ -96,15 +76,14 @@ EOF
 
 cat > /tmp/scripts/hosts << EOF
 127.0.0.1 localhost
-$HADOOP_MASTER_IP hadoop-master
-$HADOOP_SLAVE1_IP hadoop-slave-1
-$HADOOP_SLAVE2_IP hadoop-slave-2
+$HADOOP_MASTER_IP $N1
+$HADOOP_SLAVE1_IP $N2
+$HADOOP_SLAVE2_IP $N3
+$HADOOP_SLAVE3_IP $N4
 EOF
 
 cat > /tmp/scripts/ssh.sh << EOF
-sudo su -c "ssh -o 'StrictHostKeyChecking no' hadoop-master 'echo 1 > /dev/null'" hadoop
-sudo su -c "ssh -o 'StrictHostKeyChecking no' hadoop-slave-1 'echo 1 > /dev/null'" hadoop
-sudo su -c "ssh -o 'StrictHostKeyChecking no' hadoop-slave-2 'echo 1 > /dev/null'" hadoop
+sudo su -c "ssh -o 'StrictHostKeyChecking no' hadoop-slave-3 'echo 1 > /dev/null'" hadoop
 sudo su -c "ssh -o 'StrictHostKeyChecking no' 0.0.0.0 'echo 1 > /dev/null'" hadoop
 EOF
 
@@ -126,8 +105,10 @@ EOF
 echo "hadoop-master" > /tmp/conf/masters
 
 cat > /tmp/conf/slaves << EOF
-hadoop-slave-1
-hadoop-slave-2
+$N2
+$N3
+$N4
+
 EOF
 
 cat > /tmp/scripts/source.sh << EOF
@@ -174,11 +155,7 @@ sudo su -c "export PATH=\$PATH:\$JAVA_HOME/bin:\$HADOOP_HOME/sbin:\$HADOOP_HOME/
 EOF
 
 #echo 'sed -i "s/export JAVA_HOME=\${JAVA_HOME}/export JAVA_HOME=$JAVA_PATH/g" /usr/local/hadoop/etc/hadoop/hadoop-env.sh' > /tmp/scripts/update-java-home.sh
-<<<<<<< HEAD
-echo 'echo "export JAVA_HOME=$JAVA_PATH" >> /usr/local/hadoop/etc/hadoop/hadoop-env.sh' > /tmp/scripts/update-java-home.sh
-=======
 echo 'echo "export JAVA_HOME=/usr/lib/jvm/java-11-openjdk-amd64" >> /usr/local/hadoop/etc/hadoop/hadoop-env.sh' > /tmp/scripts/update-java-home.sh
->>>>>>> 0c5b65988aaea55a449a13a480f0d57d8e54ba20
 echo 'chown -R hadoop:hadoop /usr/local/hadoop' >> /tmp/scripts/update-java-home.sh
 
 echo 'echo "Executing: hadoop namenode -format: "' > /tmp/scripts/initial_setup.sh
@@ -277,7 +254,7 @@ EOF
 }
 
 moveScripts(){
-for hosts in $VID1 $VID2 $VID3
+for hosts in $VID1 $VID2 $VID3 $VID4
 do
 pct push $hosts /tmp/scripts/hosts /etc/hosts
 pct push $hosts /tmp/scripts/set_java_path.sh /root/set_java_path.sh
@@ -292,7 +269,7 @@ pct push $VID1 /tmp/scripts/start-hadoop.sh /root/start-hadoop.sh
 }
 
 moveHadoopConfs(){
-for hosts in $VID1 $VID2 $VID3
+for hosts in $VID1 $VID2 $VID3 $VID4
 do
 pct push $hosts /tmp/conf/masters /usr/local/hadoop/etc/hadoop/masters
 pct push $hosts /tmp/conf/slaves /usr/local/hadoop/etc/hadoop/slaves
@@ -304,21 +281,21 @@ done
 }
 
 initJavaPath(){
-for hosts in $VID1 $VID2 $VID3
+for hosts in $VID4
 do
 pct exec $hosts -- bash /root/set_java_path.sh
 done	
 }
 
 setupUsers(){
-for hosts in $VID1 $VID2 $VID3
+for hosts in $VID4
 do
 pct exec $hosts -- bash /root/setup-user.sh
 done
 }
 
 configureSSH(){
-for hosts in $VID1 $VID2 $VID3
+for hosts in $VID4
 do
 pct exec $hosts -- sed -i "s/PasswordAuthentication no/PasswordAuthentication yes/g" /etc/ssh/sshd_config
 pct exec $hosts -- /etc/init.d/ssh restart
@@ -329,51 +306,38 @@ setupPasswordlessSSH(){
 pct pull $VID1 /home/hadoop/.ssh/id_rsa.pub /tmp/ssh/id_rsa1.pub
 pct pull $VID2 /home/hadoop/.ssh/id_rsa.pub /tmp/ssh/id_rsa2.pub
 pct pull $VID3 /home/hadoop/.ssh/id_rsa.pub /tmp/ssh/id_rsa3.pub
+pct pull $VID4 /home/hadoop/.ssh/id_rsa.pub /tmp/ssh/id_rsa4.pub
 
-cat /tmp/ssh/id_rsa1.pub /tmp/ssh/id_rsa2.pub /tmp/ssh/id_rsa3.pub > /tmp/authorized_keys
+cat /tmp/ssh/id_rsa1.pub /tmp/ssh/id_rsa2.pub /tmp/ssh/id_rsa3.pub /tmp/ssh/id_rsa4.pub > /tmp/authorized_keys
 
-for hosts in $VID1 $VID2 $VID3
+for hosts in $VID1 $VID2 $VID3 $VID4
 do
 pct push $hosts /tmp/authorized_keys /home/hadoop/.ssh/authorized_keys
 done
 }
 
 ensureSSH(){
-for hosts in $VID1 $VID2 $VID3
+for hosts in $VID4
 do
 pct exec $hosts -- bash /root/ssh.sh
 done
 }
 
-moveInitialScript(){
-pct push $VID1 /tmp/scripts/initial_setup.sh /home/hadoop/initial_setup.sh
-pct exec $VID1 -- chown hadoop:hadoop /home/hadoop/initial_setup.sh
-}
-
 updateJavaHome(){
-for hosts in $VID1 $VID2 $VID3
+for hosts in $VID4
 do
 pct exec $hosts -- bash /root/update-java-home.sh
 done
 }
 
 executeScripts(){
-for hosts in $VID1 $VID2 $VID3
+for hosts in $VID4
 do
 pct exec $hosts -- bash /root/source.sh
 pct exec $hosts -- chown -R hadoop:hadoop /usr/local/hadoop
 done
 }
 
-setAutoStart(){
-pct exec $VID1 -- systemctl daemon-reload
-pct exec $VID1 -- systemctl enable hadoop
-}
-
-startHadoop(){
-#pct exec $VID1 -- JAVA_HOME=/usr/lib/jvm/java-11-openjdk-amd64 bash /root/start-hadoop.sh
-pct exec $VID1 -- JAVA_HOME=$JAVA_HOME bash /root/start-hadoop.sh
-}
 
 printInstructions(){
 echo "Deployment Done"
@@ -389,7 +353,7 @@ echo "With the inital login namenode will be formatted and hadoop"
 echo "daemons will be started."
 }
 
-mkdirs
+#mkdirs
 setNames
 launchContainers
 installUpdates
@@ -408,6 +372,4 @@ ensureSSH
 moveInitialScript
 executeScripts
 updateJavaHome
-setAutoStart
-startHadoop
 printInstructions
