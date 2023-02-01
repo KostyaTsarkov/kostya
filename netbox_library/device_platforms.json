@@ -1,0 +1,8 @@
+{
+    "name": "Cisco IOS",
+    "slug": "cisco_ios",
+    "manufacturer": {
+        "name": "Cisco"
+    },
+    "napalm_driver": "ios"
+  }
