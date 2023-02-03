@@ -6413,3 +6413,18 @@ nornir.core.exceptions.NornirSubTaskError: Subtask: 2 шаг. 1: Получае�
 
 
 2023-02-02 17:02:21,816 -  nornir.core -     INFO -        run() - Running task 'napalm_get' with args {'getters': ['facts']} on 2 hosts
+2023-02-03 08:12:28,103 -  nornir.core -     INFO -        run() - Running task 'napalm_get' with args {'getters': ['get_interfaces_ip']} on 2 hosts
+2023-02-03 08:14:20,841 -  nornir.core -     INFO -        run() - Running task 'napalm_get' with args {'getters': ['get_interfaces_ip']} on 2 hosts
+2023-02-03 08:15:35,036 -  nornir.core -     INFO -        run() - Running task 'napalm_get' with args {'getters': ['get_interfaces_ip']} on 2 hosts
+2023-02-03 08:15:37,668 -  nornir.core -     INFO -        run() - Running task 'napalm_get' with args {'getters': ['get_interfaces_ip']} on 2 hosts
+2023-02-03 08:15:51,506 -  nornir.core -     INFO -        run() - Running task 'napalm_get' with args {'getters': ['get_interfaces_ip']} on 2 hosts
+2023-02-03 08:16:02,684 -  nornir.core -     INFO -        run() - Running task 'napalm_get' with args {'getters': ['get_interfaces_ip']} on 2 hosts
+2023-02-03 08:24:15,404 -  nornir.core -     INFO -        run() - Running task 'napalm_get' with args {'getters': ['get_interfaces_ip']} on 2 hosts
+2023-02-03 08:25:45,881 -  nornir.core -     INFO -        run() - Running task 'napalm_get' with args {'getters': ['get_interfaces_ip']} on 2 hosts
+2023-02-03 08:26:17,734 -  nornir.core -     INFO -        run() - Running task 'napalm_get' with args {'getters': ['get_interfaces_ip']} on 2 hosts
+2023-02-03 08:27:04,398 -  nornir.core -     INFO -        run() - Running task 'napalm_get' with args {'getters': ['get_interfaces_ip']} on 2 hosts
+2023-02-03 08:27:11,967 -  nornir.core -     INFO -        run() - Running task 'napalm_get' with args {'getters': ['get_interfaces_ip']} on 2 hosts
+2023-02-03 08:27:30,134 -  nornir.core -     INFO -        run() - Running task 'napalm_get' with args {'getters': ['get_interfaces_ip']} on 2 hosts
+2023-02-03 08:27:41,228 -  nornir.core -     INFO -        run() - Running task 'napalm_get' with args {'getters': ['get_interfaces_ip']} on 2 hosts
+2023-02-03 08:27:50,380 -  nornir.core -     INFO -        run() - Running task 'napalm_get' with args {'getters': ['get_interfaces_ip']} on 2 hosts
+2023-02-03 08:27:58,696 -  nornir.core -     INFO -        run() - Running task 'napalm_get' with args {'getters': ['get_interfaces_ip']} on 2 hosts
