@@ -4697,6 +4697,7 @@ nornir.core.exceptions.NornirSubTaskError: Subtask: 2 шаг. 2: Настрой�
 2023-01-19 16:17:26,866 -  nornir.core -     INFO -        run() - Running task 'Настройка коммутаторов' with args {} on 2 hosts
 2023-01-20 17:18:43,557 -  nornir.core -     INFO -        run() - Running task 'Настройка коммутаторов' with args {} on 2 hosts
 >>>>>>> 84dcff63f32cfd41934ab31e149ee94ef747c521
+<<<<<<< HEAD
 2023-01-26 20:53:23,867 -  nornir.core -     INFO -        run() - Running task 'Настройка коммутаторов' with args {} on 2 hosts
 2023-01-29 18:36:01,485 -  nornir.core -     INFO -        run() - Running task 'netmiko_send_command' with args {'command_string': 'show ip int brief'} on 2 hosts
 2023-01-29 18:54:11,032 -  nornir.core -     INFO -        run() - Running task 'netmiko_send_command' with args {'command_string': 'show ip int brief'} on 3 hosts
@@ -9212,3 +9213,1736 @@ yamaha
 zte_zxros
 zyxel_os
 
+=======
+2023-02-02 12:07:11,597 -  nornir.core -  WARNING -        run() - Task 'napalm_get' has not been run – 0 hosts selected
+2023-02-02 12:08:07,432 -  nornir.core -  WARNING -        run() - Task 'napalm_get' has not been run – 0 hosts selected
+2023-02-02 12:15:02,121 -  nornir.core -  WARNING -        run() - Task 'napalm_get' has not been run – 0 hosts selected
+2023-02-02 12:15:14,770 -  nornir.core -     INFO -        run() - Running task 'napalm_get' with args {'getters': ['facts']} on 13 hosts
+2023-02-02 12:15:14,794 - nornir.core.task -    ERROR -      start() - Host 'ASA-MSK': task 'napalm_get' failed with traceback:
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/nornir_napalm/plugins/tasks/napalm_get.py", line 32, in napalm_get
+    device = task.host.get_connection(CONNECTION_NAME, task.nornir.config)
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/nornir/core/inventory.py", line 494, in get_connection
+    self.open_connection(
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/nornir/core/inventory.py", line 546, in open_connection
+    conn_obj.open(
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/nornir_napalm/plugins/connections/__init__.py", line 55, in open
+    network_driver = get_network_driver(platform)
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/napalm/base/__init__.py", line 99, in get_network_driver
+    raise ModuleImportError(
+napalm.base.exceptions.ModuleImportError: Cannot import "cisco ios". Is the library installed?
+
+2023-02-02 12:15:14,797 - nornir.core.task -    ERROR -      start() - Host 'PDU-MSK-1': task 'napalm_get' failed with traceback:
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/nornir_napalm/plugins/tasks/napalm_get.py", line 32, in napalm_get
+    device = task.host.get_connection(CONNECTION_NAME, task.nornir.config)
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/nornir/core/inventory.py", line 494, in get_connection
+    self.open_connection(
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/nornir/core/inventory.py", line 546, in open_connection
+    conn_obj.open(
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/nornir_napalm/plugins/connections/__init__.py", line 55, in open
+    network_driver = get_network_driver(platform)
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/napalm/base/__init__.py", line 99, in get_network_driver
+    raise ModuleImportError(
+napalm.base.exceptions.ModuleImportError: Cannot import "cisco_ios". Is the library installed?
+
+2023-02-02 12:15:14,798 - nornir.core.task -    ERROR -      start() - Host 'M-HVS-ROOT': task 'napalm_get' failed with traceback:
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/nornir_napalm/plugins/tasks/napalm_get.py", line 32, in napalm_get
+    device = task.host.get_connection(CONNECTION_NAME, task.nornir.config)
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/nornir/core/inventory.py", line 494, in get_connection
+    self.open_connection(
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/nornir/core/inventory.py", line 546, in open_connection
+    conn_obj.open(
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/nornir_napalm/plugins/connections/__init__.py", line 55, in open
+    network_driver = get_network_driver(platform)
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/napalm/base/__init__.py", line 99, in get_network_driver
+    raise ModuleImportError(
+napalm.base.exceptions.ModuleImportError: Cannot import "cisco_ios". Is the library installed?
+
+2023-02-02 12:15:14,801 - nornir.core.task -    ERROR -      start() - Host 'BR-MSK': task 'napalm_get' failed with traceback:
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/nornir_napalm/plugins/tasks/napalm_get.py", line 32, in napalm_get
+    device = task.host.get_connection(CONNECTION_NAME, task.nornir.config)
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/nornir/core/inventory.py", line 494, in get_connection
+    self.open_connection(
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/nornir/core/inventory.py", line 546, in open_connection
+    conn_obj.open(
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/nornir_napalm/plugins/connections/__init__.py", line 55, in open
+    network_driver = get_network_driver(platform)
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/napalm/base/__init__.py", line 99, in get_network_driver
+    raise ModuleImportError(
+napalm.base.exceptions.ModuleImportError: Cannot import "cisco ios". Is the library installed?
+
+2023-02-02 12:15:14,804 - nornir.core.task -    ERROR -      start() - Host 'SRV-PEV-1': task 'napalm_get' failed with traceback:
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/nornir_napalm/plugins/tasks/napalm_get.py", line 32, in napalm_get
+    device = task.host.get_connection(CONNECTION_NAME, task.nornir.config)
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/nornir/core/inventory.py", line 494, in get_connection
+    self.open_connection(
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/nornir/core/inventory.py", line 546, in open_connection
+    conn_obj.open(
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/nornir_napalm/plugins/connections/__init__.py", line 55, in open
+    network_driver = get_network_driver(platform)
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/napalm/base/__init__.py", line 99, in get_network_driver
+    raise ModuleImportError(
+napalm.base.exceptions.ModuleImportError: Cannot import "cisco_ios". Is the library installed?
+
+2023-02-02 12:15:14,812 - nornir.core.task -    ERROR -      start() - Host 'SRV-PEV-2': task 'napalm_get' failed with traceback:
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/nornir_napalm/plugins/tasks/napalm_get.py", line 32, in napalm_get
+    device = task.host.get_connection(CONNECTION_NAME, task.nornir.config)
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/nornir/core/inventory.py", line 494, in get_connection
+    self.open_connection(
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/nornir/core/inventory.py", line 546, in open_connection
+    conn_obj.open(
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/nornir_napalm/plugins/connections/__init__.py", line 55, in open
+    network_driver = get_network_driver(platform)
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/napalm/base/__init__.py", line 99, in get_network_driver
+    raise ModuleImportError(
+napalm.base.exceptions.ModuleImportError: Cannot import "cisco_ios". Is the library installed?
+
+2023-02-02 12:15:14,819 - nornir.core.task -    ERROR -      start() - Host 'SRV-PEV-5': task 'napalm_get' failed with traceback:
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/nornir_napalm/plugins/tasks/napalm_get.py", line 32, in napalm_get
+    device = task.host.get_connection(CONNECTION_NAME, task.nornir.config)
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/nornir/core/inventory.py", line 494, in get_connection
+    self.open_connection(
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/nornir/core/inventory.py", line 546, in open_connection
+    conn_obj.open(
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/nornir_napalm/plugins/connections/__init__.py", line 55, in open
+    network_driver = get_network_driver(platform)
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/napalm/base/__init__.py", line 99, in get_network_driver
+    raise ModuleImportError(
+napalm.base.exceptions.ModuleImportError: Cannot import "cisco_ios". Is the library installed?
+
+2023-02-02 12:15:14,822 - nornir.core.task -    ERROR -      start() - Host 'UPS-MSK': task 'napalm_get' failed with traceback:
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/nornir_napalm/plugins/tasks/napalm_get.py", line 32, in napalm_get
+    device = task.host.get_connection(CONNECTION_NAME, task.nornir.config)
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/nornir/core/inventory.py", line 494, in get_connection
+    self.open_connection(
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/nornir/core/inventory.py", line 546, in open_connection
+    conn_obj.open(
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/nornir_napalm/plugins/connections/__init__.py", line 55, in open
+    network_driver = get_network_driver(platform)
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/napalm/base/__init__.py", line 99, in get_network_driver
+    raise ModuleImportError(
+napalm.base.exceptions.ModuleImportError: Cannot import "cisco_ios". Is the library installed?
+
+2023-02-02 12:15:14,828 - nornir.core.task -    ERROR -      start() - Host 'SW-AMZ-PLGN': task 'napalm_get' failed with traceback:
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/nornir_napalm/plugins/tasks/napalm_get.py", line 32, in napalm_get
+    device = task.host.get_connection(CONNECTION_NAME, task.nornir.config)
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/nornir/core/inventory.py", line 494, in get_connection
+    self.open_connection(
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/nornir/core/inventory.py", line 546, in open_connection
+    conn_obj.open(
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/nornir_napalm/plugins/connections/__init__.py", line 55, in open
+    network_driver = get_network_driver(platform)
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/napalm/base/__init__.py", line 99, in get_network_driver
+    raise ModuleImportError(
+napalm.base.exceptions.ModuleImportError: Cannot import "cisco ios". Is the library installed?
+
+2023-02-02 12:15:14,831 - nornir.core.task -    ERROR -      start() - Host 'SW-MSK': task 'napalm_get' failed with traceback:
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/nornir_napalm/plugins/tasks/napalm_get.py", line 32, in napalm_get
+    device = task.host.get_connection(CONNECTION_NAME, task.nornir.config)
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/nornir/core/inventory.py", line 494, in get_connection
+    self.open_connection(
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/nornir/core/inventory.py", line 546, in open_connection
+    conn_obj.open(
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/nornir_napalm/plugins/connections/__init__.py", line 55, in open
+    network_driver = get_network_driver(platform)
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/napalm/base/__init__.py", line 99, in get_network_driver
+    raise ModuleImportError(
+napalm.base.exceptions.ModuleImportError: Cannot import "cisco_ios". Is the library installed?
+
+2023-02-02 12:15:14,834 - nornir.core.task -    ERROR -      start() - Host 'SW-PLGN-1': task 'napalm_get' failed with traceback:
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/nornir_napalm/plugins/tasks/napalm_get.py", line 32, in napalm_get
+    device = task.host.get_connection(CONNECTION_NAME, task.nornir.config)
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/nornir/core/inventory.py", line 494, in get_connection
+    self.open_connection(
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/nornir/core/inventory.py", line 546, in open_connection
+    conn_obj.open(
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/nornir_napalm/plugins/connections/__init__.py", line 55, in open
+    network_driver = get_network_driver(platform)
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/napalm/base/__init__.py", line 99, in get_network_driver
+    raise ModuleImportError(
+napalm.base.exceptions.ModuleImportError: Cannot import "cisco ios". Is the library installed?
+
+2023-02-02 12:15:14,837 - nornir.core.task -    ERROR -      start() - Host 'SW-PLGN-2': task 'napalm_get' failed with traceback:
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/nornir_napalm/plugins/tasks/napalm_get.py", line 32, in napalm_get
+    device = task.host.get_connection(CONNECTION_NAME, task.nornir.config)
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/nornir/core/inventory.py", line 494, in get_connection
+    self.open_connection(
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/nornir/core/inventory.py", line 546, in open_connection
+    conn_obj.open(
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/nornir_napalm/plugins/connections/__init__.py", line 55, in open
+    network_driver = get_network_driver(platform)
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/napalm/base/__init__.py", line 99, in get_network_driver
+    raise ModuleImportError(
+napalm.base.exceptions.ModuleImportError: Cannot import "cisco ios". Is the library installed?
+
+2023-02-02 12:15:14,839 - nornir.core.task -    ERROR -      start() - Host 'br-amz-1': task 'napalm_get' failed with traceback:
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/nornir_napalm/plugins/tasks/napalm_get.py", line 32, in napalm_get
+    device = task.host.get_connection(CONNECTION_NAME, task.nornir.config)
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/nornir/core/inventory.py", line 494, in get_connection
+    self.open_connection(
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/nornir/core/inventory.py", line 546, in open_connection
+    conn_obj.open(
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/nornir_napalm/plugins/connections/__init__.py", line 55, in open
+    network_driver = get_network_driver(platform)
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/napalm/base/__init__.py", line 99, in get_network_driver
+    raise ModuleImportError(
+napalm.base.exceptions.ModuleImportError: Cannot import "cisco ios". Is the library installed?
+
+2023-02-02 12:15:37,735 -  nornir.core -  WARNING -        run() - Task 'napalm_get' has not been run – 0 hosts selected
+2023-02-02 12:16:24,299 -  nornir.core -  WARNING -        run() - Task 'napalm_get' has not been run – 0 hosts selected
+2023-02-02 12:16:32,812 -  nornir.core -  WARNING -        run() - Task 'napalm_get' has not been run – 0 hosts selected
+2023-02-02 12:16:40,894 -  nornir.core -  WARNING -        run() - Task 'napalm_get' has not been run – 0 hosts selected
+2023-02-02 12:16:51,266 -  nornir.core -  WARNING -        run() - Task 'napalm_get' has not been run – 0 hosts selected
+2023-02-02 12:17:00,564 -  nornir.core -     INFO -        run() - Running task 'napalm_get' with args {'getters': ['facts']} on 13 hosts
+2023-02-02 12:29:46,803 -  nornir.core -     INFO -        run() - Running task 'napalm_get' with args {'getters': ['facts']} on 13 hosts
+2023-02-02 12:32:03,347 -  nornir.core -  WARNING -        run() - Task 'napalm_get' has not been run – 0 hosts selected
+2023-02-02 12:33:06,674 -  nornir.core -  WARNING -        run() - Task 'napalm_get' has not been run – 0 hosts selected
+2023-02-02 12:33:47,254 -  nornir.core -  WARNING -        run() - Task 'napalm_get' has not been run – 0 hosts selected
+2023-02-02 12:42:17,956 -  nornir.core -  WARNING -        run() - Task 'netmiko_send_command' has not been run – 0 hosts selected
+2023-02-02 12:42:59,134 -  nornir.core -  WARNING -        run() - Task 'netmiko_send_command' has not been run – 0 hosts selected
+2023-02-02 12:45:49,814 -  nornir.core -  WARNING -        run() - Task 'netmiko_send_command' has not been run – 0 hosts selected
+2023-02-02 12:46:20,435 -  nornir.core -  WARNING -        run() - Task 'netmiko_send_command' has not been run – 0 hosts selected
+2023-02-02 12:54:08,084 -  nornir.core -  WARNING -        run() - Task 'netmiko_send_command' has not been run – 0 hosts selected
+2023-02-02 12:54:23,625 -  nornir.core -  WARNING -        run() - Task 'netmiko_send_command' has not been run – 0 hosts selected
+2023-02-02 12:54:41,773 -  nornir.core -  WARNING -        run() - Task 'napalm_get' has not been run – 0 hosts selected
+2023-02-02 13:09:50,079 -  nornir.core -  WARNING -        run() - Task 'napalm_get' has not been run – 0 hosts selected
+2023-02-02 13:18:33,162 -  nornir.core -  WARNING -        run() - Task 'napalm_get' has not been run – 0 hosts selected
+2023-02-02 13:18:37,844 -  nornir.core -  WARNING -        run() - Task 'napalm_get' has not been run – 0 hosts selected
+2023-02-02 13:18:43,438 -  nornir.core -  WARNING -        run() - Task 'napalm_get' has not been run – 0 hosts selected
+2023-02-02 13:19:46,451 -  nornir.core -  WARNING -        run() - Task 'napalm_get' has not been run – 0 hosts selected
+2023-02-02 13:19:55,297 -  nornir.core -  WARNING -        run() - Task 'napalm_get' has not been run – 0 hosts selected
+2023-02-02 13:21:51,454 -  nornir.core -  WARNING -        run() - Task 'napalm_get' has not been run – 0 hosts selected
+2023-02-02 13:22:29,736 -  nornir.core -     INFO -        run() - Running task 'napalm_get' with args {'getters': ['facts']} on 13 hosts
+2023-02-02 13:22:29,750 - nornir.core.task -    ERROR -      start() - Host 'ASA-MSK': task 'napalm_get' failed with traceback:
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/nornir_napalm/plugins/tasks/napalm_get.py", line 32, in napalm_get
+    device = task.host.get_connection(CONNECTION_NAME, task.nornir.config)
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/nornir/core/inventory.py", line 494, in get_connection
+    self.open_connection(
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/nornir/core/inventory.py", line 546, in open_connection
+    conn_obj.open(
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/nornir_napalm/plugins/connections/__init__.py", line 55, in open
+    network_driver = get_network_driver(platform)
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/napalm/base/__init__.py", line 99, in get_network_driver
+    raise ModuleImportError(
+napalm.base.exceptions.ModuleImportError: Cannot import "cisco ios". Is the library installed?
+
+2023-02-02 13:22:29,756 - nornir.core.task -    ERROR -      start() - Host 'BR-MSK': task 'napalm_get' failed with traceback:
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/nornir_napalm/plugins/tasks/napalm_get.py", line 32, in napalm_get
+    device = task.host.get_connection(CONNECTION_NAME, task.nornir.config)
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/nornir/core/inventory.py", line 494, in get_connection
+    self.open_connection(
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/nornir/core/inventory.py", line 546, in open_connection
+    conn_obj.open(
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/nornir_napalm/plugins/connections/__init__.py", line 55, in open
+    network_driver = get_network_driver(platform)
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/napalm/base/__init__.py", line 99, in get_network_driver
+    raise ModuleImportError(
+napalm.base.exceptions.ModuleImportError: Cannot import "cisco ios". Is the library installed?
+
+2023-02-02 13:22:29,769 - nornir.core.task -    ERROR -      start() - Host 'M-HVS-ROOT': task 'napalm_get' failed with traceback:
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/nornir_napalm/plugins/tasks/napalm_get.py", line 32, in napalm_get
+    device = task.host.get_connection(CONNECTION_NAME, task.nornir.config)
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/nornir/core/inventory.py", line 494, in get_connection
+    self.open_connection(
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/nornir/core/inventory.py", line 546, in open_connection
+    conn_obj.open(
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/nornir_napalm/plugins/connections/__init__.py", line 55, in open
+    network_driver = get_network_driver(platform)
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/napalm/base/__init__.py", line 99, in get_network_driver
+    raise ModuleImportError(
+napalm.base.exceptions.ModuleImportError: Cannot import "cisco_ios". Is the library installed?
+
+2023-02-02 13:22:29,771 - nornir.core.task -    ERROR -      start() - Host 'SW-AMZ-PLGN': task 'napalm_get' failed with traceback:
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/nornir_napalm/plugins/tasks/napalm_get.py", line 32, in napalm_get
+    device = task.host.get_connection(CONNECTION_NAME, task.nornir.config)
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/nornir/core/inventory.py", line 494, in get_connection
+    self.open_connection(
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/nornir/core/inventory.py", line 546, in open_connection
+    conn_obj.open(
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/nornir_napalm/plugins/connections/__init__.py", line 55, in open
+    network_driver = get_network_driver(platform)
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/napalm/base/__init__.py", line 99, in get_network_driver
+    raise ModuleImportError(
+napalm.base.exceptions.ModuleImportError: Cannot import "cisco ios". Is the library installed?
+
+2023-02-02 13:22:29,773 - nornir.core.task -    ERROR -      start() - Host 'PDU-MSK-1': task 'napalm_get' failed with traceback:
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/nornir_napalm/plugins/tasks/napalm_get.py", line 32, in napalm_get
+    device = task.host.get_connection(CONNECTION_NAME, task.nornir.config)
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/nornir/core/inventory.py", line 494, in get_connection
+    self.open_connection(
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/nornir/core/inventory.py", line 546, in open_connection
+    conn_obj.open(
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/nornir_napalm/plugins/connections/__init__.py", line 55, in open
+    network_driver = get_network_driver(platform)
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/napalm/base/__init__.py", line 99, in get_network_driver
+    raise ModuleImportError(
+napalm.base.exceptions.ModuleImportError: Cannot import "cisco_ios". Is the library installed?
+
+2023-02-02 13:22:29,775 - nornir.core.task -    ERROR -      start() - Host 'SW-PLGN-2': task 'napalm_get' failed with traceback:
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/nornir_napalm/plugins/tasks/napalm_get.py", line 32, in napalm_get
+    device = task.host.get_connection(CONNECTION_NAME, task.nornir.config)
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/nornir/core/inventory.py", line 494, in get_connection
+    self.open_connection(
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/nornir/core/inventory.py", line 546, in open_connection
+    conn_obj.open(
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/nornir_napalm/plugins/connections/__init__.py", line 55, in open
+    network_driver = get_network_driver(platform)
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/napalm/base/__init__.py", line 99, in get_network_driver
+    raise ModuleImportError(
+napalm.base.exceptions.ModuleImportError: Cannot import "cisco ios". Is the library installed?
+
+2023-02-02 13:22:29,778 - nornir.core.task -    ERROR -      start() - Host 'SRV-PEV-5': task 'napalm_get' failed with traceback:
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/nornir_napalm/plugins/tasks/napalm_get.py", line 32, in napalm_get
+    device = task.host.get_connection(CONNECTION_NAME, task.nornir.config)
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/nornir/core/inventory.py", line 494, in get_connection
+    self.open_connection(
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/nornir/core/inventory.py", line 546, in open_connection
+    conn_obj.open(
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/nornir_napalm/plugins/connections/__init__.py", line 55, in open
+    network_driver = get_network_driver(platform)
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/napalm/base/__init__.py", line 99, in get_network_driver
+    raise ModuleImportError(
+napalm.base.exceptions.ModuleImportError: Cannot import "cisco_ios". Is the library installed?
+
+2023-02-02 13:22:29,780 - nornir.core.task -    ERROR -      start() - Host 'SW-PLGN-1': task 'napalm_get' failed with traceback:
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/nornir_napalm/plugins/tasks/napalm_get.py", line 32, in napalm_get
+    device = task.host.get_connection(CONNECTION_NAME, task.nornir.config)
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/nornir/core/inventory.py", line 494, in get_connection
+    self.open_connection(
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/nornir/core/inventory.py", line 546, in open_connection
+    conn_obj.open(
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/nornir_napalm/plugins/connections/__init__.py", line 55, in open
+    network_driver = get_network_driver(platform)
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/napalm/base/__init__.py", line 99, in get_network_driver
+    raise ModuleImportError(
+napalm.base.exceptions.ModuleImportError: Cannot import "cisco ios". Is the library installed?
+
+2023-02-02 13:22:29,783 - nornir.core.task -    ERROR -      start() - Host 'SRV-PEV-1': task 'napalm_get' failed with traceback:
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/nornir_napalm/plugins/tasks/napalm_get.py", line 32, in napalm_get
+    device = task.host.get_connection(CONNECTION_NAME, task.nornir.config)
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/nornir/core/inventory.py", line 494, in get_connection
+    self.open_connection(
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/nornir/core/inventory.py", line 546, in open_connection
+    conn_obj.open(
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/nornir_napalm/plugins/connections/__init__.py", line 55, in open
+    network_driver = get_network_driver(platform)
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/napalm/base/__init__.py", line 99, in get_network_driver
+    raise ModuleImportError(
+napalm.base.exceptions.ModuleImportError: Cannot import "cisco_ios". Is the library installed?
+
+2023-02-02 13:22:29,785 - nornir.core.task -    ERROR -      start() - Host 'br-amz-1': task 'napalm_get' failed with traceback:
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/nornir_napalm/plugins/tasks/napalm_get.py", line 32, in napalm_get
+    device = task.host.get_connection(CONNECTION_NAME, task.nornir.config)
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/nornir/core/inventory.py", line 494, in get_connection
+    self.open_connection(
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/nornir/core/inventory.py", line 546, in open_connection
+    conn_obj.open(
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/nornir_napalm/plugins/connections/__init__.py", line 55, in open
+    network_driver = get_network_driver(platform)
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/napalm/base/__init__.py", line 99, in get_network_driver
+    raise ModuleImportError(
+napalm.base.exceptions.ModuleImportError: Cannot import "cisco ios". Is the library installed?
+
+2023-02-02 13:22:29,787 - nornir.core.task -    ERROR -      start() - Host 'UPS-MSK': task 'napalm_get' failed with traceback:
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/nornir_napalm/plugins/tasks/napalm_get.py", line 32, in napalm_get
+    device = task.host.get_connection(CONNECTION_NAME, task.nornir.config)
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/nornir/core/inventory.py", line 494, in get_connection
+    self.open_connection(
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/nornir/core/inventory.py", line 546, in open_connection
+    conn_obj.open(
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/nornir_napalm/plugins/connections/__init__.py", line 55, in open
+    network_driver = get_network_driver(platform)
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/napalm/base/__init__.py", line 99, in get_network_driver
+    raise ModuleImportError(
+napalm.base.exceptions.ModuleImportError: Cannot import "cisco_ios". Is the library installed?
+
+2023-02-02 13:22:29,790 - nornir.core.task -    ERROR -      start() - Host 'SRV-PEV-2': task 'napalm_get' failed with traceback:
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/nornir_napalm/plugins/tasks/napalm_get.py", line 32, in napalm_get
+    device = task.host.get_connection(CONNECTION_NAME, task.nornir.config)
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/nornir/core/inventory.py", line 494, in get_connection
+    self.open_connection(
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/nornir/core/inventory.py", line 546, in open_connection
+    conn_obj.open(
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/nornir_napalm/plugins/connections/__init__.py", line 55, in open
+    network_driver = get_network_driver(platform)
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/napalm/base/__init__.py", line 99, in get_network_driver
+    raise ModuleImportError(
+napalm.base.exceptions.ModuleImportError: Cannot import "cisco_ios". Is the library installed?
+
+2023-02-02 13:22:29,793 - nornir.core.task -    ERROR -      start() - Host 'SW-MSK': task 'napalm_get' failed with traceback:
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/nornir_napalm/plugins/tasks/napalm_get.py", line 32, in napalm_get
+    device = task.host.get_connection(CONNECTION_NAME, task.nornir.config)
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/nornir/core/inventory.py", line 494, in get_connection
+    self.open_connection(
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/nornir/core/inventory.py", line 546, in open_connection
+    conn_obj.open(
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/nornir_napalm/plugins/connections/__init__.py", line 55, in open
+    network_driver = get_network_driver(platform)
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/napalm/base/__init__.py", line 99, in get_network_driver
+    raise ModuleImportError(
+napalm.base.exceptions.ModuleImportError: Cannot import "cisco_ios". Is the library installed?
+
+2023-02-02 13:24:53,732 -  nornir.core -  WARNING -        run() - Task 'napalm_get' has not been run – 0 hosts selected
+2023-02-02 13:32:28,795 -  nornir.core -     INFO -        run() - Running task 'napalm_get' with args {'getters': ['facts']} on 2 hosts
+2023-02-02 13:32:31,257 - nornir.core.task -    ERROR -      start() - Host 'SW-2': task 'napalm_get' failed with traceback:
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/netmiko/base_connection.py", line 1046, in establish_connection
+    self.remote_conn_pre.connect(**ssh_connect_params)
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/paramiko/client.py", line 450, in connect
+    self._auth(
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/paramiko/client.py", line 781, in _auth
+    raise saved_exception
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/paramiko/client.py", line 768, in _auth
+    self._transport.auth_password(username, password)
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/paramiko/transport.py", line 1564, in auth_password
+    return self.auth_handler.wait_for_response(my_event)
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/paramiko/auth_handler.py", line 259, in wait_for_response
+    raise e
+paramiko.ssh_exception.AuthenticationException: Authentication failed.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/nornir_napalm/plugins/tasks/napalm_get.py", line 32, in napalm_get
+    device = task.host.get_connection(CONNECTION_NAME, task.nornir.config)
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/nornir/core/inventory.py", line 494, in get_connection
+    self.open_connection(
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/nornir/core/inventory.py", line 546, in open_connection
+    conn_obj.open(
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/nornir_napalm/plugins/connections/__init__.py", line 57, in open
+    connection.open()
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/napalm/ios/ios.py", line 170, in open
+    self.device = self._netmiko_open(
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/napalm/base/base.py", line 113, in _netmiko_open
+    self._netmiko_device = ConnectHandler(
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/netmiko/ssh_dispatcher.py", line 365, in ConnectHandler
+    return ConnectionClass(*args, **kwargs)
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/netmiko/base_connection.py", line 439, in __init__
+    self._open()
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/netmiko/base_connection.py", line 444, in _open
+    self.establish_connection()
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/netmiko/base_connection.py", line 1083, in establish_connection
+    raise NetmikoAuthenticationException(msg)
+netmiko.exceptions.NetmikoAuthenticationException: Authentication to device failed.
+
+Common causes of this problem are:
+1. Invalid username and password
+2. Incorrect SSH-key file
+3. Connecting to the wrong device
+
+Device settings: cisco_ios 10.30.1.108:22
+
+
+Authentication failed.
+
+2023-02-02 13:32:31,258 - nornir.core.task -    ERROR -      start() - Host 'SW-1': task 'napalm_get' failed with traceback:
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/netmiko/base_connection.py", line 1046, in establish_connection
+    self.remote_conn_pre.connect(**ssh_connect_params)
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/paramiko/client.py", line 450, in connect
+    self._auth(
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/paramiko/client.py", line 781, in _auth
+    raise saved_exception
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/paramiko/client.py", line 768, in _auth
+    self._transport.auth_password(username, password)
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/paramiko/transport.py", line 1564, in auth_password
+    return self.auth_handler.wait_for_response(my_event)
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/paramiko/auth_handler.py", line 259, in wait_for_response
+    raise e
+paramiko.ssh_exception.AuthenticationException: Authentication failed.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/nornir_napalm/plugins/tasks/napalm_get.py", line 32, in napalm_get
+    device = task.host.get_connection(CONNECTION_NAME, task.nornir.config)
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/nornir/core/inventory.py", line 494, in get_connection
+    self.open_connection(
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/nornir/core/inventory.py", line 546, in open_connection
+    conn_obj.open(
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/nornir_napalm/plugins/connections/__init__.py", line 57, in open
+    connection.open()
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/napalm/ios/ios.py", line 170, in open
+    self.device = self._netmiko_open(
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/napalm/base/base.py", line 113, in _netmiko_open
+    self._netmiko_device = ConnectHandler(
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/netmiko/ssh_dispatcher.py", line 365, in ConnectHandler
+    return ConnectionClass(*args, **kwargs)
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/netmiko/base_connection.py", line 439, in __init__
+    self._open()
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/netmiko/base_connection.py", line 444, in _open
+    self.establish_connection()
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/netmiko/base_connection.py", line 1083, in establish_connection
+    raise NetmikoAuthenticationException(msg)
+netmiko.exceptions.NetmikoAuthenticationException: Authentication to device failed.
+
+Common causes of this problem are:
+1. Invalid username and password
+2. Incorrect SSH-key file
+3. Connecting to the wrong device
+
+Device settings: cisco_ios 10.30.1.105:22
+
+
+Authentication failed.
+
+2023-02-02 13:34:05,918 -  nornir.core -     INFO -        run() - Running task 'netmiko_send_command' with args {'command_string': 'show ip int brief'} on 2 hosts
+2023-02-02 13:34:20,804 -  nornir.core -     INFO -        run() - Running task 'netmiko_send_command' with args {'command_string': 'show ip int brief'} on 2 hosts
+2023-02-02 13:34:25,871 -  nornir.core -     INFO -        run() - Running task 'netmiko_send_command' with args {'command_string': 'show ip int brief'} on 2 hosts
+2023-02-02 13:34:28,412 - nornir.core.task -    ERROR -      start() - Host 'SW-1': task 'netmiko_send_command' failed with traceback:
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/netmiko/base_connection.py", line 1046, in establish_connection
+    self.remote_conn_pre.connect(**ssh_connect_params)
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/paramiko/client.py", line 450, in connect
+    self._auth(
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/paramiko/client.py", line 781, in _auth
+    raise saved_exception
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/paramiko/client.py", line 768, in _auth
+    self._transport.auth_password(username, password)
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/paramiko/transport.py", line 1564, in auth_password
+    return self.auth_handler.wait_for_response(my_event)
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/paramiko/auth_handler.py", line 259, in wait_for_response
+    raise e
+paramiko.ssh_exception.AuthenticationException: Authentication failed.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/nornir_netmiko/tasks/netmiko_send_command.py", line 26, in netmiko_send_command
+    net_connect = task.host.get_connection(CONNECTION_NAME, task.nornir.config)
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/nornir/core/inventory.py", line 494, in get_connection
+    self.open_connection(
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/nornir/core/inventory.py", line 546, in open_connection
+    conn_obj.open(
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/nornir_netmiko/connections/netmiko.py", line 59, in open
+    connection = ConnectHandler(**parameters)
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/netmiko/ssh_dispatcher.py", line 365, in ConnectHandler
+    return ConnectionClass(*args, **kwargs)
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/netmiko/base_connection.py", line 439, in __init__
+    self._open()
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/netmiko/base_connection.py", line 444, in _open
+    self.establish_connection()
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/netmiko/base_connection.py", line 1083, in establish_connection
+    raise NetmikoAuthenticationException(msg)
+netmiko.exceptions.NetmikoAuthenticationException: Authentication to device failed.
+
+Common causes of this problem are:
+1. Invalid username and password
+2. Incorrect SSH-key file
+3. Connecting to the wrong device
+
+Device settings: cisco_ios 10.30.1.105:22
+
+
+Authentication failed.
+
+2023-02-02 13:34:28,413 - nornir.core.task -    ERROR -      start() - Host 'SW-2': task 'netmiko_send_command' failed with traceback:
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/netmiko/base_connection.py", line 1046, in establish_connection
+    self.remote_conn_pre.connect(**ssh_connect_params)
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/paramiko/client.py", line 450, in connect
+    self._auth(
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/paramiko/client.py", line 781, in _auth
+    raise saved_exception
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/paramiko/client.py", line 768, in _auth
+    self._transport.auth_password(username, password)
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/paramiko/transport.py", line 1564, in auth_password
+    return self.auth_handler.wait_for_response(my_event)
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/paramiko/auth_handler.py", line 259, in wait_for_response
+    raise e
+paramiko.ssh_exception.AuthenticationException: Authentication failed.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/nornir_netmiko/tasks/netmiko_send_command.py", line 26, in netmiko_send_command
+    net_connect = task.host.get_connection(CONNECTION_NAME, task.nornir.config)
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/nornir/core/inventory.py", line 494, in get_connection
+    self.open_connection(
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/nornir/core/inventory.py", line 546, in open_connection
+    conn_obj.open(
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/nornir_netmiko/connections/netmiko.py", line 59, in open
+    connection = ConnectHandler(**parameters)
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/netmiko/ssh_dispatcher.py", line 365, in ConnectHandler
+    return ConnectionClass(*args, **kwargs)
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/netmiko/base_connection.py", line 439, in __init__
+    self._open()
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/netmiko/base_connection.py", line 444, in _open
+    self.establish_connection()
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/netmiko/base_connection.py", line 1083, in establish_connection
+    raise NetmikoAuthenticationException(msg)
+netmiko.exceptions.NetmikoAuthenticationException: Authentication to device failed.
+
+Common causes of this problem are:
+1. Invalid username and password
+2. Incorrect SSH-key file
+3. Connecting to the wrong device
+
+Device settings: cisco_ios 10.30.1.108:22
+
+
+Authentication failed.
+
+2023-02-02 13:39:44,185 -  nornir.core -     INFO -        run() - Running task 'netmiko_send_command' with args {'command_string': 'show ip int brief'} on 2 hosts
+2023-02-02 13:39:46,606 - nornir.core.task -    ERROR -      start() - Host 'SW-1': task 'netmiko_send_command' failed with traceback:
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/netmiko/base_connection.py", line 1046, in establish_connection
+    self.remote_conn_pre.connect(**ssh_connect_params)
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/paramiko/client.py", line 450, in connect
+    self._auth(
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/paramiko/client.py", line 781, in _auth
+    raise saved_exception
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/paramiko/client.py", line 768, in _auth
+    self._transport.auth_password(username, password)
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/paramiko/transport.py", line 1564, in auth_password
+    return self.auth_handler.wait_for_response(my_event)
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/paramiko/auth_handler.py", line 259, in wait_for_response
+    raise e
+paramiko.ssh_exception.AuthenticationException: Authentication failed.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/nornir_netmiko/tasks/netmiko_send_command.py", line 26, in netmiko_send_command
+    net_connect = task.host.get_connection(CONNECTION_NAME, task.nornir.config)
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/nornir/core/inventory.py", line 494, in get_connection
+    self.open_connection(
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/nornir/core/inventory.py", line 546, in open_connection
+    conn_obj.open(
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/nornir_netmiko/connections/netmiko.py", line 59, in open
+    connection = ConnectHandler(**parameters)
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/netmiko/ssh_dispatcher.py", line 365, in ConnectHandler
+    return ConnectionClass(*args, **kwargs)
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/netmiko/base_connection.py", line 439, in __init__
+    self._open()
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/netmiko/base_connection.py", line 444, in _open
+    self.establish_connection()
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/netmiko/base_connection.py", line 1083, in establish_connection
+    raise NetmikoAuthenticationException(msg)
+netmiko.exceptions.NetmikoAuthenticationException: Authentication to device failed.
+
+Common causes of this problem are:
+1. Invalid username and password
+2. Incorrect SSH-key file
+3. Connecting to the wrong device
+
+Device settings: cisco_ios 10.30.1.105:22
+
+
+Authentication failed.
+
+2023-02-02 13:39:46,702 - nornir.core.task -    ERROR -      start() - Host 'SW-2': task 'netmiko_send_command' failed with traceback:
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/netmiko/base_connection.py", line 1046, in establish_connection
+    self.remote_conn_pre.connect(**ssh_connect_params)
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/paramiko/client.py", line 450, in connect
+    self._auth(
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/paramiko/client.py", line 781, in _auth
+    raise saved_exception
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/paramiko/client.py", line 768, in _auth
+    self._transport.auth_password(username, password)
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/paramiko/transport.py", line 1564, in auth_password
+    return self.auth_handler.wait_for_response(my_event)
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/paramiko/auth_handler.py", line 259, in wait_for_response
+    raise e
+paramiko.ssh_exception.AuthenticationException: Authentication failed.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/nornir_netmiko/tasks/netmiko_send_command.py", line 26, in netmiko_send_command
+    net_connect = task.host.get_connection(CONNECTION_NAME, task.nornir.config)
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/nornir/core/inventory.py", line 494, in get_connection
+    self.open_connection(
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/nornir/core/inventory.py", line 546, in open_connection
+    conn_obj.open(
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/nornir_netmiko/connections/netmiko.py", line 59, in open
+    connection = ConnectHandler(**parameters)
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/netmiko/ssh_dispatcher.py", line 365, in ConnectHandler
+    return ConnectionClass(*args, **kwargs)
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/netmiko/base_connection.py", line 439, in __init__
+    self._open()
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/netmiko/base_connection.py", line 444, in _open
+    self.establish_connection()
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/netmiko/base_connection.py", line 1083, in establish_connection
+    raise NetmikoAuthenticationException(msg)
+netmiko.exceptions.NetmikoAuthenticationException: Authentication to device failed.
+
+Common causes of this problem are:
+1. Invalid username and password
+2. Incorrect SSH-key file
+3. Connecting to the wrong device
+
+Device settings: cisco_ios 10.30.1.108:22
+
+
+Authentication failed.
+
+2023-02-02 13:40:38,634 -  nornir.core -     INFO -        run() - Running task 'netmiko_send_command' with args {'command_string': 'show ip int brief'} on 2 hosts
+2023-02-02 13:41:10,055 -  nornir.core -     INFO -        run() - Running task 'napalm_get' with args {'getters': ['facts']} on 2 hosts
+2023-02-02 13:42:47,709 -  nornir.core -  WARNING -        run() - Task 'napalm_get' has not been run – 0 hosts selected
+2023-02-02 13:42:54,819 -  nornir.core -  WARNING -        run() - Task 'napalm_get' has not been run – 0 hosts selected
+2023-02-02 13:43:09,822 -  nornir.core -  WARNING -        run() - Task 'napalm_get' has not been run – 0 hosts selected
+2023-02-02 13:43:45,910 -  nornir.core -  WARNING -        run() - Task 'napalm_get' has not been run – 0 hosts selected
+2023-02-02 13:44:24,846 -  nornir.core -  WARNING -        run() - Task 'napalm_get' has not been run – 0 hosts selected
+2023-02-02 13:44:48,610 -  nornir.core -  WARNING -        run() - Task 'napalm_get' has not been run – 0 hosts selected
+2023-02-02 13:59:42,932 -  nornir.core -     INFO -        run() - Running task 'napalm_get' with args {'getters': ['facts']} on 2 hosts
+2023-02-02 13:59:44,912 -  nornir.core -     INFO -        run() - Running task 'Настройка коммутаторов' with args {} on 2 hosts
+2023-02-02 14:45:51,487 -  nornir.core -  WARNING -        run() - Task 'napalm_get' has not been run – 0 hosts selected
+2023-02-02 14:45:59,564 -  nornir.core -  WARNING -        run() - Task 'napalm_get' has not been run – 0 hosts selected
+2023-02-02 14:47:22,636 -  nornir.core -  WARNING -        run() - Task 'napalm_get' has not been run – 0 hosts selected
+2023-02-02 14:47:41,792 -  nornir.core -  WARNING -        run() - Task 'napalm_get' has not been run – 0 hosts selected
+2023-02-02 15:13:58,995 -  nornir.core -     INFO -        run() - Running task 'napalm_get' with args {'getters': ['facts']} on 1 hosts
+2023-02-02 15:13:59,019 - nornir.core.task -    ERROR -      start() - Host 'SW-PLGN-1': task 'napalm_get' failed with traceback:
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/nornir_napalm/plugins/tasks/napalm_get.py", line 32, in napalm_get
+    device = task.host.get_connection(CONNECTION_NAME, task.nornir.config)
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/nornir/core/inventory.py", line 494, in get_connection
+    self.open_connection(
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/nornir/core/inventory.py", line 546, in open_connection
+    conn_obj.open(
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/nornir_napalm/plugins/connections/__init__.py", line 55, in open
+    network_driver = get_network_driver(platform)
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/napalm/base/__init__.py", line 99, in get_network_driver
+    raise ModuleImportError(
+napalm.base.exceptions.ModuleImportError: Cannot import "cisco ios". Is the library installed?
+
+2023-02-02 15:14:10,127 -  nornir.core -     INFO -        run() - Running task 'napalm_get' with args {'getters': ['facts']} on 1 hosts
+2023-02-02 15:15:10,735 -  nornir.core -     INFO -        run() - Running task 'napalm_get' with args {'getters': ['facts']} on 1 hosts
+2023-02-02 15:15:10,739 - nornir.core.task -    ERROR -      start() - Host 'SW-PLGN-1': task 'napalm_get' failed with traceback:
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/nornir_napalm/plugins/tasks/napalm_get.py", line 32, in napalm_get
+    device = task.host.get_connection(CONNECTION_NAME, task.nornir.config)
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/nornir/core/inventory.py", line 494, in get_connection
+    self.open_connection(
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/nornir/core/inventory.py", line 546, in open_connection
+    conn_obj.open(
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/nornir_napalm/plugins/connections/__init__.py", line 55, in open
+    network_driver = get_network_driver(platform)
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/napalm/base/__init__.py", line 99, in get_network_driver
+    raise ModuleImportError(
+napalm.base.exceptions.ModuleImportError: Cannot import "cisco ios". Is the library installed?
+
+2023-02-02 15:16:12,968 -  nornir.core -     INFO -        run() - Running task 'napalm_get' with args {'getters': ['facts']} on 1 hosts
+2023-02-02 15:16:12,991 - nornir.core.task -    ERROR -      start() - Host 'SW-PLGN-1': task 'napalm_get' failed with traceback:
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/nornir_napalm/plugins/tasks/napalm_get.py", line 32, in napalm_get
+    device = task.host.get_connection(CONNECTION_NAME, task.nornir.config)
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/nornir/core/inventory.py", line 494, in get_connection
+    self.open_connection(
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/nornir/core/inventory.py", line 546, in open_connection
+    conn_obj.open(
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/nornir_napalm/plugins/connections/__init__.py", line 55, in open
+    network_driver = get_network_driver(platform)
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/napalm/base/__init__.py", line 99, in get_network_driver
+    raise ModuleImportError(
+napalm.base.exceptions.ModuleImportError: Cannot import "cisco ios". Is the library installed?
+
+2023-02-02 15:18:29,906 -  nornir.core -     INFO -        run() - Running task 'napalm_get' with args {'getters': ['facts']} on 2 hosts
+2023-02-02 15:20:31,164 -  nornir.core -     INFO -        run() - Running task 'napalm_get' with args {'getters': ['facts']} on 1 hosts
+2023-02-02 15:20:31,185 - nornir.core.task -    ERROR -      start() - Host 'SW-PLGN-1': task 'napalm_get' failed with traceback:
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/nornir_napalm/plugins/tasks/napalm_get.py", line 32, in napalm_get
+    device = task.host.get_connection(CONNECTION_NAME, task.nornir.config)
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/nornir/core/inventory.py", line 494, in get_connection
+    self.open_connection(
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/nornir/core/inventory.py", line 546, in open_connection
+    conn_obj.open(
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/nornir_napalm/plugins/connections/__init__.py", line 55, in open
+    network_driver = get_network_driver(platform)
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/napalm/base/__init__.py", line 99, in get_network_driver
+    raise ModuleImportError(
+napalm.base.exceptions.ModuleImportError: Cannot import "cisco ios". Is the library installed?
+
+2023-02-02 15:23:44,822 -  nornir.core -     INFO -        run() - Running task 'napalm_get' with args {'getters': ['facts']} on 1 hosts
+2023-02-02 15:23:47,294 - nornir.core.task -    ERROR -      start() - Host 'SW-PLGN-1': task 'napalm_get' failed with traceback:
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/netmiko/base_connection.py", line 1046, in establish_connection
+    self.remote_conn_pre.connect(**ssh_connect_params)
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/paramiko/client.py", line 450, in connect
+    self._auth(
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/paramiko/client.py", line 781, in _auth
+    raise saved_exception
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/paramiko/client.py", line 768, in _auth
+    self._transport.auth_password(username, password)
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/paramiko/transport.py", line 1564, in auth_password
+    return self.auth_handler.wait_for_response(my_event)
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/paramiko/auth_handler.py", line 259, in wait_for_response
+    raise e
+paramiko.ssh_exception.AuthenticationException: Authentication failed.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/nornir_napalm/plugins/tasks/napalm_get.py", line 32, in napalm_get
+    device = task.host.get_connection(CONNECTION_NAME, task.nornir.config)
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/nornir/core/inventory.py", line 494, in get_connection
+    self.open_connection(
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/nornir/core/inventory.py", line 546, in open_connection
+    conn_obj.open(
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/nornir_napalm/plugins/connections/__init__.py", line 57, in open
+    connection.open()
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/napalm/ios/ios.py", line 170, in open
+    self.device = self._netmiko_open(
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/napalm/base/base.py", line 113, in _netmiko_open
+    self._netmiko_device = ConnectHandler(
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/netmiko/ssh_dispatcher.py", line 365, in ConnectHandler
+    return ConnectionClass(*args, **kwargs)
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/netmiko/base_connection.py", line 439, in __init__
+    self._open()
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/netmiko/base_connection.py", line 444, in _open
+    self.establish_connection()
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/netmiko/base_connection.py", line 1083, in establish_connection
+    raise NetmikoAuthenticationException(msg)
+netmiko.exceptions.NetmikoAuthenticationException: Authentication to device failed.
+
+Common causes of this problem are:
+1. Invalid username and password
+2. Incorrect SSH-key file
+3. Connecting to the wrong device
+
+Device settings: cisco_ios 10.30.1.105:22
+
+
+Authentication failed.
+
+2023-02-02 15:25:15,063 -  nornir.core -     INFO -        run() - Running task 'napalm_get' with args {'getters': ['facts']} on 1 hosts
+2023-02-02 15:32:23,642 -  nornir.core -     INFO -        run() - Running task 'napalm_get' with args {'getters': ['get_interfaces_ip']} on 1 hosts
+2023-02-02 15:35:25,196 -  nornir.core -     INFO -        run() - Running task 'napalm_get' with args {'getters': ['get_interfaces_ip']} on 1 hosts
+2023-02-02 15:36:42,128 -  nornir.core -  WARNING -        run() - Task 'napalm_get' has not been run – 0 hosts selected
+2023-02-02 15:37:55,891 -  nornir.core -     INFO -        run() - Running task 'napalm_get' with args {'getters': ['facts']} on 2 hosts
+2023-02-02 15:40:32,721 -  nornir.core -  WARNING -        run() - Task 'napalm_get' has not been run – 0 hosts selected
+2023-02-02 15:43:18,224 -  nornir.core -     INFO -        run() - Running task 'napalm_get' with args {'getters': ['get_interfaces_ip']} on 1 hosts
+2023-02-02 15:46:22,493 -  nornir.core -     INFO -        run() - Running task 'napalm_cli' with args {'command_string': 'sh ip int brief'} on 1 hosts
+2023-02-02 15:46:22,502 - nornir.core.task -    ERROR -      start() - Host 'SW-PLGN-2': task 'napalm_cli' failed with traceback:
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+TypeError: napalm_cli() got an unexpected keyword argument 'command_string'
+
+2023-02-02 15:47:31,285 -  nornir.core -     INFO -        run() - Running task 'napalm_cli' with args {'commands': 'sh ip int brief'} on 1 hosts
+2023-02-02 15:47:36,637 -  nornir.core -     INFO -        run() - Running task 'napalm_cli' with args {'commands': 'sh ip int brief'} on 1 hosts
+2023-02-02 15:47:37,394 - nornir.core.task -    ERROR -      start() - Host 'SW-PLGN-2': task 'napalm_cli' failed with traceback:
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/nornir_napalm/plugins/tasks/napalm_cli.py", line 20, in napalm_cli
+    result = device.cli(commands)
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/napalm/ios/ios.py", line 2493, in cli
+    raise TypeError("Please enter a valid list of commands!")
+TypeError: Please enter a valid list of commands!
+
+2023-02-02 15:48:04,199 -  nornir.core -     INFO -        run() - Running task 'napalm_cli' with args {'commands': ['sh ip int brief']} on 1 hosts
+2023-02-02 15:48:07,880 -  nornir.core -     INFO -        run() - Running task 'napalm_cli' with args {'commands': ['sh ip int brief']} on 1 hosts
+2023-02-02 15:54:33,839 -  nornir.core -     INFO -        run() - Running task 'netmiko_send_command' with args {'command_string': 'show ip int brief'} on 1 hosts
+2023-02-02 16:04:24,671 -  nornir.core -     INFO -        run() - Running task 'netmiko_send_command' with args {'command_string': 'show ip int brief'} on 1 hosts
+2023-02-02 16:07:08,545 -  nornir.core -  WARNING -        run() - Task 'netmiko_send_command' has not been run – 0 hosts selected
+2023-02-02 16:08:10,364 -  nornir.core -  WARNING -        run() - Task 'netmiko_send_command' has not been run – 0 hosts selected
+2023-02-02 16:10:07,297 -  nornir.core -     INFO -        run() - Running task 'netmiko_send_command' with args {'command_string': 'show ip int brief'} on 1 hosts
+2023-02-02 16:10:21,848 -  nornir.core -     INFO -        run() - Running task 'netmiko_send_command' with args {'command_string': 'show ip int brief'} on 1 hosts
+2023-02-02 16:11:58,717 -  nornir.core -     INFO -        run() - Running task 'netmiko_send_command' with args {'command_string': 'show ip int brief'} on 1 hosts
+2023-02-02 16:28:30,535 -  nornir.core -  WARNING -        run() - Task 'netmiko_send_command' has not been run – 0 hosts selected
+2023-02-02 16:32:08,149 -  nornir.core -     INFO -        run() - Running task 'netmiko_send_command' with args {'command_string': 'show ip int brief'} on 6 hosts
+2023-02-02 16:32:10,379 - nornir.core.task -    ERROR -      start() - Host 'SRV-PEV-1': task 'netmiko_send_command' failed with traceback:
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/netmiko/base_connection.py", line 1046, in establish_connection
+    self.remote_conn_pre.connect(**ssh_connect_params)
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/paramiko/client.py", line 450, in connect
+    self._auth(
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/paramiko/client.py", line 781, in _auth
+    raise saved_exception
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/paramiko/client.py", line 768, in _auth
+    self._transport.auth_password(username, password)
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/paramiko/transport.py", line 1564, in auth_password
+    return self.auth_handler.wait_for_response(my_event)
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/paramiko/auth_handler.py", line 259, in wait_for_response
+    raise e
+paramiko.ssh_exception.AuthenticationException: Authentication failed.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/nornir_netmiko/tasks/netmiko_send_command.py", line 26, in netmiko_send_command
+    net_connect = task.host.get_connection(CONNECTION_NAME, task.nornir.config)
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/nornir/core/inventory.py", line 494, in get_connection
+    self.open_connection(
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/nornir/core/inventory.py", line 546, in open_connection
+    conn_obj.open(
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/nornir_netmiko/connections/netmiko.py", line 59, in open
+    connection = ConnectHandler(**parameters)
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/netmiko/ssh_dispatcher.py", line 365, in ConnectHandler
+    return ConnectionClass(*args, **kwargs)
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/netmiko/base_connection.py", line 439, in __init__
+    self._open()
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/netmiko/base_connection.py", line 444, in _open
+    self.establish_connection()
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/netmiko/base_connection.py", line 1083, in establish_connection
+    raise NetmikoAuthenticationException(msg)
+netmiko.exceptions.NetmikoAuthenticationException: Authentication to device failed.
+
+Common causes of this problem are:
+1. Invalid username and password
+2. Incorrect SSH-key file
+3. Connecting to the wrong device
+
+Device settings: cisco_ios 10.30.1.251:22
+
+
+Authentication failed.
+
+2023-02-02 16:32:10,432 - nornir.core.task -    ERROR -      start() - Host 'SRV-PEV-5': task 'netmiko_send_command' failed with traceback:
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/netmiko/base_connection.py", line 1046, in establish_connection
+    self.remote_conn_pre.connect(**ssh_connect_params)
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/paramiko/client.py", line 450, in connect
+    self._auth(
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/paramiko/client.py", line 781, in _auth
+    raise saved_exception
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/paramiko/client.py", line 768, in _auth
+    self._transport.auth_password(username, password)
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/paramiko/transport.py", line 1564, in auth_password
+    return self.auth_handler.wait_for_response(my_event)
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/paramiko/auth_handler.py", line 259, in wait_for_response
+    raise e
+paramiko.ssh_exception.AuthenticationException: Authentication failed.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/nornir_netmiko/tasks/netmiko_send_command.py", line 26, in netmiko_send_command
+    net_connect = task.host.get_connection(CONNECTION_NAME, task.nornir.config)
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/nornir/core/inventory.py", line 494, in get_connection
+    self.open_connection(
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/nornir/core/inventory.py", line 546, in open_connection
+    conn_obj.open(
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/nornir_netmiko/connections/netmiko.py", line 59, in open
+    connection = ConnectHandler(**parameters)
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/netmiko/ssh_dispatcher.py", line 365, in ConnectHandler
+    return ConnectionClass(*args, **kwargs)
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/netmiko/base_connection.py", line 439, in __init__
+    self._open()
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/netmiko/base_connection.py", line 444, in _open
+    self.establish_connection()
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/netmiko/base_connection.py", line 1083, in establish_connection
+    raise NetmikoAuthenticationException(msg)
+netmiko.exceptions.NetmikoAuthenticationException: Authentication to device failed.
+
+Common causes of this problem are:
+1. Invalid username and password
+2. Incorrect SSH-key file
+3. Connecting to the wrong device
+
+Device settings: cisco_ios SRV-PEV-5:22
+
+
+Authentication failed.
+
+2023-02-02 16:32:10,469 - nornir.core.task -    ERROR -      start() - Host 'SRV-PEV-2': task 'netmiko_send_command' failed with traceback:
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/netmiko/base_connection.py", line 1046, in establish_connection
+    self.remote_conn_pre.connect(**ssh_connect_params)
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/paramiko/client.py", line 450, in connect
+    self._auth(
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/paramiko/client.py", line 781, in _auth
+    raise saved_exception
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/paramiko/client.py", line 768, in _auth
+    self._transport.auth_password(username, password)
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/paramiko/transport.py", line 1564, in auth_password
+    return self.auth_handler.wait_for_response(my_event)
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/paramiko/auth_handler.py", line 259, in wait_for_response
+    raise e
+paramiko.ssh_exception.AuthenticationException: Authentication failed.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/nornir_netmiko/tasks/netmiko_send_command.py", line 26, in netmiko_send_command
+    net_connect = task.host.get_connection(CONNECTION_NAME, task.nornir.config)
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/nornir/core/inventory.py", line 494, in get_connection
+    self.open_connection(
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/nornir/core/inventory.py", line 546, in open_connection
+    conn_obj.open(
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/nornir_netmiko/connections/netmiko.py", line 59, in open
+    connection = ConnectHandler(**parameters)
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/netmiko/ssh_dispatcher.py", line 365, in ConnectHandler
+    return ConnectionClass(*args, **kwargs)
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/netmiko/base_connection.py", line 439, in __init__
+    self._open()
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/netmiko/base_connection.py", line 444, in _open
+    self.establish_connection()
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/netmiko/base_connection.py", line 1083, in establish_connection
+    raise NetmikoAuthenticationException(msg)
+netmiko.exceptions.NetmikoAuthenticationException: Authentication to device failed.
+
+Common causes of this problem are:
+1. Invalid username and password
+2. Incorrect SSH-key file
+3. Connecting to the wrong device
+
+Device settings: cisco_ios 10.30.1.252:22
+
+
+Authentication failed.
+
+2023-02-02 16:32:18,172 - nornir.core.task -    ERROR -      start() - Host 'SW-AMZ-PLGN': task 'netmiko_send_command' failed with traceback:
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/netmiko/base_connection.py", line 1046, in establish_connection
+    self.remote_conn_pre.connect(**ssh_connect_params)
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/paramiko/client.py", line 358, in connect
+    retry_on_signal(lambda: sock.connect(addr))
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/paramiko/util.py", line 279, in retry_on_signal
+    return function()
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/paramiko/client.py", line 358, in <lambda>
+    retry_on_signal(lambda: sock.connect(addr))
+socket.timeout: timed out
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/nornir_netmiko/tasks/netmiko_send_command.py", line 26, in netmiko_send_command
+    net_connect = task.host.get_connection(CONNECTION_NAME, task.nornir.config)
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/nornir/core/inventory.py", line 494, in get_connection
+    self.open_connection(
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/nornir/core/inventory.py", line 546, in open_connection
+    conn_obj.open(
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/nornir_netmiko/connections/netmiko.py", line 59, in open
+    connection = ConnectHandler(**parameters)
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/netmiko/ssh_dispatcher.py", line 365, in ConnectHandler
+    return ConnectionClass(*args, **kwargs)
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/netmiko/base_connection.py", line 439, in __init__
+    self._open()
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/netmiko/base_connection.py", line 444, in _open
+    self.establish_connection()
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/netmiko/base_connection.py", line 1068, in establish_connection
+    raise NetmikoTimeoutException(msg)
+netmiko.exceptions.NetmikoTimeoutException: TCP connection to device failed.
+
+Common causes of this problem are:
+1. Incorrect hostname or IP address.
+2. Wrong TCP port.
+3. Intermediate firewall blocking access.
+
+Device settings: cisco_ios 10.91.254.52:22
+
+
+
+2023-02-02 16:34:53,344 -  nornir.core -     INFO -        run() - Running task 'netmiko_send_command' with args {'command_string': 'show ip int brief'} on 6 hosts
+2023-02-02 16:34:57,445 - nornir.core.task -    ERROR -      start() - Host 'SRV-PEV-1': task 'netmiko_send_command' failed with traceback:
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/netmiko/base_connection.py", line 1046, in establish_connection
+    self.remote_conn_pre.connect(**ssh_connect_params)
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/paramiko/client.py", line 450, in connect
+    self._auth(
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/paramiko/client.py", line 781, in _auth
+    raise saved_exception
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/paramiko/client.py", line 768, in _auth
+    self._transport.auth_password(username, password)
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/paramiko/transport.py", line 1564, in auth_password
+    return self.auth_handler.wait_for_response(my_event)
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/paramiko/auth_handler.py", line 259, in wait_for_response
+    raise e
+paramiko.ssh_exception.AuthenticationException: Authentication failed.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/nornir_netmiko/tasks/netmiko_send_command.py", line 26, in netmiko_send_command
+    net_connect = task.host.get_connection(CONNECTION_NAME, task.nornir.config)
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/nornir/core/inventory.py", line 494, in get_connection
+    self.open_connection(
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/nornir/core/inventory.py", line 546, in open_connection
+    conn_obj.open(
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/nornir_netmiko/connections/netmiko.py", line 59, in open
+    connection = ConnectHandler(**parameters)
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/netmiko/ssh_dispatcher.py", line 365, in ConnectHandler
+    return ConnectionClass(*args, **kwargs)
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/netmiko/base_connection.py", line 439, in __init__
+    self._open()
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/netmiko/base_connection.py", line 444, in _open
+    self.establish_connection()
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/netmiko/base_connection.py", line 1083, in establish_connection
+    raise NetmikoAuthenticationException(msg)
+netmiko.exceptions.NetmikoAuthenticationException: Authentication to device failed.
+
+Common causes of this problem are:
+1. Invalid username and password
+2. Incorrect SSH-key file
+3. Connecting to the wrong device
+
+Device settings: cisco_ios 10.30.1.251:22
+
+
+Authentication failed.
+
+2023-02-02 16:34:57,622 - nornir.core.task -    ERROR -      start() - Host 'SRV-PEV-5': task 'netmiko_send_command' failed with traceback:
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/netmiko/base_connection.py", line 1046, in establish_connection
+    self.remote_conn_pre.connect(**ssh_connect_params)
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/paramiko/client.py", line 450, in connect
+    self._auth(
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/paramiko/client.py", line 781, in _auth
+    raise saved_exception
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/paramiko/client.py", line 768, in _auth
+    self._transport.auth_password(username, password)
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/paramiko/transport.py", line 1564, in auth_password
+    return self.auth_handler.wait_for_response(my_event)
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/paramiko/auth_handler.py", line 259, in wait_for_response
+    raise e
+paramiko.ssh_exception.AuthenticationException: Authentication failed.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/nornir_netmiko/tasks/netmiko_send_command.py", line 26, in netmiko_send_command
+    net_connect = task.host.get_connection(CONNECTION_NAME, task.nornir.config)
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/nornir/core/inventory.py", line 494, in get_connection
+    self.open_connection(
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/nornir/core/inventory.py", line 546, in open_connection
+    conn_obj.open(
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/nornir_netmiko/connections/netmiko.py", line 59, in open
+    connection = ConnectHandler(**parameters)
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/netmiko/ssh_dispatcher.py", line 365, in ConnectHandler
+    return ConnectionClass(*args, **kwargs)
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/netmiko/base_connection.py", line 439, in __init__
+    self._open()
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/netmiko/base_connection.py", line 444, in _open
+    self.establish_connection()
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/netmiko/base_connection.py", line 1083, in establish_connection
+    raise NetmikoAuthenticationException(msg)
+netmiko.exceptions.NetmikoAuthenticationException: Authentication to device failed.
+
+Common causes of this problem are:
+1. Invalid username and password
+2. Incorrect SSH-key file
+3. Connecting to the wrong device
+
+Device settings: cisco_ios SRV-PEV-5:22
+
+
+Authentication failed.
+
+2023-02-02 16:34:57,709 - nornir.core.task -    ERROR -      start() - Host 'SRV-PEV-2': task 'netmiko_send_command' failed with traceback:
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/netmiko/base_connection.py", line 1046, in establish_connection
+    self.remote_conn_pre.connect(**ssh_connect_params)
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/paramiko/client.py", line 450, in connect
+    self._auth(
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/paramiko/client.py", line 781, in _auth
+    raise saved_exception
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/paramiko/client.py", line 768, in _auth
+    self._transport.auth_password(username, password)
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/paramiko/transport.py", line 1564, in auth_password
+    return self.auth_handler.wait_for_response(my_event)
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/paramiko/auth_handler.py", line 259, in wait_for_response
+    raise e
+paramiko.ssh_exception.AuthenticationException: Authentication failed.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/nornir_netmiko/tasks/netmiko_send_command.py", line 26, in netmiko_send_command
+    net_connect = task.host.get_connection(CONNECTION_NAME, task.nornir.config)
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/nornir/core/inventory.py", line 494, in get_connection
+    self.open_connection(
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/nornir/core/inventory.py", line 546, in open_connection
+    conn_obj.open(
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/nornir_netmiko/connections/netmiko.py", line 59, in open
+    connection = ConnectHandler(**parameters)
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/netmiko/ssh_dispatcher.py", line 365, in ConnectHandler
+    return ConnectionClass(*args, **kwargs)
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/netmiko/base_connection.py", line 439, in __init__
+    self._open()
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/netmiko/base_connection.py", line 444, in _open
+    self.establish_connection()
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/netmiko/base_connection.py", line 1083, in establish_connection
+    raise NetmikoAuthenticationException(msg)
+netmiko.exceptions.NetmikoAuthenticationException: Authentication to device failed.
+
+Common causes of this problem are:
+1. Invalid username and password
+2. Incorrect SSH-key file
+3. Connecting to the wrong device
+
+Device settings: cisco_ios 10.30.1.252:22
+
+
+Authentication failed.
+
+2023-02-02 16:35:03,368 - nornir.core.task -    ERROR -      start() - Host 'SW-AMZ-PLGN': task 'netmiko_send_command' failed with traceback:
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/netmiko/base_connection.py", line 1046, in establish_connection
+    self.remote_conn_pre.connect(**ssh_connect_params)
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/paramiko/client.py", line 358, in connect
+    retry_on_signal(lambda: sock.connect(addr))
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/paramiko/util.py", line 279, in retry_on_signal
+    return function()
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/paramiko/client.py", line 358, in <lambda>
+    retry_on_signal(lambda: sock.connect(addr))
+socket.timeout: timed out
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/nornir_netmiko/tasks/netmiko_send_command.py", line 26, in netmiko_send_command
+    net_connect = task.host.get_connection(CONNECTION_NAME, task.nornir.config)
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/nornir/core/inventory.py", line 494, in get_connection
+    self.open_connection(
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/nornir/core/inventory.py", line 546, in open_connection
+    conn_obj.open(
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/nornir_netmiko/connections/netmiko.py", line 59, in open
+    connection = ConnectHandler(**parameters)
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/netmiko/ssh_dispatcher.py", line 365, in ConnectHandler
+    return ConnectionClass(*args, **kwargs)
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/netmiko/base_connection.py", line 439, in __init__
+    self._open()
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/netmiko/base_connection.py", line 444, in _open
+    self.establish_connection()
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/netmiko/base_connection.py", line 1068, in establish_connection
+    raise NetmikoTimeoutException(msg)
+netmiko.exceptions.NetmikoTimeoutException: TCP connection to device failed.
+
+Common causes of this problem are:
+1. Incorrect hostname or IP address.
+2. Wrong TCP port.
+3. Intermediate firewall blocking access.
+
+Device settings: cisco_ios 10.91.254.52:22
+
+
+
+2023-02-02 16:36:42,857 -  nornir.core -     INFO -        run() - Running task 'netmiko_send_command' with args {'command_string': 'show ip int brief'} on 3 hosts
+2023-02-02 16:36:52,871 - nornir.core.task -    ERROR -      start() - Host 'SW-AMZ-PLGN': task 'netmiko_send_command' failed with traceback:
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/netmiko/base_connection.py", line 1046, in establish_connection
+    self.remote_conn_pre.connect(**ssh_connect_params)
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/paramiko/client.py", line 358, in connect
+    retry_on_signal(lambda: sock.connect(addr))
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/paramiko/util.py", line 279, in retry_on_signal
+    return function()
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/paramiko/client.py", line 358, in <lambda>
+    retry_on_signal(lambda: sock.connect(addr))
+socket.timeout: timed out
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/nornir_netmiko/tasks/netmiko_send_command.py", line 26, in netmiko_send_command
+    net_connect = task.host.get_connection(CONNECTION_NAME, task.nornir.config)
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/nornir/core/inventory.py", line 494, in get_connection
+    self.open_connection(
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/nornir/core/inventory.py", line 546, in open_connection
+    conn_obj.open(
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/nornir_netmiko/connections/netmiko.py", line 59, in open
+    connection = ConnectHandler(**parameters)
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/netmiko/ssh_dispatcher.py", line 365, in ConnectHandler
+    return ConnectionClass(*args, **kwargs)
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/netmiko/base_connection.py", line 439, in __init__
+    self._open()
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/netmiko/base_connection.py", line 444, in _open
+    self.establish_connection()
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/netmiko/base_connection.py", line 1068, in establish_connection
+    raise NetmikoTimeoutException(msg)
+netmiko.exceptions.NetmikoTimeoutException: TCP connection to device failed.
+
+Common causes of this problem are:
+1. Incorrect hostname or IP address.
+2. Wrong TCP port.
+3. Intermediate firewall blocking access.
+
+Device settings: cisco_ios 10.91.254.52:22
+
+
+
+2023-02-02 16:36:59,720 -  nornir.core -     INFO -        run() - Running task 'netmiko_send_command' with args {'command_string': 'show ip int brief'} on 3 hosts
+2023-02-02 16:37:09,730 - nornir.core.task -    ERROR -      start() - Host 'SW-AMZ-PLGN': task 'netmiko_send_command' failed with traceback:
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/netmiko/base_connection.py", line 1046, in establish_connection
+    self.remote_conn_pre.connect(**ssh_connect_params)
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/paramiko/client.py", line 358, in connect
+    retry_on_signal(lambda: sock.connect(addr))
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/paramiko/util.py", line 279, in retry_on_signal
+    return function()
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/paramiko/client.py", line 358, in <lambda>
+    retry_on_signal(lambda: sock.connect(addr))
+socket.timeout: timed out
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/nornir_netmiko/tasks/netmiko_send_command.py", line 26, in netmiko_send_command
+    net_connect = task.host.get_connection(CONNECTION_NAME, task.nornir.config)
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/nornir/core/inventory.py", line 494, in get_connection
+    self.open_connection(
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/nornir/core/inventory.py", line 546, in open_connection
+    conn_obj.open(
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/nornir_netmiko/connections/netmiko.py", line 59, in open
+    connection = ConnectHandler(**parameters)
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/netmiko/ssh_dispatcher.py", line 365, in ConnectHandler
+    return ConnectionClass(*args, **kwargs)
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/netmiko/base_connection.py", line 439, in __init__
+    self._open()
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/netmiko/base_connection.py", line 444, in _open
+    self.establish_connection()
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/netmiko/base_connection.py", line 1068, in establish_connection
+    raise NetmikoTimeoutException(msg)
+netmiko.exceptions.NetmikoTimeoutException: TCP connection to device failed.
+
+Common causes of this problem are:
+1. Incorrect hostname or IP address.
+2. Wrong TCP port.
+3. Intermediate firewall blocking access.
+
+Device settings: cisco_ios 10.91.254.52:22
+
+
+
+2023-02-02 16:38:29,365 -  nornir.core -     INFO -        run() - Running task 'napalm_get' with args {'getters': ['get_interfaces_ip']} on 3 hosts
+2023-02-02 16:38:39,395 - nornir.core.task -    ERROR -      start() - Host 'SW-AMZ-PLGN': task 'napalm_get' failed with traceback:
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/netmiko/base_connection.py", line 1046, in establish_connection
+    self.remote_conn_pre.connect(**ssh_connect_params)
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/paramiko/client.py", line 358, in connect
+    retry_on_signal(lambda: sock.connect(addr))
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/paramiko/util.py", line 279, in retry_on_signal
+    return function()
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/paramiko/client.py", line 358, in <lambda>
+    retry_on_signal(lambda: sock.connect(addr))
+socket.timeout: timed out
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/napalm/base/base.py", line 113, in _netmiko_open
+    self._netmiko_device = ConnectHandler(
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/netmiko/ssh_dispatcher.py", line 365, in ConnectHandler
+    return ConnectionClass(*args, **kwargs)
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/netmiko/base_connection.py", line 439, in __init__
+    self._open()
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/netmiko/base_connection.py", line 444, in _open
+    self.establish_connection()
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/netmiko/base_connection.py", line 1068, in establish_connection
+    raise NetmikoTimeoutException(msg)
+netmiko.exceptions.NetmikoTimeoutException: TCP connection to device failed.
+
+Common causes of this problem are:
+1. Incorrect hostname or IP address.
+2. Wrong TCP port.
+3. Intermediate firewall blocking access.
+
+Device settings: cisco_ios 10.91.254.52:22
+
+
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/nornir_napalm/plugins/tasks/napalm_get.py", line 32, in napalm_get
+    device = task.host.get_connection(CONNECTION_NAME, task.nornir.config)
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/nornir/core/inventory.py", line 494, in get_connection
+    self.open_connection(
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/nornir/core/inventory.py", line 546, in open_connection
+    conn_obj.open(
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/nornir_napalm/plugins/connections/__init__.py", line 57, in open
+    connection.open()
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/napalm/ios/ios.py", line 170, in open
+    self.device = self._netmiko_open(
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/napalm/base/base.py", line 122, in _netmiko_open
+    raise ConnectionException("Cannot connect to {}".format(self.hostname))
+napalm.base.exceptions.ConnectionException: Cannot connect to 10.91.254.52
+
+2023-02-02 16:45:14,101 -  nornir.core -     INFO -        run() - Running task 'napalm_get' with args {'getters': ['get_interfaces_ip']} on 2 hosts
+2023-02-02 16:45:21,250 -  nornir.core -     INFO -        run() - Running task 'napalm_get' with args {'getters': ['get_interfaces_ip']} on 2 hosts
+2023-02-02 16:48:04,764 -  nornir.core -     INFO -        run() - Running task 'Настройка коммутаторов' with args {} on 2 hosts
+2023-02-02 16:48:04,817 - nornir.core.task -    ERROR -      start() - Host 'SW-PLGN-1': task '2 шаг. 1: Получаем шаблон конфигурации интерфейсов' failed with traceback:
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/nornir_jinja2/plugins/tasks/template_file.py", line 43, in template_file
+    text = t.render(host=task.host, **kwargs)
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/jinja2/environment.py", line 1301, in render
+    self.environment.handle_exception()
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/jinja2/environment.py", line 936, in handle_exception
+    raise rewrite_traceback_stack(source=source)
+  File "templates/cisco_ios_interface.template", line 1, in top-level template code
+    {% for i in host.interface_list %}
+jinja2.exceptions.UndefinedError: 'nornir.core.inventory.Host object' has no attribute 'interface_list'
+
+2023-02-02 16:48:04,818 - nornir.core.task -    ERROR -      start() - Host 'SW-PLGN-2': task '2 шаг. 1: Получаем шаблон конфигурации интерфейсов' failed with traceback:
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/nornir_jinja2/plugins/tasks/template_file.py", line 43, in template_file
+    text = t.render(host=task.host, **kwargs)
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/jinja2/environment.py", line 1301, in render
+    self.environment.handle_exception()
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/jinja2/environment.py", line 936, in handle_exception
+    raise rewrite_traceback_stack(source=source)
+  File "templates/cisco_ios_interface.template", line 1, in top-level template code
+    {% for i in host.interface_list %}
+jinja2.exceptions.UndefinedError: 'nornir.core.inventory.Host object' has no attribute 'interface_list'
+
+2023-02-02 16:48:04,819 - nornir.core.task -    ERROR -      start() - Host 'SW-PLGN-1': task 'Настройка коммутаторов' failed with traceback:
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/var/folders/9k/hzppltf9457f5jb13jkn56340000gq/T/ipykernel_45489/668834791.py", line 4, in config_switches
+    ios_interface_template = task.run(
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/nornir/core/task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: 2 шаг. 1: Получаем шаблон конфигурации интерфейсов (failed)
+
+
+2023-02-02 16:48:04,819 - nornir.core.task -    ERROR -      start() - Host 'SW-PLGN-2': task 'Настройка коммутаторов' failed with traceback:
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/var/folders/9k/hzppltf9457f5jb13jkn56340000gq/T/ipykernel_45489/668834791.py", line 4, in config_switches
+    ios_interface_template = task.run(
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/nornir/core/task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: 2 шаг. 1: Получаем шаблон конфигурации интерфейсов (failed)
+
+
+2023-02-02 16:50:01,026 -  nornir.core -     INFO -        run() - Running task 'Настройка коммутаторов' with args {} on 2 hosts
+2023-02-02 16:50:01,048 - nornir.core.task -    ERROR -      start() - Host 'SW-PLGN-1': task '2 шаг. 1: Получаем шаблон конфигурации интерфейсов' failed with traceback:
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/nornir_jinja2/plugins/tasks/template_file.py", line 43, in template_file
+    text = t.render(host=task.host, **kwargs)
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/jinja2/environment.py", line 1301, in render
+    self.environment.handle_exception()
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/jinja2/environment.py", line 936, in handle_exception
+    raise rewrite_traceback_stack(source=source)
+  File "templates/cisco_ios_interface.template", line 1, in top-level template code
+    {% for i in host.interface_list %}
+jinja2.exceptions.UndefinedError: 'nornir.core.inventory.Host object' has no attribute 'interface_list'
+
+2023-02-02 16:50:01,049 - nornir.core.task -    ERROR -      start() - Host 'SW-PLGN-1': task 'Настройка коммутаторов' failed with traceback:
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/var/folders/9k/hzppltf9457f5jb13jkn56340000gq/T/ipykernel_45489/668834791.py", line 4, in config_switches
+    ios_interface_template = task.run(
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/nornir/core/task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: 2 шаг. 1: Получаем шаблон конфигурации интерфейсов (failed)
+
+
+2023-02-02 16:50:01,057 - nornir.core.task -    ERROR -      start() - Host 'SW-PLGN-2': task '2 шаг. 1: Получаем шаблон конфигурации интерфейсов' failed with traceback:
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/nornir_jinja2/plugins/tasks/template_file.py", line 43, in template_file
+    text = t.render(host=task.host, **kwargs)
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/jinja2/environment.py", line 1301, in render
+    self.environment.handle_exception()
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/jinja2/environment.py", line 936, in handle_exception
+    raise rewrite_traceback_stack(source=source)
+  File "templates/cisco_ios_interface.template", line 1, in top-level template code
+    {% for i in host.interface_list %}
+jinja2.exceptions.UndefinedError: 'nornir.core.inventory.Host object' has no attribute 'interface_list'
+
+2023-02-02 16:50:01,057 - nornir.core.task -    ERROR -      start() - Host 'SW-PLGN-2': task 'Настройка коммутаторов' failed with traceback:
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/var/folders/9k/hzppltf9457f5jb13jkn56340000gq/T/ipykernel_45489/668834791.py", line 4, in config_switches
+    ios_interface_template = task.run(
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/nornir/core/task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: 2 шаг. 1: Получаем шаблон конфигурации интерфейсов (failed)
+
+
+2023-02-02 16:50:37,499 -  nornir.core -     INFO -        run() - Running task 'Настройка коммутаторов' with args {} on 2 hosts
+2023-02-02 16:50:44,470 -  nornir.core -     INFO -        run() - Running task 'Настройка коммутаторов' with args {} on 2 hosts
+2023-02-02 16:50:44,488 - nornir.core.task -    ERROR -      start() - Host 'SW-PLGN-2': task '2 шаг. 1: Получаем шаблон конфигурации интерфейсов' failed with traceback:
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/nornir_jinja2/plugins/tasks/template_file.py", line 43, in template_file
+    text = t.render(host=task.host, **kwargs)
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/jinja2/environment.py", line 1301, in render
+    self.environment.handle_exception()
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/jinja2/environment.py", line 936, in handle_exception
+    raise rewrite_traceback_stack(source=source)
+  File "templates/cisco_ios_interface.template", line 1, in top-level template code
+    {% for i in host.interface_list %}
+jinja2.exceptions.UndefinedError: 'nornir.core.inventory.Host object' has no attribute 'interface_list'
+
+2023-02-02 16:50:44,488 - nornir.core.task -    ERROR -      start() - Host 'SW-PLGN-2': task 'Настройка коммутаторов' failed with traceback:
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/var/folders/9k/hzppltf9457f5jb13jkn56340000gq/T/ipykernel_45489/668834791.py", line 4, in config_switches
+    ios_interface_template = task.run(
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/nornir/core/task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: 2 шаг. 1: Получаем шаблон конфигурации интерфейсов (failed)
+
+
+2023-02-02 16:50:44,489 - nornir.core.task -    ERROR -      start() - Host 'SW-PLGN-1': task '2 шаг. 1: Получаем шаблон конфигурации интерфейсов' failed with traceback:
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/nornir_jinja2/plugins/tasks/template_file.py", line 43, in template_file
+    text = t.render(host=task.host, **kwargs)
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/jinja2/environment.py", line 1301, in render
+    self.environment.handle_exception()
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/jinja2/environment.py", line 936, in handle_exception
+    raise rewrite_traceback_stack(source=source)
+  File "templates/cisco_ios_interface.template", line 1, in top-level template code
+    {% for i in host.interface_list %}
+jinja2.exceptions.UndefinedError: 'nornir.core.inventory.Host object' has no attribute 'interface_list'
+
+2023-02-02 16:50:44,489 - nornir.core.task -    ERROR -      start() - Host 'SW-PLGN-1': task 'Настройка коммутаторов' failed with traceback:
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/var/folders/9k/hzppltf9457f5jb13jkn56340000gq/T/ipykernel_45489/668834791.py", line 4, in config_switches
+    ios_interface_template = task.run(
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/nornir/core/task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: 2 шаг. 1: Получаем шаблон конфигурации интерфейсов (failed)
+
+
+2023-02-02 16:52:17,168 -  nornir.core -     INFO -        run() - Running task 'Настройка коммутаторов' with args {} on 2 hosts
+2023-02-02 16:52:17,185 - nornir.core.task -    ERROR -      start() - Host 'SW-PLGN-1': task '2 шаг. 1: Получаем шаблон конфигурации интерфейсов' failed with traceback:
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/nornir_jinja2/plugins/tasks/template_file.py", line 43, in template_file
+    text = t.render(host=task.host, **kwargs)
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/jinja2/environment.py", line 1301, in render
+    self.environment.handle_exception()
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/jinja2/environment.py", line 936, in handle_exception
+    raise rewrite_traceback_stack(source=source)
+  File "templates/cisco_ios_interface.template", line 1, in top-level template code
+    {% for i in host.interface_list %}
+jinja2.exceptions.UndefinedError: 'nornir.core.inventory.Host object' has no attribute 'interface_list'
+
+2023-02-02 16:52:17,185 - nornir.core.task -    ERROR -      start() - Host 'SW-PLGN-2': task '2 шаг. 1: Получаем шаблон конфигурации интерфейсов' failed with traceback:
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/nornir_jinja2/plugins/tasks/template_file.py", line 43, in template_file
+    text = t.render(host=task.host, **kwargs)
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/jinja2/environment.py", line 1301, in render
+    self.environment.handle_exception()
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/jinja2/environment.py", line 936, in handle_exception
+    raise rewrite_traceback_stack(source=source)
+  File "templates/cisco_ios_interface.template", line 1, in top-level template code
+    {% for i in host.interface_list %}
+jinja2.exceptions.UndefinedError: 'nornir.core.inventory.Host object' has no attribute 'interface_list'
+
+2023-02-02 16:52:17,186 - nornir.core.task -    ERROR -      start() - Host 'SW-PLGN-1': task 'Настройка коммутаторов' failed with traceback:
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/var/folders/9k/hzppltf9457f5jb13jkn56340000gq/T/ipykernel_45489/668834791.py", line 4, in config_switches
+    ios_interface_template = task.run(
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/nornir/core/task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: 2 шаг. 1: Получаем шаблон конфигурации интерфейсов (failed)
+
+
+2023-02-02 16:52:17,186 - nornir.core.task -    ERROR -      start() - Host 'SW-PLGN-2': task 'Настройка коммутаторов' failed with traceback:
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/var/folders/9k/hzppltf9457f5jb13jkn56340000gq/T/ipykernel_45489/668834791.py", line 4, in config_switches
+    ios_interface_template = task.run(
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/nornir/core/task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: 2 шаг. 1: Получаем шаблон конфигурации интерфейсов (failed)
+
+
+2023-02-02 16:52:44,749 -  nornir.core -     INFO -        run() - Running task 'Настройка коммутаторов' with args {} on 2 hosts
+2023-02-02 16:54:24,147 - nornir.core.task -    ERROR -      start() - Host 'SW-PLGN-1': task '2 шаг. 1: Получаем шаблон конфигурации интерфейсов' failed with traceback:
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/nornir_jinja2/plugins/tasks/template_file.py", line 43, in template_file
+    text = t.render(host=task.host, **kwargs)
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/jinja2/environment.py", line 1301, in render
+    self.environment.handle_exception()
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/jinja2/environment.py", line 936, in handle_exception
+    raise rewrite_traceback_stack(source=source)
+  File "templates/cisco_ios_interface.template", line 1, in top-level template code
+    {% for i in host.interface_list %}
+jinja2.exceptions.UndefinedError: 'nornir.core.inventory.Host object' has no attribute 'interface_list'
+
+2023-02-02 16:54:45,258 - nornir.core.task -    ERROR -      start() - Host 'SW-PLGN-1': task 'Настройка коммутаторов' failed with traceback:
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/var/folders/9k/hzppltf9457f5jb13jkn56340000gq/T/ipykernel_45489/668834791.py", line 4, in config_switches
+    ios_interface_template = task.run(
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/nornir/core/task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: 2 шаг. 1: Получаем шаблон конфигурации интерфейсов (failed)
+
+
+2023-02-02 16:55:15,987 - nornir.core.task -    ERROR -      start() - Host 'SW-PLGN-2': task '2 шаг. 1: Получаем шаблон конфигурации интерфейсов' failed with traceback:
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/nornir_jinja2/plugins/tasks/template_file.py", line 43, in template_file
+    text = t.render(host=task.host, **kwargs)
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/jinja2/environment.py", line 1301, in render
+    self.environment.handle_exception()
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/jinja2/environment.py", line 936, in handle_exception
+    raise rewrite_traceback_stack(source=source)
+  File "templates/cisco_ios_interface.template", line 1, in top-level template code
+    {% for i in host.interface_list %}
+jinja2.exceptions.UndefinedError: 'nornir.core.inventory.Host object' has no attribute 'interface_list'
+
+2023-02-02 16:55:15,991 - nornir.core.task -    ERROR -      start() - Host 'SW-PLGN-2': task 'Настройка коммутаторов' failed with traceback:
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/var/folders/9k/hzppltf9457f5jb13jkn56340000gq/T/ipykernel_45489/668834791.py", line 4, in config_switches
+    ios_interface_template = task.run(
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/nornir/core/task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: 2 шаг. 1: Получаем шаблон конфигурации интерфейсов (failed)
+
+
+2023-02-02 17:02:21,816 -  nornir.core -     INFO -        run() - Running task 'napalm_get' with args {'getters': ['facts']} on 2 hosts
+2023-02-03 08:12:28,103 -  nornir.core -     INFO -        run() - Running task 'napalm_get' with args {'getters': ['get_interfaces_ip']} on 2 hosts
+2023-02-03 08:14:20,841 -  nornir.core -     INFO -        run() - Running task 'napalm_get' with args {'getters': ['get_interfaces_ip']} on 2 hosts
+2023-02-03 08:15:35,036 -  nornir.core -     INFO -        run() - Running task 'napalm_get' with args {'getters': ['get_interfaces_ip']} on 2 hosts
+2023-02-03 08:15:37,668 -  nornir.core -     INFO -        run() - Running task 'napalm_get' with args {'getters': ['get_interfaces_ip']} on 2 hosts
+2023-02-03 08:15:51,506 -  nornir.core -     INFO -        run() - Running task 'napalm_get' with args {'getters': ['get_interfaces_ip']} on 2 hosts
+2023-02-03 08:16:02,684 -  nornir.core -     INFO -        run() - Running task 'napalm_get' with args {'getters': ['get_interfaces_ip']} on 2 hosts
+2023-02-03 08:24:15,404 -  nornir.core -     INFO -        run() - Running task 'napalm_get' with args {'getters': ['get_interfaces_ip']} on 2 hosts
+2023-02-03 08:25:45,881 -  nornir.core -     INFO -        run() - Running task 'napalm_get' with args {'getters': ['get_interfaces_ip']} on 2 hosts
+2023-02-03 08:26:17,734 -  nornir.core -     INFO -        run() - Running task 'napalm_get' with args {'getters': ['get_interfaces_ip']} on 2 hosts
+2023-02-03 08:27:04,398 -  nornir.core -     INFO -        run() - Running task 'napalm_get' with args {'getters': ['get_interfaces_ip']} on 2 hosts
+2023-02-03 08:27:11,967 -  nornir.core -     INFO -        run() - Running task 'napalm_get' with args {'getters': ['get_interfaces_ip']} on 2 hosts
+2023-02-03 08:27:30,134 -  nornir.core -     INFO -        run() - Running task 'napalm_get' with args {'getters': ['get_interfaces_ip']} on 2 hosts
+2023-02-03 08:27:41,228 -  nornir.core -     INFO -        run() - Running task 'napalm_get' with args {'getters': ['get_interfaces_ip']} on 2 hosts
+2023-02-03 08:27:50,380 -  nornir.core -     INFO -        run() - Running task 'napalm_get' with args {'getters': ['get_interfaces_ip']} on 2 hosts
+2023-02-03 08:27:58,696 -  nornir.core -     INFO -        run() - Running task 'napalm_get' with args {'getters': ['get_interfaces_ip']} on 2 hosts
+>>>>>>> 8fc6d627b49989f94362908a7104d41d4ea859ac

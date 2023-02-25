@@ -1,0 +1,30 @@
+[
+{
+    "name": "Border Router",
+    "slug": "border_router",
+    "color": "327fa8",
+    "vm_role": false,
+    "description": "Маршрутизатор периметра"
+  },
+  {
+    "name": "Access Switch",
+    "slug": "access_switch",
+    "color": "32a871",
+    "vm_role": false,
+    "description": "Коммутатор доступа"
+  },
+  {
+    "name": "Wireless AP",
+    "slug": "wireless_ap",
+    "color": "a86332",
+    "vm_role": false,
+    "description": "Беспроводная точка доступа"
+  },
+  {
+    "name": "UPS",
+    "slug": "ups",
+    "color": "a86322",
+    "vm_role": false,
+    "description": "Источник бесперебойного питания"
+  }
+]

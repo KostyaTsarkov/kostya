@@ -1,0 +1,950 @@
+{
+	"info": {
+		"_postman_id": "b76308e2-e405-40e6-aedd-37ba4cc9916e",
+		"name": "NetBox API Collection",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "22983964"
+	},
+	"item": [
+		{
+			"name": "DCIM",
+			"item": [
+				{
+					"name": "Sites",
+					"item": [
+						{
+							"name": "Get Sites",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "https://{{netboxURL}}/api/dcim/sites/",
+									"protocol": "https",
+									"host": [
+										"{{netboxURL}}"
+									],
+									"path": [
+										"api",
+										"dcim",
+										"sites",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Create New Sites",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Response is OK\", function () {",
+											"    pm.response.to.have.status(201);",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "Authorization",
+										"value": "Token  2b59600a0a57a36dcb284290da61e5c68fd86bc2",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"name\": \"{{dcimSitesCreate_Name}}\",\n    \"slug\": \"{{dcimSitesCreate_Slug}}\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://{{netboxURL}}/api/dcim/sites/",
+									"protocol": "https",
+									"host": [
+										"{{netboxURL}}"
+									],
+									"path": [
+										"api",
+										"dcim",
+										"sites",
+										""
+									]
+								},
+								"description": "``` json\n{    \"name\": \"[[siteName]]\",    \"slug\": \"[[siteSlug]]\"}\n```"
+							},
+							"response": []
+						},
+						{
+							"name": "Update Existing Sites",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "[\n{\n\"id\": 38,    \n\"name\": \"Frank's House\",\n\"slug\": \"frank-s-house\",\n\"status\": \"planned\"\n}\n]",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://{{netboxURL}}/api/dcim/sites/",
+									"protocol": "https",
+									"host": [
+										"{{netboxURL}}"
+									],
+									"path": [
+										"api",
+										"dcim",
+										"sites",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Update Existing Sites (Partial)",
+							"request": {
+								"method": "PATCH",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://{{netboxURL}}/api/dcim/sites/",
+									"protocol": "https",
+									"host": [
+										"{{netboxURL}}"
+									],
+									"path": [
+										"api",
+										"dcim",
+										"sites",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Delete Existing Sites",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://{{netboxURL}}/api/dcim/sites/",
+									"protocol": "https",
+									"host": [
+										"{{netboxURL}}"
+									],
+									"path": [
+										"api",
+										"dcim",
+										"sites",
+										""
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Devices",
+					"item": [
+						{
+							"name": "Get Devices",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "https://{{netboxURL}}/api/dcim/devices/",
+									"protocol": "https",
+									"host": [
+										"{{netboxURL}}"
+									],
+									"path": [
+										"api",
+										"dcim",
+										"devices",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Create New Devices",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "Authorization",
+										"value": "Token  2b59600a0a57a36dcb284290da61e5c68fd86bc2",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"name\": \"[[deviceName]]\",\n    \"device_type\": [[deviceTypeID]],\n    \"device_role\": [[deviceRoleID]],\n    \"site\": [[siteID]]\n  }",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://{{netboxURL}}/api/dcim/devices/",
+									"protocol": "https",
+									"host": [
+										"{{netboxURL}}"
+									],
+									"path": [
+										"api",
+										"dcim",
+										"devices",
+										""
+									]
+								},
+								"description": "``` json\n{\n    \"name\": \"[[deviceName]]\",\n    \"device_type\": [[deviceTypeID]],\n    \"device_role\": [[deviceRoleID]],\n    \"site\": [[siteID]]\n  }\n\n```"
+							},
+							"response": []
+						},
+						{
+							"name": "Update Existing Devices",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "[\n{\n\"id\": 38,    \n\"name\": \"Frank's House\",\n\"slug\": \"frank-s-house\",\n\"status\": \"planned\"\n}\n]",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://{{netboxURL}}/api/dcim/devices/",
+									"protocol": "https",
+									"host": [
+										"{{netboxURL}}"
+									],
+									"path": [
+										"api",
+										"dcim",
+										"devices",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Update Existing Devices (Partial)",
+							"request": {
+								"method": "PATCH",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://{{netboxURL}}/api/dcim/devices/",
+									"protocol": "https",
+									"host": [
+										"{{netboxURL}}"
+									],
+									"path": [
+										"api",
+										"dcim",
+										"devices",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Delete Existing Devices",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://{{netboxURL}}/api/dcim/devices/",
+									"protocol": "https",
+									"host": [
+										"{{netboxURL}}"
+									],
+									"path": [
+										"api",
+										"dcim",
+										"devices",
+										""
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Manufacturers",
+					"item": [
+						{
+							"name": "Get Manufacturers",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "https://{{netboxURL}}/api/dcim/manufacturers/",
+									"protocol": "https",
+									"host": [
+										"{{netboxURL}}"
+									],
+									"path": [
+										"api",
+										"dcim",
+										"manufacturers",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Create New Manufacturers",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Response is OK\", function () {",
+											"    pm.response.to.have.status(201);",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "Authorization",
+										"value": "Token  2b59600a0a57a36dcb284290da61e5c68fd86bc2",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"name\": \"{{manufacturerName}}\",\n    \"slug\": \"{{manufacturerSlug}}\",\n    \"description\": \"{{manufacturerDescription}}\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://{{netboxURL}}/api/dcim/manufacturers/",
+									"protocol": "https",
+									"host": [
+										"{{netboxURL}}"
+									],
+									"path": [
+										"api",
+										"dcim",
+										"manufacturers",
+										""
+									]
+								},
+								"description": "``` json\n{\n    \"name\": \"[[deviceName]]\",\n    \"device_type\": [[deviceTypeID]],\n    \"device_role\": [[deviceRoleID]],\n    \"site\": [[siteID]]\n  }\n\n```"
+							},
+							"response": []
+						},
+						{
+							"name": "Create New Manufacturers Copy",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Response is OK\", function () {",
+											"    pm.response.to.have.status(200);",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "Authorization",
+										"value": "Token  2b59600a0a57a36dcb284290da61e5c68fd86bc2",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"name\": \"[[manufacturerName]]\",\n    \"slug\": \"[[manufacturerSlug]]\",\n    \"description\": \"[[manufacturerDescription]]\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://{{netboxURL}}/api/dcim/manufacturers/",
+									"protocol": "https",
+									"host": [
+										"{{netboxURL}}"
+									],
+									"path": [
+										"api",
+										"dcim",
+										"manufacturers",
+										""
+									]
+								},
+								"description": "``` json\n{\n    \"name\": \"[[deviceName]]\",\n    \"device_type\": [[deviceTypeID]],\n    \"device_role\": [[deviceRoleID]],\n    \"site\": [[siteID]]\n  }\n\n```"
+							},
+							"response": []
+						},
+						{
+							"name": "Update Existing Manufacturers",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "[\n{\n\"id\": 38,    \n\"name\": \"Frank's House\",\n\"slug\": \"frank-s-house\",\n\"status\": \"planned\"\n}\n]",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://{{netboxURL}}/api/dcim/manufacturers/",
+									"protocol": "https",
+									"host": [
+										"{{netboxURL}}"
+									],
+									"path": [
+										"api",
+										"dcim",
+										"manufacturers",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Update Existing Manufacturers (Partial)",
+							"request": {
+								"method": "PATCH",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://{{netboxURL}}/api/dcim/manufacturers/",
+									"protocol": "https",
+									"host": [
+										"{{netboxURL}}"
+									],
+									"path": [
+										"api",
+										"dcim",
+										"manufacturers",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Delete Existing Manufacturers",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://{{netboxURL}}/api/dcim/manufacturers/",
+									"protocol": "https",
+									"host": [
+										"{{netboxURL}}"
+									],
+									"path": [
+										"api",
+										"dcim",
+										"manufacturers",
+										""
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Circuits",
+			"item": [
+				{
+					"name": "Circuits",
+					"item": [
+						{
+							"name": "Get Circuits",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "https://{{netboxURL}}/api/circuits/circuits/",
+									"protocol": "https",
+									"host": [
+										"{{netboxURL}}"
+									],
+									"path": [
+										"api",
+										"circuits",
+										"circuits",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Create New Circuits",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "Authorization",
+										"value": "Token  2b59600a0a57a36dcb284290da61e5c68fd86bc2",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"name\": \"North America Headquarters\",\n    \"slug\": \"north-america-headquarters\",\n    \"status\": \"active\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://{{netboxURL}}/api/circuits/circuits/",
+									"protocol": "https",
+									"host": [
+										"{{netboxURL}}"
+									],
+									"path": [
+										"api",
+										"circuits",
+										"circuits",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Update Existing Circuits",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "[\n{\n\"id\": 38,    \n\"name\": \"Frank's House\",\n\"slug\": \"frank-s-house\",\n\"status\": \"planned\"\n}\n]",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://{{netboxURL}}/api/circuits/circuits/",
+									"protocol": "https",
+									"host": [
+										"{{netboxURL}}"
+									],
+									"path": [
+										"api",
+										"circuits",
+										"circuits",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Update Existing Circuits (Partial)",
+							"request": {
+								"method": "PATCH",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://{{netboxURL}}/api/circuits/circuits/",
+									"protocol": "https",
+									"host": [
+										"{{netboxURL}}"
+									],
+									"path": [
+										"api",
+										"circuits",
+										"circuits",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Delete Existing Circuits",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://{{netboxURL}}/api/circuits/circuits/",
+									"protocol": "https",
+									"host": [
+										"{{netboxURL}}"
+									],
+									"path": [
+										"api",
+										"circuits",
+										"circuits",
+										""
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "IPAM",
+			"item": [
+				{
+					"name": "Prefixes",
+					"item": [
+						{
+							"name": "Get Prefixes",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "https://{{netboxURL}}/api/ipam/prefixes/",
+									"protocol": "https",
+									"host": [
+										"{{netboxURL}}"
+									],
+									"path": [
+										"api",
+										"ipam",
+										"prefixes",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Create New Prefixes",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "Authorization",
+										"value": "Token  2b59600a0a57a36dcb284290da61e5c68fd86bc2",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"name\": \"North America Headquarters\",\n    \"slug\": \"north-america-headquarters\",\n    \"status\": \"active\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://{{netboxURL}}/api/ipam/prefixes/",
+									"protocol": "https",
+									"host": [
+										"{{netboxURL}}"
+									],
+									"path": [
+										"api",
+										"ipam",
+										"prefixes",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Update Existing Prefixes",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "[\n{\n\"id\": 38,    \n\"name\": \"Frank's House\",\n\"slug\": \"frank-s-house\",\n\"status\": \"planned\"\n}\n]",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://{{netboxURL}}/api/ipam/prefixes/",
+									"protocol": "https",
+									"host": [
+										"{{netboxURL}}"
+									],
+									"path": [
+										"api",
+										"ipam",
+										"prefixes",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Update Existing Prefixes (Partial)",
+							"request": {
+								"method": "PATCH",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://{{netboxURL}}/api/ipam/prefixes/",
+									"protocol": "https",
+									"host": [
+										"{{netboxURL}}"
+									],
+									"path": [
+										"api",
+										"ipam",
+										"prefixes",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Delete Existing Circuits",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://{{netboxURL}}/api/ipam/prefixes/",
+									"protocol": "https",
+									"host": [
+										"{{netboxURL}}"
+									],
+									"path": [
+										"api",
+										"ipam",
+										"prefixes",
+										""
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				}
+			]
+		}
+	],
+	"auth": {
+		"type": "apikey",
+		"apikey": [
+			{
+				"key": "key",
+				"value": "Authorization",
+				"type": "string"
+			},
+			{
+				"key": "value",
+				"value": "Token {{netboxToken}}",
+				"type": "string"
+			}
+		]
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "netboxToken",
+			"value": "dc5b766afda60e647a9fcc384c736a9689da8618"
+		},
+		{
+			"key": "netboxURL",
+			"value": "10.30.1.226",
+			"type": "string"
+		},
+		{
+			"key": "protocol",
+			"value": "http",
+			"type": "string"
+		},
+		{
+			"key": "port",
+			"value": "8000",
+			"type": "string"
+		}
+	]
+}
