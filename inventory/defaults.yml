@@ -2,3 +2,8 @@
 platform: cisco_ios
 username: sa
 password: Qwerty11
+connection_options:
+    netmiko:
+      extras:
+        secret: Qwerty11
+transport: ssh
