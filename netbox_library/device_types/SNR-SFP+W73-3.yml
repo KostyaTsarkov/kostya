@@ -1,0 +1,8 @@
+---
+manufacturer: SNR
+model: SFP+ WDM 10GBASE-LR/LW Tx/Rx - 1270/1330
+part_number: SNR-SFP+W73-3
+interfaces:
+  - name: '{module}-1'
+    type: 10gbase-x-sfpp
+    mgmt_only: false
