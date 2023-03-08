@@ -1,7 +1,34 @@
----
-inventory:
-    plugin: SimpleInventory
-    options:
-        host_file: "./inventory/hosts.yml"
-        group_file: "./inventory/groups.yml"
-        defaults_file: "./inventory/defaults.yml"
+########################
+#### Global options ####
+########################
+
+## Be more verbose ##
+verbose: None
+
+## Disable ssl warnings in urllib3 ##
+disable_ssl_warnings: False
+
+
+################
+#### Netbox ####
+################
+
+netbox:
+  # Netbox API URL
+  url: "http://10.30.1.226:8000/api"
+  # username: "admin"
+  # password: "admin"
+  # or to use a token instead
+  token: "dc5b766afda60e647a9fcc384c736a9689da8618"
+
+
+##########################
+#### Interconnections ####
+##########################
+
+# On some devices, LLDP will expose the host FQDN. If devices are stored on
+# Netbox only by their hostname, the interconnection process will not be able
+# to find them. Fill this list to strip the domain name from exposed names.
+remove_domains:
+  - "ventprom.com"
+  - "plgn.com"

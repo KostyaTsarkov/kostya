@@ -1,0 +1,11 @@
+---
+manufacturer: Mellanox
+model: ConnectX-3 Pro
+part_number: ConnectX-3 Pro
+interfaces:
+  - name: 10ge{module}-1
+    type: 10gbase-x-sfpp
+    mgmt_only: false
+  - name: 10ge{module}-2
+    type: 10gbase-x-sfpp
+    mgmt_only: false
