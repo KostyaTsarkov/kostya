@@ -1,0 +1,4 @@
+host {{ device_name }} {
+  hardware ethernet {{ mac_address }};
+  fixed-address {{ ip_address }};
+}

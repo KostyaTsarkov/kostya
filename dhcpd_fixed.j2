@@ -1,0 +1,44 @@
+{% for device_all_ips in get_all_ip.results %}{# f-002: list all IPs from all devices #}
+{% for device_ip in device_all_ips.json.results %}{# f-003: list all IPs per device #}
+{% if device_ip.address | ipaddr('network') == ip_prefix.prefix | ipaddr('network') %}{# i-002: looking for interfaces matching OOB subnet #}
+{% for device_all_interfaces in get_all_interfaces.results %}{# f-004: list all interfaces from all devices #}
+{% for device_interface in device_all_interfaces.json.results %}{# f-005: list all interfaces per device #}
+{% if device_ip.interface.device.name == device_interface.device.name and device_interface.mac_address != None %}{# i-003: checking there is MAC provided #}
+host {{ device_ip.interface.device.name }} {
+   hardware ethernet {{ device_interface.mac_address}};
+   fixed-address {{ device_ip.address | ipaddr('address') }};
+}
+
+
+
+
+
+
+# {{ ip_prefix.description }} // fixed lease
+{% for device_all_ips in get_all_ip.results %}{# f-002: list all IPs from all devices #}
+    {% for device_ip in device_all_ips.json.results %}{# f-003: list all IPs per device #}
+        {% if device_ip.address | ipaddr('network') == ip_prefix.prefix | ipaddr('network') %}{# i-002: looking for interfaces matching OOB subnet #}
+            {% for device_all_interfaces in get_all_interfaces.results %}{# f-004: list all interfaces from all devices #}
+                {% for device_interface in device_all_interfaces.json.results %}{# f-005: list all interfaces per device #}
+                    {% if device_ip.interface.device.name == device_interface.device.name and device_interface.mac_address != None %}{# i-003: checking there is MAC provided #}
+                        host {{ device_ip.interface.device.name }} {
+                        hardware ethernet {{ device_interface.mac_address}};
+                        fixed-address {{ device_ip.address | ipaddr('address') }};
+                        option host-name "{{ device_ip.interface.device.name }}";
+                        {# Adding vendor-specific entries for ZTP #}
+                        {% for device in get_devices.json.results %}{# f-006: loopling all devices #}
+                            {% if device_ip.interface.device.name == device.name %}{# i-004: matching proper device #}
+                                {% if device.platform.slug == 'cumulus-linux' %}{# i-005: adding vendor-specific stuff #}
+                                option cumulus-provision-url "http://{% for d_in in get_devices.json.results %}{% if d_in.site.slug == 'bln' and 'infra-srv' in d_in.name %}{{ d_in.primary_ip4.address | ipaddr('address') }}{% endif %}{% endfor %}/cumulus-ztp.sh";
+                                {% elif device.platform.slug == 'arista-eos' %}{# i-005: adding vendor-specific stuff #}
+                                option bootfile-name "http://{% for d_in in get_devices.json.results %}{% if d_in.site.slug == 'bln' and 'infra-srv' in d_in.name %}{{ d_in.primary_ip4.address | ipaddr('address') }}{% endif %}{% endfor %}/bootstrap";
+                                {% endif %}{# i-005: adding vendor-specific stuff #}
+                            {% endif %}{# i-004: matching proper device #}
+                        {% endfor %}{# f-006: loopling all devices #}
+                        }
+                    {% endif %}{# i-003: checking there is MAC provided #}
+                {% endfor %}{# f-005: list all interfaces per device #}
+            {% endfor %}{# f-004: list all interfaces from all devices #}
+        {% endif %}{# i-002: looking for interfaces matching OOB subnet #}
+    {% endfor %}{# f-003: list all IPs per device #}
+{% endfor %}{# f-002: list all IPs from all devices #}
