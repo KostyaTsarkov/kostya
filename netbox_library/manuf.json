@@ -1,5 +1,7 @@
 {
     "name": "Ubiquiti",
     "slug": "ubiquiti",
-    "description": "Wireless devices"
-}
+    "vm_role": false,
+    "description": "Wireless devices",
+    "custom_fields": {}
+  }
