@@ -1,0 +1,20 @@
+---
+site: DC
+status: Active
+manufacturer: Ippon
+device_role: UPS
+device_type: Innova RT II 10000
+model: Innova RT II 10000
+slug: smart-ups-rt-10000va
+part_number: 1005633
+u_height: 5
+is_full_depth: true
+comments: однофазный онлайн источник бесперебойного питания с синусоидальной формой выходного напряжения
+console-ports:
+  - name: Serial
+    type: de-9
+power-outlets:
+  - name: Output 1
+    type: c13
+  - name: Output 2
+    type: c13
