@@ -1,0 +1,8 @@
+---
+manufacturer: SNR
+model: SFP+ WDM 10GBASE-LR/LW
+part_number: SNR-SFP+W37-3
+interfaces:
+  - name: '{module}-1'
+    type: 10gbase-x-sfpp
+    mgmt_only: false
