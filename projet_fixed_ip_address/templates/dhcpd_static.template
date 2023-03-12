@@ -1,4 +1,5 @@
 host {{ device_name }} {
+  option host-name {{ host_name }};
   hardware ethernet {{ mac_address }};
   fixed-address {{ ip_address }};
 }
