@@ -1,5 +1,6 @@
 from flask import Flask
 from nb_ipam_api import manage_interface_ip_address
+
 # Create a Flask instance
 app = Flask(__name__)
 app.add_url_rule("/api/fixed_ip",

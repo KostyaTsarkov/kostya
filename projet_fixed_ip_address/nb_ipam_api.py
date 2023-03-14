@@ -1,36 +1,10 @@
 
 from flask import request, Response
-from nornir import InitNornir
-import pynetbox
+from config import netbox_api
 import ipaddress
 from jinja2 import Environment, FileSystemLoader
 import macaddress
 from pydhcpdparser import parser
-
-# Инициализируем nornir
-
-# Init Nornir
-nr = InitNornir(
-    inventory={
-        "plugin": "NetBoxInventory2",
-        "options": {
-            "nb_url": "http://10.30.1.101:8000",
-            "nb_token": "dc5b766afda60e647a9fcc384c736a9689da8618",
-            "group_file": "./inventory/groups.yml",
-            "defaults_file": "./inventory/defaults.yml",
-        },
-    },
-)
-
-# Инициализируем pynetbox
-
-# Init pynetbox
-nb_url = nr.config.inventory.options['nb_url']
-nb_token = nr.config.inventory.options['nb_token']
-nb = pynetbox.api(
-    nb_url,
-    token=nb_token
-)
 
 # Создаем функцию проверки None
 
@@ -47,11 +21,11 @@ def configure_interface_ipv4_address(netbox_ip_address):
     """
 
     ip4_address = format(ipaddress.IPv4Interface(netbox_ip_address).ip)
-    ip4_netmask = format(ipaddress.IPv4Interface(netbox_ip_address).netmask)
-    ip4_network = format(ipaddress.IPv4Interface(netbox_ip_address).network)
-    ip4_prefix = format(ipaddress.IPv4Network(ip4_network).prefixlen)
-    ip4_broadcast = format(ipaddress.IPv4Network(ip4_network).broadcast_address)
-    ip4_gateway = format(list(ipaddress.IPv4Network(ip4_network).hosts())[-1])
+    #ip4_netmask = format(ipaddress.IPv4Interface(netbox_ip_address).netmask)
+    #ip4_network = format(ipaddress.IPv4Interface(netbox_ip_address).network)
+    #ip4_prefix = format(ipaddress.IPv4Network(ip4_network).prefixlen)
+    #ip4_broadcast = format(ipaddress.IPv4Network(ip4_network).broadcast_address)
+    #ip4_gateway = format(list(ipaddress.IPv4Network(ip4_network).hosts())[-1])
 
     return(ip4_address)
 
@@ -251,7 +225,7 @@ def update_ip_address(netbox_interface,snapshot_json,netbox_ip_address,netbox_ad
             old_interface_id = snapshot_json["prechange"]["assigned_object_id"]
 
             if old_interface_id != netbox_interface.id: # если старое назначение принадлежит другому интерфейсу
-                old_interface_data = nb.dcim.interfaces.get(old_interface_id) # измененияем конфигурацию перед настройкой нового устройства
+                old_interface_data = netbox_api.dcim.interfaces.get(old_interface_id) # измененияем конфигурацию перед настройкой нового устройства
                 if not old_interface_data.mgmt_only: # если интерфейс не используется для управления! 
                     delete_ip_address(  netbox_interface,
                                         netbox_ip_address,
@@ -277,7 +251,7 @@ def update_ip_address(netbox_interface,snapshot_json,netbox_ip_address,netbox_ad
 
 def manage_interface_ip_address():
         
-    get_device_interface = nb.dcim.interfaces.get(request.json["data"]["assigned_object_id"])    
+    get_device_interface = netbox_api.dcim.interfaces.get(request.json["data"]["assigned_object_id"])    
     get_device_ips = request.json["data"]["address"]
     get_address_family = request.json["data"]["family"]["value"]
 
