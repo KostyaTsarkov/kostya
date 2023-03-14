@@ -4,7 +4,6 @@ from nornir import InitNornir
 import pynetbox
 import ipaddress
 from jinja2 import Environment, FileSystemLoader
-import json
 import macaddress
 from pydhcpdparser import parser
 
@@ -186,6 +185,8 @@ def delete_ip_address(netbox_interface,netbox_ip_address,netbox_address_family):
     :param netbox_address_family: Версия IP (4|6)
     :return: None
     """
+    ip_address = ''
+    interface = ''
     
     print(f"Removing address {netbox_ip_address} "
           f"from interface '{netbox_interface.name}' "
@@ -213,7 +214,9 @@ def create_ip_address(netbox_interface,netbox_ip_address,netbox_address_family):
     :param netbox_address_family: Версия IP (4|6)
     :return: None
     """
-
+    ip_address = ''
+    interface = ''
+    
     print(f"Assigning address {netbox_ip_address} "
           f"to interface '{netbox_interface.name}' "
           f"on device '{netbox_interface.device.name}'...")
@@ -239,7 +242,9 @@ def update_ip_address(netbox_interface,snapshot_json,netbox_ip_address,netbox_ad
     :param netbox_address_family: Версия IP (4|6)
     :return: None
     """
-
+    ip_address = ''
+    interface = ''
+    
     print("Updating IP address...")
     if snapshot_json:
         try:
@@ -272,7 +277,6 @@ def update_ip_address(netbox_interface,snapshot_json,netbox_ip_address,netbox_ad
 
 def manage_interface_ip_address():
         
-    #get_device = request.json["data"]["assigned_object"]["device"]["name"]
     get_device_interface = nb.dcim.interfaces.get(request.json["data"]["assigned_object_id"])    
     get_device_ips = request.json["data"]["address"]
     get_address_family = request.json["data"]["family"]["value"]
@@ -303,7 +307,7 @@ def manage_interface_ip_address():
     
     return Response(status=204)
 
-# Создаем экземпляр Flask
+""" # Создаем экземпляр Flask
 
 # Create a Flask instance
 app = Flask(__name__)
@@ -316,6 +320,4 @@ if __name__ == "__main__":
     # debugging for the app and listen on every IP address on the specified
     # port.
     #app.debug = True
-    app.run(host="0.0.0.0", port=8080)
-
-
+    app.run(host="0.0.0.0", port=8080) """
