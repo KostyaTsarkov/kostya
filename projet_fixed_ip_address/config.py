@@ -33,4 +33,5 @@ def create_netbox_api():
     )
     return nb
 
+nornir_session = create_nornir_session()
 netbox_api = create_netbox_api()
