@@ -1,0 +1,40 @@
+---
+SW-1:
+  groups:
+    - cisco_ios_l2
+  hostname: 10.30.1.105
+  connection_options:
+    netmiko:
+      extras:
+        secret:
+  platform: ios
+  transport: ssh
+  data:
+    site: plgn
+    type: l2
+    interface_list:
+      - interface_name: vlan1
+        ipaddr: 10.30.252.11
+        netmask: 255.255.255.0
+        descr: management
+    src_interface: vlan1
+    vty_num: 4
+
+SW-2:
+  groups:
+    - cisco_ios_l2
+  hostname: 10.30.1.108
+  connection_options:
+    netmiko:
+      extras:
+        secret:
+  platform: ios
+  transport: ssh
+  data:
+    interface_list:
+      - interface_name: vlan1 
+        ipaddr: 10.30.252.12
+        netmask: 255.255.255.0
+        descr: management
+    src_interface: vlan1
+    vty_num: 4

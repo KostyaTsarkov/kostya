@@ -131,7 +131,7 @@ def dhcpd_config_file(j2_ip_address,j2_interface,event='None'):
         if confiugure_interface_mac_address(j2_interface.mac_address) != None:
 
             templates_path = "./templates/"
-            environment = Environment(loader=FileSystemLoader(templates_path))
+            environment = Environment(loader=FileSystemLoader(templates_path)) # загружаем шаблон для заполнения
             template = environment.get_template("dhcpd_static.template")
 
             content = template.render( # заполняем шаблон

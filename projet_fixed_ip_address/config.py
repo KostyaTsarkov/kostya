@@ -14,6 +14,8 @@ def create_nornir_session():
             "options": {
                 "nb_url": netbox_url,
                 "nb_token": netbox_token,
+                "flatten_custom_fields": True,
+                "include_vms": True,
                 "group_file": "./inventory/groups.yml",
                 "defaults_file": "./inventory/defaults.yml",
             },
@@ -33,5 +35,4 @@ def create_netbox_api():
     )
     return nb
 
-nornir_session = create_nornir_session()
 netbox_api = create_netbox_api()
