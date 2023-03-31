@@ -13018,3 +13018,1852 @@ napalm.base.exceptions.ConnectionException: Cannot connect to 10.30.1.105
 2023-03-19 12:59:44,933 -  nornir.core -     INFO -        run() - Running task 'napalm_get' with args {'getters': ['get_interfaces']} on 1 hosts
 2023-03-19 12:59:45,921 -  nornir.core -     INFO -        run() - Running task 'netmiko_send_config' with args {'config_commands': ['interface Ethernet0/3', '    description T-IVANOVII', '    switchport access vlan 310', '    switchport mode access', '    no shutdown']} on 1 hosts
 2023-03-19 12:59:47,064 -  nornir.core -     INFO -        run() - Running task 'close_connections_task' with args {} on 1 hosts
+2023-03-19 13:06:13,319 -  nornir.core -     INFO -        run() - Running task 'napalm_get' with args {'getters': ['get_interfaces']} on 1 hosts
+2023-03-19 13:06:14,275 -  nornir.core -     INFO -        run() - Running task 'netmiko_send_config' with args {'config_commands': ['interface Ethernet0/3', '    description T-IVANOVII', '    switchport access vlan 310', '    switchport mode access', '    no shutdown']} on 1 hosts
+2023-03-19 13:06:15,525 -  nornir.core -     INFO -        run() - Running task 'close_connections_task' with args {} on 1 hosts
+2023-03-19 21:20:14,131 -  nornir.core -     INFO -        run() - Running task 'napalm_get' with args {'getters': ['get_interfaces']} on 1 hosts
+2023-03-19 21:20:15,114 -  nornir.core -     INFO -        run() - Running task 'Configuration interface.../' with args {'config_commands': ['interface Ethernet0/3', '    description T-IVANOVII', '    switchport access vlan 310', '    switchport mode access', '    no shutdown']} on 1 hosts
+2023-03-19 21:20:16,114 -  nornir.core -     INFO -        run() - Running task 'close_connections_task' with args {} on 1 hosts
+2023-03-19 21:32:14,932 -  nornir.core -     INFO -        run() - Running task 'napalm_get' with args {'getters': ['get_interfaces']} on 1 hosts
+2023-03-19 21:32:15,884 -  nornir.core -     INFO -        run() - Running task 'Configuration interface.../' with args {'config_commands': ['interface Ethernet0/3', '    description T-IVANOVII', '    switchport access vlan 310', '    switchport mode access', '    no shutdown']} on 1 hosts
+2023-03-19 21:32:16,998 -  nornir.core -     INFO -        run() - Running task 'close_connections_task' with args {} on 1 hosts
+2023-03-19 21:39:50,847 -  nornir.core -     INFO -        run() - Running task 'napalm_get' with args {'getters': ['get_interfaces']} on 1 hosts
+2023-03-19 21:39:51,798 -  nornir.core -     INFO -        run() - Running task 'Configuration interface.../' with args {'config_commands': ['interface Ethernet0/3', '    description T-IVANOVII', '    switchport access vlan 310', '    switchport mode access', '    no shutdown']} on 1 hosts
+2023-03-19 21:39:52,712 -  nornir.core -     INFO -        run() - Running task 'close_connections_task' with args {} on 1 hosts
+2023-03-19 21:41:27,713 -  nornir.core -     INFO -        run() - Running task 'napalm_get' with args {'getters': ['get_interfaces']} on 1 hosts
+2023-03-19 21:41:28,664 -  nornir.core -     INFO -        run() - Running task 'Configuration interface.../' with args {'config_commands': ['interface Ethernet0/3', '    description T-IVANOVII', '    switchport access vlan 330', '    switchport mode access', '    no shutdown']} on 1 hosts
+2023-03-19 21:41:29,808 -  nornir.core -     INFO -        run() - Running task 'close_connections_task' with args {} on 1 hosts
+2023-03-19 21:46:36,980 -  nornir.core -     INFO -        run() - Running task 'napalm_get' with args {'getters': ['get_interfaces']} on 1 hosts
+2023-03-19 21:46:37,936 -  nornir.core -     INFO -        run() - Running task 'Configuration interface.../' with args {'config_commands': ['interface Ethernet0/3', '    description T-IVANOVII', '    switchport access vlan 330', '    switchport mode access', '    no shutdown']} on 1 hosts
+2023-03-19 21:46:39,068 -  nornir.core -     INFO -        run() - Running task 'close_connections_task' with args {} on 1 hosts
+2023-03-20 09:34:43,557 -  nornir.core -     INFO -        run() - Running task 'napalm_get' with args {'getters': ['get_interfaces']} on 1 hosts
+2023-03-20 09:34:44,532 -  nornir.core -     INFO -        run() - Running task 'Configuration interface.../' with args {'config_commands': ['interface Ethernet0/3', '    description T-IVANOVII', '    switchport access vlan 330', '    switchport mode access', '    no shutdown']} on 1 hosts
+2023-03-20 09:34:45,658 -  nornir.core -     INFO -        run() - Running task 'close_connections_task' with args {} on 1 hosts
+2023-03-20 09:36:34,683 -  nornir.core -     INFO -        run() - Running task 'napalm_get' with args {'getters': ['get_interfaces']} on 1 hosts
+2023-03-20 09:36:35,637 -  nornir.core -     INFO -        run() - Running task 'Configuration interface.../' with args {'config_commands': ['interface Ethernet0/3', '    description T-IVANOVII', '    switchport access vlan 330', '    switchport mode access', '    no shutdown']} on 1 hosts
+2023-03-20 09:36:36,699 -  nornir.core -     INFO -        run() - Running task 'close_connections_task' with args {} on 1 hosts
+2023-03-20 09:37:09,671 -  nornir.core -     INFO -        run() - Running task 'napalm_get' with args {'getters': ['get_interfaces']} on 1 hosts
+2023-03-20 09:37:10,645 -  nornir.core -     INFO -        run() - Running task 'Configuration interface.../' with args {'config_commands': ['interface Ethernet0/3', '    description T-IVANOVII', '    switchport access vlan 330', '    switchport mode access', '    no shutdown']} on 1 hosts
+2023-03-20 09:37:11,788 -  nornir.core -     INFO -        run() - Running task 'close_connections_task' with args {} on 1 hosts
+2023-03-20 09:40:03,440 -  nornir.core -     INFO -        run() - Running task 'napalm_get' with args {'getters': ['get_interfaces']} on 1 hosts
+2023-03-20 09:40:04,213 -  nornir.core -     INFO -        run() - Running task 'Configuration interface.../' with args {'config_commands': ['interface Ethernet0/3', '    description T-IVANOVII', '    switchport access vlan 330', '    switchport mode access', '    no shutdown']} on 1 hosts
+2023-03-20 09:40:05,199 -  nornir.core -     INFO -        run() - Running task 'close_connections_task' with args {} on 1 hosts
+2023-03-20 09:41:36,690 -  nornir.core -     INFO -        run() - Running task 'napalm_get' with args {'getters': ['get_interfaces']} on 1 hosts
+2023-03-20 11:09:04,027 -  nornir.core -     INFO -        run() - Running task 'napalm_get' with args {'getters': ['get_interfaces']} on 1 hosts
+2023-03-20 11:10:40,551 -  nornir.core -     INFO -        run() - Running task 'napalm_get' with args {'getters': ['get_interfaces']} on 1 hosts
+2023-03-20 11:10:41,527 -  nornir.core -     INFO -        run() - Running task 'Configuration interface.../' with args {'config_commands': ['interface Ethernet0/3', '    description T-IVANOVII', '    switchport access vlan 330', '    switchport mode access', '    no shutdown']} on 1 hosts
+2023-03-20 11:10:42,733 -  nornir.core -     INFO -        run() - Running task 'close_connections_task' with args {} on 1 hosts
+2023-03-20 11:12:22,870 -  nornir.core -     INFO -        run() - Running task 'napalm_get' with args {'getters': ['get_interfaces']} on 1 hosts
+2023-03-20 11:12:23,875 -  nornir.core -     INFO -        run() - Running task 'Configuration interface.../' with args {'config_commands': ['default interface Ethernet0/3', 'interface Ethernet0/3', '    description DEFAULT', '    switchport access vlan 99', '    switchport mode access', '    no shutdown']} on 1 hosts
+2023-03-20 11:12:25,112 -  nornir.core -     INFO -        run() - Running task 'close_connections_task' with args {} on 1 hosts
+2023-03-20 12:07:24,323 -  nornir.core -     INFO -        run() - Running task 'napalm_ping' with args {} on 1 hosts
+2023-03-20 12:07:24,326 - nornir.core.task -    ERROR -      start() - Host 'SW-PLGN-1': task 'napalm_ping' failed with traceback:
+Traceback (most recent call last):
+  File "C:\Users\kcarkov\AppData\Roaming\Python\Python37\site-packages\nornir\core\task.py", line 99, in start
+    r = self.task(self, **self.params)
+TypeError: napalm_ping() missing 1 required positional argument: 'dest'
+
+2023-03-20 12:07:24,329 -  nornir.core -     INFO -        run() - Running task 'napalm_get' with args {'getters': ['get_interfaces']} on 1 hosts
+2023-03-20 12:07:24,345 -  nornir.core -     INFO -        run() - Running task 'Configuration interface.../' with args {'config_commands': ['interface Ethernet0/3', '    description T-IVANOVII', '    switchport access vlan 330', '    switchport mode access', '    no shutdown']} on 1 hosts
+2023-03-20 12:07:24,347 -  nornir.core -     INFO -        run() - Running task 'close_connections_task' with args {} on 1 hosts
+2023-03-20 12:10:50,733 -  nornir.core -     INFO -        run() - Running task 'napalm_ping' with args {'dest': '10.30.1.105'} on 1 hosts
+2023-03-20 12:10:51,773 -  nornir.core -     INFO -        run() - Running task 'napalm_get' with args {'getters': ['get_interfaces']} on 1 hosts
+2023-03-20 12:10:51,922 -  nornir.core -     INFO -        run() - Running task 'Configuration interface.../' with args {'config_commands': ['interface Ethernet0/3', '    description T-IVANOVII', '    switchport access vlan 330', '    switchport mode access', '    no shutdown']} on 1 hosts
+2023-03-20 12:10:53,120 -  nornir.core -     INFO -        run() - Running task 'close_connections_task' with args {} on 1 hosts
+2023-03-20 12:12:59,607 -  nornir.core -     INFO -        run() - Running task 'napalm_ping' with args {'dest': '10.30.1.105'} on 1 hosts
+2023-03-20 12:13:00,606 -  nornir.core -     INFO -        run() - Running task 'napalm_get' with args {'getters': ['get_interfaces']} on 1 hosts
+2023-03-20 12:13:19,557 -  nornir.core -     INFO -        run() - Running task 'napalm_ping' with args {'dest': '10.30.1.105'} on 1 hosts
+2023-03-20 12:13:20,591 -  nornir.core -     INFO -        run() - Running task 'napalm_get' with args {'getters': ['get_interfaces']} on 1 hosts
+2023-03-20 12:14:33,835 -  nornir.core -     INFO -        run() - Running task 'napalm_ping' with args {'dest': '10.30.1.105', 'count': 2} on 1 hosts
+2023-03-20 12:14:34,880 -  nornir.core -     INFO -        run() - Running task 'napalm_get' with args {'getters': ['get_interfaces']} on 1 hosts
+2023-03-20 12:14:56,919 -  nornir.core -  WARNING -        run() - Task 'napalm_ping' has not been run – 0 hosts selected
+2023-03-20 12:14:56,921 -  nornir.core -  WARNING -        run() - Task 'napalm_get' has not been run – 0 hosts selected
+2023-03-20 12:15:17,614 -  nornir.core -     INFO -        run() - Running task 'napalm_ping' with args {'dest': '10.30.1.108', 'count': 2} on 1 hosts
+2023-03-20 12:15:19,738 - nornir.core.task -    ERROR -      start() - Host 'SW-PLGN-2': task 'napalm_ping' failed with traceback:
+Traceback (most recent call last):
+  File "C:\Users\kcarkov\AppData\Roaming\Python\Python37\site-packages\netmiko\base_connection.py", line 1046, in establish_connection
+    self.remote_conn_pre.connect(**ssh_connect_params)
+  File "C:\Users\kcarkov\AppData\Roaming\Python\Python37\site-packages\paramiko\client.py", line 380, in connect
+    raise NoValidConnectionsError(errors)
+paramiko.ssh_exception.NoValidConnectionsError: [Errno None] Unable to connect to port 22 on 10.30.1.108
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\kcarkov\AppData\Roaming\Python\Python37\site-packages\napalm\base\base.py", line 119, in _netmiko_open
+    **netmiko_optional_args
+  File "C:\Users\kcarkov\AppData\Roaming\Python\Python37\site-packages\netmiko\ssh_dispatcher.py", line 365, in ConnectHandler
+    return ConnectionClass(*args, **kwargs)
+  File "C:\Users\kcarkov\AppData\Roaming\Python\Python37\site-packages\netmiko\base_connection.py", line 439, in __init__
+    self._open()
+  File "C:\Users\kcarkov\AppData\Roaming\Python\Python37\site-packages\netmiko\base_connection.py", line 444, in _open
+    self.establish_connection()
+  File "C:\Users\kcarkov\AppData\Roaming\Python\Python37\site-packages\netmiko\base_connection.py", line 1068, in establish_connection
+    raise NetmikoTimeoutException(msg)
+netmiko.exceptions.NetmikoTimeoutException: TCP connection to device failed.
+
+Common causes of this problem are:
+1. Incorrect hostname or IP address.
+2. Wrong TCP port.
+3. Intermediate firewall blocking access.
+
+Device settings: cisco_ios 10.30.1.108:22
+
+
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\kcarkov\AppData\Roaming\Python\Python37\site-packages\nornir\core\task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "C:\Users\kcarkov\AppData\Roaming\Python\Python37\site-packages\nornir_napalm\plugins\tasks\napalm_ping.py", line 36, in napalm_ping
+    device = task.host.get_connection(CONNECTION_NAME, task.nornir.config)
+  File "C:\Users\kcarkov\AppData\Roaming\Python\Python37\site-packages\nornir\core\inventory.py", line 502, in get_connection
+    extras=conn.extras,
+  File "C:\Users\kcarkov\AppData\Roaming\Python\Python37\site-packages\nornir\core\inventory.py", line 553, in open_connection
+    configuration=configuration,
+  File "C:\Users\kcarkov\AppData\Roaming\Python\Python37\site-packages\nornir_napalm\plugins\connections\__init__.py", line 57, in open
+    connection.open()
+  File "C:\Users\kcarkov\AppData\Roaming\Python\Python37\site-packages\napalm\ios\ios.py", line 171, in open
+    device_type, netmiko_optional_args=self.netmiko_optional_args
+  File "C:\Users\kcarkov\AppData\Roaming\Python\Python37\site-packages\napalm\base\base.py", line 122, in _netmiko_open
+    raise ConnectionException("Cannot connect to {}".format(self.hostname))
+napalm.base.exceptions.ConnectionException: Cannot connect to 10.30.1.108
+
+2023-03-20 12:15:19,748 -  nornir.core -     INFO -        run() - Running task 'napalm_get' with args {'getters': ['get_interfaces']} on 1 hosts
+2023-03-20 12:15:43,206 -  nornir.core -     INFO -        run() - Running task 'napalm_ping' with args {'dest': '10.30.1.108', 'count': 2} on 1 hosts
+2023-03-20 12:15:45,284 - nornir.core.task -    ERROR -      start() - Host 'SW-PLGN-2': task 'napalm_ping' failed with traceback:
+Traceback (most recent call last):
+  File "C:\Users\kcarkov\AppData\Roaming\Python\Python37\site-packages\netmiko\base_connection.py", line 1046, in establish_connection
+    self.remote_conn_pre.connect(**ssh_connect_params)
+  File "C:\Users\kcarkov\AppData\Roaming\Python\Python37\site-packages\paramiko\client.py", line 380, in connect
+    raise NoValidConnectionsError(errors)
+paramiko.ssh_exception.NoValidConnectionsError: [Errno None] Unable to connect to port 22 on 10.30.1.108
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\kcarkov\AppData\Roaming\Python\Python37\site-packages\napalm\base\base.py", line 119, in _netmiko_open
+    **netmiko_optional_args
+  File "C:\Users\kcarkov\AppData\Roaming\Python\Python37\site-packages\netmiko\ssh_dispatcher.py", line 365, in ConnectHandler
+    return ConnectionClass(*args, **kwargs)
+  File "C:\Users\kcarkov\AppData\Roaming\Python\Python37\site-packages\netmiko\base_connection.py", line 439, in __init__
+    self._open()
+  File "C:\Users\kcarkov\AppData\Roaming\Python\Python37\site-packages\netmiko\base_connection.py", line 444, in _open
+    self.establish_connection()
+  File "C:\Users\kcarkov\AppData\Roaming\Python\Python37\site-packages\netmiko\base_connection.py", line 1068, in establish_connection
+    raise NetmikoTimeoutException(msg)
+netmiko.exceptions.NetmikoTimeoutException: TCP connection to device failed.
+
+Common causes of this problem are:
+1. Incorrect hostname or IP address.
+2. Wrong TCP port.
+3. Intermediate firewall blocking access.
+
+Device settings: cisco_ios 10.30.1.108:22
+
+
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\kcarkov\AppData\Roaming\Python\Python37\site-packages\nornir\core\task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "C:\Users\kcarkov\AppData\Roaming\Python\Python37\site-packages\nornir_napalm\plugins\tasks\napalm_ping.py", line 36, in napalm_ping
+    device = task.host.get_connection(CONNECTION_NAME, task.nornir.config)
+  File "C:\Users\kcarkov\AppData\Roaming\Python\Python37\site-packages\nornir\core\inventory.py", line 502, in get_connection
+    extras=conn.extras,
+  File "C:\Users\kcarkov\AppData\Roaming\Python\Python37\site-packages\nornir\core\inventory.py", line 553, in open_connection
+    configuration=configuration,
+  File "C:\Users\kcarkov\AppData\Roaming\Python\Python37\site-packages\nornir_napalm\plugins\connections\__init__.py", line 57, in open
+    connection.open()
+  File "C:\Users\kcarkov\AppData\Roaming\Python\Python37\site-packages\napalm\ios\ios.py", line 171, in open
+    device_type, netmiko_optional_args=self.netmiko_optional_args
+  File "C:\Users\kcarkov\AppData\Roaming\Python\Python37\site-packages\napalm\base\base.py", line 122, in _netmiko_open
+    raise ConnectionException("Cannot connect to {}".format(self.hostname))
+napalm.base.exceptions.ConnectionException: Cannot connect to 10.30.1.108
+
+2023-03-20 12:15:45,291 -  nornir.core -     INFO -        run() - Running task 'napalm_get' with args {'getters': ['get_interfaces']} on 1 hosts
+2023-03-20 12:15:45,293 -  nornir.core -     INFO -        run() - Running task 'close_connections_task' with args {} on 1 hosts
+2023-03-20 12:16:13,371 -  nornir.core -     INFO -        run() - Running task 'napalm_ping' with args {'dest': '10.30.1.108', 'count': 2} on 1 hosts
+2023-03-20 12:16:15,454 - nornir.core.task -    ERROR -      start() - Host 'SW-PLGN-2': task 'napalm_ping' failed with traceback:
+Traceback (most recent call last):
+  File "C:\Users\kcarkov\AppData\Roaming\Python\Python37\site-packages\netmiko\base_connection.py", line 1046, in establish_connection
+    self.remote_conn_pre.connect(**ssh_connect_params)
+  File "C:\Users\kcarkov\AppData\Roaming\Python\Python37\site-packages\paramiko\client.py", line 380, in connect
+    raise NoValidConnectionsError(errors)
+paramiko.ssh_exception.NoValidConnectionsError: [Errno None] Unable to connect to port 22 on 10.30.1.108
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\kcarkov\AppData\Roaming\Python\Python37\site-packages\napalm\base\base.py", line 119, in _netmiko_open
+    **netmiko_optional_args
+  File "C:\Users\kcarkov\AppData\Roaming\Python\Python37\site-packages\netmiko\ssh_dispatcher.py", line 365, in ConnectHandler
+    return ConnectionClass(*args, **kwargs)
+  File "C:\Users\kcarkov\AppData\Roaming\Python\Python37\site-packages\netmiko\base_connection.py", line 439, in __init__
+    self._open()
+  File "C:\Users\kcarkov\AppData\Roaming\Python\Python37\site-packages\netmiko\base_connection.py", line 444, in _open
+    self.establish_connection()
+  File "C:\Users\kcarkov\AppData\Roaming\Python\Python37\site-packages\netmiko\base_connection.py", line 1068, in establish_connection
+    raise NetmikoTimeoutException(msg)
+netmiko.exceptions.NetmikoTimeoutException: TCP connection to device failed.
+
+Common causes of this problem are:
+1. Incorrect hostname or IP address.
+2. Wrong TCP port.
+3. Intermediate firewall blocking access.
+
+Device settings: cisco_ios 10.30.1.108:22
+
+
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\kcarkov\AppData\Roaming\Python\Python37\site-packages\nornir\core\task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "C:\Users\kcarkov\AppData\Roaming\Python\Python37\site-packages\nornir_napalm\plugins\tasks\napalm_ping.py", line 36, in napalm_ping
+    device = task.host.get_connection(CONNECTION_NAME, task.nornir.config)
+  File "C:\Users\kcarkov\AppData\Roaming\Python\Python37\site-packages\nornir\core\inventory.py", line 502, in get_connection
+    extras=conn.extras,
+  File "C:\Users\kcarkov\AppData\Roaming\Python\Python37\site-packages\nornir\core\inventory.py", line 553, in open_connection
+    configuration=configuration,
+  File "C:\Users\kcarkov\AppData\Roaming\Python\Python37\site-packages\nornir_napalm\plugins\connections\__init__.py", line 57, in open
+    connection.open()
+  File "C:\Users\kcarkov\AppData\Roaming\Python\Python37\site-packages\napalm\ios\ios.py", line 171, in open
+    device_type, netmiko_optional_args=self.netmiko_optional_args
+  File "C:\Users\kcarkov\AppData\Roaming\Python\Python37\site-packages\napalm\base\base.py", line 122, in _netmiko_open
+    raise ConnectionException("Cannot connect to {}".format(self.hostname))
+napalm.base.exceptions.ConnectionException: Cannot connect to 10.30.1.108
+
+2023-03-20 12:16:15,463 -  nornir.core -     INFO -        run() - Running task 'close_connections_task' with args {} on 1 hosts
+2023-03-20 12:17:48,744 -  nornir.core -     INFO -        run() - Running task 'napalm_ping' with args {'dest': '10.30.1.108', 'count': 2} on 1 hosts
+2023-03-20 12:17:50,826 - nornir.core.task -    ERROR -      start() - Host 'SW-PLGN-2': task 'napalm_ping' failed with traceback:
+Traceback (most recent call last):
+  File "C:\Users\kcarkov\AppData\Roaming\Python\Python37\site-packages\netmiko\base_connection.py", line 1046, in establish_connection
+    self.remote_conn_pre.connect(**ssh_connect_params)
+  File "C:\Users\kcarkov\AppData\Roaming\Python\Python37\site-packages\paramiko\client.py", line 380, in connect
+    raise NoValidConnectionsError(errors)
+paramiko.ssh_exception.NoValidConnectionsError: [Errno None] Unable to connect to port 22 on 10.30.1.108
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\kcarkov\AppData\Roaming\Python\Python37\site-packages\napalm\base\base.py", line 119, in _netmiko_open
+    **netmiko_optional_args
+  File "C:\Users\kcarkov\AppData\Roaming\Python\Python37\site-packages\netmiko\ssh_dispatcher.py", line 365, in ConnectHandler
+    return ConnectionClass(*args, **kwargs)
+  File "C:\Users\kcarkov\AppData\Roaming\Python\Python37\site-packages\netmiko\base_connection.py", line 439, in __init__
+    self._open()
+  File "C:\Users\kcarkov\AppData\Roaming\Python\Python37\site-packages\netmiko\base_connection.py", line 444, in _open
+    self.establish_connection()
+  File "C:\Users\kcarkov\AppData\Roaming\Python\Python37\site-packages\netmiko\base_connection.py", line 1068, in establish_connection
+    raise NetmikoTimeoutException(msg)
+netmiko.exceptions.NetmikoTimeoutException: TCP connection to device failed.
+
+Common causes of this problem are:
+1. Incorrect hostname or IP address.
+2. Wrong TCP port.
+3. Intermediate firewall blocking access.
+
+Device settings: cisco_ios 10.30.1.108:22
+
+
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\kcarkov\AppData\Roaming\Python\Python37\site-packages\nornir\core\task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "C:\Users\kcarkov\AppData\Roaming\Python\Python37\site-packages\nornir_napalm\plugins\tasks\napalm_ping.py", line 36, in napalm_ping
+    device = task.host.get_connection(CONNECTION_NAME, task.nornir.config)
+  File "C:\Users\kcarkov\AppData\Roaming\Python\Python37\site-packages\nornir\core\inventory.py", line 502, in get_connection
+    extras=conn.extras,
+  File "C:\Users\kcarkov\AppData\Roaming\Python\Python37\site-packages\nornir\core\inventory.py", line 553, in open_connection
+    configuration=configuration,
+  File "C:\Users\kcarkov\AppData\Roaming\Python\Python37\site-packages\nornir_napalm\plugins\connections\__init__.py", line 57, in open
+    connection.open()
+  File "C:\Users\kcarkov\AppData\Roaming\Python\Python37\site-packages\napalm\ios\ios.py", line 171, in open
+    device_type, netmiko_optional_args=self.netmiko_optional_args
+  File "C:\Users\kcarkov\AppData\Roaming\Python\Python37\site-packages\napalm\base\base.py", line 122, in _netmiko_open
+    raise ConnectionException("Cannot connect to {}".format(self.hostname))
+napalm.base.exceptions.ConnectionException: Cannot connect to 10.30.1.108
+
+2023-03-20 12:17:50,833 -  nornir.core -     INFO -        run() - Running task 'close_connections_task' with args {} on 1 hosts
+2023-03-20 12:19:42,800 -  nornir.core -     INFO -        run() - Running task 'napalm_ping' with args {'dest': '10.30.1.108', 'count': 2} on 1 hosts
+2023-03-20 12:19:44,880 - nornir.core.task -    ERROR -      start() - Host 'SW-PLGN-2': task 'napalm_ping' failed with traceback:
+Traceback (most recent call last):
+  File "C:\Users\kcarkov\AppData\Roaming\Python\Python37\site-packages\netmiko\base_connection.py", line 1046, in establish_connection
+    self.remote_conn_pre.connect(**ssh_connect_params)
+  File "C:\Users\kcarkov\AppData\Roaming\Python\Python37\site-packages\paramiko\client.py", line 380, in connect
+    raise NoValidConnectionsError(errors)
+paramiko.ssh_exception.NoValidConnectionsError: [Errno None] Unable to connect to port 22 on 10.30.1.108
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\kcarkov\AppData\Roaming\Python\Python37\site-packages\napalm\base\base.py", line 119, in _netmiko_open
+    **netmiko_optional_args
+  File "C:\Users\kcarkov\AppData\Roaming\Python\Python37\site-packages\netmiko\ssh_dispatcher.py", line 365, in ConnectHandler
+    return ConnectionClass(*args, **kwargs)
+  File "C:\Users\kcarkov\AppData\Roaming\Python\Python37\site-packages\netmiko\base_connection.py", line 439, in __init__
+    self._open()
+  File "C:\Users\kcarkov\AppData\Roaming\Python\Python37\site-packages\netmiko\base_connection.py", line 444, in _open
+    self.establish_connection()
+  File "C:\Users\kcarkov\AppData\Roaming\Python\Python37\site-packages\netmiko\base_connection.py", line 1068, in establish_connection
+    raise NetmikoTimeoutException(msg)
+netmiko.exceptions.NetmikoTimeoutException: TCP connection to device failed.
+
+Common causes of this problem are:
+1. Incorrect hostname or IP address.
+2. Wrong TCP port.
+3. Intermediate firewall blocking access.
+
+Device settings: cisco_ios 10.30.1.108:22
+
+
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\kcarkov\AppData\Roaming\Python\Python37\site-packages\nornir\core\task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "C:\Users\kcarkov\AppData\Roaming\Python\Python37\site-packages\nornir_napalm\plugins\tasks\napalm_ping.py", line 36, in napalm_ping
+    device = task.host.get_connection(CONNECTION_NAME, task.nornir.config)
+  File "C:\Users\kcarkov\AppData\Roaming\Python\Python37\site-packages\nornir\core\inventory.py", line 502, in get_connection
+    extras=conn.extras,
+  File "C:\Users\kcarkov\AppData\Roaming\Python\Python37\site-packages\nornir\core\inventory.py", line 553, in open_connection
+    configuration=configuration,
+  File "C:\Users\kcarkov\AppData\Roaming\Python\Python37\site-packages\nornir_napalm\plugins\connections\__init__.py", line 57, in open
+    connection.open()
+  File "C:\Users\kcarkov\AppData\Roaming\Python\Python37\site-packages\napalm\ios\ios.py", line 171, in open
+    device_type, netmiko_optional_args=self.netmiko_optional_args
+  File "C:\Users\kcarkov\AppData\Roaming\Python\Python37\site-packages\napalm\base\base.py", line 122, in _netmiko_open
+    raise ConnectionException("Cannot connect to {}".format(self.hostname))
+napalm.base.exceptions.ConnectionException: Cannot connect to 10.30.1.108
+
+2023-03-20 12:20:53,983 -  nornir.core -     INFO -        run() - Running task 'napalm_ping' with args {'dest': '10.30.1.105', 'count': 2} on 1 hosts
+2023-03-20 12:21:57,548 -  nornir.core -     INFO -        run() - Running task 'napalm_ping' with args {'dest': '10.30.1.105', 'count': 2} on 1 hosts
+2023-03-20 12:22:06,902 -  nornir.core -     INFO -        run() - Running task 'napalm_ping' with args {'dest': '10.30.1.108', 'count': 2} on 1 hosts
+2023-03-20 12:22:09,000 - nornir.core.task -    ERROR -      start() - Host 'SW-PLGN-2': task 'napalm_ping' failed with traceback:
+Traceback (most recent call last):
+  File "C:\Users\kcarkov\AppData\Roaming\Python\Python37\site-packages\netmiko\base_connection.py", line 1046, in establish_connection
+    self.remote_conn_pre.connect(**ssh_connect_params)
+  File "C:\Users\kcarkov\AppData\Roaming\Python\Python37\site-packages\paramiko\client.py", line 380, in connect
+    raise NoValidConnectionsError(errors)
+paramiko.ssh_exception.NoValidConnectionsError: [Errno None] Unable to connect to port 22 on 10.30.1.108
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\kcarkov\AppData\Roaming\Python\Python37\site-packages\napalm\base\base.py", line 119, in _netmiko_open
+    **netmiko_optional_args
+  File "C:\Users\kcarkov\AppData\Roaming\Python\Python37\site-packages\netmiko\ssh_dispatcher.py", line 365, in ConnectHandler
+    return ConnectionClass(*args, **kwargs)
+  File "C:\Users\kcarkov\AppData\Roaming\Python\Python37\site-packages\netmiko\base_connection.py", line 439, in __init__
+    self._open()
+  File "C:\Users\kcarkov\AppData\Roaming\Python\Python37\site-packages\netmiko\base_connection.py", line 444, in _open
+    self.establish_connection()
+  File "C:\Users\kcarkov\AppData\Roaming\Python\Python37\site-packages\netmiko\base_connection.py", line 1068, in establish_connection
+    raise NetmikoTimeoutException(msg)
+netmiko.exceptions.NetmikoTimeoutException: TCP connection to device failed.
+
+Common causes of this problem are:
+1. Incorrect hostname or IP address.
+2. Wrong TCP port.
+3. Intermediate firewall blocking access.
+
+Device settings: cisco_ios 10.30.1.108:22
+
+
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\kcarkov\AppData\Roaming\Python\Python37\site-packages\nornir\core\task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "C:\Users\kcarkov\AppData\Roaming\Python\Python37\site-packages\nornir_napalm\plugins\tasks\napalm_ping.py", line 36, in napalm_ping
+    device = task.host.get_connection(CONNECTION_NAME, task.nornir.config)
+  File "C:\Users\kcarkov\AppData\Roaming\Python\Python37\site-packages\nornir\core\inventory.py", line 502, in get_connection
+    extras=conn.extras,
+  File "C:\Users\kcarkov\AppData\Roaming\Python\Python37\site-packages\nornir\core\inventory.py", line 553, in open_connection
+    configuration=configuration,
+  File "C:\Users\kcarkov\AppData\Roaming\Python\Python37\site-packages\nornir_napalm\plugins\connections\__init__.py", line 57, in open
+    connection.open()
+  File "C:\Users\kcarkov\AppData\Roaming\Python\Python37\site-packages\napalm\ios\ios.py", line 171, in open
+    device_type, netmiko_optional_args=self.netmiko_optional_args
+  File "C:\Users\kcarkov\AppData\Roaming\Python\Python37\site-packages\napalm\base\base.py", line 122, in _netmiko_open
+    raise ConnectionException("Cannot connect to {}".format(self.hostname))
+napalm.base.exceptions.ConnectionException: Cannot connect to 10.30.1.108
+
+2023-03-20 12:22:25,572 -  nornir.core -     INFO -        run() - Running task 'napalm_ping' with args {'dest': '10.30.1.108', 'count': 2} on 1 hosts
+2023-03-20 12:22:27,652 - nornir.core.task -    ERROR -      start() - Host 'SW-PLGN-2': task 'napalm_ping' failed with traceback:
+Traceback (most recent call last):
+  File "C:\Users\kcarkov\AppData\Roaming\Python\Python37\site-packages\netmiko\base_connection.py", line 1046, in establish_connection
+    self.remote_conn_pre.connect(**ssh_connect_params)
+  File "C:\Users\kcarkov\AppData\Roaming\Python\Python37\site-packages\paramiko\client.py", line 380, in connect
+    raise NoValidConnectionsError(errors)
+paramiko.ssh_exception.NoValidConnectionsError: [Errno None] Unable to connect to port 22 on 10.30.1.108
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\kcarkov\AppData\Roaming\Python\Python37\site-packages\napalm\base\base.py", line 119, in _netmiko_open
+    **netmiko_optional_args
+  File "C:\Users\kcarkov\AppData\Roaming\Python\Python37\site-packages\netmiko\ssh_dispatcher.py", line 365, in ConnectHandler
+    return ConnectionClass(*args, **kwargs)
+  File "C:\Users\kcarkov\AppData\Roaming\Python\Python37\site-packages\netmiko\base_connection.py", line 439, in __init__
+    self._open()
+  File "C:\Users\kcarkov\AppData\Roaming\Python\Python37\site-packages\netmiko\base_connection.py", line 444, in _open
+    self.establish_connection()
+  File "C:\Users\kcarkov\AppData\Roaming\Python\Python37\site-packages\netmiko\base_connection.py", line 1068, in establish_connection
+    raise NetmikoTimeoutException(msg)
+netmiko.exceptions.NetmikoTimeoutException: TCP connection to device failed.
+
+Common causes of this problem are:
+1. Incorrect hostname or IP address.
+2. Wrong TCP port.
+3. Intermediate firewall blocking access.
+
+Device settings: cisco_ios 10.30.1.108:22
+
+
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\kcarkov\AppData\Roaming\Python\Python37\site-packages\nornir\core\task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "C:\Users\kcarkov\AppData\Roaming\Python\Python37\site-packages\nornir_napalm\plugins\tasks\napalm_ping.py", line 36, in napalm_ping
+    device = task.host.get_connection(CONNECTION_NAME, task.nornir.config)
+  File "C:\Users\kcarkov\AppData\Roaming\Python\Python37\site-packages\nornir\core\inventory.py", line 502, in get_connection
+    extras=conn.extras,
+  File "C:\Users\kcarkov\AppData\Roaming\Python\Python37\site-packages\nornir\core\inventory.py", line 553, in open_connection
+    configuration=configuration,
+  File "C:\Users\kcarkov\AppData\Roaming\Python\Python37\site-packages\nornir_napalm\plugins\connections\__init__.py", line 57, in open
+    connection.open()
+  File "C:\Users\kcarkov\AppData\Roaming\Python\Python37\site-packages\napalm\ios\ios.py", line 171, in open
+    device_type, netmiko_optional_args=self.netmiko_optional_args
+  File "C:\Users\kcarkov\AppData\Roaming\Python\Python37\site-packages\napalm\base\base.py", line 122, in _netmiko_open
+    raise ConnectionException("Cannot connect to {}".format(self.hostname))
+napalm.base.exceptions.ConnectionException: Cannot connect to 10.30.1.108
+
+2023-03-20 12:22:34,290 -  nornir.core -     INFO -        run() - Running task 'napalm_ping' with args {'dest': '10.30.1.108', 'count': 2} on 1 hosts
+2023-03-20 12:22:36,416 - nornir.core.task -    ERROR -      start() - Host 'SW-PLGN-2': task 'napalm_ping' failed with traceback:
+Traceback (most recent call last):
+  File "C:\Users\kcarkov\AppData\Roaming\Python\Python37\site-packages\netmiko\base_connection.py", line 1046, in establish_connection
+    self.remote_conn_pre.connect(**ssh_connect_params)
+  File "C:\Users\kcarkov\AppData\Roaming\Python\Python37\site-packages\paramiko\client.py", line 380, in connect
+    raise NoValidConnectionsError(errors)
+paramiko.ssh_exception.NoValidConnectionsError: [Errno None] Unable to connect to port 22 on 10.30.1.108
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\kcarkov\AppData\Roaming\Python\Python37\site-packages\napalm\base\base.py", line 119, in _netmiko_open
+    **netmiko_optional_args
+  File "C:\Users\kcarkov\AppData\Roaming\Python\Python37\site-packages\netmiko\ssh_dispatcher.py", line 365, in ConnectHandler
+    return ConnectionClass(*args, **kwargs)
+  File "C:\Users\kcarkov\AppData\Roaming\Python\Python37\site-packages\netmiko\base_connection.py", line 439, in __init__
+    self._open()
+  File "C:\Users\kcarkov\AppData\Roaming\Python\Python37\site-packages\netmiko\base_connection.py", line 444, in _open
+    self.establish_connection()
+  File "C:\Users\kcarkov\AppData\Roaming\Python\Python37\site-packages\netmiko\base_connection.py", line 1068, in establish_connection
+    raise NetmikoTimeoutException(msg)
+netmiko.exceptions.NetmikoTimeoutException: TCP connection to device failed.
+
+Common causes of this problem are:
+1. Incorrect hostname or IP address.
+2. Wrong TCP port.
+3. Intermediate firewall blocking access.
+
+Device settings: cisco_ios 10.30.1.108:22
+
+
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\kcarkov\AppData\Roaming\Python\Python37\site-packages\nornir\core\task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "C:\Users\kcarkov\AppData\Roaming\Python\Python37\site-packages\nornir_napalm\plugins\tasks\napalm_ping.py", line 36, in napalm_ping
+    device = task.host.get_connection(CONNECTION_NAME, task.nornir.config)
+  File "C:\Users\kcarkov\AppData\Roaming\Python\Python37\site-packages\nornir\core\inventory.py", line 502, in get_connection
+    extras=conn.extras,
+  File "C:\Users\kcarkov\AppData\Roaming\Python\Python37\site-packages\nornir\core\inventory.py", line 553, in open_connection
+    configuration=configuration,
+  File "C:\Users\kcarkov\AppData\Roaming\Python\Python37\site-packages\nornir_napalm\plugins\connections\__init__.py", line 57, in open
+    connection.open()
+  File "C:\Users\kcarkov\AppData\Roaming\Python\Python37\site-packages\napalm\ios\ios.py", line 171, in open
+    device_type, netmiko_optional_args=self.netmiko_optional_args
+  File "C:\Users\kcarkov\AppData\Roaming\Python\Python37\site-packages\napalm\base\base.py", line 122, in _netmiko_open
+    raise ConnectionException("Cannot connect to {}".format(self.hostname))
+napalm.base.exceptions.ConnectionException: Cannot connect to 10.30.1.108
+
+2023-03-20 12:23:00,149 -  nornir.core -     INFO -        run() - Running task 'napalm_ping' with args {'dest': '10.30.1.108', 'count': 2} on 1 hosts
+2023-03-20 12:23:02,243 - nornir.core.task -    ERROR -      start() - Host 'SW-PLGN-2': task 'napalm_ping' failed with traceback:
+Traceback (most recent call last):
+  File "C:\Users\kcarkov\AppData\Roaming\Python\Python37\site-packages\netmiko\base_connection.py", line 1046, in establish_connection
+    self.remote_conn_pre.connect(**ssh_connect_params)
+  File "C:\Users\kcarkov\AppData\Roaming\Python\Python37\site-packages\paramiko\client.py", line 380, in connect
+    raise NoValidConnectionsError(errors)
+paramiko.ssh_exception.NoValidConnectionsError: [Errno None] Unable to connect to port 22 on 10.30.1.108
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\kcarkov\AppData\Roaming\Python\Python37\site-packages\napalm\base\base.py", line 119, in _netmiko_open
+    **netmiko_optional_args
+  File "C:\Users\kcarkov\AppData\Roaming\Python\Python37\site-packages\netmiko\ssh_dispatcher.py", line 365, in ConnectHandler
+    return ConnectionClass(*args, **kwargs)
+  File "C:\Users\kcarkov\AppData\Roaming\Python\Python37\site-packages\netmiko\base_connection.py", line 439, in __init__
+    self._open()
+  File "C:\Users\kcarkov\AppData\Roaming\Python\Python37\site-packages\netmiko\base_connection.py", line 444, in _open
+    self.establish_connection()
+  File "C:\Users\kcarkov\AppData\Roaming\Python\Python37\site-packages\netmiko\base_connection.py", line 1068, in establish_connection
+    raise NetmikoTimeoutException(msg)
+netmiko.exceptions.NetmikoTimeoutException: TCP connection to device failed.
+
+Common causes of this problem are:
+1. Incorrect hostname or IP address.
+2. Wrong TCP port.
+3. Intermediate firewall blocking access.
+
+Device settings: cisco_ios 10.30.1.108:22
+
+
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\kcarkov\AppData\Roaming\Python\Python37\site-packages\nornir\core\task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "C:\Users\kcarkov\AppData\Roaming\Python\Python37\site-packages\nornir_napalm\plugins\tasks\napalm_ping.py", line 36, in napalm_ping
+    device = task.host.get_connection(CONNECTION_NAME, task.nornir.config)
+  File "C:\Users\kcarkov\AppData\Roaming\Python\Python37\site-packages\nornir\core\inventory.py", line 502, in get_connection
+    extras=conn.extras,
+  File "C:\Users\kcarkov\AppData\Roaming\Python\Python37\site-packages\nornir\core\inventory.py", line 553, in open_connection
+    configuration=configuration,
+  File "C:\Users\kcarkov\AppData\Roaming\Python\Python37\site-packages\nornir_napalm\plugins\connections\__init__.py", line 57, in open
+    connection.open()
+  File "C:\Users\kcarkov\AppData\Roaming\Python\Python37\site-packages\napalm\ios\ios.py", line 171, in open
+    device_type, netmiko_optional_args=self.netmiko_optional_args
+  File "C:\Users\kcarkov\AppData\Roaming\Python\Python37\site-packages\napalm\base\base.py", line 122, in _netmiko_open
+    raise ConnectionException("Cannot connect to {}".format(self.hostname))
+napalm.base.exceptions.ConnectionException: Cannot connect to 10.30.1.108
+
+2023-03-20 12:23:30,520 -  nornir.core -     INFO -        run() - Running task 'napalm_ping' with args {'dest': '10.30.1.108', 'count': 2} on 1 hosts
+2023-03-20 12:23:32,617 - nornir.core.task -    ERROR -      start() - Host 'SW-PLGN-2': task 'napalm_ping' failed with traceback:
+Traceback (most recent call last):
+  File "C:\Users\kcarkov\AppData\Roaming\Python\Python37\site-packages\netmiko\base_connection.py", line 1046, in establish_connection
+    self.remote_conn_pre.connect(**ssh_connect_params)
+  File "C:\Users\kcarkov\AppData\Roaming\Python\Python37\site-packages\paramiko\client.py", line 380, in connect
+    raise NoValidConnectionsError(errors)
+paramiko.ssh_exception.NoValidConnectionsError: [Errno None] Unable to connect to port 22 on 10.30.1.108
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\kcarkov\AppData\Roaming\Python\Python37\site-packages\napalm\base\base.py", line 119, in _netmiko_open
+    **netmiko_optional_args
+  File "C:\Users\kcarkov\AppData\Roaming\Python\Python37\site-packages\netmiko\ssh_dispatcher.py", line 365, in ConnectHandler
+    return ConnectionClass(*args, **kwargs)
+  File "C:\Users\kcarkov\AppData\Roaming\Python\Python37\site-packages\netmiko\base_connection.py", line 439, in __init__
+    self._open()
+  File "C:\Users\kcarkov\AppData\Roaming\Python\Python37\site-packages\netmiko\base_connection.py", line 444, in _open
+    self.establish_connection()
+  File "C:\Users\kcarkov\AppData\Roaming\Python\Python37\site-packages\netmiko\base_connection.py", line 1068, in establish_connection
+    raise NetmikoTimeoutException(msg)
+netmiko.exceptions.NetmikoTimeoutException: TCP connection to device failed.
+
+Common causes of this problem are:
+1. Incorrect hostname or IP address.
+2. Wrong TCP port.
+3. Intermediate firewall blocking access.
+
+Device settings: cisco_ios 10.30.1.108:22
+
+
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\kcarkov\AppData\Roaming\Python\Python37\site-packages\nornir\core\task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "C:\Users\kcarkov\AppData\Roaming\Python\Python37\site-packages\nornir_napalm\plugins\tasks\napalm_ping.py", line 36, in napalm_ping
+    device = task.host.get_connection(CONNECTION_NAME, task.nornir.config)
+  File "C:\Users\kcarkov\AppData\Roaming\Python\Python37\site-packages\nornir\core\inventory.py", line 502, in get_connection
+    extras=conn.extras,
+  File "C:\Users\kcarkov\AppData\Roaming\Python\Python37\site-packages\nornir\core\inventory.py", line 553, in open_connection
+    configuration=configuration,
+  File "C:\Users\kcarkov\AppData\Roaming\Python\Python37\site-packages\nornir_napalm\plugins\connections\__init__.py", line 57, in open
+    connection.open()
+  File "C:\Users\kcarkov\AppData\Roaming\Python\Python37\site-packages\napalm\ios\ios.py", line 171, in open
+    device_type, netmiko_optional_args=self.netmiko_optional_args
+  File "C:\Users\kcarkov\AppData\Roaming\Python\Python37\site-packages\napalm\base\base.py", line 122, in _netmiko_open
+    raise ConnectionException("Cannot connect to {}".format(self.hostname))
+napalm.base.exceptions.ConnectionException: Cannot connect to 10.30.1.108
+
+2023-03-20 12:23:50,734 -  nornir.core -     INFO -        run() - Running task 'napalm_ping' with args {'dest': '10.30.1.108', 'count': 2} on 1 hosts
+2023-03-20 12:23:52,834 - nornir.core.task -    ERROR -      start() - Host 'SW-PLGN-2': task 'napalm_ping' failed with traceback:
+Traceback (most recent call last):
+  File "C:\Users\kcarkov\AppData\Roaming\Python\Python37\site-packages\netmiko\base_connection.py", line 1046, in establish_connection
+    self.remote_conn_pre.connect(**ssh_connect_params)
+  File "C:\Users\kcarkov\AppData\Roaming\Python\Python37\site-packages\paramiko\client.py", line 380, in connect
+    raise NoValidConnectionsError(errors)
+paramiko.ssh_exception.NoValidConnectionsError: [Errno None] Unable to connect to port 22 on 10.30.1.108
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\kcarkov\AppData\Roaming\Python\Python37\site-packages\napalm\base\base.py", line 119, in _netmiko_open
+    **netmiko_optional_args
+  File "C:\Users\kcarkov\AppData\Roaming\Python\Python37\site-packages\netmiko\ssh_dispatcher.py", line 365, in ConnectHandler
+    return ConnectionClass(*args, **kwargs)
+  File "C:\Users\kcarkov\AppData\Roaming\Python\Python37\site-packages\netmiko\base_connection.py", line 439, in __init__
+    self._open()
+  File "C:\Users\kcarkov\AppData\Roaming\Python\Python37\site-packages\netmiko\base_connection.py", line 444, in _open
+    self.establish_connection()
+  File "C:\Users\kcarkov\AppData\Roaming\Python\Python37\site-packages\netmiko\base_connection.py", line 1068, in establish_connection
+    raise NetmikoTimeoutException(msg)
+netmiko.exceptions.NetmikoTimeoutException: TCP connection to device failed.
+
+Common causes of this problem are:
+1. Incorrect hostname or IP address.
+2. Wrong TCP port.
+3. Intermediate firewall blocking access.
+
+Device settings: cisco_ios 10.30.1.108:22
+
+
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\kcarkov\AppData\Roaming\Python\Python37\site-packages\nornir\core\task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "C:\Users\kcarkov\AppData\Roaming\Python\Python37\site-packages\nornir_napalm\plugins\tasks\napalm_ping.py", line 36, in napalm_ping
+    device = task.host.get_connection(CONNECTION_NAME, task.nornir.config)
+  File "C:\Users\kcarkov\AppData\Roaming\Python\Python37\site-packages\nornir\core\inventory.py", line 502, in get_connection
+    extras=conn.extras,
+  File "C:\Users\kcarkov\AppData\Roaming\Python\Python37\site-packages\nornir\core\inventory.py", line 553, in open_connection
+    configuration=configuration,
+  File "C:\Users\kcarkov\AppData\Roaming\Python\Python37\site-packages\nornir_napalm\plugins\connections\__init__.py", line 57, in open
+    connection.open()
+  File "C:\Users\kcarkov\AppData\Roaming\Python\Python37\site-packages\napalm\ios\ios.py", line 171, in open
+    device_type, netmiko_optional_args=self.netmiko_optional_args
+  File "C:\Users\kcarkov\AppData\Roaming\Python\Python37\site-packages\napalm\base\base.py", line 122, in _netmiko_open
+    raise ConnectionException("Cannot connect to {}".format(self.hostname))
+napalm.base.exceptions.ConnectionException: Cannot connect to 10.30.1.108
+
+2023-03-20 12:30:41,966 -  nornir.core -     INFO -        run() - Running task 'napalm_ping' with args {'dest': '10.30.1.108', 'count': 2} on 1 hosts
+2023-03-20 12:30:44,076 - nornir.core.task -    ERROR -      start() - Host 'SW-PLGN-2': task 'napalm_ping' failed with traceback:
+Traceback (most recent call last):
+  File "C:\Users\kcarkov\AppData\Roaming\Python\Python37\site-packages\netmiko\base_connection.py", line 1046, in establish_connection
+    self.remote_conn_pre.connect(**ssh_connect_params)
+  File "C:\Users\kcarkov\AppData\Roaming\Python\Python37\site-packages\paramiko\client.py", line 380, in connect
+    raise NoValidConnectionsError(errors)
+paramiko.ssh_exception.NoValidConnectionsError: [Errno None] Unable to connect to port 22 on 10.30.1.108
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\kcarkov\AppData\Roaming\Python\Python37\site-packages\napalm\base\base.py", line 119, in _netmiko_open
+    **netmiko_optional_args
+  File "C:\Users\kcarkov\AppData\Roaming\Python\Python37\site-packages\netmiko\ssh_dispatcher.py", line 365, in ConnectHandler
+    return ConnectionClass(*args, **kwargs)
+  File "C:\Users\kcarkov\AppData\Roaming\Python\Python37\site-packages\netmiko\base_connection.py", line 439, in __init__
+    self._open()
+  File "C:\Users\kcarkov\AppData\Roaming\Python\Python37\site-packages\netmiko\base_connection.py", line 444, in _open
+    self.establish_connection()
+  File "C:\Users\kcarkov\AppData\Roaming\Python\Python37\site-packages\netmiko\base_connection.py", line 1068, in establish_connection
+    raise NetmikoTimeoutException(msg)
+netmiko.exceptions.NetmikoTimeoutException: TCP connection to device failed.
+
+Common causes of this problem are:
+1. Incorrect hostname or IP address.
+2. Wrong TCP port.
+3. Intermediate firewall blocking access.
+
+Device settings: cisco_ios 10.30.1.108:22
+
+
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\kcarkov\AppData\Roaming\Python\Python37\site-packages\nornir\core\task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "C:\Users\kcarkov\AppData\Roaming\Python\Python37\site-packages\nornir_napalm\plugins\tasks\napalm_ping.py", line 36, in napalm_ping
+    device = task.host.get_connection(CONNECTION_NAME, task.nornir.config)
+  File "C:\Users\kcarkov\AppData\Roaming\Python\Python37\site-packages\nornir\core\inventory.py", line 502, in get_connection
+    extras=conn.extras,
+  File "C:\Users\kcarkov\AppData\Roaming\Python\Python37\site-packages\nornir\core\inventory.py", line 553, in open_connection
+    configuration=configuration,
+  File "C:\Users\kcarkov\AppData\Roaming\Python\Python37\site-packages\nornir_napalm\plugins\connections\__init__.py", line 57, in open
+    connection.open()
+  File "C:\Users\kcarkov\AppData\Roaming\Python\Python37\site-packages\napalm\ios\ios.py", line 171, in open
+    device_type, netmiko_optional_args=self.netmiko_optional_args
+  File "C:\Users\kcarkov\AppData\Roaming\Python\Python37\site-packages\napalm\base\base.py", line 122, in _netmiko_open
+    raise ConnectionException("Cannot connect to {}".format(self.hostname))
+napalm.base.exceptions.ConnectionException: Cannot connect to 10.30.1.108
+
+2023-03-20 12:30:59,059 -  nornir.core -     INFO -        run() - Running task 'napalm_ping' with args {'dest': '10.30.1.108', 'count': 2} on 1 hosts
+2023-03-20 12:31:01,157 - nornir.core.task -    ERROR -      start() - Host 'SW-PLGN-2': task 'napalm_ping' failed with traceback:
+Traceback (most recent call last):
+  File "C:\Users\kcarkov\AppData\Roaming\Python\Python37\site-packages\netmiko\base_connection.py", line 1046, in establish_connection
+    self.remote_conn_pre.connect(**ssh_connect_params)
+  File "C:\Users\kcarkov\AppData\Roaming\Python\Python37\site-packages\paramiko\client.py", line 380, in connect
+    raise NoValidConnectionsError(errors)
+paramiko.ssh_exception.NoValidConnectionsError: [Errno None] Unable to connect to port 22 on 10.30.1.108
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\kcarkov\AppData\Roaming\Python\Python37\site-packages\napalm\base\base.py", line 119, in _netmiko_open
+    **netmiko_optional_args
+  File "C:\Users\kcarkov\AppData\Roaming\Python\Python37\site-packages\netmiko\ssh_dispatcher.py", line 365, in ConnectHandler
+    return ConnectionClass(*args, **kwargs)
+  File "C:\Users\kcarkov\AppData\Roaming\Python\Python37\site-packages\netmiko\base_connection.py", line 439, in __init__
+    self._open()
+  File "C:\Users\kcarkov\AppData\Roaming\Python\Python37\site-packages\netmiko\base_connection.py", line 444, in _open
+    self.establish_connection()
+  File "C:\Users\kcarkov\AppData\Roaming\Python\Python37\site-packages\netmiko\base_connection.py", line 1068, in establish_connection
+    raise NetmikoTimeoutException(msg)
+netmiko.exceptions.NetmikoTimeoutException: TCP connection to device failed.
+
+Common causes of this problem are:
+1. Incorrect hostname or IP address.
+2. Wrong TCP port.
+3. Intermediate firewall blocking access.
+
+Device settings: cisco_ios 10.30.1.108:22
+
+
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\kcarkov\AppData\Roaming\Python\Python37\site-packages\nornir\core\task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "C:\Users\kcarkov\AppData\Roaming\Python\Python37\site-packages\nornir_napalm\plugins\tasks\napalm_ping.py", line 36, in napalm_ping
+    device = task.host.get_connection(CONNECTION_NAME, task.nornir.config)
+  File "C:\Users\kcarkov\AppData\Roaming\Python\Python37\site-packages\nornir\core\inventory.py", line 502, in get_connection
+    extras=conn.extras,
+  File "C:\Users\kcarkov\AppData\Roaming\Python\Python37\site-packages\nornir\core\inventory.py", line 553, in open_connection
+    configuration=configuration,
+  File "C:\Users\kcarkov\AppData\Roaming\Python\Python37\site-packages\nornir_napalm\plugins\connections\__init__.py", line 57, in open
+    connection.open()
+  File "C:\Users\kcarkov\AppData\Roaming\Python\Python37\site-packages\napalm\ios\ios.py", line 171, in open
+    device_type, netmiko_optional_args=self.netmiko_optional_args
+  File "C:\Users\kcarkov\AppData\Roaming\Python\Python37\site-packages\napalm\base\base.py", line 122, in _netmiko_open
+    raise ConnectionException("Cannot connect to {}".format(self.hostname))
+napalm.base.exceptions.ConnectionException: Cannot connect to 10.30.1.108
+
+2023-03-20 12:32:55,444 -  nornir.core -     INFO -        run() - Running task 'napalm_ping' with args {'dest': '10.30.1.108', 'count': 2} on 1 hosts
+2023-03-20 12:32:57,554 - nornir.core.task -    ERROR -      start() - Host 'SW-PLGN-2': task 'napalm_ping' failed with traceback:
+Traceback (most recent call last):
+  File "C:\Users\kcarkov\AppData\Roaming\Python\Python37\site-packages\netmiko\base_connection.py", line 1046, in establish_connection
+    self.remote_conn_pre.connect(**ssh_connect_params)
+  File "C:\Users\kcarkov\AppData\Roaming\Python\Python37\site-packages\paramiko\client.py", line 380, in connect
+    raise NoValidConnectionsError(errors)
+paramiko.ssh_exception.NoValidConnectionsError: [Errno None] Unable to connect to port 22 on 10.30.1.108
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\kcarkov\AppData\Roaming\Python\Python37\site-packages\napalm\base\base.py", line 119, in _netmiko_open
+    **netmiko_optional_args
+  File "C:\Users\kcarkov\AppData\Roaming\Python\Python37\site-packages\netmiko\ssh_dispatcher.py", line 365, in ConnectHandler
+    return ConnectionClass(*args, **kwargs)
+  File "C:\Users\kcarkov\AppData\Roaming\Python\Python37\site-packages\netmiko\base_connection.py", line 439, in __init__
+    self._open()
+  File "C:\Users\kcarkov\AppData\Roaming\Python\Python37\site-packages\netmiko\base_connection.py", line 444, in _open
+    self.establish_connection()
+  File "C:\Users\kcarkov\AppData\Roaming\Python\Python37\site-packages\netmiko\base_connection.py", line 1068, in establish_connection
+    raise NetmikoTimeoutException(msg)
+netmiko.exceptions.NetmikoTimeoutException: TCP connection to device failed.
+
+Common causes of this problem are:
+1. Incorrect hostname or IP address.
+2. Wrong TCP port.
+3. Intermediate firewall blocking access.
+
+Device settings: cisco_ios 10.30.1.108:22
+
+
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\kcarkov\AppData\Roaming\Python\Python37\site-packages\nornir\core\task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "C:\Users\kcarkov\AppData\Roaming\Python\Python37\site-packages\nornir_napalm\plugins\tasks\napalm_ping.py", line 36, in napalm_ping
+    device = task.host.get_connection(CONNECTION_NAME, task.nornir.config)
+  File "C:\Users\kcarkov\AppData\Roaming\Python\Python37\site-packages\nornir\core\inventory.py", line 502, in get_connection
+    extras=conn.extras,
+  File "C:\Users\kcarkov\AppData\Roaming\Python\Python37\site-packages\nornir\core\inventory.py", line 553, in open_connection
+    configuration=configuration,
+  File "C:\Users\kcarkov\AppData\Roaming\Python\Python37\site-packages\nornir_napalm\plugins\connections\__init__.py", line 57, in open
+    connection.open()
+  File "C:\Users\kcarkov\AppData\Roaming\Python\Python37\site-packages\napalm\ios\ios.py", line 171, in open
+    device_type, netmiko_optional_args=self.netmiko_optional_args
+  File "C:\Users\kcarkov\AppData\Roaming\Python\Python37\site-packages\napalm\base\base.py", line 122, in _netmiko_open
+    raise ConnectionException("Cannot connect to {}".format(self.hostname))
+napalm.base.exceptions.ConnectionException: Cannot connect to 10.30.1.108
+
+2023-03-20 12:33:10,376 -  nornir.core -     INFO -        run() - Running task 'napalm_ping' with args {'dest': '10.30.1.108', 'count': 2} on 1 hosts
+2023-03-20 12:33:12,448 - nornir.core.task -    ERROR -      start() - Host 'SW-PLGN-2': task 'napalm_ping' failed with traceback:
+Traceback (most recent call last):
+  File "C:\Users\kcarkov\AppData\Roaming\Python\Python37\site-packages\netmiko\base_connection.py", line 1046, in establish_connection
+    self.remote_conn_pre.connect(**ssh_connect_params)
+  File "C:\Users\kcarkov\AppData\Roaming\Python\Python37\site-packages\paramiko\client.py", line 380, in connect
+    raise NoValidConnectionsError(errors)
+paramiko.ssh_exception.NoValidConnectionsError: [Errno None] Unable to connect to port 22 on 10.30.1.108
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\kcarkov\AppData\Roaming\Python\Python37\site-packages\napalm\base\base.py", line 119, in _netmiko_open
+    **netmiko_optional_args
+  File "C:\Users\kcarkov\AppData\Roaming\Python\Python37\site-packages\netmiko\ssh_dispatcher.py", line 365, in ConnectHandler
+    return ConnectionClass(*args, **kwargs)
+  File "C:\Users\kcarkov\AppData\Roaming\Python\Python37\site-packages\netmiko\base_connection.py", line 439, in __init__
+    self._open()
+  File "C:\Users\kcarkov\AppData\Roaming\Python\Python37\site-packages\netmiko\base_connection.py", line 444, in _open
+    self.establish_connection()
+  File "C:\Users\kcarkov\AppData\Roaming\Python\Python37\site-packages\netmiko\base_connection.py", line 1068, in establish_connection
+    raise NetmikoTimeoutException(msg)
+netmiko.exceptions.NetmikoTimeoutException: TCP connection to device failed.
+
+Common causes of this problem are:
+1. Incorrect hostname or IP address.
+2. Wrong TCP port.
+3. Intermediate firewall blocking access.
+
+Device settings: cisco_ios 10.30.1.108:22
+
+
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\kcarkov\AppData\Roaming\Python\Python37\site-packages\nornir\core\task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "C:\Users\kcarkov\AppData\Roaming\Python\Python37\site-packages\nornir_napalm\plugins\tasks\napalm_ping.py", line 36, in napalm_ping
+    device = task.host.get_connection(CONNECTION_NAME, task.nornir.config)
+  File "C:\Users\kcarkov\AppData\Roaming\Python\Python37\site-packages\nornir\core\inventory.py", line 502, in get_connection
+    extras=conn.extras,
+  File "C:\Users\kcarkov\AppData\Roaming\Python\Python37\site-packages\nornir\core\inventory.py", line 553, in open_connection
+    configuration=configuration,
+  File "C:\Users\kcarkov\AppData\Roaming\Python\Python37\site-packages\nornir_napalm\plugins\connections\__init__.py", line 57, in open
+    connection.open()
+  File "C:\Users\kcarkov\AppData\Roaming\Python\Python37\site-packages\napalm\ios\ios.py", line 171, in open
+    device_type, netmiko_optional_args=self.netmiko_optional_args
+  File "C:\Users\kcarkov\AppData\Roaming\Python\Python37\site-packages\napalm\base\base.py", line 122, in _netmiko_open
+    raise ConnectionException("Cannot connect to {}".format(self.hostname))
+napalm.base.exceptions.ConnectionException: Cannot connect to 10.30.1.108
+
+2023-03-20 12:42:17,634 -  nornir.core -     INFO -        run() - Running task 'napalm_ping' with args {'dest': '10.30.1.108', 'count': 2} on 1 hosts
+2023-03-20 12:42:34,630 -  nornir.core -     INFO -        run() - Running task 'napalm_ping' with args {'dest': '10.30.1.108', 'count': 2} on 1 hosts
+2023-03-20 12:42:43,957 -  nornir.core -     INFO -        run() - Running task 'napalm_ping' with args {'dest': '10.30.1.109', 'count': 2} on 1 hosts
+2023-03-20 13:15:19,180 -  nornir.core -     INFO -        run() - Running task 'napalm_ping' with args {'dest': '10.30.1.111', 'count': 2} on 1 hosts
+2023-03-20 14:59:59,808 -  nornir.core -     INFO -        run() - Running task 'napalm_ping' with args {'dest': '10.30.1.108', 'count': 2} on 1 hosts
+2023-03-20 16:02:11,058 -  nornir.core -     INFO -        run() - Running task 'napalm_get' with args {'getters': ['get_interfaces']} on 1 hosts
+2023-03-20 16:03:16,462 -  nornir.core -     INFO -        run() - Running task 'napalm_get' with args {'getters': ['get_interfaces']} on 1 hosts
+2023-03-20 16:03:18,565 - nornir.core.task -    ERROR -      start() - Host 'SW-PLGN-2': task 'napalm_get' failed with traceback:
+Traceback (most recent call last):
+  File "C:\Users\kcarkov\AppData\Roaming\Python\Python37\site-packages\netmiko\base_connection.py", line 1046, in establish_connection
+    self.remote_conn_pre.connect(**ssh_connect_params)
+  File "C:\Users\kcarkov\AppData\Roaming\Python\Python37\site-packages\paramiko\client.py", line 380, in connect
+    raise NoValidConnectionsError(errors)
+paramiko.ssh_exception.NoValidConnectionsError: [Errno None] Unable to connect to port 22 on 10.30.1.108
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\kcarkov\AppData\Roaming\Python\Python37\site-packages\napalm\base\base.py", line 119, in _netmiko_open
+    **netmiko_optional_args
+  File "C:\Users\kcarkov\AppData\Roaming\Python\Python37\site-packages\netmiko\ssh_dispatcher.py", line 365, in ConnectHandler
+    return ConnectionClass(*args, **kwargs)
+  File "C:\Users\kcarkov\AppData\Roaming\Python\Python37\site-packages\netmiko\base_connection.py", line 439, in __init__
+    self._open()
+  File "C:\Users\kcarkov\AppData\Roaming\Python\Python37\site-packages\netmiko\base_connection.py", line 444, in _open
+    self.establish_connection()
+  File "C:\Users\kcarkov\AppData\Roaming\Python\Python37\site-packages\netmiko\base_connection.py", line 1068, in establish_connection
+    raise NetmikoTimeoutException(msg)
+netmiko.exceptions.NetmikoTimeoutException: TCP connection to device failed.
+
+Common causes of this problem are:
+1. Incorrect hostname or IP address.
+2. Wrong TCP port.
+3. Intermediate firewall blocking access.
+
+Device settings: cisco_ios 10.30.1.108:22
+
+
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\kcarkov\AppData\Roaming\Python\Python37\site-packages\nornir\core\task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "C:\Users\kcarkov\AppData\Roaming\Python\Python37\site-packages\nornir_napalm\plugins\tasks\napalm_get.py", line 32, in napalm_get
+    device = task.host.get_connection(CONNECTION_NAME, task.nornir.config)
+  File "C:\Users\kcarkov\AppData\Roaming\Python\Python37\site-packages\nornir\core\inventory.py", line 502, in get_connection
+    extras=conn.extras,
+  File "C:\Users\kcarkov\AppData\Roaming\Python\Python37\site-packages\nornir\core\inventory.py", line 553, in open_connection
+    configuration=configuration,
+  File "C:\Users\kcarkov\AppData\Roaming\Python\Python37\site-packages\nornir_napalm\plugins\connections\__init__.py", line 57, in open
+    connection.open()
+  File "C:\Users\kcarkov\AppData\Roaming\Python\Python37\site-packages\napalm\ios\ios.py", line 171, in open
+    device_type, netmiko_optional_args=self.netmiko_optional_args
+  File "C:\Users\kcarkov\AppData\Roaming\Python\Python37\site-packages\napalm\base\base.py", line 122, in _netmiko_open
+    raise ConnectionException("Cannot connect to {}".format(self.hostname))
+napalm.base.exceptions.ConnectionException: Cannot connect to 10.30.1.108
+
+2023-03-20 16:03:23,575 -  nornir.core -     INFO -        run() - Running task 'napalm_get' with args {'getters': ['get_interfaces']} on 1 hosts
+2023-03-20 16:04:15,404 -  nornir.core -     INFO -        run() - Running task 'napalm_get' with args {'getters': ['get_interfaces']} on 1 hosts
+2023-03-20 16:05:27,494 -  nornir.core -     INFO -        run() - Running task 'napalm_get' with args {'getters': ['get_interfaces']} on 1 hosts
+2023-03-20 16:11:21,343 -  nornir.core -     INFO -        run() - Running task 'napalm_get' with args {'getters': ['get_interfaces']} on 1 hosts
+2023-03-20 16:11:23,456 - nornir.core.task -    ERROR -      start() - Host 'SW-PLGN-2': task 'napalm_get' failed with traceback:
+Traceback (most recent call last):
+  File "C:\Users\kcarkov\AppData\Roaming\Python\Python37\site-packages\netmiko\base_connection.py", line 1046, in establish_connection
+    self.remote_conn_pre.connect(**ssh_connect_params)
+  File "C:\Users\kcarkov\AppData\Roaming\Python\Python37\site-packages\paramiko\client.py", line 380, in connect
+    raise NoValidConnectionsError(errors)
+paramiko.ssh_exception.NoValidConnectionsError: [Errno None] Unable to connect to port 22 on 10.30.1.108
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\kcarkov\AppData\Roaming\Python\Python37\site-packages\napalm\base\base.py", line 119, in _netmiko_open
+    **netmiko_optional_args
+  File "C:\Users\kcarkov\AppData\Roaming\Python\Python37\site-packages\netmiko\ssh_dispatcher.py", line 365, in ConnectHandler
+    return ConnectionClass(*args, **kwargs)
+  File "C:\Users\kcarkov\AppData\Roaming\Python\Python37\site-packages\netmiko\base_connection.py", line 439, in __init__
+    self._open()
+  File "C:\Users\kcarkov\AppData\Roaming\Python\Python37\site-packages\netmiko\base_connection.py", line 444, in _open
+    self.establish_connection()
+  File "C:\Users\kcarkov\AppData\Roaming\Python\Python37\site-packages\netmiko\base_connection.py", line 1068, in establish_connection
+    raise NetmikoTimeoutException(msg)
+netmiko.exceptions.NetmikoTimeoutException: TCP connection to device failed.
+
+Common causes of this problem are:
+1. Incorrect hostname or IP address.
+2. Wrong TCP port.
+3. Intermediate firewall blocking access.
+
+Device settings: cisco_ios 10.30.1.108:22
+
+
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\kcarkov\AppData\Roaming\Python\Python37\site-packages\nornir\core\task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "C:\Users\kcarkov\AppData\Roaming\Python\Python37\site-packages\nornir_napalm\plugins\tasks\napalm_get.py", line 32, in napalm_get
+    device = task.host.get_connection(CONNECTION_NAME, task.nornir.config)
+  File "C:\Users\kcarkov\AppData\Roaming\Python\Python37\site-packages\nornir\core\inventory.py", line 502, in get_connection
+    extras=conn.extras,
+  File "C:\Users\kcarkov\AppData\Roaming\Python\Python37\site-packages\nornir\core\inventory.py", line 553, in open_connection
+    configuration=configuration,
+  File "C:\Users\kcarkov\AppData\Roaming\Python\Python37\site-packages\nornir_napalm\plugins\connections\__init__.py", line 57, in open
+    connection.open()
+  File "C:\Users\kcarkov\AppData\Roaming\Python\Python37\site-packages\napalm\ios\ios.py", line 171, in open
+    device_type, netmiko_optional_args=self.netmiko_optional_args
+  File "C:\Users\kcarkov\AppData\Roaming\Python\Python37\site-packages\napalm\base\base.py", line 122, in _netmiko_open
+    raise ConnectionException("Cannot connect to {}".format(self.hostname))
+napalm.base.exceptions.ConnectionException: Cannot connect to 10.30.1.108
+
+2023-03-20 16:24:17,012 -  nornir.core -     INFO -        run() - Running task 'napalm_get' with args {'getters': ['get_interfaces']} on 1 hosts
+2023-03-20 16:24:19,100 - nornir.core.task -    ERROR -      start() - Host 'SW-PLGN-2': task 'napalm_get' failed with traceback:
+Traceback (most recent call last):
+  File "C:\Users\kcarkov\AppData\Roaming\Python\Python37\site-packages\netmiko\base_connection.py", line 1046, in establish_connection
+    self.remote_conn_pre.connect(**ssh_connect_params)
+  File "C:\Users\kcarkov\AppData\Roaming\Python\Python37\site-packages\paramiko\client.py", line 380, in connect
+    raise NoValidConnectionsError(errors)
+paramiko.ssh_exception.NoValidConnectionsError: [Errno None] Unable to connect to port 22 on 10.30.1.108
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\kcarkov\AppData\Roaming\Python\Python37\site-packages\napalm\base\base.py", line 119, in _netmiko_open
+    **netmiko_optional_args
+  File "C:\Users\kcarkov\AppData\Roaming\Python\Python37\site-packages\netmiko\ssh_dispatcher.py", line 365, in ConnectHandler
+    return ConnectionClass(*args, **kwargs)
+  File "C:\Users\kcarkov\AppData\Roaming\Python\Python37\site-packages\netmiko\base_connection.py", line 439, in __init__
+    self._open()
+  File "C:\Users\kcarkov\AppData\Roaming\Python\Python37\site-packages\netmiko\base_connection.py", line 444, in _open
+    self.establish_connection()
+  File "C:\Users\kcarkov\AppData\Roaming\Python\Python37\site-packages\netmiko\base_connection.py", line 1068, in establish_connection
+    raise NetmikoTimeoutException(msg)
+netmiko.exceptions.NetmikoTimeoutException: TCP connection to device failed.
+
+Common causes of this problem are:
+1. Incorrect hostname or IP address.
+2. Wrong TCP port.
+3. Intermediate firewall blocking access.
+
+Device settings: cisco_ios 10.30.1.108:22
+
+
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\kcarkov\AppData\Roaming\Python\Python37\site-packages\nornir\core\task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "C:\Users\kcarkov\AppData\Roaming\Python\Python37\site-packages\nornir_napalm\plugins\tasks\napalm_get.py", line 32, in napalm_get
+    device = task.host.get_connection(CONNECTION_NAME, task.nornir.config)
+  File "C:\Users\kcarkov\AppData\Roaming\Python\Python37\site-packages\nornir\core\inventory.py", line 502, in get_connection
+    extras=conn.extras,
+  File "C:\Users\kcarkov\AppData\Roaming\Python\Python37\site-packages\nornir\core\inventory.py", line 553, in open_connection
+    configuration=configuration,
+  File "C:\Users\kcarkov\AppData\Roaming\Python\Python37\site-packages\nornir_napalm\plugins\connections\__init__.py", line 57, in open
+    connection.open()
+  File "C:\Users\kcarkov\AppData\Roaming\Python\Python37\site-packages\napalm\ios\ios.py", line 171, in open
+    device_type, netmiko_optional_args=self.netmiko_optional_args
+  File "C:\Users\kcarkov\AppData\Roaming\Python\Python37\site-packages\napalm\base\base.py", line 122, in _netmiko_open
+    raise ConnectionException("Cannot connect to {}".format(self.hostname))
+napalm.base.exceptions.ConnectionException: Cannot connect to 10.30.1.108
+
+2023-03-20 16:25:36,858 -  nornir.core -     INFO -        run() - Running task 'napalm_get' with args {'getters': ['get_interfaces']} on 1 hosts
+2023-03-20 16:25:38,953 - nornir.core.task -    ERROR -      start() - Host 'SW-PLGN-2': task 'napalm_get' failed with traceback:
+Traceback (most recent call last):
+  File "C:\Users\kcarkov\AppData\Roaming\Python\Python37\site-packages\netmiko\base_connection.py", line 1046, in establish_connection
+    self.remote_conn_pre.connect(**ssh_connect_params)
+  File "C:\Users\kcarkov\AppData\Roaming\Python\Python37\site-packages\paramiko\client.py", line 380, in connect
+    raise NoValidConnectionsError(errors)
+paramiko.ssh_exception.NoValidConnectionsError: [Errno None] Unable to connect to port 22 on 10.30.1.108
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\kcarkov\AppData\Roaming\Python\Python37\site-packages\napalm\base\base.py", line 119, in _netmiko_open
+    **netmiko_optional_args
+  File "C:\Users\kcarkov\AppData\Roaming\Python\Python37\site-packages\netmiko\ssh_dispatcher.py", line 365, in ConnectHandler
+    return ConnectionClass(*args, **kwargs)
+  File "C:\Users\kcarkov\AppData\Roaming\Python\Python37\site-packages\netmiko\base_connection.py", line 439, in __init__
+    self._open()
+  File "C:\Users\kcarkov\AppData\Roaming\Python\Python37\site-packages\netmiko\base_connection.py", line 444, in _open
+    self.establish_connection()
+  File "C:\Users\kcarkov\AppData\Roaming\Python\Python37\site-packages\netmiko\base_connection.py", line 1068, in establish_connection
+    raise NetmikoTimeoutException(msg)
+netmiko.exceptions.NetmikoTimeoutException: TCP connection to device failed.
+
+Common causes of this problem are:
+1. Incorrect hostname or IP address.
+2. Wrong TCP port.
+3. Intermediate firewall blocking access.
+
+Device settings: cisco_ios 10.30.1.108:22
+
+
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\kcarkov\AppData\Roaming\Python\Python37\site-packages\nornir\core\task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "C:\Users\kcarkov\AppData\Roaming\Python\Python37\site-packages\nornir_napalm\plugins\tasks\napalm_get.py", line 32, in napalm_get
+    device = task.host.get_connection(CONNECTION_NAME, task.nornir.config)
+  File "C:\Users\kcarkov\AppData\Roaming\Python\Python37\site-packages\nornir\core\inventory.py", line 502, in get_connection
+    extras=conn.extras,
+  File "C:\Users\kcarkov\AppData\Roaming\Python\Python37\site-packages\nornir\core\inventory.py", line 553, in open_connection
+    configuration=configuration,
+  File "C:\Users\kcarkov\AppData\Roaming\Python\Python37\site-packages\nornir_napalm\plugins\connections\__init__.py", line 57, in open
+    connection.open()
+  File "C:\Users\kcarkov\AppData\Roaming\Python\Python37\site-packages\napalm\ios\ios.py", line 171, in open
+    device_type, netmiko_optional_args=self.netmiko_optional_args
+  File "C:\Users\kcarkov\AppData\Roaming\Python\Python37\site-packages\napalm\base\base.py", line 122, in _netmiko_open
+    raise ConnectionException("Cannot connect to {}".format(self.hostname))
+napalm.base.exceptions.ConnectionException: Cannot connect to 10.30.1.108
+
+2023-03-20 16:28:56,982 -  nornir.core -     INFO -        run() - Running task 'napalm_get' with args {'getters': ['get_interfaces']} on 1 hosts
+2023-03-20 16:28:59,090 - nornir.core.task -    ERROR -      start() - Host 'SW-PLGN-2': task 'napalm_get' failed with traceback:
+Traceback (most recent call last):
+  File "C:\Users\kcarkov\AppData\Roaming\Python\Python37\site-packages\netmiko\base_connection.py", line 1046, in establish_connection
+    self.remote_conn_pre.connect(**ssh_connect_params)
+  File "C:\Users\kcarkov\AppData\Roaming\Python\Python37\site-packages\paramiko\client.py", line 380, in connect
+    raise NoValidConnectionsError(errors)
+paramiko.ssh_exception.NoValidConnectionsError: [Errno None] Unable to connect to port 22 on 10.30.1.108
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\kcarkov\AppData\Roaming\Python\Python37\site-packages\napalm\base\base.py", line 119, in _netmiko_open
+    **netmiko_optional_args
+  File "C:\Users\kcarkov\AppData\Roaming\Python\Python37\site-packages\netmiko\ssh_dispatcher.py", line 365, in ConnectHandler
+    return ConnectionClass(*args, **kwargs)
+  File "C:\Users\kcarkov\AppData\Roaming\Python\Python37\site-packages\netmiko\base_connection.py", line 439, in __init__
+    self._open()
+  File "C:\Users\kcarkov\AppData\Roaming\Python\Python37\site-packages\netmiko\base_connection.py", line 444, in _open
+    self.establish_connection()
+  File "C:\Users\kcarkov\AppData\Roaming\Python\Python37\site-packages\netmiko\base_connection.py", line 1068, in establish_connection
+    raise NetmikoTimeoutException(msg)
+netmiko.exceptions.NetmikoTimeoutException: TCP connection to device failed.
+
+Common causes of this problem are:
+1. Incorrect hostname or IP address.
+2. Wrong TCP port.
+3. Intermediate firewall blocking access.
+
+Device settings: cisco_ios 10.30.1.108:22
+
+
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\kcarkov\AppData\Roaming\Python\Python37\site-packages\nornir\core\task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "C:\Users\kcarkov\AppData\Roaming\Python\Python37\site-packages\nornir_napalm\plugins\tasks\napalm_get.py", line 32, in napalm_get
+    device = task.host.get_connection(CONNECTION_NAME, task.nornir.config)
+  File "C:\Users\kcarkov\AppData\Roaming\Python\Python37\site-packages\nornir\core\inventory.py", line 502, in get_connection
+    extras=conn.extras,
+  File "C:\Users\kcarkov\AppData\Roaming\Python\Python37\site-packages\nornir\core\inventory.py", line 553, in open_connection
+    configuration=configuration,
+  File "C:\Users\kcarkov\AppData\Roaming\Python\Python37\site-packages\nornir_napalm\plugins\connections\__init__.py", line 57, in open
+    connection.open()
+  File "C:\Users\kcarkov\AppData\Roaming\Python\Python37\site-packages\napalm\ios\ios.py", line 171, in open
+    device_type, netmiko_optional_args=self.netmiko_optional_args
+  File "C:\Users\kcarkov\AppData\Roaming\Python\Python37\site-packages\napalm\base\base.py", line 122, in _netmiko_open
+    raise ConnectionException("Cannot connect to {}".format(self.hostname))
+napalm.base.exceptions.ConnectionException: Cannot connect to 10.30.1.108
+
+2023-03-20 16:31:09,121 -  nornir.core -     INFO -        run() - Running task 'napalm_get' with args {'getters': ['get_interfaces']} on 1 hosts
+2023-03-20 16:31:11,196 - nornir.core.task -    ERROR -      start() - Host 'SW-PLGN-2': task 'napalm_get' failed with traceback:
+Traceback (most recent call last):
+  File "C:\Users\kcarkov\AppData\Roaming\Python\Python37\site-packages\netmiko\base_connection.py", line 1046, in establish_connection
+    self.remote_conn_pre.connect(**ssh_connect_params)
+  File "C:\Users\kcarkov\AppData\Roaming\Python\Python37\site-packages\paramiko\client.py", line 380, in connect
+    raise NoValidConnectionsError(errors)
+paramiko.ssh_exception.NoValidConnectionsError: [Errno None] Unable to connect to port 22 on 10.30.1.108
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\kcarkov\AppData\Roaming\Python\Python37\site-packages\napalm\base\base.py", line 119, in _netmiko_open
+    **netmiko_optional_args
+  File "C:\Users\kcarkov\AppData\Roaming\Python\Python37\site-packages\netmiko\ssh_dispatcher.py", line 365, in ConnectHandler
+    return ConnectionClass(*args, **kwargs)
+  File "C:\Users\kcarkov\AppData\Roaming\Python\Python37\site-packages\netmiko\base_connection.py", line 439, in __init__
+    self._open()
+  File "C:\Users\kcarkov\AppData\Roaming\Python\Python37\site-packages\netmiko\base_connection.py", line 444, in _open
+    self.establish_connection()
+  File "C:\Users\kcarkov\AppData\Roaming\Python\Python37\site-packages\netmiko\base_connection.py", line 1068, in establish_connection
+    raise NetmikoTimeoutException(msg)
+netmiko.exceptions.NetmikoTimeoutException: TCP connection to device failed.
+
+Common causes of this problem are:
+1. Incorrect hostname or IP address.
+2. Wrong TCP port.
+3. Intermediate firewall blocking access.
+
+Device settings: cisco_ios 10.30.1.108:22
+
+
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\kcarkov\AppData\Roaming\Python\Python37\site-packages\nornir\core\task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "C:\Users\kcarkov\AppData\Roaming\Python\Python37\site-packages\nornir_napalm\plugins\tasks\napalm_get.py", line 32, in napalm_get
+    device = task.host.get_connection(CONNECTION_NAME, task.nornir.config)
+  File "C:\Users\kcarkov\AppData\Roaming\Python\Python37\site-packages\nornir\core\inventory.py", line 502, in get_connection
+    extras=conn.extras,
+  File "C:\Users\kcarkov\AppData\Roaming\Python\Python37\site-packages\nornir\core\inventory.py", line 553, in open_connection
+    configuration=configuration,
+  File "C:\Users\kcarkov\AppData\Roaming\Python\Python37\site-packages\nornir_napalm\plugins\connections\__init__.py", line 57, in open
+    connection.open()
+  File "C:\Users\kcarkov\AppData\Roaming\Python\Python37\site-packages\napalm\ios\ios.py", line 171, in open
+    device_type, netmiko_optional_args=self.netmiko_optional_args
+  File "C:\Users\kcarkov\AppData\Roaming\Python\Python37\site-packages\napalm\base\base.py", line 122, in _netmiko_open
+    raise ConnectionException("Cannot connect to {}".format(self.hostname))
+napalm.base.exceptions.ConnectionException: Cannot connect to 10.30.1.108
+
+2023-03-20 16:33:38,806 -  nornir.core -     INFO -        run() - Running task 'napalm_get' with args {'getters': ['get_interfaces']} on 1 hosts
+2023-03-20 16:33:40,901 - nornir.core.task -    ERROR -      start() - Host 'SW-PLGN-2': task 'napalm_get' failed with traceback:
+Traceback (most recent call last):
+  File "C:\Users\kcarkov\AppData\Roaming\Python\Python37\site-packages\netmiko\base_connection.py", line 1046, in establish_connection
+    self.remote_conn_pre.connect(**ssh_connect_params)
+  File "C:\Users\kcarkov\AppData\Roaming\Python\Python37\site-packages\paramiko\client.py", line 380, in connect
+    raise NoValidConnectionsError(errors)
+paramiko.ssh_exception.NoValidConnectionsError: [Errno None] Unable to connect to port 22 on 10.30.1.108
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\kcarkov\AppData\Roaming\Python\Python37\site-packages\napalm\base\base.py", line 119, in _netmiko_open
+    **netmiko_optional_args
+  File "C:\Users\kcarkov\AppData\Roaming\Python\Python37\site-packages\netmiko\ssh_dispatcher.py", line 365, in ConnectHandler
+    return ConnectionClass(*args, **kwargs)
+  File "C:\Users\kcarkov\AppData\Roaming\Python\Python37\site-packages\netmiko\base_connection.py", line 439, in __init__
+    self._open()
+  File "C:\Users\kcarkov\AppData\Roaming\Python\Python37\site-packages\netmiko\base_connection.py", line 444, in _open
+    self.establish_connection()
+  File "C:\Users\kcarkov\AppData\Roaming\Python\Python37\site-packages\netmiko\base_connection.py", line 1068, in establish_connection
+    raise NetmikoTimeoutException(msg)
+netmiko.exceptions.NetmikoTimeoutException: TCP connection to device failed.
+
+Common causes of this problem are:
+1. Incorrect hostname or IP address.
+2. Wrong TCP port.
+3. Intermediate firewall blocking access.
+
+Device settings: cisco_ios 10.30.1.108:22
+
+
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\kcarkov\AppData\Roaming\Python\Python37\site-packages\nornir\core\task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "C:\Users\kcarkov\AppData\Roaming\Python\Python37\site-packages\nornir_napalm\plugins\tasks\napalm_get.py", line 32, in napalm_get
+    device = task.host.get_connection(CONNECTION_NAME, task.nornir.config)
+  File "C:\Users\kcarkov\AppData\Roaming\Python\Python37\site-packages\nornir\core\inventory.py", line 502, in get_connection
+    extras=conn.extras,
+  File "C:\Users\kcarkov\AppData\Roaming\Python\Python37\site-packages\nornir\core\inventory.py", line 553, in open_connection
+    configuration=configuration,
+  File "C:\Users\kcarkov\AppData\Roaming\Python\Python37\site-packages\nornir_napalm\plugins\connections\__init__.py", line 57, in open
+    connection.open()
+  File "C:\Users\kcarkov\AppData\Roaming\Python\Python37\site-packages\napalm\ios\ios.py", line 171, in open
+    device_type, netmiko_optional_args=self.netmiko_optional_args
+  File "C:\Users\kcarkov\AppData\Roaming\Python\Python37\site-packages\napalm\base\base.py", line 122, in _netmiko_open
+    raise ConnectionException("Cannot connect to {}".format(self.hostname))
+napalm.base.exceptions.ConnectionException: Cannot connect to 10.30.1.108
+
+2023-03-20 16:34:24,780 -  nornir.core -     INFO -        run() - Running task 'napalm_get' with args {'getters': ['get_interfaces']} on 1 hosts
+2023-03-20 16:35:21,269 -  nornir.core -     INFO -        run() - Running task 'napalm_get' with args {'getters': ['get_interfaces']} on 1 hosts
+2023-03-20 16:35:32,270 -  nornir.core -     INFO -        run() - Running task 'napalm_get' with args {'getters': ['get_interfaces']} on 1 hosts
+2023-03-20 16:35:34,353 - nornir.core.task -    ERROR -      start() - Host 'SW-PLGN-2': task 'napalm_get' failed with traceback:
+Traceback (most recent call last):
+  File "C:\Users\kcarkov\AppData\Roaming\Python\Python37\site-packages\netmiko\base_connection.py", line 1046, in establish_connection
+    self.remote_conn_pre.connect(**ssh_connect_params)
+  File "C:\Users\kcarkov\AppData\Roaming\Python\Python37\site-packages\paramiko\client.py", line 380, in connect
+    raise NoValidConnectionsError(errors)
+paramiko.ssh_exception.NoValidConnectionsError: [Errno None] Unable to connect to port 22 on 10.30.1.108
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\kcarkov\AppData\Roaming\Python\Python37\site-packages\napalm\base\base.py", line 119, in _netmiko_open
+    **netmiko_optional_args
+  File "C:\Users\kcarkov\AppData\Roaming\Python\Python37\site-packages\netmiko\ssh_dispatcher.py", line 365, in ConnectHandler
+    return ConnectionClass(*args, **kwargs)
+  File "C:\Users\kcarkov\AppData\Roaming\Python\Python37\site-packages\netmiko\base_connection.py", line 439, in __init__
+    self._open()
+  File "C:\Users\kcarkov\AppData\Roaming\Python\Python37\site-packages\netmiko\base_connection.py", line 444, in _open
+    self.establish_connection()
+  File "C:\Users\kcarkov\AppData\Roaming\Python\Python37\site-packages\netmiko\base_connection.py", line 1068, in establish_connection
+    raise NetmikoTimeoutException(msg)
+netmiko.exceptions.NetmikoTimeoutException: TCP connection to device failed.
+
+Common causes of this problem are:
+1. Incorrect hostname or IP address.
+2. Wrong TCP port.
+3. Intermediate firewall blocking access.
+
+Device settings: cisco_ios 10.30.1.108:22
+
+
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\kcarkov\AppData\Roaming\Python\Python37\site-packages\nornir\core\task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "C:\Users\kcarkov\AppData\Roaming\Python\Python37\site-packages\nornir_napalm\plugins\tasks\napalm_get.py", line 32, in napalm_get
+    device = task.host.get_connection(CONNECTION_NAME, task.nornir.config)
+  File "C:\Users\kcarkov\AppData\Roaming\Python\Python37\site-packages\nornir\core\inventory.py", line 502, in get_connection
+    extras=conn.extras,
+  File "C:\Users\kcarkov\AppData\Roaming\Python\Python37\site-packages\nornir\core\inventory.py", line 553, in open_connection
+    configuration=configuration,
+  File "C:\Users\kcarkov\AppData\Roaming\Python\Python37\site-packages\nornir_napalm\plugins\connections\__init__.py", line 57, in open
+    connection.open()
+  File "C:\Users\kcarkov\AppData\Roaming\Python\Python37\site-packages\napalm\ios\ios.py", line 171, in open
+    device_type, netmiko_optional_args=self.netmiko_optional_args
+  File "C:\Users\kcarkov\AppData\Roaming\Python\Python37\site-packages\napalm\base\base.py", line 122, in _netmiko_open
+    raise ConnectionException("Cannot connect to {}".format(self.hostname))
+napalm.base.exceptions.ConnectionException: Cannot connect to 10.30.1.108
+
+2023-03-20 16:40:02,153 -  nornir.core -     INFO -        run() - Running task 'napalm_get' with args {'getters': ['get_interfaces']} on 1 hosts
+2023-03-20 16:40:27,168 -  nornir.core -     INFO -        run() - Running task 'napalm_get' with args {'getters': ['get_interfaces']} on 1 hosts
+2023-03-20 16:45:33,819 -  nornir.core -     INFO -        run() - Running task 'napalm_get' with args {'getters': ['get_interfaces']} on 1 hosts
+2023-03-20 16:45:35,141 -  nornir.core -     INFO -        run() - Running task 'close_connections_task' with args {} on 1 hosts
+2023-03-20 16:47:03,613 -  nornir.core -     INFO -        run() - Running task 'napalm_get' with args {'getters': ['get_interfaces']} on 1 hosts
+2023-03-20 16:47:04,379 -  nornir.core -     INFO -        run() - Running task 'Configuration interface.../' with args {'config_commands': ['interface Ethernet0/3', '    description T-IVANOVII', '    switchport access vlan 330', '    switchport mode access', '    no shutdown']} on 1 hosts
+2023-03-20 16:47:05,590 -  nornir.core -     INFO -        run() - Running task 'close_connections_task' with args {} on 1 hosts
+2023-03-20 16:47:27,172 -  nornir.core -     INFO -        run() - Running task 'napalm_get' with args {'getters': ['get_interfaces']} on 1 hosts
+2023-03-20 16:47:29,245 - nornir.core.task -    ERROR -      start() - Host 'SW-PLGN-2': task 'napalm_get' failed with traceback:
+Traceback (most recent call last):
+  File "C:\Users\kcarkov\AppData\Roaming\Python\Python37\site-packages\netmiko\base_connection.py", line 1046, in establish_connection
+    self.remote_conn_pre.connect(**ssh_connect_params)
+  File "C:\Users\kcarkov\AppData\Roaming\Python\Python37\site-packages\paramiko\client.py", line 380, in connect
+    raise NoValidConnectionsError(errors)
+paramiko.ssh_exception.NoValidConnectionsError: [Errno None] Unable to connect to port 22 on 10.30.1.108
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\kcarkov\AppData\Roaming\Python\Python37\site-packages\napalm\base\base.py", line 119, in _netmiko_open
+    **netmiko_optional_args
+  File "C:\Users\kcarkov\AppData\Roaming\Python\Python37\site-packages\netmiko\ssh_dispatcher.py", line 365, in ConnectHandler
+    return ConnectionClass(*args, **kwargs)
+  File "C:\Users\kcarkov\AppData\Roaming\Python\Python37\site-packages\netmiko\base_connection.py", line 439, in __init__
+    self._open()
+  File "C:\Users\kcarkov\AppData\Roaming\Python\Python37\site-packages\netmiko\base_connection.py", line 444, in _open
+    self.establish_connection()
+  File "C:\Users\kcarkov\AppData\Roaming\Python\Python37\site-packages\netmiko\base_connection.py", line 1068, in establish_connection
+    raise NetmikoTimeoutException(msg)
+netmiko.exceptions.NetmikoTimeoutException: TCP connection to device failed.
+
+Common causes of this problem are:
+1. Incorrect hostname or IP address.
+2. Wrong TCP port.
+3. Intermediate firewall blocking access.
+
+Device settings: cisco_ios 10.30.1.108:22
+
+
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\kcarkov\AppData\Roaming\Python\Python37\site-packages\nornir\core\task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "C:\Users\kcarkov\AppData\Roaming\Python\Python37\site-packages\nornir_napalm\plugins\tasks\napalm_get.py", line 32, in napalm_get
+    device = task.host.get_connection(CONNECTION_NAME, task.nornir.config)
+  File "C:\Users\kcarkov\AppData\Roaming\Python\Python37\site-packages\nornir\core\inventory.py", line 502, in get_connection
+    extras=conn.extras,
+  File "C:\Users\kcarkov\AppData\Roaming\Python\Python37\site-packages\nornir\core\inventory.py", line 553, in open_connection
+    configuration=configuration,
+  File "C:\Users\kcarkov\AppData\Roaming\Python\Python37\site-packages\nornir_napalm\plugins\connections\__init__.py", line 57, in open
+    connection.open()
+  File "C:\Users\kcarkov\AppData\Roaming\Python\Python37\site-packages\napalm\ios\ios.py", line 171, in open
+    device_type, netmiko_optional_args=self.netmiko_optional_args
+  File "C:\Users\kcarkov\AppData\Roaming\Python\Python37\site-packages\napalm\base\base.py", line 122, in _netmiko_open
+    raise ConnectionException("Cannot connect to {}".format(self.hostname))
+napalm.base.exceptions.ConnectionException: Cannot connect to 10.30.1.108
+
+2023-03-20 16:47:44,285 -  nornir.core -     INFO -        run() - Running task 'close_connections_task' with args {} on 1 hosts
+2023-03-20 16:48:25,893 -  nornir.core -     INFO -        run() - Running task 'napalm_get' with args {'getters': ['get_interfaces']} on 1 hosts
+2023-03-20 16:48:26,889 -  nornir.core -     INFO -        run() - Running task 'Configuration interface.../' with args {'config_commands': ['interface Ethernet0/3', '    description T-IVANOVII', '    switchport access vlan 330', '    switchport mode access', '    no shutdown']} on 1 hosts
+2023-03-20 16:48:27,840 -  nornir.core -     INFO -        run() - Running task 'close_connections_task' with args {} on 1 hosts
+2023-03-20 17:09:51,260 -  nornir.core -     INFO -        run() - Running task 'napalm_get' with args {'getters': ['get_interfaces']} on 1 hosts
+2023-03-20 17:09:52,052 -  nornir.core -     INFO -        run() - Running task 'Configuration interface.../' with args {'config_commands': ['interface Ethernet0/3', '    description T-IVANOVII', '    switchport access vlan 330', '    switchport mode access', '    no shutdown']} on 1 hosts
+2023-03-20 17:09:55,298 -  nornir.core -     INFO -        run() - Running task 'close_connections_task' with args {} on 1 hosts
+2023-03-20 17:35:18,152 -  nornir.core -     INFO -        run() - Running task 'napalm_get' with args {'getters': ['get_interfaces']} on 1 hosts
+2023-03-20 17:35:18,960 -  nornir.core -     INFO -        run() - Running task 'Configuration interface.../' with args {'config_commands': ['interface Ethernet0/3', '    description T-IVANOVII', '    switchport access vlan 330', '    switchport mode access', '    no shutdown']} on 1 hosts
+2023-03-20 17:35:20,534 -  nornir.core -     INFO -        run() - Running task 'close_connections_task' with args {} on 1 hosts
+2023-03-20 17:36:10,535 -  nornir.core -     INFO -        run() - Running task 'napalm_get' with args {'getters': ['get_interfaces']} on 1 hosts
+2023-03-20 17:39:49,947 -  nornir.core -     INFO -        run() - Running task 'napalm_get' with args {'getters': ['get_interfaces']} on 1 hosts
+2023-03-20 17:41:40,219 -  nornir.core -     INFO -        run() - Running task 'napalm_get' with args {'getters': ['get_interfaces']} on 1 hosts
+2023-03-20 18:44:38,615 -  nornir.core -     INFO -        run() - Running task 'napalm_get' with args {'getters': ['get_interfaces']} on 1 hosts
+2023-03-20 18:44:39,629 -  nornir.core -     INFO -        run() - Running task 'Configuration interface.../' with args {'config_commands': ['interface Ethernet0/3', '    description T-IVANOVII', '    switchport access vlan 330', '    switchport mode access', '    no shutdown']} on 1 hosts
+2023-03-20 18:44:40,808 -  nornir.core -     INFO -        run() - Running task 'close_connections_task' with args {} on 1 hosts
+2023-03-20 18:51:12,907 -  nornir.core -     INFO -        run() - Running task 'napalm_get' with args {'getters': ['get_interfaces']} on 1 hosts
+2023-03-20 18:51:13,906 -  nornir.core -     INFO -        run() - Running task 'Configuration interface.../' with args {'config_commands': ['interface Ethernet0/3', '    description T-IVANOVII', '    switchport access vlan 330', '    switchport mode access', '    no shutdown']} on 1 hosts
+2023-03-20 18:51:15,080 -  nornir.core -     INFO -        run() - Running task 'close_connections_task' with args {} on 1 hosts
+2023-03-20 18:57:54,761 -  nornir.core -     INFO -        run() - Running task 'napalm_get' with args {'getters': ['get_interfaces']} on 1 hosts
+2023-03-20 18:57:55,771 -  nornir.core -     INFO -        run() - Running task 'Configuration interface.../' with args {'config_commands': ['interface Ethernet0/3', '    description T-IVANOVII', '    switchport access vlan 330', '    switchport mode access', '    no shutdown']} on 1 hosts
+2023-03-20 18:57:56,859 -  nornir.core -     INFO -        run() - Running task 'close_connections_task' with args {} on 1 hosts
+2023-03-21 08:17:21,691 -  nornir.core -     INFO -        run() - Running task 'napalm_get' with args {'getters': ['get_interfaces']} on 1 hosts
+2023-03-21 08:17:22,669 -  nornir.core -     INFO -        run() - Running task 'Configuration interface.../' with args {'config_commands': ['interface Ethernet0/3', '    description T-IVANOVII', '    switchport access vlan 330', '    switchport mode access', '    no shutdown']} on 1 hosts
+2023-03-21 08:17:23,827 -  nornir.core -     INFO -        run() - Running task 'close_connections_task' with args {} on 1 hosts
+2023-03-21 08:19:05,389 -  nornir.core -     INFO -        run() - Running task 'napalm_get' with args {'getters': ['get_interfaces']} on 1 hosts
+2023-03-21 08:19:06,428 -  nornir.core -     INFO -        run() - Running task 'Configuration interface.../' with args {'config_commands': ['interface Ethernet0/3', '    description T-IVANOVII', '    switchport access vlan 330', '    switchport mode access', '    no shutdown']} on 1 hosts
+2023-03-21 08:19:07,678 -  nornir.core -     INFO -        run() - Running task 'close_connections_task' with args {} on 1 hosts
+2023-03-21 08:20:20,931 -  nornir.core -     INFO -        run() - Running task 'napalm_get' with args {'getters': ['get_interfaces']} on 1 hosts
+2023-03-21 08:20:21,881 -  nornir.core -     INFO -        run() - Running task 'Configuration interface.../' with args {'config_commands': ['interface Ethernet0/3', '    description T-IVANOVII', '    switchport access vlan 330', '    switchport mode access', '    no shutdown']} on 1 hosts
+2023-03-21 08:20:23,147 -  nornir.core -     INFO -        run() - Running task 'close_connections_task' with args {} on 1 hosts
+2023-03-21 08:30:24,849 -  nornir.core -     INFO -        run() - Running task 'napalm_get' with args {'getters': ['get_interfaces']} on 1 hosts
+2023-03-21 08:30:25,646 -  nornir.core -     INFO -        run() - Running task 'Configuration interface.../' with args {'config_commands': ['interface Ethernet0/3', '    description T-IVANOVII', '    switchport access vlan 330', '    switchport mode access', '    no shutdown']} on 1 hosts
+2023-03-21 08:30:26,716 -  nornir.core -     INFO -        run() - Running task 'close_connections_task' with args {} on 1 hosts
+2023-03-21 09:18:54,091 -  nornir.core -     INFO -        run() - Running task 'napalm_get' with args {'getters': ['get_interfaces']} on 1 hosts
+2023-03-21 09:18:55,728 -  nornir.core -     INFO -        run() - Running task 'Configuration interface.../' with args {'config_commands': ['interface Ethernet0/3', '    description T-IVANOVII', '    switchport access vlan 330', '    switchport mode access', '    no shutdown']} on 1 hosts
+2023-03-21 09:18:57,085 -  nornir.core -     INFO -        run() - Running task 'close_connections_task' with args {} on 1 hosts
+2023-03-21 13:08:11,824 -  nornir.core -     INFO -        run() - Running task 'napalm_get' with args {'getters': ['get_interfaces']} on 1 hosts
+2023-03-21 13:08:12,795 -  nornir.core -     INFO -        run() - Running task 'Configuration interface.../' with args {'config_commands': ['interface Ethernet0/3', '    description T-IVANOVII', '    switchport access vlan 330', '    switchport mode access', '    no shutdown']} on 1 hosts
+2023-03-21 13:08:13,855 -  nornir.core -     INFO -        run() - Running task 'close_connections_task' with args {} on 1 hosts
+2023-03-21 13:11:40,736 -  nornir.core -     INFO -        run() - Running task 'napalm_get' with args {'getters': ['get_interfaces']} on 1 hosts
+2023-03-21 13:12:55,968 -  nornir.core -     INFO -        run() - Running task 'napalm_get' with args {'getters': ['get_interfaces']} on 1 hosts
+2023-03-21 13:12:56,954 -  nornir.core -     INFO -        run() - Running task 'napalm_configure' with args {'dry_run': True, 'configuration': ['interface Ethernet0/3', '    description T-IVANOVII', '    switchport access vlan 330', '    switchport mode access', '    no shutdown']} on 1 hosts
+2023-03-21 13:12:57,197 - nornir.core.task -    ERROR -      start() - Host 'SW-PLGN-1': task 'napalm_configure' failed with traceback:
+Traceback (most recent call last):
+  File "C:\Users\kcarkov\AppData\Roaming\Python\Python37\site-packages\nornir\core\task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "C:\Users\kcarkov\AppData\Roaming\Python\Python37\site-packages\nornir_napalm\plugins\tasks\napalm_configure.py", line 35, in napalm_configure
+    device.load_merge_candidate(filename=filename, config=configuration)
+  File "C:\Users\kcarkov\AppData\Roaming\Python\Python37\site-packages\napalm\ios\ios.py", line 321, in load_merge_candidate
+    file_system=self.dest_file_system,
+  File "C:\Users\kcarkov\AppData\Roaming\Python\Python37\site-packages\napalm\ios\ios.py", line 270, in _load_candidate_wrapper
+    tmp_file = self._create_tmp_file(source_config)
+  File "C:\Users\kcarkov\AppData\Roaming\Python\Python37\site-packages\napalm\ios\ios.py", line 245, in _create_tmp_file
+    fobj.write(config)
+TypeError: write() argument must be str, not list
+
+2023-03-21 13:12:57,208 -  nornir.core -     INFO -        run() - Running task 'close_connections_task' with args {} on 1 hosts
+2023-03-21 13:15:24,976 -  nornir.core -     INFO -        run() - Running task 'napalm_get' with args {'getters': ['get_interfaces']} on 1 hosts
+2023-03-21 13:15:25,773 -  nornir.core -     INFO -        run() - Running task 'napalm_configure' with args {'dry_run': True, 'configuration': '\n                    interface Ethernet 0/3\n                    description Nornir\n                '} on 1 hosts
+2023-03-21 13:15:28,626 - nornir.core.task -    ERROR -      start() - Host 'SW-PLGN-1': task 'napalm_configure' failed with traceback:
+Traceback (most recent call last):
+  File "C:\Users\kcarkov\AppData\Roaming\Python\Python37\site-packages\nornir\core\task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "C:\Users\kcarkov\AppData\Roaming\Python\Python37\site-packages\nornir_napalm\plugins\tasks\napalm_configure.py", line 35, in napalm_configure
+    device.load_merge_candidate(filename=filename, config=configuration)
+  File "C:\Users\kcarkov\AppData\Roaming\Python\Python37\site-packages\napalm\ios\ios.py", line 321, in load_merge_candidate
+    file_system=self.dest_file_system,
+  File "C:\Users\kcarkov\AppData\Roaming\Python\Python37\site-packages\napalm\ios\ios.py", line 272, in _load_candidate_wrapper
+    source_file=tmp_file, dest_file=dest_file, file_system=file_system
+  File "C:\Users\kcarkov\AppData\Roaming\Python\Python37\site-packages\napalm\ios\ios.py", line 737, in _scp_file
+    TransferClass=FileTransfer,
+  File "C:\Users\kcarkov\AppData\Roaming\Python\Python37\site-packages\napalm\ios\ios.py", line 802, in _xfer_file
+    raise CommandErrorException(msg)
+napalm.base.exceptions.CommandErrorException: SCP file transfers are not enabled. Configure 'ip scp server enable' on the device.
+
+2023-03-21 13:15:28,635 -  nornir.core -     INFO -        run() - Running task 'close_connections_task' with args {} on 1 hosts
+2023-03-21 13:46:51,282 -  nornir.core -     INFO -        run() - Running task 'napalm_get' with args {'getters': ['get_interfaces']} on 1 hosts
+2023-03-21 13:46:52,042 -  nornir.core -     INFO -        run() - Running task 'napalm_configure' with args {'dry_run': True, 'configuration': '\n                    interface Ethernet 0/3\n                    description Nornir\n                '} on 1 hosts
+2023-03-21 13:46:54,413 -  nornir.core -     INFO -        run() - Running task 'close_connections_task' with args {} on 1 hosts
+2023-03-21 13:51:54,617 -  nornir.core -     INFO -        run() - Running task 'napalm_get' with args {'getters': ['get_interfaces']} on 1 hosts
+2023-03-21 13:51:55,573 -  nornir.core -     INFO -        run() - Running task 'napalm_configure' with args {'dry_run': True, 'configuration': ['interface Ethernet0/3', '    description T-IVANOVII', '    switchport access vlan 330', '    switchport mode access', '    no shutdown']} on 1 hosts
+2023-03-21 13:51:55,856 - nornir.core.task -    ERROR -      start() - Host 'SW-PLGN-1': task 'napalm_configure' failed with traceback:
+Traceback (most recent call last):
+  File "C:\Users\kcarkov\AppData\Roaming\Python\Python37\site-packages\nornir\core\task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "C:\Users\kcarkov\AppData\Roaming\Python\Python37\site-packages\nornir_napalm\plugins\tasks\napalm_configure.py", line 35, in napalm_configure
+    device.load_merge_candidate(filename=filename, config=configuration)
+  File "C:\Users\kcarkov\AppData\Roaming\Python\Python37\site-packages\napalm\ios\ios.py", line 321, in load_merge_candidate
+    file_system=self.dest_file_system,
+  File "C:\Users\kcarkov\AppData\Roaming\Python\Python37\site-packages\napalm\ios\ios.py", line 270, in _load_candidate_wrapper
+    tmp_file = self._create_tmp_file(source_config)
+  File "C:\Users\kcarkov\AppData\Roaming\Python\Python37\site-packages\napalm\ios\ios.py", line 245, in _create_tmp_file
+    fobj.write(config)
+TypeError: write() argument must be str, not list
+
+2023-03-21 13:51:55,869 -  nornir.core -     INFO -        run() - Running task 'close_connections_task' with args {} on 1 hosts
+2023-03-21 13:54:20,384 -  nornir.core -     INFO -        run() - Running task 'napalm_get' with args {'getters': ['get_interfaces']} on 1 hosts
+2023-03-21 13:54:21,384 -  nornir.core -     INFO -        run() - Running task 'Configuration interface.../' with args {'config_commands': ['interface Ethernet0/3', '    description T-IVANOVII', '    switchport access vlan 330', '    switchport mode access', '    no shutdown']} on 1 hosts
+2023-03-21 13:54:22,599 -  nornir.core -     INFO -        run() - Running task 'close_connections_task' with args {} on 1 hosts
+2023-03-21 14:06:12,826 -  nornir.core -     INFO -        run() - Running task 'napalm_get' with args {'getters': ['get_interfaces']} on 1 hosts
+2023-03-21 14:06:14,125 -  nornir.core -     INFO -        run() - Running task 'Configuration interface.../' with args {'config_commands': ['interface Ethernet0/3', '    description T-IVANOVII', '    switchport access vlan 330', '    switchport mode access', '    no shutdown']} on 1 hosts
+2023-03-21 14:06:15,260 -  nornir.core -     INFO -        run() - Running task 'close_connections_task' with args {} on 1 hosts
+2023-03-21 14:06:32,642 -  nornir.core -     INFO -        run() - Running task 'napalm_get' with args {'getters': ['get_interfaces']} on 1 hosts
+2023-03-21 14:16:51,304 -  nornir.core -     INFO -        run() - Running task 'napalm_get' with args {'getters': ['get_interfaces']} on 1 hosts
+2023-03-21 14:16:52,281 -  nornir.core -     INFO -        run() - Running task 'Configuration interface.../' with args {'config_commands': ['']} on 1 hosts
+2023-03-21 14:16:53,072 -  nornir.core -     INFO -        run() - Running task 'close_connections_task' with args {} on 1 hosts
+2023-03-21 14:28:39,635 -  nornir.core -     INFO -        run() - Running task 'napalm_get' with args {'getters': ['get_interfaces']} on 1 hosts
+2023-03-22 12:26:08,047 -  nornir.core -     INFO -        run() - Running task 'napalm_get' with args {'getters': ['get_interfaces']} on 1 hosts
+2023-03-22 12:26:09,037 -  nornir.core -     INFO -        run() - Running task 'Configuration interface.../' with args {'config_commands': ['interface Ethernet0/3', '    description T-IVANOVII', '    switchport access vlan 330', '    switchport mode access', '    no shutdown']} on 1 hosts
+2023-03-22 12:26:10,188 -  nornir.core -     INFO -        run() - Running task 'close_connections_task' with args {} on 1 hosts
+2023-03-22 12:28:22,781 -  nornir.core -     INFO -        run() - Running task 'napalm_get' with args {'getters': ['get_interfaces']} on 1 hosts
+2023-03-22 12:28:23,735 -  nornir.core -     INFO -        run() - Running task 'Configuration interface.../' with args {'config_commands': ['interface Ethernet0/3', '    description T-IVANOVII', '    switchport access vlan 330', '    switchport mode access', '    no shutdown']} on 1 hosts
+2023-03-22 12:28:24,933 -  nornir.core -     INFO -        run() - Running task 'close_connections_task' with args {} on 1 hosts
+2023-03-22 12:30:29,665 -  nornir.core -     INFO -        run() - Running task 'napalm_get' with args {'getters': ['get_interfaces']} on 1 hosts
+2023-03-22 12:30:30,639 -  nornir.core -     INFO -        run() - Running task 'Configuration interface.../' with args {'config_commands': 'create'} on 1 hosts
+2023-03-22 12:30:31,588 -  nornir.core -     INFO -        run() - Running task 'close_connections_task' with args {} on 1 hosts
+2023-03-22 12:32:58,531 -  nornir.core -     INFO -        run() - Running task 'napalm_get' with args {'getters': ['get_interfaces']} on 1 hosts
+2023-03-22 12:32:59,487 -  nornir.core -     INFO -        run() - Running task 'Configuration interface.../' with args {'config_commands': ['interface Ethernet0/3', '    description T-IVANOVII', '    switchport access vlan 330', '    switchport mode access', '    no shutdown']} on 1 hosts
+2023-03-22 12:33:00,623 -  nornir.core -     INFO -        run() - Running task 'close_connections_task' with args {} on 1 hosts
+2023-03-22 12:34:01,389 -  nornir.core -     INFO -        run() - Running task 'napalm_get' with args {'getters': ['get_interfaces']} on 1 hosts
+2023-03-22 12:34:02,348 -  nornir.core -     INFO -        run() - Running task 'Configuration interface.../' with args {'config_commands': ['interface Ethernet0/3', '    description T-IVANOVII', '    switchport access vlan 330', '    switchport mode access', '    no shutdown']} on 1 hosts
+2023-03-22 12:34:03,509 -  nornir.core -     INFO -        run() - Running task 'close_connections_task' with args {} on 1 hosts
+2023-03-22 12:34:25,037 -  nornir.core -     INFO -        run() - Running task 'napalm_get' with args {'getters': ['get_interfaces']} on 1 hosts
+2023-03-22 12:34:25,983 -  nornir.core -     INFO -        run() - Running task 'Configuration interface.../' with args {'config_commands': ['interface Ethernet0/3', '    description T-IVANOVII', '    switchport access vlan 330', '    switchport mode access', '    no shutdown']} on 1 hosts
+2023-03-22 12:34:26,895 -  nornir.core -     INFO -        run() - Running task 'close_connections_task' with args {} on 1 hosts
+2023-03-22 12:49:09,436 -  nornir.core -     INFO -        run() - Running task 'napalm_get' with args {'getters': ['get_interfaces']} on 1 hosts
+2023-03-22 12:49:10,402 -  nornir.core -     INFO -        run() - Running task 'Configuration interface.../' with args {'config_commands': ['interface Ethernet0/3', '    description T-IVANOVII', '    switchport access vlan 330', '    switchport mode access', '    no shutdown']} on 1 hosts
+2023-03-22 12:49:11,361 -  nornir.core -     INFO -        run() - Running task 'close_connections_task' with args {} on 1 hosts
+2023-03-22 12:50:03,490 -  nornir.core -     INFO -        run() - Running task 'napalm_get' with args {'getters': ['get_interfaces']} on 1 hosts
+2023-03-22 12:50:04,254 -  nornir.core -     INFO -        run() - Running task 'Configuration interface.../' with args {'config_commands': ['interface Ethernet0/3', '    description T-IVANOVII', '    switchport access vlan 330', '    switchport mode access', '    no shutdown']} on 1 hosts
+2023-03-22 12:50:05,398 -  nornir.core -     INFO -        run() - Running task 'close_connections_task' with args {} on 1 hosts
+2023-03-22 13:19:15,941 -  nornir.core -     INFO -        run() - Running task 'napalm_get' with args {'getters': ['get_interfaces']} on 1 hosts
+2023-03-22 13:19:16,897 -  nornir.core -     INFO -        run() - Running task 'Configuration interface.../' with args {'config_commands': ['interface Ethernet0/3', '    description T-IVANOVII', '    switchport access vlan 330', '    switchport mode access', '    no shutdown']} on 1 hosts
+2023-03-22 13:19:18,033 -  nornir.core -     INFO -        run() - Running task 'close_connections_task' with args {} on 1 hosts
+2023-03-24 08:15:58,717 -  nornir.core -     INFO -        run() - Running task 'napalm_get' with args {'getters': ['get_interfaces']} on 1 hosts
+2023-03-24 08:15:59,838 -  nornir.core -     INFO -        run() - Running task 'Configuration interface.../' with args {'config_commands': ['interface Ethernet0/3', '    description T-IVANOVII', '    switchport access vlan 330', '    switchport mode access', '    no shutdown']} on 1 hosts
+2023-03-24 08:16:00,836 -  nornir.core -     INFO -        run() - Running task 'close_connections_task' with args {} on 1 hosts
+2023-03-24 08:24:05,818 -  nornir.core -     INFO -        run() - Running task 'napalm_get' with args {'getters': ['get_interfaces']} on 1 hosts
+2023-03-24 08:24:06,577 -  nornir.core -     INFO -        run() - Running task 'Configuration interface.../' with args {'config_commands': ['interface Ethernet0/3', '    description T-IVANOVII', '    switchport access vlan 330', '    switchport mode access', '    no shutdown']} on 1 hosts
+2023-03-24 08:24:07,766 -  nornir.core -     INFO -        run() - Running task 'close_connections_task' with args {} on 1 hosts
+2023-03-24 08:59:33,210 -  nornir.core -     INFO -        run() - Running task 'napalm_get' with args {'getters': ['get_interfaces']} on 1 hosts
+2023-03-24 08:59:34,072 -  nornir.core -     INFO -        run() - Running task 'Configuration interface.../' with args {'config_commands': ['interface Ethernet0/3', '    description T-IVANOVII', '    switchport access vlan 330', '    switchport mode access', '    no shutdown']} on 1 hosts
+2023-03-24 08:59:35,388 -  nornir.core -     INFO -        run() - Running task 'close_connections_task' with args {} on 1 hosts
+2023-03-24 09:53:03,799 -  nornir.core -     INFO -        run() - Running task 'napalm_get' with args {'getters': ['get_interfaces']} on 1 hosts
+2023-03-24 09:53:04,789 -  nornir.core -     INFO -        run() - Running task 'Configuration interface.../' with args {'config_commands': ['interface Ethernet0/3', '    description T-IVANOVII', '    switchport access vlan 330', '    switchport mode access', '    no shutdown']} on 1 hosts
+2023-03-24 09:53:05,851 -  nornir.core -     INFO -        run() - Running task 'close_connections_task' with args {} on 1 hosts
+2023-03-24 17:08:08,205 -  nornir.core -     INFO -        run() - Running task 'napalm_get' with args {'getters': ['get_interfaces']} on 1 hosts
+2023-03-24 17:08:09,243 -  nornir.core -     INFO -        run() - Running task 'Configuration interface.../' with args {'config_commands': ['interface Ethernet0/3', '    description T-IVANOVII', '    switchport access vlan 330', '    switchport mode access', '    no shutdown']} on 1 hosts
+2023-03-24 17:08:10,267 -  nornir.core -     INFO -        run() - Running task 'close_connections_task' with args {} on 1 hosts
+2023-03-27 09:49:00,892 -  nornir.core -     INFO -        run() - Running task 'napalm_get' with args {'getters': ['get_interfaces']} on 1 hosts
+2023-03-27 09:49:02,095 -  nornir.core -     INFO -        run() - Running task 'Configuration interface.../' with args {'config_commands': ['interface Ethernet0/3', '    description T-IVANOVII', '    switchport access vlan 330', '    switchport mode access', '    no shutdown']} on 1 hosts
+2023-03-27 09:49:04,325 -  nornir.core -     INFO -        run() - Running task 'close_connections_task' with args {} on 1 hosts
+2023-03-27 09:49:37,919 -  nornir.core -     INFO -        run() - Running task 'napalm_get' with args {'getters': ['get_interfaces']} on 1 hosts
+2023-03-27 09:49:39,044 -  nornir.core -     INFO -        run() - Running task 'Configuration interface.../' with args {'config_commands': ['interface Ethernet0/3', '    description T-IVANOVII', '    switchport access vlan 330', '    switchport mode access', '    no shutdown']} on 1 hosts
+2023-03-27 09:49:40,778 -  nornir.core -     INFO -        run() - Running task 'close_connections_task' with args {} on 1 hosts
+2023-03-27 10:44:57,610 -  nornir.core -     INFO -        run() - Running task 'napalm_get' with args {'getters': ['get_interfaces']} on 1 hosts
+2023-03-27 10:44:58,790 -  nornir.core -     INFO -        run() - Running task 'Configuration interface.../' with args {'config_commands': ['interface Ethernet0/3', '    description T-IVANOVII', '    switchport access vlan 330', '    switchport mode access', '    no shutdown']} on 1 hosts
+2023-03-27 10:45:00,431 -  nornir.core -     INFO -        run() - Running task 'close_connections_task' with args {} on 1 hosts
+2023-03-27 10:46:33,842 -  nornir.core -     INFO -        run() - Running task 'napalm_get' with args {'getters': ['get_interfaces']} on 1 hosts
+2023-03-27 10:46:35,008 -  nornir.core -     INFO -        run() - Running task 'Configuration interface.../' with args {'config_commands': ['interface Ethernet0/3', '    description T-IVANOVII', '    switchport access vlan 330', '    switchport mode access', '    no shutdown']} on 1 hosts
+2023-03-27 10:46:36,662 -  nornir.core -     INFO -        run() - Running task 'close_connections_task' with args {} on 1 hosts
+2023-03-27 11:40:51,191 -  nornir.core -     INFO -        run() - Running task 'napalm_get' with args {'getters': ['get_interfaces']} on 1 hosts
+2023-03-27 11:40:52,317 -  nornir.core -     INFO -        run() - Running task 'Configuration interface.../' with args {'config_commands': ['interface Ethernet0/3', '    description T-IVANOVII', '    switchport access vlan 330', '    switchport mode access', '    no shutdown']} on 1 hosts
+2023-03-27 11:40:53,973 -  nornir.core -     INFO -        run() - Running task 'close_connections_task' with args {} on 1 hosts
+2023-03-27 11:43:14,847 -  nornir.core -     INFO -        run() - Running task 'napalm_get' with args {'getters': ['get_interfaces']} on 1 hosts
+2023-03-27 11:43:15,969 -  nornir.core -     INFO -        run() - Running task 'Configuration interface.../' with args {'config_commands': ['interface Ethernet0/3', '    description T-IVANOVII', '    switchport access vlan 330', '    switchport mode access', '    no shutdown']} on 1 hosts
+2023-03-27 11:43:17,798 -  nornir.core -     INFO -        run() - Running task 'close_connections_task' with args {} on 1 hosts
+2023-03-27 11:45:54,506 -  nornir.core -     INFO -        run() - Running task 'napalm_get' with args {'getters': ['get_interfaces']} on 1 hosts
+2023-03-27 11:45:56,261 -  nornir.core -     INFO -        run() - Running task 'Configuration interface.../' with args {'config_commands': ['interface Ethernet0/3', '    description T-IVANOVII', '    switchport access vlan 330', '    switchport mode access', '    no shutdown']} on 1 hosts
+2023-03-27 11:45:57,841 -  nornir.core -     INFO -        run() - Running task 'close_connections_task' with args {} on 1 hosts
+2023-03-27 11:56:36,861 -  nornir.core -     INFO -        run() - Running task 'napalm_get' with args {'getters': ['get_interfaces']} on 1 hosts
+2023-03-27 11:56:39,636 -  nornir.core -     INFO -        run() - Running task 'Configuration interface.../' with args {'config_commands': ['interface Ethernet0/3', '    description T-IVANOVII', '    switchport access vlan 330', '    switchport mode access', '    no shutdown']} on 1 hosts
+2023-03-27 11:56:41,282 -  nornir.core -     INFO -        run() - Running task 'close_connections_task' with args {} on 1 hosts
+2023-03-27 11:58:54,032 -  nornir.core -     INFO -        run() - Running task 'napalm_get' with args {'getters': ['get_interfaces']} on 1 hosts
+2023-03-27 11:58:55,522 -  nornir.core -     INFO -        run() - Running task 'Configuration interface.../' with args {'config_commands': ['interface Ethernet0/3', '    description T-IVANOVII', '    switchport access vlan 330', '    switchport mode access', '    no shutdown']} on 1 hosts
+2023-03-27 11:58:57,383 -  nornir.core -     INFO -        run() - Running task 'close_connections_task' with args {} on 1 hosts
+2023-03-27 12:03:33,602 -  nornir.core -     INFO -        run() - Running task 'napalm_get' with args {'getters': ['get_interfaces']} on 1 hosts
+2023-03-27 12:03:34,766 -  nornir.core -     INFO -        run() - Running task 'Configuration interface.../' with args {'config_commands': ['interface Ethernet0/3', '    description T-IVANOVII', '    switchport access vlan 330', '    switchport mode access', '    no shutdown']} on 1 hosts
+2023-03-27 12:03:36,502 -  nornir.core -     INFO -        run() - Running task 'close_connections_task' with args {} on 1 hosts
+2023-03-27 12:06:03,590 -  nornir.core -     INFO -        run() - Running task 'napalm_get' with args {'getters': ['get_interfaces']} on 1 hosts
+2023-03-27 12:06:04,716 -  nornir.core -     INFO -        run() - Running task 'Configuration interface.../' with args {'config_commands': ['interface Ethernet0/3', '    description T-IVANOVII', '    switchport access vlan 330', '    switchport mode access', '    no shutdown']} on 1 hosts
+2023-03-27 12:06:06,369 -  nornir.core -     INFO -        run() - Running task 'close_connections_task' with args {} on 1 hosts
+2023-03-27 12:09:19,575 -  nornir.core -     INFO -        run() - Running task 'napalm_get' with args {'getters': ['get_interfaces']} on 1 hosts
+2023-03-27 12:09:20,744 -  nornir.core -     INFO -        run() - Running task 'Configuration interface.../' with args {'config_commands': ['interface Ethernet0/3', '    description T-IVANOVII', '    switchport access vlan 330', '    switchport mode access', '    no shutdown']} on 1 hosts
+2023-03-27 12:09:22,649 -  nornir.core -     INFO -        run() - Running task 'close_connections_task' with args {} on 1 hosts
+2023-03-27 12:15:46,797 -  nornir.core -     INFO -        run() - Running task 'napalm_get' with args {'getters': ['get_interfaces']} on 1 hosts
+2023-03-27 12:15:47,921 -  nornir.core -     INFO -        run() - Running task 'Configuration interface.../' with args {'config_commands': ['']} on 1 hosts
+2023-03-27 12:15:48,920 -  nornir.core -     INFO -        run() - Running task 'close_connections_task' with args {} on 1 hosts
+2023-03-27 12:16:21,787 -  nornir.core -     INFO -        run() - Running task 'napalm_get' with args {'getters': ['get_interfaces']} on 1 hosts
+2023-03-27 12:16:23,124 -  nornir.core -     INFO -        run() - Running task 'Configuration interface.../' with args {'config_commands': ['interface Ethernet0/3', '    description T-IVANOVII', '    switchport access vlan 330', '    switchport mode access', '    no shutdown']} on 1 hosts
+2023-03-27 12:16:25,046 -  nornir.core -     INFO -        run() - Running task 'close_connections_task' with args {} on 1 hosts
+2023-03-27 12:16:59,155 -  nornir.core -     INFO -        run() - Running task 'napalm_get' with args {'getters': ['get_interfaces']} on 1 hosts
+2023-03-27 12:17:00,076 -  nornir.core -     INFO -        run() - Running task 'Configuration interface.../' with args {'config_commands': ['']} on 1 hosts
+2023-03-27 12:17:01,122 -  nornir.core -     INFO -        run() - Running task 'close_connections_task' with args {} on 1 hosts
+2023-03-27 12:17:48,783 -  nornir.core -     INFO -        run() - Running task 'napalm_get' with args {'getters': ['get_interfaces']} on 1 hosts
+2023-03-27 12:17:49,933 -  nornir.core -     INFO -        run() - Running task 'Configuration interface.../' with args {'config_commands': ['']} on 1 hosts
+2023-03-27 12:17:50,950 -  nornir.core -     INFO -        run() - Running task 'close_connections_task' with args {} on 1 hosts
+2023-03-27 12:52:05,939 -  nornir.core -     INFO -        run() - Running task 'napalm_get' with args {'getters': ['get_interfaces']} on 1 hosts
+2023-03-27 12:52:07,131 -  nornir.core -     INFO -        run() - Running task 'Configuration interface.../' with args {'config_commands': ['interface Ethernet0/3', '    description T-IVANOVII', '    switchport access vlan 330', '    switchport mode access', '    no shutdown']} on 1 hosts
+2023-03-27 12:52:08,696 -  nornir.core -     INFO -        run() - Running task 'close_connections_task' with args {} on 1 hosts
+2023-03-27 12:52:24,346 -  nornir.core -     INFO -        run() - Running task 'napalm_get' with args {'getters': ['get_interfaces']} on 1 hosts
+2023-03-27 12:52:25,493 -  nornir.core -     INFO -        run() - Running task 'Configuration interface.../' with args {'config_commands': ['']} on 1 hosts
+2023-03-27 12:52:26,630 -  nornir.core -     INFO -        run() - Running task 'close_connections_task' with args {} on 1 hosts
+2023-03-27 12:55:04,949 -  nornir.core -     INFO -        run() - Running task 'napalm_get' with args {'getters': ['get_interfaces']} on 1 hosts
+2023-03-27 12:55:06,754 -  nornir.core -     INFO -        run() - Running task 'Configuration interface.../' with args {'config_commands': ['']} on 1 hosts
+2023-03-27 12:55:07,958 -  nornir.core -     INFO -        run() - Running task 'close_connections_task' with args {} on 1 hosts
+2023-03-27 12:57:03,996 -  nornir.core -     INFO -        run() - Running task 'napalm_get' with args {'getters': ['get_interfaces']} on 1 hosts
+2023-03-27 12:57:05,142 -  nornir.core -     INFO -        run() - Running task 'Configuration interface.../' with args {'config_commands': ['interface Ethernet0/3', '    description T-IVANOVII', '    switchport access vlan 330', '    switchport mode access', '    no shutdown']} on 1 hosts
+2023-03-27 12:57:06,754 -  nornir.core -     INFO -        run() - Running task 'close_connections_task' with args {} on 1 hosts
+2023-03-27 13:06:47,870 -  nornir.core -     INFO -        run() - Running task 'napalm_get' with args {'getters': ['get_interfaces']} on 1 hosts
+2023-03-27 13:06:48,830 -  nornir.core -     INFO -        run() - Running task 'Configuration interface.../' with args {'config_commands': ['interface Ethernet0/3', '    description T-PETROV', '    switchport access vlan 330', '    switchport mode access', '    no shutdown']} on 1 hosts
+2023-03-27 13:06:50,550 -  nornir.core -     INFO -        run() - Running task 'close_connections_task' with args {} on 1 hosts
+2023-03-27 13:09:57,517 -  nornir.core -     INFO -        run() - Running task 'napalm_get' with args {'getters': ['get_interfaces']} on 1 hosts
+2023-03-27 13:09:58,670 -  nornir.core -     INFO -        run() - Running task 'Configuration interface.../' with args {'config_commands': ['interface Ethernet0/3', '    description T-PETROV', '    switchport access vlan 330', '    switchport mode access', '    no shutdown']} on 1 hosts
+2023-03-27 13:10:00,295 -  nornir.core -     INFO -        run() - Running task 'close_connections_task' with args {} on 1 hosts
+2023-03-27 15:27:23,731 -  nornir.core -     INFO -        run() - Running task 'napalm_get' with args {'getters': ['get_interfaces']} on 1 hosts
+2023-03-27 15:27:24,820 -  nornir.core -     INFO -        run() - Running task 'Configuration interface.../' with args {'config_commands': ['interface Ethernet0/3', '    description T-PETROV', '    switchport access vlan 330', '    switchport mode access', '    no shutdown']} on 1 hosts
+2023-03-27 15:27:26,491 -  nornir.core -     INFO -        run() - Running task 'close_connections_task' with args {} on 1 hosts
+2023-03-27 15:28:08,997 -  nornir.core -     INFO -        run() - Running task 'napalm_get' with args {'getters': ['get_interfaces']} on 1 hosts
+2023-03-27 15:28:10,111 -  nornir.core -     INFO -        run() - Running task 'Configuration interface.../' with args {'config_commands': ['interface Ethernet0/3', '    description T-PETROV', '    switchport access vlan 330', '    switchport mode access', '    no shutdown']} on 1 hosts
+2023-03-27 15:28:11,722 -  nornir.core -     INFO -        run() - Running task 'close_connections_task' with args {} on 1 hosts
+2023-03-27 15:35:31,686 -  nornir.core -     INFO -        run() - Running task 'napalm_get' with args {'getters': ['get_interfaces']} on 1 hosts
+2023-03-27 15:35:34,115 -  nornir.core -     INFO -        run() - Running task 'Configuration interface.../' with args {'config_commands': ['interface Ethernet0/3', '    description T-PETROV', '    switchport access vlan 330', '    switchport mode access', '    no shutdown']} on 1 hosts
+2023-03-27 15:35:35,740 -  nornir.core -     INFO -        run() - Running task 'close_connections_task' with args {} on 1 hosts
+2023-03-27 15:35:57,692 -  nornir.core -     INFO -        run() - Running task 'napalm_get' with args {'getters': ['get_interfaces']} on 1 hosts
+2023-03-27 15:35:58,878 -  nornir.core -     INFO -        run() - Running task 'Configuration interface.../' with args {'config_commands': ['interface Ethernet0/3', '    description T-PETROV', '    switchport access vlan 330', '    switchport mode access', '    no shutdown']} on 1 hosts
+2023-03-27 15:36:00,533 -  nornir.core -     INFO -        run() - Running task 'close_connections_task' with args {} on 1 hosts
+2023-03-29 08:31:50,619 -  nornir.core -     INFO -        run() - Running task 'napalm_get' with args {'getters': ['get_interfaces']} on 1 hosts
+2023-03-29 08:31:51,753 -  nornir.core -     INFO -        run() - Running task 'Configuration interface.../' with args {'config_commands': ['interface Ethernet0/3', '    description T-PETROV', '    switchport access vlan 330', '    switchport mode access', '    no shutdown']} on 1 hosts
+2023-03-29 08:31:53,458 -  nornir.core -     INFO -        run() - Running task 'close_connections_task' with args {} on 1 hosts
+2023-03-29 08:33:00,339 -  nornir.core -     INFO -        run() - Running task 'napalm_get' with args {'getters': ['get_interfaces']} on 1 hosts
+2023-03-29 08:33:01,486 -  nornir.core -     INFO -        run() - Running task 'Configuration interface.../' with args {'config_commands': ['interface Ethernet0/3', '    description T-PETROV', '    switchport access vlan 330', '    switchport mode access', '    no shutdown']} on 1 hosts
+2023-03-29 08:33:03,142 -  nornir.core -     INFO -        run() - Running task 'close_connections_task' with args {} on 1 hosts
+2023-03-29 08:33:59,680 -  nornir.core -     INFO -        run() - Running task 'napalm_get' with args {'getters': ['get_interfaces']} on 1 hosts
+2023-03-29 08:34:01,763 - nornir.core.task -    ERROR -      start() - Host 'SW-AMZ-PLGN': task 'napalm_get' failed with traceback:
+Traceback (most recent call last):
+  File "C:\Users\kcarkov\AppData\Roaming\Python\Python37\site-packages\netmiko\base_connection.py", line 1046, in establish_connection
+    self.remote_conn_pre.connect(**ssh_connect_params)
+  File "C:\Users\kcarkov\AppData\Roaming\Python\Python37\site-packages\paramiko\client.py", line 380, in connect
+    raise NoValidConnectionsError(errors)
+paramiko.ssh_exception.NoValidConnectionsError: [Errno None] Unable to connect to port 22 on 10.91.254.52
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\kcarkov\AppData\Roaming\Python\Python37\site-packages\napalm\base\base.py", line 119, in _netmiko_open
+    **netmiko_optional_args
+  File "C:\Users\kcarkov\AppData\Roaming\Python\Python37\site-packages\netmiko\ssh_dispatcher.py", line 365, in ConnectHandler
+    return ConnectionClass(*args, **kwargs)
+  File "C:\Users\kcarkov\AppData\Roaming\Python\Python37\site-packages\netmiko\base_connection.py", line 439, in __init__
+    self._open()
+  File "C:\Users\kcarkov\AppData\Roaming\Python\Python37\site-packages\netmiko\base_connection.py", line 444, in _open
+    self.establish_connection()
+  File "C:\Users\kcarkov\AppData\Roaming\Python\Python37\site-packages\netmiko\base_connection.py", line 1068, in establish_connection
+    raise NetmikoTimeoutException(msg)
+netmiko.exceptions.NetmikoTimeoutException: TCP connection to device failed.
+
+Common causes of this problem are:
+1. Incorrect hostname or IP address.
+2. Wrong TCP port.
+3. Intermediate firewall blocking access.
+
+Device settings: cisco_ios 10.91.254.52:22
+
+
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\kcarkov\AppData\Roaming\Python\Python37\site-packages\nornir\core\task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "C:\Users\kcarkov\AppData\Roaming\Python\Python37\site-packages\nornir_napalm\plugins\tasks\napalm_get.py", line 32, in napalm_get
+    device = task.host.get_connection(CONNECTION_NAME, task.nornir.config)
+  File "C:\Users\kcarkov\AppData\Roaming\Python\Python37\site-packages\nornir\core\inventory.py", line 502, in get_connection
+    extras=conn.extras,
+  File "C:\Users\kcarkov\AppData\Roaming\Python\Python37\site-packages\nornir\core\inventory.py", line 553, in open_connection
+    configuration=configuration,
+  File "C:\Users\kcarkov\AppData\Roaming\Python\Python37\site-packages\nornir_napalm\plugins\connections\__init__.py", line 57, in open
+    connection.open()
+  File "C:\Users\kcarkov\AppData\Roaming\Python\Python37\site-packages\napalm\ios\ios.py", line 171, in open
+    device_type, netmiko_optional_args=self.netmiko_optional_args
+  File "C:\Users\kcarkov\AppData\Roaming\Python\Python37\site-packages\napalm\base\base.py", line 122, in _netmiko_open
+    raise ConnectionException("Cannot connect to {}".format(self.hostname))
+napalm.base.exceptions.ConnectionException: Cannot connect to 10.91.254.52
+
+2023-03-29 08:34:16,805 -  nornir.core -     INFO -        run() - Running task 'close_connections_task' with args {} on 1 hosts
+2023-03-29 08:49:40,366 -  nornir.core -     INFO -        run() - Running task 'napalm_get' with args {'getters': ['get_interfaces']} on 1 hosts
+2023-03-29 08:49:42,465 - nornir.core.task -    ERROR -      start() - Host 'SW-AMZ-PLGN': task 'napalm_get' failed with traceback:
+Traceback (most recent call last):
+  File "C:\Users\kcarkov\AppData\Roaming\Python\Python37\site-packages\netmiko\base_connection.py", line 1046, in establish_connection
+    self.remote_conn_pre.connect(**ssh_connect_params)
+  File "C:\Users\kcarkov\AppData\Roaming\Python\Python37\site-packages\paramiko\client.py", line 380, in connect
+    raise NoValidConnectionsError(errors)
+paramiko.ssh_exception.NoValidConnectionsError: [Errno None] Unable to connect to port 22 on 10.91.254.52
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\kcarkov\AppData\Roaming\Python\Python37\site-packages\napalm\base\base.py", line 119, in _netmiko_open
+    **netmiko_optional_args
+  File "C:\Users\kcarkov\AppData\Roaming\Python\Python37\site-packages\netmiko\ssh_dispatcher.py", line 365, in ConnectHandler
+    return ConnectionClass(*args, **kwargs)
+  File "C:\Users\kcarkov\AppData\Roaming\Python\Python37\site-packages\netmiko\base_connection.py", line 439, in __init__
+    self._open()
+  File "C:\Users\kcarkov\AppData\Roaming\Python\Python37\site-packages\netmiko\base_connection.py", line 444, in _open
+    self.establish_connection()
+  File "C:\Users\kcarkov\AppData\Roaming\Python\Python37\site-packages\netmiko\base_connection.py", line 1068, in establish_connection
+    raise NetmikoTimeoutException(msg)
+netmiko.exceptions.NetmikoTimeoutException: TCP connection to device failed.
+
+Common causes of this problem are:
+1. Incorrect hostname or IP address.
+2. Wrong TCP port.
+3. Intermediate firewall blocking access.
+
+Device settings: cisco_ios 10.91.254.52:22
+
+
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\kcarkov\AppData\Roaming\Python\Python37\site-packages\nornir\core\task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "C:\Users\kcarkov\AppData\Roaming\Python\Python37\site-packages\nornir_napalm\plugins\tasks\napalm_get.py", line 32, in napalm_get
+    device = task.host.get_connection(CONNECTION_NAME, task.nornir.config)
+  File "C:\Users\kcarkov\AppData\Roaming\Python\Python37\site-packages\nornir\core\inventory.py", line 502, in get_connection
+    extras=conn.extras,
+  File "C:\Users\kcarkov\AppData\Roaming\Python\Python37\site-packages\nornir\core\inventory.py", line 553, in open_connection
+    configuration=configuration,
+  File "C:\Users\kcarkov\AppData\Roaming\Python\Python37\site-packages\nornir_napalm\plugins\connections\__init__.py", line 57, in open
+    connection.open()
+  File "C:\Users\kcarkov\AppData\Roaming\Python\Python37\site-packages\napalm\ios\ios.py", line 171, in open
+    device_type, netmiko_optional_args=self.netmiko_optional_args
+  File "C:\Users\kcarkov\AppData\Roaming\Python\Python37\site-packages\napalm\base\base.py", line 122, in _netmiko_open
+    raise ConnectionException("Cannot connect to {}".format(self.hostname))
+napalm.base.exceptions.ConnectionException: Cannot connect to 10.91.254.52
+
+2023-03-29 08:49:57,511 -  nornir.core -     INFO -        run() - Running task 'close_connections_task' with args {} on 1 hosts
+2023-03-29 08:58:59,712 -  nornir.core -     INFO -        run() - Running task 'napalm_get' with args {'getters': ['get_interfaces']} on 1 hosts
+2023-03-29 08:59:01,794 - nornir.core.task -    ERROR -      start() - Host 'SW-AMZ-PLGN': task 'napalm_get' failed with traceback:
+Traceback (most recent call last):
+  File "C:\Users\kcarkov\AppData\Roaming\Python\Python37\site-packages\netmiko\base_connection.py", line 1046, in establish_connection
+    self.remote_conn_pre.connect(**ssh_connect_params)
+  File "C:\Users\kcarkov\AppData\Roaming\Python\Python37\site-packages\paramiko\client.py", line 380, in connect
+    raise NoValidConnectionsError(errors)
+paramiko.ssh_exception.NoValidConnectionsError: [Errno None] Unable to connect to port 22 on 10.91.254.52
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\kcarkov\AppData\Roaming\Python\Python37\site-packages\napalm\base\base.py", line 119, in _netmiko_open
+    **netmiko_optional_args
+  File "C:\Users\kcarkov\AppData\Roaming\Python\Python37\site-packages\netmiko\ssh_dispatcher.py", line 365, in ConnectHandler
+    return ConnectionClass(*args, **kwargs)
+  File "C:\Users\kcarkov\AppData\Roaming\Python\Python37\site-packages\netmiko\base_connection.py", line 439, in __init__
+    self._open()
+  File "C:\Users\kcarkov\AppData\Roaming\Python\Python37\site-packages\netmiko\base_connection.py", line 444, in _open
+    self.establish_connection()
+  File "C:\Users\kcarkov\AppData\Roaming\Python\Python37\site-packages\netmiko\base_connection.py", line 1068, in establish_connection
+    raise NetmikoTimeoutException(msg)
+netmiko.exceptions.NetmikoTimeoutException: TCP connection to device failed.
+
+Common causes of this problem are:
+1. Incorrect hostname or IP address.
+2. Wrong TCP port.
+3. Intermediate firewall blocking access.
+
+Device settings: cisco_ios 10.91.254.52:22
+
+
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\kcarkov\AppData\Roaming\Python\Python37\site-packages\nornir\core\task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "C:\Users\kcarkov\AppData\Roaming\Python\Python37\site-packages\nornir_napalm\plugins\tasks\napalm_get.py", line 32, in napalm_get
+    device = task.host.get_connection(CONNECTION_NAME, task.nornir.config)
+  File "C:\Users\kcarkov\AppData\Roaming\Python\Python37\site-packages\nornir\core\inventory.py", line 502, in get_connection
+    extras=conn.extras,
+  File "C:\Users\kcarkov\AppData\Roaming\Python\Python37\site-packages\nornir\core\inventory.py", line 553, in open_connection
+    configuration=configuration,
+  File "C:\Users\kcarkov\AppData\Roaming\Python\Python37\site-packages\nornir_napalm\plugins\connections\__init__.py", line 57, in open
+    connection.open()
+  File "C:\Users\kcarkov\AppData\Roaming\Python\Python37\site-packages\napalm\ios\ios.py", line 171, in open
+    device_type, netmiko_optional_args=self.netmiko_optional_args
+  File "C:\Users\kcarkov\AppData\Roaming\Python\Python37\site-packages\napalm\base\base.py", line 122, in _netmiko_open
+    raise ConnectionException("Cannot connect to {}".format(self.hostname))
+napalm.base.exceptions.ConnectionException: Cannot connect to 10.91.254.52
+
+2023-03-29 08:59:16,840 -  nornir.core -     INFO -        run() - Running task 'close_connections_task' with args {} on 1 hosts
+2023-03-29 09:08:08,241 -  nornir.core -     INFO -        run() - Running task 'napalm_get' with args {'getters': ['get_interfaces']} on 1 hosts
+2023-03-29 09:08:09,393 -  nornir.core -     INFO -        run() - Running task 'Configuration interface.../' with args {'config_commands': ['interface Ethernet0/3', '    description T-PETROV', '    switchport access vlan 330', '    switchport mode access', '    no shutdown']} on 1 hosts
+2023-03-29 09:08:11,019 -  nornir.core -     INFO -        run() - Running task 'close_connections_task' with args {} on 1 hosts
+2023-03-29 09:09:10,151 -  nornir.core -     INFO -        run() - Running task 'napalm_get' with args {'getters': ['get_interfaces']} on 1 hosts
+2023-03-29 09:09:11,281 -  nornir.core -     INFO -        run() - Running task 'Configuration interface.../' with args {'config_commands': ['interface Ethernet0/3', '    description T-PETROV', '    switchport access vlan 330', '    switchport mode access', '    no shutdown']} on 1 hosts
+2023-03-29 09:09:12,924 -  nornir.core -     INFO -        run() - Running task 'close_connections_task' with args {} on 1 hosts
+2023-03-29 09:13:56,042 -  nornir.core -     INFO -        run() - Running task 'napalm_get' with args {'getters': ['get_interfaces']} on 1 hosts
+2023-03-29 09:13:57,181 -  nornir.core -     INFO -        run() - Running task 'Configuration interface.../' with args {'config_commands': ['interface Ethernet0/3', '    description T-PETROV', '    switchport access vlan 330', '    switchport mode access', '    no shutdown']} on 1 hosts
+2023-03-29 09:13:58,779 -  nornir.core -     INFO -        run() - Running task 'close_connections_task' with args {} on 1 hosts
+2023-03-29 09:43:40,037 -  nornir.core -     INFO -        run() - Running task 'napalm_get' with args {'getters': ['get_interfaces']} on 1 hosts
+2023-03-29 09:43:41,178 -  nornir.core -     INFO -        run() - Running task 'Configuration interface.../' with args {'config_commands': ['interface Ethernet0/3', '    description T-PETROV', '    switchport access vlan 330', '    switchport mode access', '    no shutdown']} on 1 hosts
+2023-03-29 09:43:42,964 -  nornir.core -     INFO -        run() - Running task 'close_connections_task' with args {} on 1 hosts
+2023-03-29 17:20:47,804 -  nornir.core -     INFO -        run() - Running task 'napalm_get' with args {'getters': ['get_interfaces']} on 1 hosts
+2023-03-29 17:20:48,952 -  nornir.core -     INFO -        run() - Running task 'Configuration interface.../' with args {'config_commands': ['interface Ethernet0/3', '    description T-PETROVA', '    switchport access vlan 330', '    switchport mode access', '    no shutdown']} on 1 hosts
+2023-03-29 17:20:50,811 -  nornir.core -     INFO -        run() - Running task 'close_connections_task' with args {} on 1 hosts
+2023-03-29 17:21:09,854 -  nornir.core -     INFO -        run() - Running task 'napalm_get' with args {'getters': ['get_interfaces']} on 1 hosts
+2023-03-29 17:21:10,980 -  nornir.core -     INFO -        run() - Running task 'Configuration interface.../' with args {'config_commands': ['interface Ethernet0/3', '    description T-PETROVA', '    switchport access vlan 330', '    switchport mode access', '    no shutdown']} on 1 hosts
+2023-03-29 17:21:12,513 -  nornir.core -     INFO -        run() - Running task 'close_connections_task' with args {} on 1 hosts
+2023-03-29 17:44:13,849 -  nornir.core -     INFO -        run() - Running task 'napalm_get' with args {'getters': ['get_interfaces']} on 1 hosts
+2023-03-29 17:44:15,001 -  nornir.core -     INFO -        run() - Running task 'Configuration interface.../' with args {'config_commands': ['interface Ethernet0/3', '    description T-PETROVA', '    switchport access vlan 330', '    switchport mode access', '    no shutdown']} on 1 hosts
+2023-03-29 17:44:16,652 -  nornir.core -     INFO -        run() - Running task 'close_connections_task' with args {} on 1 hosts
+2023-03-29 17:47:57,228 -  nornir.core -     INFO -        run() - Running task 'napalm_get' with args {'getters': ['get_interfaces']} on 1 hosts
+2023-03-29 17:47:58,402 -  nornir.core -     INFO -        run() - Running task 'Configuration interface.../' with args {'config_commands': ['interface Ethernet0/3', '    description T-PETROVA', '    switchport access vlan 330', '    switchport mode access', '    no shutdown']} on 1 hosts
+2023-03-29 17:48:00,168 -  nornir.core -     INFO -        run() - Running task 'close_connections_task' with args {} on 1 hosts
+2023-03-29 18:13:46,024 -  nornir.core -     INFO -        run() - Running task 'napalm_get' with args {'getters': ['get_interfaces']} on 1 hosts
+2023-03-29 18:13:47,160 -  nornir.core -     INFO -        run() - Running task 'Configuration interface.../' with args {'config_commands': ['interface Ethernet0/3', '    description T-PETROVAT', '    switchport access vlan 330', '    switchport mode access', '    no shutdown']} on 1 hosts
+2023-03-29 18:13:48,815 -  nornir.core -     INFO -        run() - Running task 'close_connections_task' with args {} on 1 hosts
+2023-03-29 18:14:53,956 -  nornir.core -     INFO -        run() - Running task 'napalm_get' with args {'getters': ['get_interfaces']} on 1 hosts
+2023-03-29 18:14:55,106 -  nornir.core -     INFO -        run() - Running task 'Configuration interface.../' with args {'config_commands': ['interface Ethernet0/3', '    description T-PETROVAT', '    switchport access vlan 330', '    switchport mode access', '    no shutdown']} on 1 hosts
+2023-03-29 18:14:56,784 -  nornir.core -     INFO -        run() - Running task 'close_connections_task' with args {} on 1 hosts
+2023-03-29 18:30:55,468 -  nornir.core -     INFO -        run() - Running task 'napalm_get' with args {'getters': ['get_interfaces']} on 1 hosts
+2023-03-29 18:30:56,676 -  nornir.core -     INFO -        run() - Running task 'Configuration interface.../' with args {'config_commands': ['default interface Ethernet0/3', 'interface Ethernet0/3', '    shutdown']} on 1 hosts
+2023-03-29 18:30:58,333 -  nornir.core -     INFO -        run() - Running task 'close_connections_task' with args {} on 1 hosts
+2023-03-29 18:31:26,419 -  nornir.core -     INFO -        run() - Running task 'napalm_get' with args {'getters': ['get_interfaces']} on 1 hosts
+2023-03-29 18:31:27,581 -  nornir.core -     INFO -        run() - Running task 'Configuration interface.../' with args {'config_commands': ['interface Ethernet0/3', '    description T-PETROVAT', '    switchport access vlan 330', '    switchport mode access', '    no shutdown']} on 1 hosts
+2023-03-29 18:31:30,119 -  nornir.core -     INFO -        run() - Running task 'close_connections_task' with args {} on 1 hosts
+2023-03-29 18:42:05,004 -  nornir.core -     INFO -        run() - Running task 'napalm_get' with args {'getters': ['get_interfaces']} on 1 hosts
+2023-03-29 18:42:06,128 -  nornir.core -     INFO -        run() - Running task 'Configuration interface.../' with args {'config_commands': ['interface Ethernet0/3', '    description T-PETROVAT', '    switchport access vlan 330', '    switchport mode access', '    no shutdown']} on 1 hosts
+2023-03-29 18:42:08,285 -  nornir.core -     INFO -        run() - Running task 'close_connections_task' with args {} on 1 hosts
+2023-03-29 18:43:40,367 -  nornir.core -     INFO -        run() - Running task 'napalm_get' with args {'getters': ['get_interfaces']} on 1 hosts
+2023-03-29 18:43:41,515 -  nornir.core -     INFO -        run() - Running task 'Configuration interface.../' with args {'config_commands': ['default interface Ethernet0/3', 'interface Ethernet0/3', '    shutdown']} on 1 hosts
+2023-03-29 18:43:42,909 -  nornir.core -     INFO -        run() - Running task 'close_connections_task' with args {} on 1 hosts
+2023-03-29 19:03:06,811 -  nornir.core -     INFO -        run() - Running task 'napalm_get' with args {'getters': ['get_interfaces']} on 1 hosts
+2023-03-29 19:03:07,923 -  nornir.core -     INFO -        run() - Running task 'Configuration interface.../' with args {'config_commands': ['default interface Ethernet0/0', 'interface Ethernet0/0', '    shutdown']} on 1 hosts
+2023-03-29 19:03:09,286 -  nornir.core -     INFO -        run() - Running task 'close_connections_task' with args {} on 1 hosts
+2023-03-29 19:03:47,232 -  nornir.core -     INFO -        run() - Running task 'napalm_get' with args {'getters': ['get_interfaces']} on 1 hosts
+2023-03-29 19:03:49,750 -  nornir.core -     INFO -        run() - Running task 'Configuration interface.../' with args {'config_commands': ['default interface Ethernet0/2', 'interface Ethernet0/2', '    shutdown']} on 1 hosts
+2023-03-29 19:03:51,490 -  nornir.core -     INFO -        run() - Running task 'close_connections_task' with args {} on 1 hosts
+2023-03-29 19:04:02,991 -  nornir.core -     INFO -        run() - Running task 'napalm_get' with args {'getters': ['get_interfaces']} on 1 hosts
+2023-03-29 19:04:03,910 -  nornir.core -     INFO -        run() - Running task 'Configuration interface.../' with args {'config_commands': ['default interface Ethernet0/3', 'interface Ethernet0/3', '    shutdown']} on 1 hosts
+2023-03-29 19:04:05,238 -  nornir.core -     INFO -        run() - Running task 'close_connections_task' with args {} on 1 hosts
+2023-03-29 19:05:00,855 -  nornir.core -     INFO -        run() - Running task 'napalm_get' with args {'getters': ['get_interfaces']} on 1 hosts
+2023-03-29 19:05:02,015 -  nornir.core -     INFO -        run() - Running task 'Configuration interface.../' with args {'config_commands': ['interface Ethernet0/3', '    description T-PETROVAT', '    switchport access vlan 330', '    switchport mode access', '    no shutdown']} on 1 hosts
+2023-03-29 19:05:03,657 -  nornir.core -     INFO -        run() - Running task 'close_connections_task' with args {} on 1 hosts
+2023-03-29 19:21:26,088 -  nornir.core -     INFO -        run() - Running task 'napalm_get' with args {'getters': ['get_interfaces']} on 1 hosts
+2023-03-29 19:21:27,260 -  nornir.core -     INFO -        run() - Running task 'Configuration interface.../' with args {'config_commands': ['default interface Ethernet0/3', 'interface Ethernet0/3', '    shutdown']} on 1 hosts
+2023-03-29 19:21:28,586 -  nornir.core -     INFO -        run() - Running task 'close_connections_task' with args {} on 1 hosts
+2023-03-29 19:27:54,693 -  nornir.core -     INFO -        run() - Running task 'napalm_get' with args {'getters': ['get_interfaces']} on 1 hosts
+2023-03-29 19:27:55,859 -  nornir.core -     INFO -        run() - Running task 'Configuration interface.../' with args {'config_commands': ['interface Ethernet0/3', '    description T-PETROVAT', '    switchport access vlan 330', '    switchport mode access', '    no shutdown']} on 1 hosts
+2023-03-29 19:27:57,452 -  nornir.core -     INFO -        run() - Running task 'close_connections_task' with args {} on 1 hosts
+2023-03-29 19:28:43,791 -  nornir.core -     INFO -        run() - Running task 'napalm_get' with args {'getters': ['get_interfaces']} on 1 hosts
+2023-03-29 19:28:44,935 -  nornir.core -     INFO -        run() - Running task 'Configuration interface.../' with args {'config_commands': ['interface Ethernet0/3', '    description T-PETROVAT', '    switchport access vlan 330', '    switchport mode access', '    no shutdown']} on 1 hosts
+2023-03-29 19:28:46,576 -  nornir.core -     INFO -        run() - Running task 'close_connections_task' with args {} on 1 hosts
+2023-03-30 15:31:04,585 -  nornir.core -     INFO -        run() - Running task 'napalm_get' with args {'getters': ['get_interfaces']} on 1 hosts
+2023-03-30 15:31:05,889 -  nornir.core -     INFO -        run() - Running task 'Configuration interface.../' with args {'config_commands': ['interface Ethernet0/3', '    description T-PETROV', '    switchport access vlan 330', '    switchport mode access', '    no shutdown']} on 1 hosts
+2023-03-30 15:31:07,700 -  nornir.core -     INFO -        run() - Running task 'close_connections_task' with args {} on 1 hosts
+2023-03-30 16:36:44,924 -  nornir.core -     INFO -        run() - Running task 'napalm_get' with args {'getters': ['get_interfaces']} on 1 hosts
+2023-03-30 16:36:46,149 -  nornir.core -     INFO -        run() - Running task 'Configuration interface.../' with args {'config_commands': ['interface Ethernet0/3', '    description T-PETROVA', '    switchport access vlan 330', '    switchport mode access', '    no shutdown']} on 1 hosts
+2023-03-30 16:36:47,932 -  nornir.core -     INFO -        run() - Running task 'close_connections_task' with args {} on 1 hosts
+2023-03-30 16:41:26,801 -  nornir.core -     INFO -        run() - Running task 'napalm_get' with args {'getters': ['get_interfaces']} on 1 hosts
+2023-03-30 16:41:27,964 -  nornir.core -     INFO -        run() - Running task 'Configuration interface.../' with args {'config_commands': ['interface Ethernet0/3', '    description T-PETROVAP', '    switchport access vlan 330', '    switchport mode access', '    no shutdown']} on 1 hosts
+2023-03-30 16:50:33,244 -  nornir.core -     INFO -        run() - Running task 'napalm_get' with args {'getters': ['get_interfaces']} on 1 hosts
+2023-03-30 16:50:34,232 -  nornir.core -     INFO -        run() - Running task 'Configuration interface.../' with args {'config_commands': ['interface Ethernet0/3', '    description T-PETROV', '    switchport access vlan 330', '    switchport mode access', '    no shutdown']} on 1 hosts
+2023-03-31 08:27:48,793 -  nornir.core -     INFO -        run() - Running task 'napalm_get' with args {'getters': ['get_interfaces']} on 1 hosts
+2023-03-31 08:27:49,733 -  nornir.core -     INFO -        run() - Running task 'Configuration interface.../' with args {'config_commands': ['interface Ethernet0/3', '    description T-PETROVS', '    switchport access vlan 330', '    switchport mode access', '    no shutdown']} on 1 hosts
+2023-03-31 08:37:31,773 -  nornir.core -     INFO -        run() - Running task 'napalm_get' with args {'getters': ['get_interfaces']} on 1 hosts
+2023-03-31 08:37:32,983 -  nornir.core -     INFO -        run() - Running task 'Configuration interface.../' with args {'config_commands': ['interface Ethernet0/3', '    description T-PETROVSN', '    switchport access vlan 330', '    switchport mode access', '    no shutdown']} on 1 hosts
+2023-03-31 08:58:39,876 -  nornir.core -     INFO -        run() - Running task 'napalm_get' with args {'getters': ['get_interfaces']} on 1 hosts
+2023-03-31 08:58:41,019 -  nornir.core -     INFO -        run() - Running task 'Configuration interface.../' with args {'config_commands': ['interface Ethernet0/3', '    description T-PETROVS', '    switchport access vlan 330', '    switchport mode access', '    no shutdown']} on 1 hosts
+2023-03-31 09:00:56,175 -  nornir.core -     INFO -        run() - Running task 'napalm_get' with args {'getters': ['get_interfaces']} on 1 hosts
+2023-03-31 09:00:57,326 -  nornir.core -     INFO -        run() - Running task 'Configuration interface.../' with args {'config_commands': ['interface Ethernet0/3', '    description T-PETROVSN', '    switchport access vlan 330', '    switchport mode access', '    no shutdown']} on 1 hosts
+2023-03-31 09:00:58,968 -  nornir.core -     INFO -        run() - Running task 'close_connections_task' with args {} on 1 hosts
+2023-03-31 09:12:57,732 -  nornir.core -     INFO -        run() - Running task 'napalm_get' with args {'getters': ['get_interfaces']} on 1 hosts
+2023-03-31 09:12:58,818 -  nornir.core -     INFO -        run() - Running task 'Configuration interface.../' with args {'config_commands': ['interface Ethernet0/3', '    description T-PETROVS', '    switchport access vlan 330', '    switchport mode access', '    no shutdown']} on 1 hosts
+2023-03-31 09:25:35,760 -  nornir.core -     INFO -        run() - Running task 'napalm_get' with args {'getters': ['get_interfaces']} on 1 hosts
+2023-03-31 09:25:36,898 -  nornir.core -     INFO -        run() - Running task 'Configuration interface.../' with args {'config_commands': ['interface Ethernet0/3', '    description T-PETROVSN', '    switchport access vlan 330', '    switchport mode access', '    no shutdown']} on 1 hosts
+2023-03-31 09:25:38,701 -  nornir.core -     INFO -        run() - Running task 'close_connections_task' with args {} on 1 hosts
+2023-03-31 11:00:14,886 -  nornir.core -     INFO -        run() - Running task 'napalm_get' with args {'getters': ['get_interfaces']} on 1 hosts
+2023-03-31 11:00:16,046 -  nornir.core -     INFO -        run() - Running task 'Configuration interface.../' with args {'config_commands': ['default interface Ethernet0/0', 'interface Ethernet0/0', '    shutdown']} on 1 hosts
+2023-03-31 11:00:17,527 -  nornir.core -     INFO -        run() - Running task 'close_connections_task' with args {} on 1 hosts
+2023-03-31 12:36:44,445 -  nornir.core -     INFO -        run() - Running task 'napalm_get' with args {'getters': ['get_interfaces']} on 1 hosts
+2023-03-31 12:36:45,650 -  nornir.core -     INFO -        run() - Running task 'Configuration interface.../' with args {'config_commands': ['default interface Ethernet0/3', 'interface Ethernet0/3', '    shutdown']} on 1 hosts
+2023-03-31 12:36:47,461 -  nornir.core -     INFO -        run() - Running task 'close_connections_task' with args {} on 1 hosts
+2023-03-31 12:37:50,496 -  nornir.core -     INFO -        run() - Running task 'napalm_get' with args {'getters': ['get_interfaces']} on 1 hosts
+2023-03-31 12:37:51,641 -  nornir.core -     INFO -        run() - Running task 'Configuration interface.../' with args {'config_commands': ['default interface Ethernet0/3', 'interface Ethernet0/3', '    shutdown']} on 1 hosts
+2023-03-31 12:37:53,201 -  nornir.core -     INFO -        run() - Running task 'close_connections_task' with args {} on 1 hosts
+2023-03-31 12:48:48,146 -  nornir.core -     INFO -        run() - Running task 'napalm_get' with args {'getters': ['get_interfaces']} on 1 hosts
+2023-03-31 12:48:49,955 -  nornir.core -     INFO -        run() - Running task 'Configuration interface.../' with args {'config_commands': ['interface Ethernet0/3', '    description T-PETROVSN', '    switchport access vlan 330', '    switchport mode access', '    no shutdown']} on 1 hosts
+2023-03-31 12:48:51,890 -  nornir.core -     INFO -        run() - Running task 'close_connections_task' with args {} on 1 hosts
+2023-03-31 12:50:36,920 -  nornir.core -     INFO -        run() - Running task 'napalm_get' with args {'getters': ['get_interfaces']} on 1 hosts
+2023-03-31 12:50:38,035 -  nornir.core -     INFO -        run() - Running task 'Configuration interface.../' with args {'config_commands': ['interface Ethernet0/3', '    description T-PETROVS', '    switchport access vlan 330', '    switchport mode access', '    no shutdown']} on 1 hosts
+2023-03-31 12:50:39,861 -  nornir.core -     INFO -        run() - Running task 'close_connections_task' with args {} on 1 hosts
+2023-03-31 12:51:12,233 -  nornir.core -     INFO -        run() - Running task 'napalm_get' with args {'getters': ['get_interfaces']} on 1 hosts
+2023-03-31 12:51:13,475 -  nornir.core -     INFO -        run() - Running task 'Configuration interface.../' with args {'config_commands': ['default interface Ethernet0/3', 'interface Ethernet0/3', '    shutdown']} on 1 hosts
+2023-03-31 12:51:14,960 -  nornir.core -     INFO -        run() - Running task 'close_connections_task' with args {} on 1 hosts
+2023-03-31 12:53:16,646 -  nornir.core -     INFO -        run() - Running task 'napalm_get' with args {'getters': ['get_interfaces']} on 1 hosts
+2023-03-31 12:53:18,082 -  nornir.core -     INFO -        run() - Running task 'Configuration interface.../' with args {'config_commands': ['interface Ethernet0/3', '    description T-PETROVS', '    switchport access vlan 330', '    switchport mode access', '    no shutdown']} on 1 hosts
+2023-03-31 12:53:19,744 -  nornir.core -     INFO -        run() - Running task 'close_connections_task' with args {} on 1 hosts
+2023-03-31 12:54:51,593 -  nornir.core -     INFO -        run() - Running task 'napalm_get' with args {'getters': ['get_interfaces']} on 1 hosts
+2023-03-31 12:54:52,717 -  nornir.core -     INFO -        run() - Running task 'Configuration interface.../' with args {'config_commands': ['interface Ethernet0/3', '    description T-PETROVSN', '    switchport access vlan 330', '    switchport mode access', '    no shutdown']} on 1 hosts
+2023-03-31 12:54:54,328 -  nornir.core -     INFO -        run() - Running task 'close_connections_task' with args {} on 1 hosts
+2023-03-31 12:58:05,116 -  nornir.core -     INFO -        run() - Running task 'napalm_get' with args {'getters': ['get_interfaces']} on 1 hosts
+2023-03-31 12:58:06,046 -  nornir.core -     INFO -        run() - Running task 'Configuration interface.../' with args {'config_commands': ['interface Ethernet0/3', '    description T-PETROVS', '    switchport access vlan 330', '    switchport mode access', '    no shutdown']} on 1 hosts
+2023-03-31 12:58:07,796 -  nornir.core -     INFO -        run() - Running task 'close_connections_task' with args {} on 1 hosts
+2023-03-31 14:49:43,981 -  nornir.core -     INFO -        run() - Running task 'napalm_get' with args {'getters': ['get_interfaces']} on 1 hosts
+2023-03-31 14:49:45,083 -  nornir.core -     INFO -        run() - Running task 'Configuration interface.../' with args {'config_commands': ['default interface Ethernet0/3', 'interface Ethernet0/3', '    shutdown']} on 1 hosts
+2023-03-31 14:49:46,473 -  nornir.core -     INFO -        run() - Running task 'close_connections_task' with args {} on 1 hosts
+2023-03-31 14:51:58,413 -  nornir.core -     INFO -        run() - Running task 'napalm_get' with args {'getters': ['get_interfaces']} on 1 hosts
+2023-03-31 14:51:59,530 -  nornir.core -     INFO -        run() - Running task 'Configuration interface.../' with args {'config_commands': ['interface Ethernet0/3', '    description T-PETROVSN', '    switchport access vlan 330', '    switchport mode access', '    no shutdown']} on 1 hosts
+2023-03-31 14:52:01,294 -  nornir.core -     INFO -        run() - Running task 'close_connections_task' with args {} on 1 hosts
+2023-03-31 14:52:25,986 -  nornir.core -     INFO -        run() - Running task 'napalm_get' with args {'getters': ['get_interfaces']} on 1 hosts
+2023-03-31 14:52:27,186 -  nornir.core -     INFO -        run() - Running task 'Configuration interface.../' with args {'config_commands': ['default interface Ethernet0/3', 'interface Ethernet0/3', '    shutdown']} on 1 hosts
+2023-03-31 14:52:28,635 -  nornir.core -     INFO -        run() - Running task 'close_connections_task' with args {} on 1 hosts
