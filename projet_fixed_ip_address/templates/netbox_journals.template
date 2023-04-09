@@ -1,7 +1,7 @@
 {
-    "assigned_object_type": "dcim.device",
-    "assigned_object_id": 12,
-    "created_by": 1,
+    "assigned_object_type": "{{ assigned_object_type }}",
+    "assigned_object_id": {{ assigned_object_id }},
+    "created_by": {{ created_by }},
     "kind": "{{ kind }}",
     "comments": "{{ comments }}",
     "tags": [],

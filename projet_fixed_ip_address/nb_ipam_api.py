@@ -5,6 +5,10 @@ import ipaddress
 from jinja2 import Environment, FileSystemLoader
 import macaddress
 from pydhcpdparser import parser
+from global_var import(global_id,
+                        global_dcim,
+                        parent_path,
+                        templates_path)
 
 # Создаем функцию проверки None
 
@@ -57,9 +61,11 @@ def delete_config_file(device_name):
     :param device_name
     :return: None
     """
+    global parent_path
+    parent_path = parent_path + '/'
     start,end = -2,-2 # start и end должны быть не пустыми и меньше -1
     name = device_name.strip().casefold() # избавляемся от пробелов и игнорируем регистр
-    with open("result.conf", 'r') as f: # открываем файл для чтения
+    with open(parent_path + "result.conf", 'r') as f: # открываем файл для чтения
         config = f.readlines() # считывем построчно и получаем список
     for line in config:
         if line.startswith('host'): # если в начале строки попадается 'host'
@@ -70,7 +76,7 @@ def delete_config_file(device_name):
                         end = i
                         if start >= 0 and end >=start : # значения для среза обязательно должны быть, и второе (end) должно быть не меньше первого (start)
                             del config[start:end+1] # делаем срез списка (избавляемся от строк)
-                            with open("result.conf", 'w') as w:
+                            with open(parent_path + "result.conf", 'w') as w:
                                 w.writelines(config)
                                 w.close()
                             print("'{}' is find and deleted there config...".format(device_name))
@@ -88,13 +94,15 @@ def test_for_equal(mac_address, device_name,ip_address):
     :return: None 
     """
     
+    global parent_path
+    parent_path = parent_path + '/'
     """
     Находим составное имя по MAC адресу или по IP адресу
     """
     if confiugure_interface_mac_address(mac_address) != None: 
         hw_addr = mac_address.strip() # избавляемся от пробелов
         ip_addr = ip_address.strip() # избавляемся от пробелов
-        with open("result.conf", "r") as f: # открываем файл на чтение
+        with open(parent_path + "result.conf", "r") as f: # открываем файл на чтение
             conf = f.read() # считываем все одной строкой
             f.close() # закрываем файл
         config = parser.parse(conf) # парсим и получаем словарь
@@ -122,6 +130,8 @@ def dhcpd_config_file(j2_ip_address,j2_interface,event='None'):
     :param j2_ip_address: ip адрес
     :return: None
     """
+    global parent_path
+    parent_path = parent_path + '/'
     j2_host = j2_interface.device.name+'.'+j2_interface.name.replace(" ","_")
     
     test_for_equal(j2_interface.mac_address, j2_host,j2_ip_address)
@@ -130,7 +140,7 @@ def dhcpd_config_file(j2_ip_address,j2_interface,event='None'):
         
         if confiugure_interface_mac_address(j2_interface.mac_address) != None:
 
-            templates_path = "./templates/"
+            #templates_path = "./templates/"
             environment = Environment(loader=FileSystemLoader(templates_path)) # загружаем шаблон для заполнения
             template = environment.get_template("dhcpd_static.template")
 
@@ -141,7 +151,7 @@ def dhcpd_config_file(j2_ip_address,j2_interface,event='None'):
             ip_address = j2_ip_address
             )
             print("Filling in the template...\n{}".format(content))
-            with open('result.conf', 'a') as fp: # Сохраняем получившийся конфиг
+            with open(parent_path + 'result.conf', 'a') as fp: # Сохраняем получившийся конфиг
                 fp.write(content + '\n')
                 fp.close()
             print("File {} is saved!".format("result.conf"))
@@ -249,7 +259,7 @@ def update_ip_address(netbox_interface,snapshot_json,netbox_ip_address,netbox_ad
 
 # Создаем функцию для манипулирования IP адресами
 
-def manage_interface_ip_address():
+def mng_ip():
         
     get_device_interface = netbox_api.dcim.interfaces.get(request.json["data"]["assigned_object_id"])    
     get_device_ips = request.json["data"]["address"]

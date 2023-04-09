@@ -3,4 +3,4 @@ interface {{ interface_name }}
     description DEFAULT
     switchport access vlan 99
     switchport mode access
-    no shutdown
+    shutdown
