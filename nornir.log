@@ -10946,3 +10946,118 @@ nornir.core.exceptions.NornirSubTaskError: Subtask: 2 ÑˆÐ°Ð³. 1: ÐŸÐ¾Ð»ÑƒÑ‡Ð°ÐµÐ
 2023-02-03 08:27:50,380 -  nornir.core -     INFO -        run() - Running task 'napalm_get' with args {'getters': ['get_interfaces_ip']} on 2 hosts
 2023-02-03 08:27:58,696 -  nornir.core -     INFO -        run() - Running task 'napalm_get' with args {'getters': ['get_interfaces_ip']} on 2 hosts
 >>>>>>> 8fc6d627b49989f94362908a7104d41d4ea859ac
+2023-04-04 15:22:22,486 -  nornir.core -  WARNING -        run() - Task 'napalm_get' has not been run – 0 hosts selected
+2023-04-04 15:22:22,486 -  nornir.core -  WARNING -        run() - Task 'Configuration interface.../' has not been run – 0 hosts selected
+2023-04-04 15:22:22,486 -  nornir.core -  WARNING -        run() - Task 'close_connections_task' has not been run – 0 hosts selected
+2023-04-04 15:31:27,344 -  nornir.core -  WARNING -        run() - Task 'napalm_get' has not been run – 0 hosts selected
+2023-04-04 15:31:27,344 -  nornir.core -  WARNING -        run() - Task 'Configuration interface.../' has not been run – 0 hosts selected
+2023-04-04 15:31:27,345 -  nornir.core -  WARNING -        run() - Task 'close_connections_task' has not been run – 0 hosts selected
+2023-04-04 15:54:34,580 -  nornir.core -  WARNING -        run() - Task 'napalm_get' has not been run – 0 hosts selected
+2023-04-04 15:54:34,580 -  nornir.core -  WARNING -        run() - Task 'Configuration interface.../' has not been run – 0 hosts selected
+2023-04-04 15:54:34,580 -  nornir.core -  WARNING -        run() - Task 'close_connections_task' has not been run – 0 hosts selected
+2023-04-04 15:54:58,485 -  nornir.core -  WARNING -        run() - Task 'napalm_get' has not been run – 0 hosts selected
+2023-04-04 15:54:58,485 -  nornir.core -  WARNING -        run() - Task 'Configuration interface.../' has not been run – 0 hosts selected
+2023-04-04 15:54:58,485 -  nornir.core -  WARNING -        run() - Task 'close_connections_task' has not been run – 0 hosts selected
+2023-04-04 15:55:43,433 -  nornir.core -  WARNING -        run() - Task 'napalm_get' has not been run – 0 hosts selected
+2023-04-04 15:55:43,434 -  nornir.core -  WARNING -        run() - Task 'Configuration interface.../' has not been run – 0 hosts selected
+2023-04-04 15:55:43,434 -  nornir.core -  WARNING -        run() - Task 'close_connections_task' has not been run – 0 hosts selected
+2023-04-04 15:56:17,902 -  nornir.core -  WARNING -        run() - Task 'napalm_get' has not been run – 0 hosts selected
+2023-04-04 15:56:17,902 -  nornir.core -  WARNING -        run() - Task 'Configuration interface.../' has not been run – 0 hosts selected
+2023-04-04 15:56:17,902 -  nornir.core -  WARNING -        run() - Task 'close_connections_task' has not been run – 0 hosts selected
+2023-04-04 16:02:54,531 -  nornir.core -  WARNING -        run() - Task 'napalm_get' has not been run – 0 hosts selected
+2023-04-04 16:02:54,532 -  nornir.core -  WARNING -        run() - Task 'Configuration interface.../' has not been run – 0 hosts selected
+2023-04-04 16:02:54,532 -  nornir.core -  WARNING -        run() - Task 'close_connections_task' has not been run – 0 hosts selected
+2023-04-05 08:49:53,849 -  nornir.core -     INFO -        run() - Running task 'napalm_get' with args {'getters': ['get_interfaces']} on 1 hosts
+2023-04-05 08:49:55,927 - nornir.core.task -    ERROR -      start() - Host 'SW-PLGN-1': task 'napalm_get' failed with traceback:
+Traceback (most recent call last):
+  File "C:\Users\kcarkov\AppData\Roaming\Python\Python37\site-packages\netmiko\base_connection.py", line 1046, in establish_connection
+    self.remote_conn_pre.connect(**ssh_connect_params)
+  File "C:\Users\kcarkov\AppData\Roaming\Python\Python37\site-packages\paramiko\client.py", line 380, in connect
+    raise NoValidConnectionsError(errors)
+paramiko.ssh_exception.NoValidConnectionsError: [Errno None] Unable to connect to port 22 on 10.30.1.105
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\kcarkov\AppData\Roaming\Python\Python37\site-packages\napalm\base\base.py", line 119, in _netmiko_open
+    **netmiko_optional_args
+  File "C:\Users\kcarkov\AppData\Roaming\Python\Python37\site-packages\netmiko\ssh_dispatcher.py", line 365, in ConnectHandler
+    return ConnectionClass(*args, **kwargs)
+  File "C:\Users\kcarkov\AppData\Roaming\Python\Python37\site-packages\netmiko\base_connection.py", line 439, in __init__
+    self._open()
+  File "C:\Users\kcarkov\AppData\Roaming\Python\Python37\site-packages\netmiko\base_connection.py", line 444, in _open
+    self.establish_connection()
+  File "C:\Users\kcarkov\AppData\Roaming\Python\Python37\site-packages\netmiko\base_connection.py", line 1068, in establish_connection
+    raise NetmikoTimeoutException(msg)
+netmiko.exceptions.NetmikoTimeoutException: TCP connection to device failed.
+
+Common causes of this problem are:
+1. Incorrect hostname or IP address.
+2. Wrong TCP port.
+3. Intermediate firewall blocking access.
+
+Device settings: cisco_ios 10.30.1.105:22
+
+
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\kcarkov\AppData\Roaming\Python\Python37\site-packages\nornir\core\task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "C:\Users\kcarkov\AppData\Roaming\Python\Python37\site-packages\nornir_napalm\plugins\tasks\napalm_get.py", line 32, in napalm_get
+    device = task.host.get_connection(CONNECTION_NAME, task.nornir.config)
+  File "C:\Users\kcarkov\AppData\Roaming\Python\Python37\site-packages\nornir\core\inventory.py", line 502, in get_connection
+    extras=conn.extras,
+  File "C:\Users\kcarkov\AppData\Roaming\Python\Python37\site-packages\nornir\core\inventory.py", line 553, in open_connection
+    configuration=configuration,
+  File "C:\Users\kcarkov\AppData\Roaming\Python\Python37\site-packages\nornir_napalm\plugins\connections\__init__.py", line 57, in open
+    connection.open()
+  File "C:\Users\kcarkov\AppData\Roaming\Python\Python37\site-packages\napalm\ios\ios.py", line 171, in open
+    device_type, netmiko_optional_args=self.netmiko_optional_args
+  File "C:\Users\kcarkov\AppData\Roaming\Python\Python37\site-packages\napalm\base\base.py", line 122, in _netmiko_open
+    raise ConnectionException("Cannot connect to {}".format(self.hostname))
+napalm.base.exceptions.ConnectionException: Cannot connect to 10.30.1.105
+
+2023-04-05 08:50:10,988 -  nornir.core -     INFO -        run() - Running task 'close_connections_task' with args {} on 1 hosts
+2023-04-05 13:38:36,388 -  nornir.core -     INFO -        run() - Running task 'napalm_get' with args {'getters': ['get_interfaces']} on 1 hosts
+2023-04-05 13:38:37,357 -  nornir.core -     INFO -        run() - Running task 'Configuration interface.../' with args {'config_commands': ['interface Ethernet0/3', '    description T-SIDOROV', '    switchport access vlan 310', '    switchport mode access', '    no shutdown']} on 1 hosts
+2023-04-05 13:38:38,951 -  nornir.core -     INFO -        run() - Running task 'close_connections_task' with args {} on 1 hosts
+2023-04-05 13:40:27,416 -  nornir.core -     INFO -        run() - Running task 'napalm_get' with args {'getters': ['get_interfaces']} on 1 hosts
+2023-04-05 13:40:28,341 -  nornir.core -     INFO -        run() - Running task 'Configuration interface.../' with args {'config_commands': ['interface Ethernet0/3', '    description T-SIDOROV', '    switchport access vlan 310', '    switchport mode access', '    no shutdown']} on 1 hosts
+2023-04-05 13:40:29,980 -  nornir.core -     INFO -        run() - Running task 'close_connections_task' with args {} on 1 hosts
+2023-04-05 13:41:24,306 -  nornir.core -     INFO -        run() - Running task 'napalm_get' with args {'getters': ['get_interfaces']} on 1 hosts
+2023-04-05 13:41:25,229 -  nornir.core -     INFO -        run() - Running task 'Configuration interface.../' with args {'config_commands': ['interface Ethernet0/3', '    description T-SIDOROV', '    switchport access vlan 310', '    switchport mode access', '    no shutdown']} on 1 hosts
+2023-04-05 13:41:27,024 -  nornir.core -     INFO -        run() - Running task 'close_connections_task' with args {} on 1 hosts
+2023-04-05 13:41:51,522 -  nornir.core -     INFO -        run() - Running task 'napalm_get' with args {'getters': ['get_interfaces']} on 1 hosts
+2023-04-05 13:41:52,461 -  nornir.core -     INFO -        run() - Running task 'Configuration interface.../' with args {'config_commands': ['interface Ethernet0/3', '    description T-SIDOROV', '    switchport access vlan 310', '    switchport mode access', '    no shutdown']} on 1 hosts
+2023-04-05 13:41:53,992 -  nornir.core -     INFO -        run() - Running task 'close_connections_task' with args {} on 1 hosts
+2023-04-05 13:46:22,969 -  nornir.core -     INFO -        run() - Running task 'napalm_get' with args {'getters': ['get_interfaces']} on 1 hosts
+2023-04-05 13:46:23,906 -  nornir.core -     INFO -        run() - Running task 'Configuration interface.../' with args {'config_commands': ['interface Ethernet0/3', '    description T-SIDOROV', '    switchport access vlan 310', '    switchport mode access', '    no shutdown']} on 1 hosts
+2023-04-05 13:46:25,516 -  nornir.core -     INFO -        run() - Running task 'close_connections_task' with args {} on 1 hosts
+2023-04-05 13:52:05,006 -  nornir.core -     INFO -        run() - Running task 'napalm_get' with args {'getters': ['get_interfaces']} on 1 hosts
+2023-04-05 13:52:05,959 -  nornir.core -     INFO -        run() - Running task 'Configuration interface.../' with args {'config_commands': ['interface Ethernet0/3', '    description T-SIDOROV', '    switchport access vlan 310', '    switchport mode access', '    no shutdown']} on 1 hosts
+2023-04-05 13:52:07,805 -  nornir.core -     INFO -        run() - Running task 'Configuration interface.../' with args {'config_commands': ['interface Ethernet0/3', '    description T-SIDOROV', '    switchport access vlan 310', '    switchport mode access', '    no shutdown']} on 1 hosts
+2023-04-05 13:52:08,616 -  nornir.core -     INFO -        run() - Running task 'Configuration interface.../' with args {'config_commands': ['interface Ethernet0/3', '    description T-SIDOROV', '    switchport access vlan 310', '    switchport mode access', '    no shutdown']} on 1 hosts
+2023-04-05 13:52:09,460 -  nornir.core -     INFO -        run() - Running task 'close_connections_task' with args {} on 1 hosts
+2023-04-05 13:56:46,171 -  nornir.core -     INFO -        run() - Running task 'napalm_get' with args {'getters': ['get_interfaces']} on 1 hosts
+2023-04-05 13:56:47,284 -  nornir.core -     INFO -        run() - Running task 'Configuration interface.../' with args {'config_commands': ['interface Ethernet0/3', '    description T-SIDOROV', '    switchport access vlan 310', '    switchport mode access', '    no shutdown']} on 1 hosts
+2023-04-05 13:56:48,905 -  nornir.core -     INFO -        run() - Running task 'close_connections_task' with args {} on 1 hosts
+2023-04-05 13:59:36,634 -  nornir.core -     INFO -        run() - Running task 'napalm_get' with args {'getters': ['get_interfaces']} on 1 hosts
+2023-04-05 13:59:37,604 -  nornir.core -     INFO -        run() - Running task 'Configuration interface.../' with args {'config_commands': ['interface Ethernet0/3', '    description T-SIDOROV', '    switchport access vlan 310', '    switchport mode access', '    no shutdown']} on 1 hosts
+2023-04-05 13:59:39,244 -  nornir.core -     INFO -        run() - Running task 'close_connections_task' with args {} on 1 hosts
+2023-04-05 14:06:07,405 -  nornir.core -     INFO -        run() - Running task 'napalm_get' with args {'getters': ['get_interfaces']} on 1 hosts
+2023-04-05 14:06:08,361 -  nornir.core -     INFO -        run() - Running task 'Configuration interface.../' with args {'config_commands': ['interface Ethernet0/3', '    description T-SIDOROV', '    switchport access vlan 310', '    switchport mode access', '    no shutdown']} on 1 hosts
+2023-04-05 14:06:10,140 -  nornir.core -     INFO -        run() - Running task 'close_connections_task' with args {} on 1 hosts
+2023-04-05 14:12:48,049 -  nornir.core -     INFO -        run() - Running task 'napalm_get' with args {'getters': ['get_interfaces']} on 1 hosts
+2023-04-05 14:12:49,630 -  nornir.core -     INFO -        run() - Running task 'Configuration interface.../' with args {'config_commands': ['interface Ethernet0/3', '    description T-SIDOROV', '    switchport access vlan 310', '    switchport mode access', '    no shutdown']} on 1 hosts
+2023-04-05 14:12:51,457 -  nornir.core -     INFO -        run() - Running task 'close_connections_task' with args {} on 1 hosts
+2023-04-06 16:54:20,412 -  nornir.core -     INFO -        run() - Running task 'napalm_get' with args {'getters': ['get_interfaces']} on 1 hosts
+2023-04-06 16:54:21,384 -  nornir.core -     INFO -        run() - Running task 'Configuration interface.../' with args {'config_commands': ['interface Ethernet0/3', '    description T-SIDOROV', '    switchport access vlan 310', '    switchport mode access', '    no shutdown']} on 1 hosts
+2023-04-06 16:54:23,083 -  nornir.core -     INFO -        run() - Running task 'close_connections_task' with args {} on 1 hosts
+2023-04-06 22:20:33,368 -  nornir.core -     INFO -        run() - Running task 'napalm_get' with args {'getters': ['get_interfaces']} on 1 hosts
+2023-04-06 22:20:34,507 -  nornir.core -     INFO -        run() - Running task 'Configuration interface.../' with args {'config_commands': ['interface Ethernet0/3', '    description T-SIDOROV', '    switchport access vlan 310', '    switchport mode access', '    no shutdown']} on 1 hosts
+2023-04-06 22:20:36,429 -  nornir.core -     INFO -        run() - Running task 'close_connections_task' with args {} on 1 hosts
+2023-04-06 22:34:37,747 -  nornir.core -     INFO -        run() - Running task 'napalm_get' with args {'getters': ['get_interfaces']} on 1 hosts
+2023-04-06 22:34:38,888 -  nornir.core -     INFO -        run() - Running task 'Configuration interface.../' with args {'config_commands': ['interface Ethernet0/2', '    description T-SIDOROV', '    switchport access vlan 310', '    switchport mode access', '    no shutdown']} on 1 hosts
+2023-04-06 22:34:40,653 -  nornir.core -     INFO -        run() - Running task 'close_connections_task' with args {} on 1 hosts

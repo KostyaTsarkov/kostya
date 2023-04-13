@@ -1,0 +1,22 @@
+cisco_ios_l2:
+  data:
+    site: plgn
+    type: l2
+    domain: plgn.com
+    dns_servers:
+      - 10.30.8.8
+    enable: Qwerty11
+    user_info:
+      - username: sa
+        privilege: 15
+        password: Qwerty11
+    ntp_server: 10.30.24.24
+    clock_tz: EKB 5
+    logging_buff: 262144
+    logging_console: critical
+    logging_monitor: warnings
+    vty_num: 4
+    logging_size: 100
+    logging_severity: critical
+    logging_hosts:
+      - 10.30.3.16

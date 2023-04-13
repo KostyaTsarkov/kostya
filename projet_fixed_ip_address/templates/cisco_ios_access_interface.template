@@ -1,0 +1,5 @@
+interface {{ interface_name }}
+    description {{ descr }}
+    switchport access vlan {{ access_vlan }}
+    switchport mode {{ mode }}
+    no shutdown

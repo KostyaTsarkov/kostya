@@ -1,0 +1,15 @@
+{
+  "a_terminations": [
+    {
+      "object_type": "{{ a_object_type }}",
+      "object_id": {{ a_object_id }}
+    }
+  ],
+  "b_terminations": [
+    {
+      "object_type": "{{ b_object_type }}",
+      "object_id": {{ b_object_id }}
+    }
+  ],
+  "status": "{{ status }}"
+}

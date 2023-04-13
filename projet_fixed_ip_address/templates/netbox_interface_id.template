@@ -1,0 +1,11 @@
+{
+    "device_type": 0,
+    "module_type": 0,
+    "name": "{{ name }}",
+    "label": "{{ label }}",
+    "type": "virtual",
+    "mgmt_only": true,
+    "description": "string",
+    "poe_mode": "pd",
+    "poe_type": "type1-ieee802.3af"
+  }

@@ -1,0 +1,9 @@
+{
+    "assigned_object_type": "{{ assigned_object_type }}",
+    "assigned_object_id": {{ assigned_object_id }},
+    "created_by": {{ created_by }},
+    "kind": "{{ kind }}",
+    "comments": "{{ comments }}",
+    "tags": [],
+    "custom_fields": {}
+}
