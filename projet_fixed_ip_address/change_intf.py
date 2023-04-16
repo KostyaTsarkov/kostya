@@ -2,7 +2,8 @@ from journal import journal_template_fill
 from push_config import *
 from config import netbox_api
 from global_var import(global_id,
-                        global_dcim)
+                        global_dcim,
+                        interface)
 
 # Создаем конфигурацию интерфейса и отправляем её на устройство
 def change_config_intf(netbox_interface,event):
@@ -14,7 +15,10 @@ def change_config_intf(netbox_interface,event):
     """
     
     interface_name = netbox_interface.name
-    #event='delete'
+
+    global global_dcim
+    global global_id
+    
     try:
         content = cisco_config_interface(netbox_interface,event).split('\n')
         print("{} interface {} config...".format(event.capitalize(),netbox_interface))
@@ -34,9 +38,13 @@ def mng_connected_interfaces(user_device_intf):
     :return: None
     """
     
+    global interface
+    global global_dcim
+    global global_id
+    
     if user_device_intf['connected_endpoints_reachable']: # проверяем, есть ли соединение с другим устройством
         
-        interface = ['mtu','mac_address','speed','duplex','description','mode','untagged_vlan'] # произвольный список параметров интерфеса 
+        #interface = ['mtu','mac_address','speed','duplex','description','mode','untagged_vlan'] # произвольный список параметров интерфеса 
         network_device = user_device_intf['connected_endpoints'][0]['id'] # устройство-сосед (сетевое)
         changes = dict()
         change_key = ['id'] # добавляем 'ID' устройства-соседа, используемое как ключ

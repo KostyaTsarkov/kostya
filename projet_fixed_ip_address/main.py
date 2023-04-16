@@ -20,8 +20,8 @@ Webhook POST
     Content types: 'DCIM > Cable'
 """
 app.add_url_rule("/api/cable_change",
-                methods=['POST'],
-                view_func=mng_cable)
+                 methods=['POST'],
+                 view_func=mng_cable)
 """
 Webhook POST
     Name:'Update the interface'
@@ -30,6 +30,6 @@ Webhook POST
 app.add_url_rule("/api/int_update",
                  methods=['POST'],
                  view_func=mng_int)
-    
-if __name__ == "__main__": 
+
+if __name__ == "__main__":
     app.run(host='0.0.0.0', port=8080)

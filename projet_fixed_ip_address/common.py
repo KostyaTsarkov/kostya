@@ -3,8 +3,7 @@ import ipaddress
 import re
 from deepdiff import DeepDiff
 from global_var import(global_id,
-                        global_dcim,
-                        templates_path)
+                        global_dcim)
 
 
 def parse_interface_name(interface_name):
@@ -29,6 +28,10 @@ def configure_interface_ipv4_address(netbox_ip_address='0.0.0.0'):
     """
         
     ipv4_dic = dict()
+    
+    global global_dcim
+    global global_id
+    
     try:
         ip_cidr = ipaddress.ip_interface(netbox_ip_address)
         
@@ -95,6 +98,6 @@ def convert_none_to_str(value):
     """ 
     Конвертируем None в пустую строку
     :param value: данные 
-    :return: '' 
+    :return: '' or 'value'
     """ 
     return '' if value is None else str(value)
