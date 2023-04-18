@@ -81,7 +81,7 @@ def mng_cable():
             
             elif get_event == "created": # Конфиг интерфейса будет добавлен
                 change_config_intf(netbox_interface=get_device_interface,event='create')
-                mng_connected_interfaces(user_device_intf=get_device_interface,event='create')
+                mng_connected_interfaces(get_device_interface,event='create',role=templates_roles[0])
 
             elif get_event == "updated" and compare(prechange,postchange) != None: # Конфиг интерфейса будет изменен
                 change_config_intf(netbox_interface=get_device_interface,event='update') 

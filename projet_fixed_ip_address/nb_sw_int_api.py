@@ -83,7 +83,7 @@ def mng_int():
     # проверяем, является ли устройство конечным (пользователя)
     elif device_role in user_devices_roles:
         # вызываем функцию внесения изменений настроек связанных портов
-        mng_connected_interfaces(get_device_interface, event='update')
+        mng_connected_interfaces(get_device_interface, event='update',role=device_role)
     
     else: print('Device role is "{}"'.format(device_role))
 

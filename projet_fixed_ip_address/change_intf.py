@@ -30,7 +30,7 @@ def change_config_intf(netbox_interface,event):
             # <
 
 # Управляем изменениями связанных интерфейсов
-def mng_connected_interfaces(user_device_intf,event):
+def mng_connected_interfaces(device_intf,event,role):
     """  
     Получаем конфигурацию интерфейса устройства пользователя и передаем её интерфейсу устройства-соседа
     Соединение должно быть point-to-point между интерфейсами (Interface)
@@ -43,14 +43,13 @@ def mng_connected_interfaces(user_device_intf,event):
     global global_id
     
     
-    if user_device_intf['connected_endpoints_reachable']: # проверяем, есть ли соединение с другим устройством
-        #interface = ['mtu','mac_address','speed','duplex','description','mode','untagged_vlan'] # произвольный список параметров интерфеса 
-        network_device = user_device_intf['connected_endpoints'][0]['id'] # устройство-сосед (сетевое)
+    def changes_fill(network_device,user_device):
+ 
         changes = dict()
         change_key = ['id'] # добавляем 'ID' устройства-соседа, используемое как ключ
         new_value = [network_device]
 
-        for value in user_device_intf: # перебираем список кортежей
+        for value in user_device: # перебираем список кортежей
             
             if value[0] in interface and value[1] != '' and value[1] != None: # проверяем, есть ли значение в списке, определенном нами ранее,
                                                                             # значение должно быть заполнено
@@ -62,11 +61,59 @@ def mng_connected_interfaces(user_device_intf,event):
                 else:
                     new_value.append(value[1])
                         
-        changes = [dict(zip(change_key,new_value))] # объединяем два списка в словарь
-        netbox_api.dcim.interfaces.update(changes) # обновляем данные интерфейса через netbox_api
-            
-    else:
-        # > добавляем запись в журнал
-        comment,level = 'Neighbor is not reachable for {}'.format(user_device_intf),'notification'
-        print(journal_template_fill(comment,level,global_id,global_dcim))
-        # <        
+        changes = [dict(zip(change_key,new_value))] # объединяем два списка в словарь       
+        
+        return changes
+    
+    
+    if role in user_devices_roles and event!='delete':
+        if device_intf['connected_endpoints_reachable']: # проверяем, есть ли соединение с другим устройством
+            #interface = ['mtu','mac_address','speed','duplex','description','mode','untagged_vlan'] # произвольный список параметров интерфеса 
+            network_device = device_intf['connected_endpoints'][0]['id'] # устройство-сосед (сетевое)    
+            changes = changes_fill(network_device,device_intf)
+            netbox_api.dcim.interfaces.update(changes) # обновляем данные интерфейса через netbox_api
+        
+        else:
+            # > добавляем запись в журнал
+            comment,level = 'Neighbor is not reachable for {}'.format(device_intf),'notification'
+            print(journal_template_fill(comment,level,global_id,global_dcim))
+            # <  
+    
+    elif role in network_devices_roles and event!='delete':        
+        if device_intf['connected_endpoints_reachable']: # проверяем, есть ли соединение с другим устройством
+            network_device = device_intf[id]
+            device_intf = network_device['connected_endpoints'][0]
+            changes = changes_fill(network_device,device_intf)
+             
+            """ changes = dict()
+            change_key = ['id'] # добавляем 'ID' устройства-соседа, используемое как ключ
+            new_value = [network_device]
+
+            for value in device_intf: # перебираем список кортежей
+                
+                if value[0] in interface and value[1] != '' and value[1] != None: # проверяем, есть ли значение в списке, определенном нами ранее,
+                                                                                # значение должно быть заполнено
+                    change_key.append(value[0])
+                    
+                    if isinstance(value[1], dict): # проверяем, является ли значение словарем
+                        new_value.append(list(value[1].values())[0]) # превращаем значение словаря в список
+                    
+                    else:
+                        new_value.append(value[1])
+                            
+            changes = [dict(zip(change_key,new_value))] # объединяем два списка в словарь """
+            netbox_api.dcim.interfaces.update(changes) # обновляем данные интерфейса через netbox_api
+                
+        else:
+            # > добавляем запись в журнал
+            comment,level = 'Neighbor is not reachable for {}'.format(device_intf),'notification'
+            print(journal_template_fill(comment,level,global_id,global_dcim))
+            # <        
+    
+    elif role in network_devices_roles and event=='delete':
+        changes = dict.fromkeys(interface, None)
+        changes['description'] = ""
+        changes['id'] = device_intf.id
+        netbox_api.dcim.interfaces.update(changes)
+        print('delete cable and netbox interface config')
+        
