@@ -85,11 +85,8 @@ def mng_cable():
             
             elif get_event == "deleted": # Конфиг интерфейса будет удален
                 change_config_intf(netbox_interface=get_device_interface,event='delete')
-<<<<<<< HEAD
                 # вызываем функцию внесения изменений настроек связанных портов
                 mng_connected_interfaces(get_device_interface, event='delete')
-=======
-
             
             else:
                 # > добавляем запись в журнал
