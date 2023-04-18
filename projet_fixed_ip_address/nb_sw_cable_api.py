@@ -1,5 +1,6 @@
 from flask import request, Response
 from config import netbox_api
+from change_intf import *
 from journal import journal_template_fill
 from global_var import(global_id,
                         global_dcim)
@@ -84,7 +85,6 @@ def mng_cable():
             
             elif get_event == "deleted": # Конфиг интерфейса будет удален
                 change_config_intf(netbox_interface=get_device_interface,event='delete')
-                # вызываем функцию внесения изменений настроек связанных портов
                 mng_connected_interfaces(get_device_interface, event='update')
             
             else:
