@@ -8,6 +8,7 @@ from change_intf import *
 
 def mng_cable():
     """  
+    Приходит POST json со статусом enabled|created|updated|deleted
     Соединение должно быть point-to-point между интерфейсами (Interface)
     Проверка полученных устройств на соответствие списку (access switch и user device)
     :return: Response(status=204)

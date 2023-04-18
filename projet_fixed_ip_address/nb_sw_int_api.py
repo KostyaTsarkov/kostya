@@ -9,6 +9,7 @@ from journal import journal_template_fill
 # Управление интерфейсом
 def mng_int():
     """  
+    Приходит POST json со статусом updated
     Проверяем полученые данные на соответствие определенным условиям и передаем их на устройства
     :return: Response(status=204)
     """
@@ -82,7 +83,7 @@ def mng_int():
     # проверяем, является ли устройство конечным (пользователя)
     elif device_role in user_devices_roles:
         # вызываем функцию внесения изменений настроек связанных портов
-        mng_connected_interfaces(get_device_interface)
+        mng_connected_interfaces(get_device_interface, event='update')
     
     else: print('Device role is "{}"'.format(device_role))
 
