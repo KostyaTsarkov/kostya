@@ -50,21 +50,17 @@ def mng_connected_interfaces(user_device_intf,event):
         change_key = ['id'] # добавляем 'ID' устройства-соседа, используемое как ключ
         new_value = [network_device]
 
-        if event != 'delete':
-            for value in user_device_intf: # перебираем список кортежей
+        for value in user_device_intf: # перебираем список кортежей
+            
+            if value[0] in interface and value[1] != '' and value[1] != None: # проверяем, есть ли значение в списке, определенном нами ранее,
+                                                                            # значение должно быть заполнено
+                change_key.append(value[0])
                 
-                if value[0] in interface and value[1] != '' and value[1] != None: # проверяем, есть ли значение в списке, определенном нами ранее,
-                                                                                # значение должно быть заполнено
-                    change_key.append(value[0])
-                    
-                    if isinstance(value[1], dict): # проверяем, является ли значение словарем
-                        new_value.append(list(value[1].values())[0]) # превращаем значение словаря в список
-                    
-                    else:
-                        new_value.append(value[1])
-        
-        else:
-            print('delete cable and netbox interface config')
+                if isinstance(value[1], dict): # проверяем, является ли значение словарем
+                    new_value.append(list(value[1].values())[0]) # превращаем значение словаря в список
+                
+                else:
+                    new_value.append(value[1])
                         
         print(changes)
         changes = [dict(zip(change_key,new_value))] # объединяем два списка в словарь
