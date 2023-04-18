@@ -11103,3 +11103,6 @@ napalm.base.exceptions.ConnectionException: Cannot connect to 10.30.1.105
 2023-04-18 12:20:01,737 -  nornir.core -     INFO -        run() - Running task 'napalm_get' with args {'getters': ['get_interfaces']} on 1 hosts
 2023-04-18 12:20:02,631 -  nornir.core -     INFO -        run() - Running task 'Configuration interface.../' with args {'config_commands': ['interface Ethernet0/3', '    description T-SIDOROVP', '    switchport access vlan 310', '    switchport mode access', '    no shutdown']} on 1 hosts
 2023-04-18 12:20:04,539 -  nornir.core -     INFO -        run() - Running task 'close_connections_task' with args {} on 1 hosts
+2023-04-18 12:38:07,157 -  nornir.core -     INFO -        run() - Running task 'napalm_get' with args {'getters': ['get_interfaces']} on 1 hosts
+2023-04-18 12:38:08,297 -  nornir.core -     INFO -        run() - Running task 'Configuration interface.../' with args {'config_commands': ['interface Ethernet0/3', '    description T-SIDOROVP', '    switchport access vlan 310', '    switchport mode access', '    no shutdown']} on 1 hosts
+2023-04-18 12:38:11,673 -  nornir.core -     INFO -        run() - Running task 'close_connections_task' with args {} on 1 hosts
