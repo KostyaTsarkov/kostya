@@ -8,10 +8,7 @@ from credentials import(netbox_url,
 from jinja2 import Environment, FileSystemLoader
 from nornir_napalm.plugins.tasks import napalm_get
 from nornir_netmiko.tasks import netmiko_send_config
-from global_var import(global_id,
-                        global_dcim,
-                        templates_path,
-                        log)
+from global_var import *
 
 
 def create_nornir_session():
@@ -40,15 +37,23 @@ def cisco_config_interface(j2_interface,event='None'):
     :param event: событие
     :return: content
     """   
+    
+    
     global global_id
     global global_dcim 
     global_dcim = 'dcim.device'
     global_id = j2_interface.device.id
+    
     def template_fill(*args,**kwargs):
     
         environment = Environment(loader=FileSystemLoader(templates_path)) # загружаем шаблон для заполнения
         template = environment.get_template(template_file)
         content = None
+        global global_id
+        global global_dcim 
+        global_dcim = 'dcim.device'
+        global_id = j2_interface.device.id
+        
         try:
             if event == 'shutdown':
                 content = template.render( # заполняем шаблон
@@ -75,7 +80,7 @@ def cisco_config_interface(j2_interface,event='None'):
         
     if event == 'shutdown':
         template_file = "cisco_ios_shutdown_interface.template"
-        content = template_fill(j2_interface, template_file,event)
+        content = template_fill(j2_interface, template_file, event)
     
     elif event != 'delete':    
         template_file = "cisco_ios_access_interface.template"
@@ -87,7 +92,7 @@ def cisco_config_interface(j2_interface,event='None'):
 
     return content
 
-# Получаем через napalm интерфейсы с устройства
+
 def push_config_interface(netbox_interface,content,event='None'):
     """  
     Проверка на доступность устройства (ping)
@@ -98,14 +103,15 @@ def push_config_interface(netbox_interface,content,event='None'):
     :return: None
     """
     
+    global network_devices_roles
     global global_id
     global global_dcim 
     global_dcim = 'dcim.device'
     global_id = netbox_interface.device.id
-    templates_roles = ['access_switch'] # получаем из netbox (произвольные данные)
     device_role = netbox_interface.device.device_role.slug
     
-    if device_role in templates_roles:
+
+    if device_role in network_devices_roles:
         attempts = 3 # количество попыток подключения
         attempt_timeout = 5 # время ожидания между попытками в секундах
         fail_count = 0 # количество неудачных попыток
@@ -113,7 +119,6 @@ def push_config_interface(netbox_interface,content,event='None'):
         addrs = []
         filter_query = mgmt_address(netbox_interface) # адрес интерфейса управления
         addrs.append(filter_query)
-        
         responses, no_responses = multi_ping(addrs, timeout=0.5, retry=2,ignore_lookup_errors=True)
         print("icmp ping...")
         
@@ -160,6 +165,6 @@ def push_config_interface(netbox_interface,content,event='None'):
             # <
     else:
         # > добавляем запись в журнал
-        comment,level = 'Devices must match the list of {}'.format(templates_roles),'notification'                
+        comment,level = 'Devices must match the list of {}'.format(network_devices_roles),'notification'                
         print(journal_template_fill(comment,level,global_id,global_dcim))
         # <

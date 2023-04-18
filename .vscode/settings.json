@@ -1,3 +1,9 @@
 {
-    "python.analysis.typeCheckingMode": "basic"
+    "python.analysis.typeCheckingMode": "basic",
+<<<<<<< HEAD
+    "files.autoSave": "afterDelay"
+=======
+    "editor.fontFamily": "Source Code Pro, Menlo, Monaco, 'Courier New', monospace",
+    "appMap.findingsEnabled": true
+>>>>>>> 8fff2483769514c410dcbca0daa8460b84e7fc69
 }
