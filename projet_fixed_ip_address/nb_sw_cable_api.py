@@ -1,8 +1,10 @@
 from flask import request, Response
 from config import netbox_api
+from change_intf import mng_connected_interfaces
 from journal import journal_template_fill
 from global_var import(global_id,
-                        global_dcim)
+                        global_dcim,
+                        interface)
 from common import *
 from change_intf import *
 
@@ -28,7 +30,8 @@ def mng_cable():
     postchange = request.json['snapshots']['postchange']
     
     global global_id
-    global global_dcim 
+    global global_dcim
+    global interface
     global_dcim = 'dcim.cable'
     global_id = get_cable['id']
      
@@ -85,10 +88,12 @@ def mng_cable():
             
             elif get_event == "deleted": # Конфиг интерфейса будет удален
                 change_config_intf(netbox_interface=get_device_interface,event='delete')
+                mng_connected_interfaces(get_device_interface,event='delete',role=templates_roles[0])
+                changes = dict.fromkeys(interface, None)
+                changes['description'] = ""
+                changes['id'] = get_device_interface.id
+                netbox_api.dcim.interfaces.update(changes)
                 print('delete cable and netbox interface config')
-
-                # вызываем функцию внесения изменений настроек связанных портов
-                mng_connected_interfaces(get_device_interface, event='delete')
             
             else:
                 # > добавляем запись в журнал
