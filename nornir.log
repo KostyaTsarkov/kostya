@@ -11094,3 +11094,12 @@ napalm.base.exceptions.ConnectionException: Cannot connect to 10.30.1.105
 2023-04-18 11:05:16,688 -  nornir.core -     INFO -        run() - Running task 'napalm_get' with args {'getters': ['get_interfaces']} on 1 hosts
 2023-04-18 11:05:17,626 -  nornir.core -     INFO -        run() - Running task 'Configuration interface.../' with args {'config_commands': ['default interface Ethernet0/3', 'interface Ethernet0/3', '    description DEFAULT', '    switchport access vlan 99', '    switchport mode access', '    shutdown']} on 1 hosts
 2023-04-18 11:05:20,860 -  nornir.core -     INFO -        run() - Running task 'close_connections_task' with args {} on 1 hosts
+2023-04-18 12:18:19,932 -  nornir.core -     INFO -        run() - Running task 'napalm_get' with args {'getters': ['get_interfaces']} on 1 hosts
+2023-04-18 12:18:20,869 -  nornir.core -     INFO -        run() - Running task 'Configuration interface.../' with args {'config_commands': ['interface Ethernet0/3', '    description T-SIDOROVP', '    switchport access vlan 310', '    switchport mode access', '    no shutdown']} on 1 hosts
+2023-04-18 12:18:22,932 -  nornir.core -     INFO -        run() - Running task 'close_connections_task' with args {} on 1 hosts
+2023-04-18 12:19:05,859 -  nornir.core -     INFO -        run() - Running task 'napalm_get' with args {'getters': ['get_interfaces']} on 1 hosts
+2023-04-18 12:19:06,837 -  nornir.core -     INFO -        run() - Running task 'Configuration interface.../' with args {'config_commands': ['interface Ethernet0/3', '    shutdown']} on 1 hosts
+2023-04-18 12:19:08,307 -  nornir.core -     INFO -        run() - Running task 'close_connections_task' with args {} on 1 hosts
+2023-04-18 12:20:01,737 -  nornir.core -     INFO -        run() - Running task 'napalm_get' with args {'getters': ['get_interfaces']} on 1 hosts
+2023-04-18 12:20:02,631 -  nornir.core -     INFO -        run() - Running task 'Configuration interface.../' with args {'config_commands': ['interface Ethernet0/3', '    description T-SIDOROVP', '    switchport access vlan 310', '    switchport mode access', '    no shutdown']} on 1 hosts
+2023-04-18 12:20:04,539 -  nornir.core -     INFO -        run() - Running task 'close_connections_task' with args {} on 1 hosts
