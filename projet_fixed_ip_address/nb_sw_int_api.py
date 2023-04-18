@@ -1,10 +1,10 @@
-from flask import request, Response
-from config import netbox_api
-from journal import journal_template_fill
-from global_var import(global_id,
-                        global_dcim)
-from common import *
 from change_intf import *
+from common import *
+from config import netbox_api
+from flask import Response, request
+from global_var import *
+from journal import journal_template_fill
+
 
 # Управление интерфейсом
 def mng_int():
@@ -12,58 +12,78 @@ def mng_int():
     Проверяем полученые данные на соответствие определенным условиям и передаем их на устройства
     :return: Response(status=204)
     """
-    
-    network_devices_roles = ['access_switch'] # присваиваем значение из netbox ("произвольные" данные)
-    user_devices_roles = ['user_device'] # присваиваем значение из netbox ("произвольные" данные)
-    
+
     # Получаем данные через flask от webhook netbox:
-    event = request.json["event"]
-    mng_int_id = request.json['data']['id']
-    prechange = request.json['snapshots']['prechange']
-    postchange = request.json['snapshots']['postchange']
-    
+    event = request.json["event"] # type: ignore
+    mng_int_id = request.json['data']['id'] # type: ignore
+    prechange = request.json['snapshots']['prechange'] # type: ignore
+    postchange = request.json['snapshots']['postchange'] # type: ignore
+
     # Запрашиваем данные через netbox_api:
     get_device_interface = netbox_api.dcim.interfaces.get(mng_int_id)
-    interface_name = get_device_interface.name
-    device_role = get_device_interface.device.device_role.slug
-    
+    interface_name = convert_none_to_str(get_device_interface.name) # type: ignore
+    device_role = convert_none_to_str(get_device_interface.device.device_role.slug) # type: ignore
+    interface_mode_802_1Q = convert_none_to_str(get_device_interface.mode.value if get_device_interface.mode else None) # type: ignore
+
+    global network_devices_roles
+    global user_devices_roles
     global global_id
-    global global_dcim 
+    global global_dcim
     global_dcim = 'dcim.device'
-    global_id = get_device_interface.device.id
-    
+    global_id = get_device_interface.device.id # type: ignore
+
+    local_context = get_device_interface.device.local_context_data
+    print(local_context)
     print("{} {}...".format(event.upper(), interface_name))
-    
-    if get_device_interface.mgmt_only: # проверяем, является ли интерфейс management интерфейсом       
+
+    # проверяем, является ли интерфейс management интерфейсом
+    if get_device_interface.mgmt_only: # type: ignore
         # > добавляем запись в журнал
-        comment,level = '{} is management interface, no changes will be performed'.format(interface_name),'notification'        
-        print(journal_template_fill(comment,level,global_id,global_dcim))
+        comment, level = '{} is management interface, no changes will be performed'.format(
+            interface_name), 'notification'
+        print(journal_template_fill(comment, level, global_id, global_dcim))
+        # <
+
+    # проверяем, изменились ли данные
+    elif compare(prechange, postchange) == None:  
+        # > добавляем запись в журнал
+        comment, level = 'No data for {} {}'.format(
+            event.lower(), interface_name), 'informational'
+        print(journal_template_fill(comment, level, global_id, global_dcim))
         # <
     
-    else:
-           
-        if compare(prechange,postchange) == None: # проверяем, изменились ли данные
-            # > добавляем запись в журнал
-            comment,level = 'No data for {} {}'.format(event.lower(),interface_name),'informational'
-            print(journal_template_fill(comment,level,global_id,global_dcim))
-            # <
-
-        elif request.json['data']['enabled'] == False and prechange['enabled'] == True: # проверяем, соответствует ли изменению ВКЛ->ВЫКЛ
-            # > добавляем запись в журнал
-            comment,level = 'Interface {} is disabled on the device'.format(interface_name),'notification'              
-            print(journal_template_fill(comment,level,global_id,global_dcim))
-            # <
-            change_config_intf(get_device_interface,event='shutdown') # вызываем функцию выключения порта устройства
-            
-        elif request.json['data']['enabled'] == False and prechange['enabled'] == False: # проверяем, соответствует ли изменению ВЫКЛ->ВЫКЛ
-            print('Interface {} was turned off before'.format(interface_name))              
-                        
-        else: 
-            
-            if device_role in network_devices_roles: # проверяем, является ли устройство сетевым устройством
-                change_config_intf(get_device_interface,event='update') # вызываем функцию внесения изменений настроек порта устройства
-            
-            elif device_role in user_devices_roles: # проверяем, является ли устройство конечным (пользователя)
-                mng_connected_interfaces(get_device_interface) # вызываем функцию внесения изменений настроек связанных портов
+    # проверяем, соответствует ли изменению ВЫКЛ->ВЫКЛ
+    elif request.json['data']['enabled'] == False and prechange['enabled'] == False: # type: ignore
+        print('Interface {} was turned off before'.format(interface_name))    
         
+    # проверяем, является ли устройство сетевым устройством
+    elif device_role in network_devices_roles:  
+        
+        # проверяем, является ли порт транковым (транковый порт не выключаем)
+        if interface_mode_802_1Q in ['tagged','tagged-all']:
+            # вызываем функцию внесения изменений настроек порта устройства
+            print('Interface {} is mode {}'.format(interface_name,interface_mode_802_1Q))
+            change_config_intf(get_device_interface, event='update')
+        
+        else:
+            
+            # проверяем, соответствует ли изменению ВКЛ->ВЫКЛ
+            if request.json['data']['enabled'] == False and prechange['enabled'] == True: # type: ignore
+                # > добавляем запись в журнал
+                comment, level = 'Interface {} is disabled on the device'.format(
+                    interface_name), 'notification'
+                print(journal_template_fill(comment, level, global_id, global_dcim))
+                # <
+                # вызываем функцию выключения порта устройства
+                change_config_intf(get_device_interface, event='shutdown')
+            
+            else: change_config_intf(get_device_interface, event='update')
+            
+    # проверяем, является ли устройство конечным (пользователя)
+    elif device_role in user_devices_roles:
+        # вызываем функцию внесения изменений настроек связанных портов
+        mng_connected_interfaces(get_device_interface)
+    
+    else: print('Device role is "{}"'.format(device_role))
+
     return Response(status=204)
