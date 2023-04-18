@@ -89,8 +89,7 @@ def mng_cable():
                 # вызываем функцию внесения изменений настроек связанных портов
                 mng_connected_interfaces(get_device_interface, event='delete')
 =======
-                mng_connected_interfaces(get_device_interface, event='update')
->>>>>>> 6c0140443661747f03cee7941b76026978f07c9a
+
             
             else:
                 # > добавляем запись в журнал
