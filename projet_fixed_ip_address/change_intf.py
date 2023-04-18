@@ -62,7 +62,6 @@ def mng_connected_interfaces(user_device_intf,event):
                 else:
                     new_value.append(value[1])
                         
-        print(changes)
         changes = [dict(zip(change_key,new_value))] # объединяем два списка в словарь
         netbox_api.dcim.interfaces.update(changes) # обновляем данные интерфейса через netbox_api
             

@@ -78,21 +78,17 @@ def mng_cable():
             
             elif get_event == "created": # Конфиг интерфейса будет добавлен
                 change_config_intf(netbox_interface=get_device_interface,event='create')
+                mng_connected_interfaces(user_device_intf=get_device_interface,event='create')
 
             elif get_event == "updated" and compare(prechange,postchange) != None: # Конфиг интерфейса будет изменен
                 change_config_intf(netbox_interface=get_device_interface,event='update') 
             
             elif get_event == "deleted": # Конфиг интерфейса будет удален
                 change_config_intf(netbox_interface=get_device_interface,event='delete')
-<<<<<<< HEAD
                 print('delete cable and netbox interface config')
-=======
-<<<<<<< HEAD
+
                 # вызываем функцию внесения изменений настроек связанных портов
                 mng_connected_interfaces(get_device_interface, event='delete')
-=======
-
->>>>>>> cbc7a9b755ee2b5f9c212e5fcbb077d54eaf1791
             
             else:
                 # > добавляем запись в журнал
