@@ -20,7 +20,7 @@ def change_config_intf(netbox_interface,event):
     global global_id
     
     try:
-        content = cisco_config_interface(netbox_interface,event).split('\n')
+        content = cisco_config_interface(netbox_interface,event).split('\n') # type: ignore
         print("{} interface {} config...".format(event.capitalize(),netbox_interface))
         push_config_interface(netbox_interface,content,event)
     except:

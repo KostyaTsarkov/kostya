@@ -24,10 +24,10 @@ def mng_cable():
     regex = "[a|b]_terminations"
     
     # Получаем данные через flask от webhook netbox:
-    get_cable = request.json['data']
-    get_event = request.json["event"]
-    prechange = request.json['snapshots']['prechange']
-    postchange = request.json['snapshots']['postchange']
+    get_cable = request.json['data'] # type: ignore
+    get_event = request.json["event"] # type: ignore
+    prechange = request.json['snapshots']['prechange'] # type: ignore
+    postchange = request.json['snapshots']['postchange'] # type: ignore
     
     global global_id
     global global_dcim
@@ -43,8 +43,8 @@ def mng_cable():
             for _ in range(len(get_cable[key])):
                 device_id = get_cable[key][_]['object']['device']['id'] # ID устройства из json
                 devices_values = []
-                devices_names.append(netbox_api.dcim.devices.get(device_id).name) # наименование устройства через netbox_api
-                devices_values.append(netbox_api.dcim.devices.get(device_id).device_role.slug) # роль устройства через netbox_api
+                devices_names.append(netbox_api.dcim.devices.get(device_id).name) # type: ignore # наименование устройства через netbox_api
+                devices_values.append(netbox_api.dcim.devices.get(device_id).device_role.slug) # type: ignore # роль устройства через netbox_api
                 devices_values.append(device_id) # id устройства
                 devices_values.append(get_cable[key][_]['object']['id']) # ID интерфейса устройства из json
                 devices.append(dict(zip(devices_keys,devices_values))) # получаем список из словарей
@@ -61,14 +61,14 @@ def mng_cable():
             if device['role'] == templates_roles[0]: # нам нужен access switch
                 device_intf_id = device['intf_id'] # получаем ID интерфейса access switchа из нами созданного словаря            
         
-        get_device_interface = netbox_api.dcim.interfaces.get(device_intf_id) # по ID находим интерфейс через netbox_api
-        interface_name = get_device_interface.name
+        get_device_interface = netbox_api.dcim.interfaces.get(device_intf_id) # type: ignore # по ID находим интерфейс через netbox_api
+        interface_name = get_device_interface.name # type: ignore
         interface_mode_802_1Q = convert_none_to_str(get_device_interface.mode.value if get_device_interface.mode else None) # type: ignore
         global_dcim = 'dcim.device'
-        global_id = get_device_interface.device.id
-        print("Connection between {} and {}, switch access interface ID: {}...".format(device_roles[0],device_roles[1], device_intf_id))
+        global_id = get_device_interface.device.id # type: ignore
+        print("Connection between {} and {}, switch access interface ID: {}...".format(device_roles[0],device_roles[1], device_intf_id)) # type: ignore
         
-        if get_device_interface.mgmt_only: # проверяем, является ли интерфейс management интерфейсов
+        if get_device_interface.mgmt_only: # type: ignore # проверяем, является ли интерфейс management интерфейсов
             # > добавляем запись в журнал
             comment,level = '{} is management interface, no changes will be performed'.format(interface_name),'notification'                
             print(journal_template_fill(comment,level,global_id,global_dcim))
@@ -89,7 +89,7 @@ def mng_cable():
                 mng_connected_interfaces(get_device_interface,event='delete',role=templates_roles[0])
                 #change_config_intf(netbox_interface=get_device_interface,event='delete')
             
-            elif get_device_interface.enabled == False:
+            elif get_device_interface.enabled == False: # type: ignore
                 print('Interface {} was turned off before'.format(interface_name))
                 pass
             
