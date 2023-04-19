@@ -43,13 +43,13 @@ def mng_connected_interfaces(device_intf,event,role):
     global global_id
     
     
-    def changes_fill(network_device,user_device):
+    def changes_fill(network_device_id,user_device_intf):
  
         changes = dict()
         change_key = ['id'] # добавляем 'ID' устройства-соседа, используемое как ключ
-        new_value = [network_device]
+        new_value = [network_device_id]
 
-        for value in user_device: # перебираем список кортежей
+        for value in user_device_intf: # перебираем список кортежей
             
             if value[0] in interface and value[1] != '' and value[1] != None: # проверяем, есть ли значение в списке, определенном нами ранее,
                                                                             # значение должно быть заполнено
@@ -67,10 +67,11 @@ def mng_connected_interfaces(device_intf,event,role):
     
     
     if role in user_devices_roles and event!='delete':
+        
         if device_intf['connected_endpoints_reachable']: # проверяем, есть ли соединение с другим устройством
             #interface = ['mtu','mac_address','speed','duplex','description','mode','untagged_vlan'] # произвольный список параметров интерфеса 
-            network_device = device_intf['connected_endpoints'][0]['id'] # устройство-сосед (сетевое)    
-            changes = changes_fill(network_device,device_intf)
+            network_device_id = device_intf['connected_endpoints'][0]['id'] # устройство-сосед (сетевое)    
+            changes = changes_fill(network_device_id,device_intf)
             netbox_api.dcim.interfaces.update(changes) # обновляем данные интерфейса через netbox_api
         
         else:
@@ -80,28 +81,12 @@ def mng_connected_interfaces(device_intf,event,role):
             # <  
     
     elif role in network_devices_roles and event!='delete':        
+        
         if device_intf['connected_endpoints_reachable']: # проверяем, есть ли соединение с другим устройством
-            network_device = device_intf[id]
-            device_intf = network_device['connected_endpoints'][0]
-            changes = changes_fill(network_device,device_intf)
-             
-            """ changes = dict()
-            change_key = ['id'] # добавляем 'ID' устройства-соседа, используемое как ключ
-            new_value = [network_device]
-
-            for value in device_intf: # перебираем список кортежей
-                
-                if value[0] in interface and value[1] != '' and value[1] != None: # проверяем, есть ли значение в списке, определенном нами ранее,
-                                                                                # значение должно быть заполнено
-                    change_key.append(value[0])
-                    
-                    if isinstance(value[1], dict): # проверяем, является ли значение словарем
-                        new_value.append(list(value[1].values())[0]) # превращаем значение словаря в список
-                    
-                    else:
-                        new_value.append(value[1])
-                            
-            changes = [dict(zip(change_key,new_value))] # объединяем два списка в словарь """
+            device_intf,network_device_id = netbox_api.dcim.interfaces.get(device_intf['connected_endpoints'][0]['id']),device_intf.id
+            #network_device = device_intf.device
+            #device_intf = network_device['connected_endpoints'][0]
+            changes = changes_fill(network_device_id,device_intf)
             netbox_api.dcim.interfaces.update(changes) # обновляем данные интерфейса через netbox_api
                 
         else:
@@ -114,6 +99,7 @@ def mng_connected_interfaces(device_intf,event,role):
         changes = dict.fromkeys(interface, None)
         changes['description'] = ""
         changes['id'] = device_intf.id
-        netbox_api.dcim.interfaces.update(changes)
-        print('delete cable and netbox interface config')
+        changes['enabled'] = False
+        netbox_api.dcim.interfaces.update([changes])
+        print('Clear {} netbox interface config'.format(device_intf))
         

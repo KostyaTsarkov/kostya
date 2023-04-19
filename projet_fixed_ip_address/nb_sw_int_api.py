@@ -33,8 +33,8 @@ def mng_int():
     global_dcim = 'dcim.device'
     global_id = get_device_interface.device.id # type: ignore
 
-    local_context = get_device_interface.device.local_context_data
-    print(local_context)
+    #local_context = get_device_interface.device.local_context_data
+    #print(local_context)
     print("{} {}...".format(event.upper(), interface_name))
 
     # проверяем, является ли интерфейс management интерфейсом

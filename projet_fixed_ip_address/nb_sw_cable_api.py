@@ -63,6 +63,7 @@ def mng_cable():
         
         get_device_interface = netbox_api.dcim.interfaces.get(device_intf_id) # по ID находим интерфейс через netbox_api
         interface_name = get_device_interface.name
+        interface_mode_802_1Q = convert_none_to_str(get_device_interface.mode.value if get_device_interface.mode else None) # type: ignore
         global_dcim = 'dcim.device'
         global_id = get_device_interface.device.id
         print("Connection between {} and {}, switch access interface ID: {}...".format(device_roles[0],device_roles[1], device_intf_id))
@@ -73,28 +74,28 @@ def mng_cable():
             print(journal_template_fill(comment,level,global_id,global_dcim))
             # <
         
+        # проверяем, является ли порт транковым (транковый порт не трогаем)
+        elif interface_mode_802_1Q in ['tagged','tagged-all']:
+            # вызываем функцию внесения изменений настроек порта устройства
+            print('Interface {} is mode {}'.format(interface_name,interface_mode_802_1Q))
+        
         else:
             
-            if get_device_interface.enabled == False:
+            if get_event == "created": # Конфиг интерфейса будет добавлен
+                mng_connected_interfaces(get_device_interface,event='create',role=templates_roles[0])
+                #change_config_intf(netbox_interface=get_device_interface,event='create')
+            
+            elif get_event == "deleted": # Конфиг интерфейса будет удален
+                mng_connected_interfaces(get_device_interface,event='delete',role=templates_roles[0])
+                #change_config_intf(netbox_interface=get_device_interface,event='delete')
+            
+            elif get_device_interface.enabled == False:
                 print('Interface {} was turned off before'.format(interface_name))
                 pass
             
-            elif get_event == "created": # Конфиг интерфейса будет добавлен
-                change_config_intf(netbox_interface=get_device_interface,event='create')
-                mng_connected_interfaces(get_device_interface,event='create',role=templates_roles[0])
-
             elif get_event == "updated" and compare(prechange,postchange) != None: # Конфиг интерфейса будет изменен
                 change_config_intf(netbox_interface=get_device_interface,event='update') 
-            
-            elif get_event == "deleted": # Конфиг интерфейса будет удален
-                change_config_intf(netbox_interface=get_device_interface,event='delete')
-                mng_connected_interfaces(get_device_interface,event='delete',role=templates_roles[0])
-                changes = dict.fromkeys(interface, None)
-                changes['description'] = ""
-                changes['id'] = get_device_interface.id
-                netbox_api.dcim.interfaces.update(changes)
-                print('delete cable and netbox interface config')
-            
+             
             else:
                 # > добавляем запись в журнал
                 comment,level = 'No data for {} {}'.format(get_event.lower(),interface_name),'informational'
