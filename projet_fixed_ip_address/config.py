@@ -34,7 +34,8 @@ def create_netbox_api():
     nb_token = nr.config.inventory.options['nb_token']
     nb = pynetbox.api(
         nb_url,
-        token=nb_token
+        token=nb_token,
+        threading=True
     )
     return nb
 

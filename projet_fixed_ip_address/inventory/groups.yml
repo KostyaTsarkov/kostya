@@ -9,7 +9,7 @@ cisco_ios_l2:
     user_info:
       - username: sa
         privilege: 15
-        password: Qwerty11
+        password: Qwerty111
     ntp_server: 10.30.24.24
     clock_tz: EKB 5
     logging_buff: 262144

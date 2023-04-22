@@ -1,8 +1,9 @@
 # Create a Flask instance
 from flask import Flask
 from nb_ipam_api import mng_ip
-from nb_sw_cable_api import mng_cable
-from nb_sw_int_api import mng_int
+#from nb_sw_cable_api import mng_cable
+#from nb_sw_int_api import mng_int
+from common import mng_cable, mng_int
 
 # Create a Flask instance
 app = Flask(__name__)

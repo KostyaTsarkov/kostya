@@ -4,6 +4,7 @@ from config import netbox_api
 from flask import Response, request
 from global_var import *
 from journal import journal_template_fill
+from types import SimpleNamespace
 
 
 # Управление интерфейсом
@@ -30,11 +31,11 @@ def mng_int():
     global user_devices_roles
     global global_id
     global global_dcim
+
+    
     global_dcim = 'dcim.device'
     global_id = get_device_interface.device.id # type: ignore
-
-    #local_context = get_device_interface.device.local_context_data
-    #print(local_context)
+    
     print("{} {}...".format(event.upper(), interface_name))
 
     # проверяем, является ли интерфейс management интерфейсом
