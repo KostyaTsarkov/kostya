@@ -17,6 +17,7 @@ def create_nornir_session():
                 "nb_token": netbox_token,
                 "flatten_custom_fields": True,
                 "include_vms": True,
+                "config_context": True,
                 "group_file": parent_path + "/inventory/groups.yml",
                 "defaults_file": parent_path + "/inventory/defaults.yml",
                 #"group_file": "./inventory/groups.yml",
