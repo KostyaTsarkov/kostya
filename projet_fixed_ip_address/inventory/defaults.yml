@@ -1,7 +1,7 @@
 ---
 platform: cisco_ios
-username: sa
-password: Qwerty11
+username: admin
+password: Qwerty111
 connection_options:
     netmiko:
       extras:

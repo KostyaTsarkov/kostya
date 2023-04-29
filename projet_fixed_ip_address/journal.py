@@ -1,12 +1,10 @@
 from config import netbox_api
 from jinja2 import Environment, FileSystemLoader
 import json
-from global_var import(global_id,
-                        global_dcim,
-                        templates_path)
+from global_var import(templates_path)
 
 # Заполняем журнал
-def journal_template_fill(comment,level,assigned_object_id=global_id,dcim=global_dcim):
+def journal_template_fill(comment,level,assigned_object_id,dcim):
     """ 
     Заполняем шаблон значениями, затем отправляем его в Netbox
     и возвращем событие вместе с уровнем важности

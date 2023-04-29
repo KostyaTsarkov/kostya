@@ -1,3 +1,2 @@
-default interface {{ interface_name }}
 interface {{ interface_name }}
     shutdown

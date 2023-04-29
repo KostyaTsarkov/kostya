@@ -11061,3 +11061,309 @@ napalm.base.exceptions.ConnectionException: Cannot connect to 10.30.1.105
 2023-04-06 22:34:37,747 -  nornir.core -     INFO -        run() - Running task 'napalm_get' with args {'getters': ['get_interfaces']} on 1 hosts
 2023-04-06 22:34:38,888 -  nornir.core -     INFO -        run() - Running task 'Configuration interface.../' with args {'config_commands': ['interface Ethernet0/2', '    description T-SIDOROV', '    switchport access vlan 310', '    switchport mode access', '    no shutdown']} on 1 hosts
 2023-04-06 22:34:40,653 -  nornir.core -     INFO -        run() - Running task 'close_connections_task' with args {} on 1 hosts
+2023-04-18 10:38:47,476 -  nornir.core -     INFO -        run() - Running task 'napalm_get' with args {'getters': ['get_interfaces']} on 1 hosts
+2023-04-18 10:38:48,619 -  nornir.core -     INFO -        run() - Running task 'Configuration interface.../' with args {'config_commands': ['interface Ethernet0/2', '    description T-SIDOROV', '    switchport access vlan 310', '    switchport mode access', '    no shutdown']} on 1 hosts
+2023-04-18 10:38:50,338 -  nornir.core -     INFO -        run() - Running task 'close_connections_task' with args {} on 1 hosts
+2023-04-18 10:43:15,504 -  nornir.core -     INFO -        run() - Running task 'napalm_get' with args {'getters': ['get_interfaces']} on 1 hosts
+2023-04-18 10:43:16,644 -  nornir.core -     INFO -        run() - Running task 'Configuration interface.../' with args {'config_commands': ['interface Ethernet0/2', '    description T-SIDOROV', '    switchport access vlan 310', '    switchport mode access', '    no shutdown']} on 1 hosts
+2023-04-18 10:43:18,362 -  nornir.core -     INFO -        run() - Running task 'close_connections_task' with args {} on 1 hosts
+2023-04-18 10:57:46,607 -  nornir.core -     INFO -        run() - Running task 'napalm_get' with args {'getters': ['get_interfaces']} on 1 hosts
+2023-04-18 10:57:47,731 -  nornir.core -     INFO -        run() - Running task 'Configuration interface.../' with args {'config_commands': ['interface Ethernet0/2', '    description T-SIDOROVp', '    switchport access vlan 310', '    switchport mode access', '    no shutdown']} on 1 hosts
+2023-04-18 10:57:49,481 -  nornir.core -     INFO -        run() - Running task 'close_connections_task' with args {} on 1 hosts
+2023-04-18 10:58:05,302 -  nornir.core -     INFO -        run() - Running task 'napalm_get' with args {'getters': ['get_interfaces']} on 1 hosts
+2023-04-18 10:58:06,402 -  nornir.core -     INFO -        run() - Running task 'Configuration interface.../' with args {'config_commands': ['default interface Ethernet0/2', 'interface Ethernet0/2', '    description DEFAULT', '    switchport access vlan 99', '    switchport mode access', '    shutdown']} on 1 hosts
+2023-04-18 10:58:08,246 -  nornir.core -     INFO -        run() - Running task 'close_connections_task' with args {} on 1 hosts
+2023-04-18 10:59:54,540 -  nornir.core -     INFO -        run() - Running task 'napalm_get' with args {'getters': ['get_interfaces']} on 1 hosts
+2023-04-18 10:59:55,493 -  nornir.core -     INFO -        run() - Running task 'Configuration interface.../' with args {'config_commands': ['interface Ethernet0/3', '    description T-SIDOROV', '    switchport access vlan 310', '    switchport mode access', '    no shutdown']} on 1 hosts
+2023-04-18 10:59:57,243 -  nornir.core -     INFO -        run() - Running task 'close_connections_task' with args {} on 1 hosts
+2023-04-18 11:00:40,570 -  nornir.core -     INFO -        run() - Running task 'napalm_get' with args {'getters': ['get_interfaces']} on 1 hosts
+2023-04-18 11:00:41,539 -  nornir.core -     INFO -        run() - Running task 'Configuration interface.../' with args {'config_commands': ['default interface Ethernet0/3', 'interface Ethernet0/3', '    shutdown']} on 1 hosts
+2023-04-18 11:00:43,179 -  nornir.core -     INFO -        run() - Running task 'close_connections_task' with args {} on 1 hosts
+2023-04-18 11:01:25,225 -  nornir.core -     INFO -        run() - Running task 'napalm_get' with args {'getters': ['get_interfaces']} on 1 hosts
+2023-04-18 11:01:26,112 -  nornir.core -     INFO -        run() - Running task 'Configuration interface.../' with args {'config_commands': ['interface Ethernet0/3', '    description T-SIDOROV', '    switchport access vlan 310', '    switchport mode access', '    no shutdown']} on 1 hosts
+2023-04-18 11:01:28,053 -  nornir.core -     INFO -        run() - Running task 'close_connections_task' with args {} on 1 hosts
+2023-04-18 11:01:55,600 -  nornir.core -     INFO -        run() - Running task 'napalm_get' with args {'getters': ['get_interfaces']} on 1 hosts
+2023-04-18 11:01:56,568 -  nornir.core -     INFO -        run() - Running task 'Configuration interface.../' with args {'config_commands': ['interface Ethernet0/3', '    description T-SIDOROVp', '    switchport access vlan 310', '    switchport mode access', '    no shutdown']} on 1 hosts
+2023-04-18 11:01:58,287 -  nornir.core -     INFO -        run() - Running task 'close_connections_task' with args {} on 1 hosts
+2023-04-18 11:02:41,005 -  nornir.core -     INFO -        run() - Running task 'napalm_get' with args {'getters': ['get_interfaces']} on 1 hosts
+2023-04-18 11:02:41,942 -  nornir.core -     INFO -        run() - Running task 'Configuration interface.../' with args {'config_commands': ['interface Ethernet0/3', '    description T-SIDOROVp', '    switchport access vlan 330', '    switchport mode access', '    no shutdown']} on 1 hosts
+2023-04-18 11:02:43,645 -  nornir.core -     INFO -        run() - Running task 'close_connections_task' with args {} on 1 hosts
+2023-04-18 11:03:10,691 -  nornir.core -     INFO -        run() - Running task 'napalm_get' with args {'getters': ['get_interfaces']} on 1 hosts
+2023-04-18 11:03:11,895 -  nornir.core -     INFO -        run() - Running task 'Configuration interface.../' with args {'config_commands': ['interface Ethernet0/3', '    description T-SIDOROVP', '    switchport access vlan 310', '    switchport mode access', '    no shutdown']} on 1 hosts
+2023-04-18 11:03:14,113 -  nornir.core -     INFO -        run() - Running task 'close_connections_task' with args {} on 1 hosts
+2023-04-18 11:05:16,688 -  nornir.core -     INFO -        run() - Running task 'napalm_get' with args {'getters': ['get_interfaces']} on 1 hosts
+2023-04-18 11:05:17,626 -  nornir.core -     INFO -        run() - Running task 'Configuration interface.../' with args {'config_commands': ['default interface Ethernet0/3', 'interface Ethernet0/3', '    description DEFAULT', '    switchport access vlan 99', '    switchport mode access', '    shutdown']} on 1 hosts
+2023-04-18 11:05:20,860 -  nornir.core -     INFO -        run() - Running task 'close_connections_task' with args {} on 1 hosts
+2023-04-18 12:18:19,932 -  nornir.core -     INFO -        run() - Running task 'napalm_get' with args {'getters': ['get_interfaces']} on 1 hosts
+2023-04-18 12:18:20,869 -  nornir.core -     INFO -        run() - Running task 'Configuration interface.../' with args {'config_commands': ['interface Ethernet0/3', '    description T-SIDOROVP', '    switchport access vlan 310', '    switchport mode access', '    no shutdown']} on 1 hosts
+2023-04-18 12:18:22,932 -  nornir.core -     INFO -        run() - Running task 'close_connections_task' with args {} on 1 hosts
+2023-04-18 12:19:05,859 -  nornir.core -     INFO -        run() - Running task 'napalm_get' with args {'getters': ['get_interfaces']} on 1 hosts
+2023-04-18 12:19:06,837 -  nornir.core -     INFO -        run() - Running task 'Configuration interface.../' with args {'config_commands': ['interface Ethernet0/3', '    shutdown']} on 1 hosts
+2023-04-18 12:19:08,307 -  nornir.core -     INFO -        run() - Running task 'close_connections_task' with args {} on 1 hosts
+2023-04-18 12:20:01,737 -  nornir.core -     INFO -        run() - Running task 'napalm_get' with args {'getters': ['get_interfaces']} on 1 hosts
+2023-04-18 12:20:02,631 -  nornir.core -     INFO -        run() - Running task 'Configuration interface.../' with args {'config_commands': ['interface Ethernet0/3', '    description T-SIDOROVP', '    switchport access vlan 310', '    switchport mode access', '    no shutdown']} on 1 hosts
+2023-04-18 12:20:04,539 -  nornir.core -     INFO -        run() - Running task 'close_connections_task' with args {} on 1 hosts
+2023-04-18 12:38:07,157 -  nornir.core -     INFO -        run() - Running task 'napalm_get' with args {'getters': ['get_interfaces']} on 1 hosts
+2023-04-18 12:38:08,297 -  nornir.core -     INFO -        run() - Running task 'Configuration interface.../' with args {'config_commands': ['interface Ethernet0/3', '    description T-SIDOROVP', '    switchport access vlan 310', '    switchport mode access', '    no shutdown']} on 1 hosts
+2023-04-18 12:38:11,673 -  nornir.core -     INFO -        run() - Running task 'close_connections_task' with args {} on 1 hosts
+2023-04-18 16:58:45,177 -  nornir.core -     INFO -        run() - Running task 'napalm_get' with args {'getters': ['get_interfaces']} on 1 hosts
+2023-04-18 16:58:46,304 -  nornir.core -     INFO -        run() - Running task 'Configuration interface.../' with args {'config_commands': ['interface Ethernet0/3', '    description T-SIDOROVp', '    switchport access vlan 310', '    switchport mode access', '    no shutdown']} on 1 hosts
+2023-04-18 16:58:55,454 -  nornir.core -     INFO -        run() - Running task 'close_connections_task' with args {} on 1 hosts
+2023-04-18 16:59:10,896 -  nornir.core -     INFO -        run() - Running task 'napalm_get' with args {'getters': ['get_interfaces']} on 1 hosts
+2023-04-18 16:59:12,005 -  nornir.core -     INFO -        run() - Running task 'Configuration interface.../' with args {'config_commands': ['interface Ethernet0/3', '    description T-SIDOROVp', '    switchport access vlan 310', '    switchport mode access', '    no shutdown']} on 1 hosts
+2023-04-18 16:59:13,741 -  nornir.core -     INFO -        run() - Running task 'close_connections_task' with args {} on 1 hosts
+2023-04-18 16:59:31,625 -  nornir.core -     INFO -        run() - Running task 'napalm_get' with args {'getters': ['get_interfaces']} on 1 hosts
+2023-04-18 16:59:32,723 -  nornir.core -     INFO -        run() - Running task 'Configuration interface.../' with args {'config_commands': ['default interface Ethernet0/3', 'interface Ethernet0/3', '    description DEFAULT', '    switchport access vlan 99', '    switchport mode access', '    shutdown']} on 1 hosts
+2023-04-18 16:59:38,011 -  nornir.core -     INFO -        run() - Running task 'close_connections_task' with args {} on 1 hosts
+2023-04-18 17:05:07,910 -  nornir.core -     INFO -        run() - Running task 'napalm_get' with args {'getters': ['get_interfaces']} on 1 hosts
+2023-04-18 17:05:08,863 -  nornir.core -     INFO -        run() - Running task 'Configuration interface.../' with args {'config_commands': ['interface Ethernet0/3', '    description T-SIDOROVp', '    switchport access vlan 310', '    switchport mode access', '    no shutdown']} on 1 hosts
+2023-04-18 17:05:10,863 -  nornir.core -     INFO -        run() - Running task 'close_connections_task' with args {} on 1 hosts
+2023-04-18 17:05:25,628 -  nornir.core -     INFO -        run() - Running task 'napalm_get' with args {'getters': ['get_interfaces']} on 1 hosts
+2023-04-18 17:05:26,581 -  nornir.core -     INFO -        run() - Running task 'Configuration interface.../' with args {'config_commands': ['default interface Ethernet0/3', 'interface Ethernet0/3', '    description DEFAULT', '    switchport access vlan 99', '    switchport mode access', '    shutdown']} on 1 hosts
+2023-04-18 17:05:28,409 -  nornir.core -     INFO -        run() - Running task 'close_connections_task' with args {} on 1 hosts
+2023-04-18 17:16:43,000 -  nornir.core -     INFO -        run() - Running task 'napalm_get' with args {'getters': ['get_interfaces']} on 1 hosts
+2023-04-18 17:16:44,114 -  nornir.core -     INFO -        run() - Running task 'Configuration interface.../' with args {'config_commands': ['interface Ethernet0/3', '    description T-SIDOROVp', '    switchport access vlan 310', '    switchport mode access', '    no shutdown']} on 1 hosts
+2023-04-18 17:16:45,924 -  nornir.core -     INFO -        run() - Running task 'close_connections_task' with args {} on 1 hosts
+2023-04-18 17:17:08,392 -  nornir.core -     INFO -        run() - Running task 'napalm_get' with args {'getters': ['get_interfaces']} on 1 hosts
+2023-04-18 17:17:09,470 -  nornir.core -     INFO -        run() - Running task 'Configuration interface.../' with args {'config_commands': ['default interface Ethernet0/3', 'interface Ethernet0/3', '    description DEFAULT', '    switchport access vlan 99', '    switchport mode access', '    shutdown']} on 1 hosts
+2023-04-18 17:17:11,376 -  nornir.core -     INFO -        run() - Running task 'close_connections_task' with args {} on 1 hosts
+2023-04-18 17:27:39,348 -  nornir.core -     INFO -        run() - Running task 'napalm_get' with args {'getters': ['get_interfaces']} on 1 hosts
+2023-04-18 17:27:40,505 -  nornir.core -     INFO -        run() - Running task 'Configuration interface.../' with args {'config_commands': ['interface Ethernet0/3', '    description T-SIDOROVp', '    switchport access vlan 310', '    switchport mode access', '    no shutdown']} on 1 hosts
+2023-04-18 17:27:42,285 -  nornir.core -     INFO -        run() - Running task 'close_connections_task' with args {} on 1 hosts
+2023-04-18 17:28:20,434 -  nornir.core -     INFO -        run() - Running task 'napalm_get' with args {'getters': ['get_interfaces']} on 1 hosts
+2023-04-18 17:28:21,539 -  nornir.core -     INFO -        run() - Running task 'Configuration interface.../' with args {'config_commands': ['default interface Ethernet0/3', 'interface Ethernet0/3', '    description DEFAULT', '    switchport access vlan 99', '    switchport mode access', '    shutdown']} on 1 hosts
+2023-04-18 17:28:23,471 -  nornir.core -     INFO -        run() - Running task 'close_connections_task' with args {} on 1 hosts
+2023-04-18 17:37:09,949 -  nornir.core -     INFO -        run() - Running task 'napalm_get' with args {'getters': ['get_interfaces']} on 1 hosts
+2023-04-18 17:37:11,308 -  nornir.core -     INFO -        run() - Running task 'Configuration interface.../' with args {'config_commands': ['interface Ethernet0/3', '    description T-SIDOROVp', '    switchport access vlan 310', '    switchport mode access', '    no shutdown']} on 1 hosts
+2023-04-18 17:37:13,058 -  nornir.core -     INFO -        run() - Running task 'close_connections_task' with args {} on 1 hosts
+2023-04-18 17:37:28,965 -  nornir.core -     INFO -        run() - Running task 'napalm_get' with args {'getters': ['get_interfaces']} on 1 hosts
+2023-04-18 17:37:29,898 -  nornir.core -     INFO -        run() - Running task 'Configuration interface.../' with args {'config_commands': ['default interface Ethernet0/3', 'interface Ethernet0/3', '    description DEFAULT', '    switchport access vlan 99', '    switchport mode access', '    shutdown']} on 1 hosts
+2023-04-18 17:37:31,836 -  nornir.core -     INFO -        run() - Running task 'close_connections_task' with args {} on 1 hosts
+2023-04-18 17:40:39,534 -  nornir.core -     INFO -        run() - Running task 'napalm_get' with args {'getters': ['get_interfaces']} on 1 hosts
+2023-04-18 17:40:40,668 -  nornir.core -     INFO -        run() - Running task 'Configuration interface.../' with args {'config_commands': ['interface Ethernet0/3', '    description T-SIDOROVp', '    switchport access vlan 310', '    switchport mode access', '    no shutdown']} on 1 hosts
+2023-04-18 17:40:42,315 -  nornir.core -     INFO -        run() - Running task 'close_connections_task' with args {} on 1 hosts
+2023-04-18 17:40:52,550 -  nornir.core -     INFO -        run() - Running task 'napalm_get' with args {'getters': ['get_interfaces']} on 1 hosts
+2023-04-18 17:40:53,492 -  nornir.core -     INFO -        run() - Running task 'Configuration interface.../' with args {'config_commands': ['default interface Ethernet0/3', 'interface Ethernet0/3', '    description DEFAULT', '    switchport access vlan 99', '    switchport mode access', '    shutdown']} on 1 hosts
+2023-04-18 17:40:55,393 -  nornir.core -     INFO -        run() - Running task 'close_connections_task' with args {} on 1 hosts
+2023-04-18 17:47:31,283 -  nornir.core -     INFO -        run() - Running task 'napalm_get' with args {'getters': ['get_interfaces']} on 1 hosts
+2023-04-18 17:47:32,387 -  nornir.core -     INFO -        run() - Running task 'Configuration interface.../' with args {'config_commands': ['interface Ethernet0/3', '    description T-SIDOROVp', '    switchport access vlan 310', '    switchport mode access', '    no shutdown']} on 1 hosts
+2023-04-18 17:47:41,729 -  nornir.core -     INFO -        run() - Running task 'close_connections_task' with args {} on 1 hosts
+2023-04-18 17:47:44,611 -  nornir.core -     INFO -        run() - Running task 'napalm_get' with args {'getters': ['get_interfaces']} on 1 hosts
+2023-04-18 17:47:45,751 -  nornir.core -     INFO -        run() - Running task 'Configuration interface.../' with args {'config_commands': ['default interface Ethernet0/3', 'interface Ethernet0/3', '    description DEFAULT', '    switchport access vlan 99', '    switchport mode access', '    shutdown']} on 1 hosts
+2023-04-18 17:47:50,345 -  nornir.core -     INFO -        run() - Running task 'close_connections_task' with args {} on 1 hosts
+2023-04-18 18:23:02,278 -  nornir.core -     INFO -        run() - Running task 'napalm_get' with args {'getters': ['get_interfaces']} on 1 hosts
+2023-04-18 18:23:03,450 -  nornir.core -     INFO -        run() - Running task 'Configuration interface.../' with args {'config_commands': ['interface Ethernet0/3', '    description T-SIDOROVP', '    switchport access vlan 310', '    switchport mode access', '    no shutdown']} on 1 hosts
+2023-04-18 18:23:05,392 -  nornir.core -     INFO -        run() - Running task 'close_connections_task' with args {} on 1 hosts
+2023-04-18 18:23:14,391 -  nornir.core -     INFO -        run() - Running task 'napalm_get' with args {'getters': ['get_interfaces']} on 1 hosts
+2023-04-18 18:23:15,506 -  nornir.core -     INFO -        run() - Running task 'Configuration interface.../' with args {'config_commands': ['default interface Ethernet0/3', 'interface Ethernet0/3', '    description DEFAULT', '    switchport access vlan 99', '    switchport mode access', '    shutdown']} on 1 hosts
+2023-04-18 18:23:17,438 -  nornir.core -     INFO -        run() - Running task 'close_connections_task' with args {} on 1 hosts
+2023-04-18 18:24:48,435 -  nornir.core -     INFO -        run() - Running task 'napalm_get' with args {'getters': ['get_interfaces']} on 1 hosts
+2023-04-18 18:24:49,570 -  nornir.core -     INFO -        run() - Running task 'Configuration interface.../' with args {'config_commands': ['interface Ethernet0/3', '    description T-SIDOROVP', '    switchport access vlan 310', '    switchport mode access', '    no shutdown']} on 1 hosts
+2023-04-18 18:24:51,526 -  nornir.core -     INFO -        run() - Running task 'close_connections_task' with args {} on 1 hosts
+2023-04-18 18:25:11,856 -  nornir.core -     INFO -        run() - Running task 'napalm_get' with args {'getters': ['get_interfaces']} on 1 hosts
+2023-04-18 18:25:12,997 -  nornir.core -     INFO -        run() - Running task 'Configuration interface.../' with args {'config_commands': ['default interface Ethernet0/3', 'interface Ethernet0/3', '    description DEFAULT', '    switchport access vlan 99', '    switchport mode access', '    shutdown']} on 1 hosts
+2023-04-18 18:25:14,935 -  nornir.core -     INFO -        run() - Running task 'close_connections_task' with args {} on 1 hosts
+2023-04-18 18:29:16,941 -  nornir.core -     INFO -        run() - Running task 'napalm_get' with args {'getters': ['get_interfaces']} on 1 hosts
+2023-04-18 18:29:18,092 -  nornir.core -     INFO -        run() - Running task 'Configuration interface.../' with args {'config_commands': ['interface Ethernet0/3', '    description T-SIDOROVP', '    switchport access vlan 310', '    switchport mode access', '    no shutdown']} on 1 hosts
+2023-04-18 18:29:19,972 -  nornir.core -     INFO -        run() - Running task 'close_connections_task' with args {} on 1 hosts
+2023-04-18 18:30:08,284 -  nornir.core -     INFO -        run() - Running task 'napalm_get' with args {'getters': ['get_interfaces']} on 1 hosts
+2023-04-18 18:30:09,393 -  nornir.core -     INFO -        run() - Running task 'Configuration interface.../' with args {'config_commands': ['default interface Ethernet0/3', 'interface Ethernet0/3', '    description DEFAULT', '    switchport access vlan 99', '    switchport mode access', '    shutdown']} on 1 hosts
+2023-04-18 18:30:11,470 -  nornir.core -     INFO -        run() - Running task 'close_connections_task' with args {} on 1 hosts
+2023-04-18 18:34:35,354 -  nornir.core -     INFO -        run() - Running task 'napalm_get' with args {'getters': ['get_interfaces']} on 1 hosts
+2023-04-18 18:34:36,495 -  nornir.core -     INFO -        run() - Running task 'Configuration interface.../' with args {'config_commands': ['interface Ethernet0/3', '    description T-SIDOROVP', '    switchport access vlan 310', '    switchport mode access', '    no shutdown']} on 1 hosts
+2023-04-18 18:34:38,446 -  nornir.core -     INFO -        run() - Running task 'close_connections_task' with args {} on 1 hosts
+2023-04-18 18:34:47,993 -  nornir.core -     INFO -        run() - Running task 'napalm_get' with args {'getters': ['get_interfaces']} on 1 hosts
+2023-04-18 18:34:49,107 -  nornir.core -     INFO -        run() - Running task 'Configuration interface.../' with args {'config_commands': ['default interface Ethernet0/3', 'interface Ethernet0/3', '    description DEFAULT', '    switchport access vlan 99', '    switchport mode access', '    shutdown']} on 1 hosts
+2023-04-18 18:34:51,086 -  nornir.core -     INFO -        run() - Running task 'close_connections_task' with args {} on 1 hosts
+2023-04-18 19:27:09,257 -  nornir.core -     INFO -        run() - Running task 'napalm_get' with args {'getters': ['get_interfaces']} on 1 hosts
+2023-04-18 19:27:10,400 -  nornir.core -     INFO -        run() - Running task 'Configuration interface.../' with args {'config_commands': ['interface Ethernet0/3', '    description T-SIDOROVP', '    switchport access vlan 310', '    switchport mode access', '    no shutdown']} on 1 hosts
+2023-04-18 19:27:12,274 -  nornir.core -     INFO -        run() - Running task 'close_connections_task' with args {} on 1 hosts
+2023-04-19 13:21:04,519 -  nornir.core -     INFO -        run() - Running task 'napalm_get' with args {'getters': ['get_interfaces']} on 1 hosts
+2023-04-19 13:21:05,657 -  nornir.core -     INFO -        run() - Running task 'Configuration interface.../' with args {'config_commands': ['interface Ethernet0/3', '    description T-SIDOROVP', '    switchport access vlan 310', '    switchport mode access', '    no shutdown']} on 1 hosts
+2023-04-19 13:21:07,383 -  nornir.core -     INFO -        run() - Running task 'close_connections_task' with args {} on 1 hosts
+2023-04-19 13:21:31,554 -  nornir.core -     INFO -        run() - Running task 'napalm_get' with args {'getters': ['get_interfaces']} on 1 hosts
+2023-04-19 13:21:33,679 -  nornir.core -     INFO -        run() - Running task 'Configuration interface.../' with args {'config_commands': ['default interface Ethernet0/3', 'interface Ethernet0/3', '    description DEFAULT', '    switchport access vlan 99', '    switchport mode access', '    shutdown']} on 1 hosts
+2023-04-19 13:21:35,723 -  nornir.core -     INFO -        run() - Running task 'close_connections_task' with args {} on 1 hosts
+2023-04-19 13:23:41,519 -  nornir.core -     INFO -        run() - Running task 'napalm_get' with args {'getters': ['get_interfaces']} on 1 hosts
+2023-04-19 13:23:42,972 -  nornir.core -     INFO -        run() - Running task 'Configuration interface.../' with args {'config_commands': ['interface Ethernet0/3', '    description T-SIDOROVP', '    switchport access vlan 310', '    switchport mode access', '    no shutdown']} on 1 hosts
+2023-04-19 13:23:45,396 -  nornir.core -     INFO -        run() - Running task 'close_connections_task' with args {} on 1 hosts
+2023-04-19 13:28:04,402 -  nornir.core -     INFO -        run() - Running task 'napalm_get' with args {'getters': ['get_interfaces']} on 1 hosts
+2023-04-19 13:28:05,896 -  nornir.core -     INFO -        run() - Running task 'Configuration interface.../' with args {'config_commands': ['default interface Ethernet0/3', 'interface Ethernet0/3', '    description DEFAULT', '    switchport access vlan 99', '    switchport mode access', '    shutdown']} on 1 hosts
+2023-04-19 13:28:07,824 -  nornir.core -     INFO -        run() - Running task 'close_connections_task' with args {} on 1 hosts
+2023-04-19 13:35:53,122 -  nornir.core -     INFO -        run() - Running task 'napalm_get' with args {'getters': ['get_interfaces']} on 1 hosts
+2023-04-19 13:35:54,101 -  nornir.core -     INFO -        run() - Running task 'Configuration interface.../' with args {'config_commands': ['interface Ethernet0/3', '    description T-SIDOROVP', '    switchport access vlan 310', '    switchport mode access', '    no shutdown']} on 1 hosts
+2023-04-19 13:35:56,055 -  nornir.core -     INFO -        run() - Running task 'close_connections_task' with args {} on 1 hosts
+2023-04-19 13:38:57,758 -  nornir.core -     INFO -        run() - Running task 'napalm_get' with args {'getters': ['get_interfaces']} on 1 hosts
+2023-04-19 13:38:58,908 -  nornir.core -     INFO -        run() - Running task 'Configuration interface.../' with args {'config_commands': ['default interface Ethernet0/3', 'interface Ethernet0/3', '    description DEFAULT', '    switchport access vlan 99', '    switchport mode access', '    shutdown']} on 1 hosts
+2023-04-19 13:39:00,792 -  nornir.core -     INFO -        run() - Running task 'close_connections_task' with args {} on 1 hosts
+2023-04-19 14:56:46,210 -  nornir.core -     INFO -        run() - Running task 'napalm_get' with args {'getters': ['get_interfaces']} on 1 hosts
+2023-04-19 14:56:47,331 -  nornir.core -     INFO -        run() - Running task 'Configuration interface.../' with args {'config_commands': ['interface Ethernet0/3', '    description T-SIDOROVP', '    switchport access vlan 310', '    switchport mode access', '    no shutdown']} on 1 hosts
+2023-04-19 14:56:49,184 -  nornir.core -     INFO -        run() - Running task 'close_connections_task' with args {} on 1 hosts
+2023-04-19 14:58:06,351 -  nornir.core -     INFO -        run() - Running task 'napalm_get' with args {'getters': ['get_interfaces']} on 1 hosts
+2023-04-19 14:58:07,476 -  nornir.core -     INFO -        run() - Running task 'Configuration interface.../' with args {'config_commands': ['default interface Ethernet0/3', 'interface Ethernet0/3', '    description DEFAULT', '    switchport access vlan 99', '    switchport mode access', '    shutdown']} on 1 hosts
+2023-04-19 14:58:09,398 -  nornir.core -     INFO -        run() - Running task 'close_connections_task' with args {} on 1 hosts
+2023-04-19 15:02:15,365 -  nornir.core -     INFO -        run() - Running task 'napalm_get' with args {'getters': ['get_interfaces']} on 1 hosts
+2023-04-19 15:02:16,490 -  nornir.core -     INFO -        run() - Running task 'Configuration interface.../' with args {'config_commands': ['interface Ethernet0/2', '    description T-SIDOROVP', '    switchport access vlan 310', '    switchport mode access', '    no shutdown']} on 1 hosts
+2023-04-19 15:02:18,177 -  nornir.core -     INFO -        run() - Running task 'close_connections_task' with args {} on 1 hosts
+2023-04-19 15:09:50,864 -  nornir.core -     INFO -        run() - Running task 'napalm_get' with args {'getters': ['get_interfaces']} on 1 hosts
+2023-04-19 15:09:51,990 -  nornir.core -     INFO -        run() - Running task 'Configuration interface.../' with args {'config_commands': ['default interface Ethernet0/2', 'interface Ethernet0/2', '    description DEFAULT', '    switchport access vlan 99', '    switchport mode access', '    shutdown']} on 1 hosts
+2023-04-19 15:09:53,957 -  nornir.core -     INFO -        run() - Running task 'close_connections_task' with args {} on 1 hosts
+2023-04-19 15:30:36,539 -  nornir.core -     INFO -        run() - Running task 'napalm_get' with args {'getters': ['get_interfaces']} on 1 hosts
+2023-04-19 15:30:37,680 -  nornir.core -     INFO -        run() - Running task 'Configuration interface.../' with args {'config_commands': ['interface Ethernet0/2', '    description T-SIDOROVP', '    switchport access vlan 310', '    switchport mode access', '    no shutdown']} on 1 hosts
+2023-04-19 15:30:39,477 -  nornir.core -     INFO -        run() - Running task 'close_connections_task' with args {} on 1 hosts
+2023-04-19 15:31:03,320 -  nornir.core -     INFO -        run() - Running task 'napalm_get' with args {'getters': ['get_interfaces']} on 1 hosts
+2023-04-19 15:31:04,460 -  nornir.core -     INFO -        run() - Running task 'Configuration interface.../' with args {'config_commands': ['interface Ethernet0/2', '    description T-SIDOROVP', '    switchport access vlan 310', '    switchport mode access', '    no shutdown']} on 1 hosts
+2023-04-19 15:31:06,226 -  nornir.core -     INFO -        run() - Running task 'close_connections_task' with args {} on 1 hosts
+2023-04-19 15:31:56,818 -  nornir.core -     INFO -        run() - Running task 'napalm_get' with args {'getters': ['get_interfaces']} on 1 hosts
+2023-04-19 15:31:57,709 -  nornir.core -     INFO -        run() - Running task 'Configuration interface.../' with args {'config_commands': ['default interface Ethernet0/2', 'interface Ethernet0/2', '    description DEFAULT', '    switchport access vlan 99', '    switchport mode access', '    shutdown']} on 1 hosts
+2023-04-19 15:31:59,757 -  nornir.core -     INFO -        run() - Running task 'close_connections_task' with args {} on 1 hosts
+2023-04-19 15:36:32,250 -  nornir.core -     INFO -        run() - Running task 'napalm_get' with args {'getters': ['get_interfaces']} on 1 hosts
+2023-04-19 15:36:33,156 -  nornir.core -     INFO -        run() - Running task 'Configuration interface.../' with args {'config_commands': ['interface Ethernet0/3', '    description T-SIDOROVP', '    switchport access vlan 310', '    switchport mode access', '    no shutdown']} on 1 hosts
+2023-04-19 15:36:42,581 -  nornir.core -     INFO -        run() - Running task 'close_connections_task' with args {} on 1 hosts
+2023-04-19 15:37:53,723 -  nornir.core -     INFO -        run() - Running task 'napalm_get' with args {'getters': ['get_interfaces']} on 1 hosts
+2023-04-19 15:37:54,654 -  nornir.core -     INFO -        run() - Running task 'Configuration interface.../' with args {'config_commands': ['default interface Ethernet0/3', 'interface Ethernet0/3', '    description DEFAULT', '    switchport access vlan 99', '    switchport mode access', '    shutdown']} on 1 hosts
+2023-04-19 15:37:56,467 -  nornir.core -     INFO -        run() - Running task 'close_connections_task' with args {} on 1 hosts
+2023-04-19 15:37:58,029 -  nornir.core -     INFO -        run() - Running task 'napalm_get' with args {'getters': ['get_interfaces']} on 1 hosts
+2023-04-19 15:37:59,169 -  nornir.core -     INFO -        run() - Running task 'Configuration interface.../' with args {'config_commands': ['interface Ethernet0/3', '    shutdown']} on 1 hosts
+2023-04-19 15:38:00,466 -  nornir.core -     INFO -        run() - Running task 'close_connections_task' with args {} on 1 hosts
+2023-04-19 15:50:09,918 -  nornir.core -     INFO -        run() - Running task 'napalm_get' with args {'getters': ['get_interfaces']} on 1 hosts
+2023-04-19 15:50:11,059 -  nornir.core -     INFO -        run() - Running task 'Configuration interface.../' with args {'config_commands': ['interface Ethernet0/3', '    description T-SIDOROVP', '    switchport access vlan 310', '    switchport mode access', '    no shutdown']} on 1 hosts
+2023-04-19 15:50:12,795 -  nornir.core -     INFO -        run() - Running task 'close_connections_task' with args {} on 1 hosts
+2023-04-19 15:50:27,575 -  nornir.core -     INFO -        run() - Running task 'napalm_get' with args {'getters': ['get_interfaces']} on 1 hosts
+2023-04-19 15:50:28,903 -  nornir.core -     INFO -        run() - Running task 'Configuration interface.../' with args {'config_commands': ['interface Ethernet0/3', '    shutdown']} on 1 hosts
+2023-04-19 15:50:30,574 -  nornir.core -     INFO -        run() - Running task 'close_connections_task' with args {} on 1 hosts
+2023-04-19 16:02:21,199 -  nornir.core -     INFO -        run() - Running task 'napalm_get' with args {'getters': ['get_interfaces']} on 1 hosts
+2023-04-19 16:02:22,137 -  nornir.core -     INFO -        run() - Running task 'Configuration interface.../' with args {'config_commands': ['interface Ethernet0/3', '    description T-SIDOROVP', '    switchport access vlan 310', '    switchport mode access', '    no shutdown']} on 1 hosts
+2023-04-19 16:02:24,137 -  nornir.core -     INFO -        run() - Running task 'close_connections_task' with args {} on 1 hosts
+2023-04-19 16:03:22,213 -  nornir.core -     INFO -        run() - Running task 'napalm_get' with args {'getters': ['get_interfaces']} on 1 hosts
+2023-04-19 16:03:23,323 -  nornir.core -     INFO -        run() - Running task 'Configuration interface.../' with args {'config_commands': ['interface Ethernet0/3', '    description T-SIDOROVP', '    switchport access vlan 310', '    switchport mode access', '    no shutdown']} on 1 hosts
+2023-04-19 16:03:25,244 -  nornir.core -     INFO -        run() - Running task 'close_connections_task' with args {} on 1 hosts
+2023-04-19 16:04:20,212 -  nornir.core -     INFO -        run() - Running task 'napalm_get' with args {'getters': ['get_interfaces']} on 1 hosts
+2023-04-19 16:04:21,321 -  nornir.core -     INFO -        run() - Running task 'Configuration interface.../' with args {'config_commands': ['interface Ethernet0/3', '    shutdown']} on 1 hosts
+2023-04-19 16:04:22,853 -  nornir.core -     INFO -        run() - Running task 'close_connections_task' with args {} on 1 hosts
+2023-04-19 16:21:26,033 -  nornir.core -     INFO -        run() - Running task 'napalm_get' with args {'getters': ['get_interfaces']} on 1 hosts
+2023-04-19 16:21:26,955 -  nornir.core -     INFO -        run() - Running task 'Configuration interface.../' with args {'config_commands': ['interface Ethernet0/3', '    description T-SIDOROVP', '    switchport access vlan 310', '    switchport mode access', '    no shutdown']} on 1 hosts
+2023-04-19 16:21:28,721 -  nornir.core -     INFO -        run() - Running task 'close_connections_task' with args {} on 1 hosts
+2023-04-19 16:22:39,110 -  nornir.core -     INFO -        run() - Running task 'napalm_get' with args {'getters': ['get_interfaces']} on 1 hosts
+2023-04-19 16:22:40,235 -  nornir.core -     INFO -        run() - Running task 'Configuration interface.../' with args {'config_commands': ['interface Ethernet0/3', '    shutdown']} on 1 hosts
+2023-04-19 16:22:41,516 -  nornir.core -     INFO -        run() - Running task 'close_connections_task' with args {} on 1 hosts
+2023-04-19 16:23:41,718 -  nornir.core -     INFO -        run() - Running task 'napalm_get' with args {'getters': ['get_interfaces']} on 1 hosts
+2023-04-19 16:23:45,140 -  nornir.core -     INFO -        run() - Running task 'Configuration interface.../' with args {'config_commands': ['interface Ethernet0/0', '    description T-SIDOROVP', '    switchport access vlan 310', '    switchport mode access', '    no shutdown']} on 1 hosts
+2023-04-19 16:23:50,538 -  nornir.core -     INFO -        run() - Running task 'close_connections_task' with args {} on 1 hosts
+2023-04-19 16:24:35,567 -  nornir.core -     INFO -        run() - Running task 'napalm_get' with args {'getters': ['get_interfaces']} on 1 hosts
+2023-04-19 16:24:36,670 -  nornir.core -     INFO -        run() - Running task 'Configuration interface.../' with args {'config_commands': ['interface Ethernet0/0', '    shutdown']} on 1 hosts
+2023-04-19 16:24:38,107 -  nornir.core -     INFO -        run() - Running task 'close_connections_task' with args {} on 1 hosts
+2023-04-19 16:39:06,839 -  nornir.core -     INFO -        run() - Running task 'napalm_get' with args {'getters': ['get_interfaces']} on 1 hosts
+2023-04-19 16:39:07,964 -  nornir.core -     INFO -        run() - Running task 'Configuration interface.../' with args {'config_commands': ['interface Ethernet0/3', '    description T-SIDOROVP', '    switchport access vlan 310', '    switchport mode access', '    no shutdown']} on 1 hosts
+2023-04-19 16:39:09,738 -  nornir.core -     INFO -        run() - Running task 'close_connections_task' with args {} on 1 hosts
+2023-04-19 16:40:19,977 -  nornir.core -     INFO -        run() - Running task 'napalm_get' with args {'getters': ['get_interfaces']} on 1 hosts
+2023-04-19 16:40:20,900 -  nornir.core -     INFO -        run() - Running task 'Configuration interface.../' with args {'config_commands': ['interface Ethernet0/3', '    description T-SIDOROVP', '    switchport access vlan 310', '    switchport mode access', '    no shutdown']} on 1 hosts
+2023-04-19 16:40:22,665 -  nornir.core -     INFO -        run() - Running task 'close_connections_task' with args {} on 1 hosts
+2023-04-19 16:41:38,538 -  nornir.core -     INFO -        run() - Running task 'napalm_get' with args {'getters': ['get_interfaces']} on 1 hosts
+2023-04-19 16:41:39,448 -  nornir.core -     INFO -        run() - Running task 'Configuration interface.../' with args {'config_commands': ['interface Ethernet0/3', '    description T-SIDOROVP', '    switchport access vlan 310', '    switchport mode access', '    no shutdown']} on 1 hosts
+2023-04-19 16:41:41,268 -  nornir.core -     INFO -        run() - Running task 'close_connections_task' with args {} on 1 hosts
+2023-04-19 16:44:34,341 -  nornir.core -     INFO -        run() - Running task 'napalm_get' with args {'getters': ['get_interfaces']} on 1 hosts
+2023-04-19 16:44:35,484 -  nornir.core -     INFO -        run() - Running task 'Configuration interface.../' with args {'config_commands': ['interface Ethernet0/3', '    shutdown']} on 1 hosts
+2023-04-19 16:44:36,775 -  nornir.core -     INFO -        run() - Running task 'close_connections_task' with args {} on 1 hosts
+2023-04-22 09:01:45,286 -  nornir.core -     INFO -        run() - Running task 'napalm_get' with args {'getters': ['get_interfaces']} on 1 hosts
+2023-04-22 09:01:46,429 -  nornir.core -     INFO -        run() - Running task 'Configuration interface.../' with args {'config_commands': ['interface Ethernet0/2', '    description T-SIDOROVP', '    switchport access vlan 310', '    switchport mode access', '    no shutdown']} on 1 hosts
+2023-04-22 09:01:48,113 -  nornir.core -     INFO -        run() - Running task 'close_connections_task' with args {} on 1 hosts
+2023-04-22 09:04:10,112 -  nornir.core -     INFO -        run() - Running task 'napalm_get' with args {'getters': ['get_interfaces']} on 1 hosts
+2023-04-22 09:04:11,237 -  nornir.core -     INFO -        run() - Running task 'Configuration interface.../' with args {'config_commands': ['interface Ethernet0/2', '    description T-SIDOROVP', '    switchport access vlan 310', '    switchport mode access', '    no shutdown']} on 1 hosts
+2023-04-22 09:04:13,047 -  nornir.core -     INFO -        run() - Running task 'close_connections_task' with args {} on 1 hosts
+2023-04-22 09:05:12,086 -  nornir.core -     INFO -        run() - Running task 'napalm_get' with args {'getters': ['get_interfaces']} on 1 hosts
+2023-04-22 09:05:13,243 -  nornir.core -     INFO -        run() - Running task 'Configuration interface.../' with args {'config_commands': ['interface Ethernet0/2', '    description T-SIDOROVP', '    switchport access vlan 310', '    switchport mode access', '    no shutdown']} on 1 hosts
+2023-04-22 09:05:15,245 -  nornir.core -     INFO -        run() - Running task 'close_connections_task' with args {} on 1 hosts
+2023-04-22 09:06:35,279 -  nornir.core -     INFO -        run() - Running task 'napalm_get' with args {'getters': ['get_interfaces']} on 1 hosts
+2023-04-22 09:06:36,813 -  nornir.core -     INFO -        run() - Running task 'Configuration interface.../' with args {'config_commands': ['interface Ethernet0/2', '    description T-SIDOROVP', '    switchport access vlan 310', '    switchport mode access', '    no shutdown']} on 1 hosts
+2023-04-22 09:06:39,357 -  nornir.core -     INFO -        run() - Running task 'close_connections_task' with args {} on 1 hosts
+2023-04-22 09:08:38,263 -  nornir.core -     INFO -        run() - Running task 'napalm_get' with args {'getters': ['get_interfaces']} on 1 hosts
+2023-04-22 09:08:39,357 -  nornir.core -     INFO -        run() - Running task 'Configuration interface.../' with args {'config_commands': ['interface Ethernet0/2', '    description T-SIDOROV', '    switchport access vlan 310', '    switchport mode access', '    no shutdown']} on 1 hosts
+2023-04-22 09:08:41,466 -  nornir.core -     INFO -        run() - Running task 'close_connections_task' with args {} on 1 hosts
+2023-04-22 17:21:03,214 -  nornir.core -     INFO -        run() - Running task 'napalm_get' with args {'getters': ['get_interfaces']} on 1 hosts
+2023-04-22 17:21:04,339 -  nornir.core -     INFO -        run() - Running task 'Configuration interface.../' with args {'config_commands': ['interface Ethernet0/2', '    description T-SIDOROV', '    switchport access vlan 310', '    switchport mode access', '    no shutdown']} on 1 hosts
+2023-04-22 17:21:06,168 -  nornir.core -     INFO -        run() - Running task 'close_connections_task' with args {} on 1 hosts
+2023-04-22 17:41:17,829 -  nornir.core -     INFO -        run() - Running task 'napalm_get' with args {'getters': ['get_interfaces']} on 1 hosts
+2023-04-22 17:41:24,163 -  nornir.core -     INFO -        run() - Running task 'Configuration interface.../' with args {'config_commands': ['interface Ethernet0/2', '    description T-SIDOROV', '    switchport access vlan 310', '    switchport mode access', '    no shutdown']} on 1 hosts
+2023-04-22 17:41:26,324 -  nornir.core -     INFO -        run() - Running task 'close_connections_task' with args {} on 1 hosts
+2023-04-22 18:14:25,635 -  nornir.core -     INFO -        run() - Running task 'napalm_get' with args {'getters': ['get_interfaces']} on 1 hosts
+2023-04-22 18:14:34,305 -  nornir.core -     INFO -        run() - Running task 'Configuration interface.../' with args {'config_commands': ['interface Ethernet0/2', '    description T-SIDOROV', '    switchport access vlan 310', '    switchport mode access', '    no shutdown']} on 1 hosts
+2023-04-22 18:14:40,728 -  nornir.core -     INFO -        run() - Running task 'close_connections_task' with args {} on 1 hosts
+2023-04-22 18:15:47,670 -  nornir.core -     INFO -        run() - Running task 'napalm_get' with args {'getters': ['get_interfaces']} on 1 hosts
+2023-04-22 18:15:57,935 -  nornir.core -     INFO -        run() - Running task 'Configuration interface.../' with args {'config_commands': ['interface Ethernet0/2', '    description T-SIDOROV', '    switchport access vlan 310', '    switchport mode access', '    no shutdown']} on 1 hosts
+2023-04-22 18:16:07,297 -  nornir.core -     INFO -        run() - Running task 'close_connections_task' with args {} on 1 hosts
+2023-04-22 18:22:18,479 -  nornir.core -     INFO -        run() - Running task 'napalm_get' with args {'getters': ['get_interfaces']} on 1 hosts
+2023-04-22 18:23:54,541 -  nornir.core -     INFO -        run() - Running task 'Configuration interface.../' with args {'config_commands': ['interface Ethernet0/2', '    description T-SIDOROV', '    switchport access vlan 310', '    switchport mode access', '    no shutdown']} on 1 hosts
+2023-04-22 18:24:00,928 -  nornir.core -     INFO -        run() - Running task 'close_connections_task' with args {} on 1 hosts
+2023-04-22 18:24:27,299 -  nornir.core -     INFO -        run() - Running task 'napalm_get' with args {'getters': ['get_interfaces']} on 1 hosts
+2023-04-22 18:24:28,224 -  nornir.core -     INFO -        run() - Running task 'Configuration interface.../' with args {'config_commands': ['interface Ethernet0/2', '    description T-SIDOROV', '    switchport access vlan 310', '    switchport mode access', '    no shutdown']} on 1 hosts
+2023-04-22 18:24:30,159 -  nornir.core -     INFO -        run() - Running task 'close_connections_task' with args {} on 1 hosts
+2023-04-22 18:24:54,526 -  nornir.core -     INFO -        run() - Running task 'napalm_get' with args {'getters': ['get_interfaces']} on 1 hosts
+2023-04-22 18:24:55,429 -  nornir.core -     INFO -        run() - Running task 'Configuration interface.../' with args {'config_commands': ['interface Ethernet0/2', '    description T-SIDOROV', '    switchport access vlan 310', '    switchport mode access', '    no shutdown']} on 1 hosts
+2023-04-22 18:24:57,163 -  nornir.core -     INFO -        run() - Running task 'close_connections_task' with args {} on 1 hosts
+2023-04-22 18:40:16,129 -  nornir.core -     INFO -        run() - Running task 'napalm_get' with args {'getters': ['get_interfaces']} on 1 hosts
+2023-04-22 18:40:17,282 -  nornir.core -     INFO -        run() - Running task 'Configuration interface.../' with args {'config_commands': ['interface Ethernet0/2', '    description T-SIDOROV', '    switchport access vlan 310', '    switchport mode access', '    no shutdown']} on 1 hosts
+2023-04-22 18:40:19,273 -  nornir.core -     INFO -        run() - Running task 'close_connections_task' with args {} on 1 hosts
+2023-04-22 18:51:18,721 -  nornir.core -     INFO -        run() - Running task 'napalm_get' with args {'getters': ['get_interfaces']} on 1 hosts
+2023-04-22 18:51:19,870 -  nornir.core -     INFO -        run() - Running task 'Configuration interface.../' with args {'config_commands': ['interface Ethernet0/2', '    description T-SIDOROV', '    switchport access vlan 310', '    switchport mode access', '    no shutdown']} on 1 hosts
+2023-04-22 18:51:21,829 -  nornir.core -     INFO -        run() - Running task 'close_connections_task' with args {} on 1 hosts
+2023-04-22 18:52:23,098 -  nornir.core -     INFO -        run() - Running task 'napalm_get' with args {'getters': ['get_interfaces']} on 1 hosts
+2023-04-22 18:52:24,197 -  nornir.core -     INFO -        run() - Running task 'Configuration interface.../' with args {'config_commands': ['interface Ethernet0/2', '    description T-SIDOROV', '    switchport access vlan 310', '    switchport mode access', '    no shutdown']} on 1 hosts
+2023-04-22 18:52:26,005 -  nornir.core -     INFO -        run() - Running task 'close_connections_task' with args {} on 1 hosts
+2023-04-22 19:16:05,602 -  nornir.core -     INFO -        run() - Running task 'napalm_get' with args {'getters': ['get_interfaces']} on 1 hosts
+2023-04-22 19:16:06,737 -  nornir.core -     INFO -        run() - Running task 'Configuration interface.../' with args {'config_commands': ['interface Ethernet0/2', '    shutdown']} on 1 hosts
+2023-04-22 19:16:08,161 -  nornir.core -     INFO -        run() - Running task 'close_connections_task' with args {} on 1 hosts
+2023-04-22 19:17:42,527 -  nornir.core -     INFO -        run() - Running task 'napalm_get' with args {'getters': ['get_interfaces']} on 1 hosts
+2023-04-22 19:17:43,689 -  nornir.core -     INFO -        run() - Running task 'Configuration interface.../' with args {'config_commands': ['interface Ethernet0/3', '    description T-SIDOROV', '    switchport access vlan 310', '    switchport mode access', '    no shutdown']} on 1 hosts
+2023-04-22 19:17:45,437 -  nornir.core -     INFO -        run() - Running task 'close_connections_task' with args {} on 1 hosts
+2023-04-22 19:19:16,865 -  nornir.core -     INFO -        run() - Running task 'napalm_get' with args {'getters': ['get_interfaces']} on 1 hosts
+2023-04-22 19:19:17,791 -  nornir.core -     INFO -        run() - Running task 'Configuration interface.../' with args {'config_commands': ['interface Ethernet0/3', '    shutdown']} on 1 hosts
+2023-04-22 19:19:19,052 -  nornir.core -     INFO -        run() - Running task 'close_connections_task' with args {} on 1 hosts
+2023-04-22 19:21:14,870 -  nornir.core -     INFO -        run() - Running task 'napalm_get' with args {'getters': ['get_interfaces']} on 1 hosts
+2023-04-22 19:21:15,995 -  nornir.core -     INFO -        run() - Running task 'Configuration interface.../' with args {'config_commands': ['interface Ethernet0/2', '    description T-SIDOROV', '    switchport access vlan 310', '    switchport mode access', '    no shutdown']} on 1 hosts
+2023-04-22 19:21:17,745 -  nornir.core -     INFO -        run() - Running task 'close_connections_task' with args {} on 1 hosts
+2023-04-22 19:51:26,773 -  nornir.core -     INFO -        run() - Running task 'napalm_get' with args {'getters': ['get_interfaces']} on 1 hosts
+2023-04-22 19:51:27,917 -  nornir.core -     INFO -        run() - Running task 'Configuration interface.../' with args {'config_commands': ['interface Ethernet0/0', '    description ', '    switchport access vlan 310', '    switchport mode access', '    no shutdown']} on 1 hosts
+2023-04-22 19:51:29,655 -  nornir.core -     INFO -        run() - Running task 'close_connections_task' with args {} on 1 hosts
+2023-04-22 20:00:07,273 -  nornir.core -     INFO -        run() - Running task 'napalm_get' with args {'getters': ['get_interfaces']} on 1 hosts
+2023-04-22 20:00:08,402 -  nornir.core -     INFO -        run() - Running task 'Configuration interface.../' with args {'config_commands': ['interface Ethernet0/0', '    description ', '    switchport access vlan 310', '    switchport mode access', '    no shutdown']} on 1 hosts
+2023-04-22 20:00:10,106 -  nornir.core -     INFO -        run() - Running task 'close_connections_task' with args {} on 1 hosts
+2023-04-22 20:05:14,717 -  nornir.core -     INFO -        run() - Running task 'napalm_get' with args {'getters': ['get_interfaces']} on 1 hosts
+2023-04-22 20:05:15,658 -  nornir.core -     INFO -        run() - Running task 'Configuration interface.../' with args {'config_commands': ['interface Ethernet0/0', '    shutdown']} on 1 hosts
+2023-04-22 20:05:16,960 -  nornir.core -     INFO -        run() - Running task 'close_connections_task' with args {} on 1 hosts
+2023-04-22 20:07:40,200 -  nornir.core -     INFO -        run() - Running task 'napalm_get' with args {'getters': ['get_interfaces']} on 1 hosts
+2023-04-22 20:07:41,106 -  nornir.core -     INFO -        run() - Running task 'Configuration interface.../' with args {'config_commands': ['interface Ethernet0/0', '    description Phone_Ivanov', '    switchport access vlan 310', '    switchport mode access', '    no shutdown']} on 1 hosts
+2023-04-22 20:07:42,871 -  nornir.core -     INFO -        run() - Running task 'close_connections_task' with args {} on 1 hosts
+2023-04-22 20:08:57,945 -  nornir.core -     INFO -        run() - Running task 'napalm_get' with args {'getters': ['get_interfaces']} on 1 hosts
+2023-04-22 20:08:59,069 -  nornir.core -     INFO -        run() - Running task 'Configuration interface.../' with args {'config_commands': ['interface Ethernet0/3', '    description ', '    switchport access vlan 310', '    switchport mode access', '    no shutdown']} on 1 hosts
+2023-04-22 20:09:00,868 -  nornir.core -     INFO -        run() - Running task 'close_connections_task' with args {} on 1 hosts
+2023-04-22 20:10:00,597 -  nornir.core -     INFO -        run() - Running task 'napalm_get' with args {'getters': ['get_interfaces']} on 1 hosts
+2023-04-22 20:10:01,550 -  nornir.core -     INFO -        run() - Running task 'Configuration interface.../' with args {'config_commands': ['interface Ethernet0/3', '    description VK-1', '    switchport access vlan 310', '    switchport mode access', '    no shutdown']} on 1 hosts
+2023-04-22 20:10:03,323 -  nornir.core -     INFO -        run() - Running task 'close_connections_task' with args {} on 1 hosts
+2023-04-22 20:10:40,222 -  nornir.core -     INFO -        run() - Running task 'napalm_get' with args {'getters': ['get_interfaces']} on 1 hosts
+2023-04-22 20:10:41,380 -  nornir.core -     INFO -        run() - Running task 'Configuration interface.../' with args {'config_commands': ['interface Ethernet0/3', '    shutdown']} on 1 hosts
+2023-04-22 20:10:42,641 -  nornir.core -     INFO -        run() - Running task 'close_connections_task' with args {} on 1 hosts
+2023-04-22 20:12:26,822 -  nornir.core -     INFO -        run() - Running task 'napalm_get' with args {'getters': ['get_interfaces']} on 1 hosts
+2023-04-22 20:12:27,775 -  nornir.core -     INFO -        run() - Running task 'Configuration interface.../' with args {'config_commands': ['interface Ethernet0/2', '    shutdown']} on 1 hosts
+2023-04-22 20:12:29,259 -  nornir.core -     INFO -        run() - Running task 'close_connections_task' with args {} on 1 hosts
+2023-04-22 20:12:31,619 -  nornir.core -     INFO -        run() - Running task 'napalm_get' with args {'getters': ['get_interfaces']} on 1 hosts
+2023-04-22 20:12:32,540 -  nornir.core -     INFO -        run() - Running task 'Configuration interface.../' with args {'config_commands': ['interface Ethernet0/0', '    shutdown']} on 1 hosts
+2023-04-22 20:12:33,806 -  nornir.core -     INFO -        run() - Running task 'close_connections_task' with args {} on 1 hosts
+2023-04-23 19:34:59,699 -  nornir.core -     INFO -        run() - Running task 'napalm_get' with args {'getters': ['get_interfaces']} on 1 hosts
+2023-04-23 19:35:00,622 -  nornir.core -     INFO -        run() - Running task 'Configuration interface.../' with args {'config_commands': ['interface Ethernet0/0', '    description T-SIDOROV', '    switchport access vlan 310', '    switchport mode access', '    no shutdown']} on 1 hosts
+2023-04-23 19:35:02,384 -  nornir.core -     INFO -        run() - Running task 'close_connections_task' with args {} on 1 hosts
+2023-04-23 19:35:16,900 -  nornir.core -     INFO -        run() - Running task 'napalm_get' with args {'getters': ['get_interfaces']} on 1 hosts
+2023-04-23 19:35:17,809 -  nornir.core -     INFO -        run() - Running task 'Configuration interface.../' with args {'config_commands': ['interface Ethernet0/2', '    description Phone_Ivanov', '    switchport access vlan 310', '    switchport mode access', '    no shutdown']} on 1 hosts
+2023-04-23 19:35:19,555 -  nornir.core -     INFO -        run() - Running task 'close_connections_task' with args {} on 1 hosts
+2023-04-23 19:35:33,446 -  nornir.core -     INFO -        run() - Running task 'napalm_get' with args {'getters': ['get_interfaces']} on 1 hosts
+2023-04-23 19:35:34,591 -  nornir.core -     INFO -        run() - Running task 'Configuration interface.../' with args {'config_commands': ['interface Ethernet0/3', '    description VK-1', '    switchport access vlan 310', '    switchport mode access', '    no shutdown']} on 1 hosts
+2023-04-23 19:35:36,341 -  nornir.core -     INFO -        run() - Running task 'close_connections_task' with args {} on 1 hosts
+2023-04-23 19:36:50,264 -  nornir.core -     INFO -        run() - Running task 'napalm_get' with args {'getters': ['get_interfaces']} on 1 hosts
+2023-04-23 19:36:51,166 -  nornir.core -     INFO -        run() - Running task 'Configuration interface.../' with args {'config_commands': ['interface Ethernet0/3', '    description VK-1', '    switchport access vlan 310', '    switchport mode access', '    no shutdown']} on 1 hosts
+2023-04-23 19:36:53,038 -  nornir.core -     INFO -        run() - Running task 'close_connections_task' with args {} on 1 hosts
+2023-04-23 19:37:53,084 -  nornir.core -     INFO -        run() - Running task 'napalm_get' with args {'getters': ['get_interfaces']} on 1 hosts
+2023-04-23 19:37:54,052 -  nornir.core -     INFO -        run() - Running task 'Configuration interface.../' with args {'config_commands': ['interface Ethernet0/2', '    description Phone_Ivanov', '    switchport access vlan 310', '    switchport mode access', '    no shutdown']} on 1 hosts
+2023-04-23 19:37:55,851 -  nornir.core -     INFO -        run() - Running task 'close_connections_task' with args {} on 1 hosts
+2023-04-23 19:42:09,812 -  nornir.core -     INFO -        run() - Running task 'napalm_get' with args {'getters': ['get_interfaces']} on 1 hosts
+2023-04-23 19:42:10,780 -  nornir.core -     INFO -        run() - Running task 'Configuration interface.../' with args {'config_commands': ['interface Ethernet0/3', '    description VK-1', '    switchport access vlan 310', '    switchport mode access', '    no shutdown']} on 1 hosts
+2023-04-23 19:42:12,686 -  nornir.core -     INFO -        run() - Running task 'close_connections_task' with args {} on 1 hosts

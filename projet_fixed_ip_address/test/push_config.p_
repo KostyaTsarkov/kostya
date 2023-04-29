@@ -103,12 +103,18 @@ def push_config_interface(netbox_interface,content,event='None'):
     :return: None
     """
     
+    
     global network_devices_roles
     global global_id
-    global global_dcim 
+    global global_dcim
+    #global device_username
+    #global device_password
+    global config_context
+    
     global_dcim = 'dcim.device'
     global_id = netbox_interface.device.id
     device_role = netbox_interface.device.device_role.slug
+    device_name = netbox_interface.device.name
     
 
     if device_role in network_devices_roles:
@@ -130,6 +136,8 @@ def push_config_interface(netbox_interface,content,event='None'):
             
             nr = create_nornir_session()
             sw = nr.filter(hostname = filter_query) # производим отбор по конкретному хосту
+            #sw.inventory.hosts[device_name].username = device_username # имя из Netbox
+            #sw.inventory.hosts[device_name].password = device_password # пароль из Netbox
             get_int = sw.run(task=napalm_get, getters=['get_interfaces']) # получаем все интерфейсы с устройства в виде словаря
             
             for _ in range(attempts): # попытка подключения к устройству

@@ -5,9 +5,7 @@ import ipaddress
 from jinja2 import Environment, FileSystemLoader
 import macaddress
 from pydhcpdparser import parser
-from global_var import(global_id,
-                        global_dcim,
-                        parent_path,
+from global_var import( parent_path,
                         templates_path)
 
 # Создаем функцию проверки None
@@ -236,7 +234,7 @@ def update_ip_address(netbox_interface,snapshot_json,netbox_ip_address,netbox_ad
 
             if old_interface_id != netbox_interface.id: # если старое назначение принадлежит другому интерфейсу
                 old_interface_data = netbox_api.dcim.interfaces.get(old_interface_id) # измененияем конфигурацию перед настройкой нового устройства
-                if not old_interface_data.mgmt_only: # если интерфейс не используется для управления! 
+                if not old_interface_data.mgmt_only: # type: ignore # если интерфейс не используется для управления! 
                     delete_ip_address(  netbox_interface,
                                         netbox_ip_address,
                                         netbox_address_family)
@@ -261,30 +259,30 @@ def update_ip_address(netbox_interface,snapshot_json,netbox_ip_address,netbox_ad
 
 def mng_ip():
         
-    get_device_interface = netbox_api.dcim.interfaces.get(request.json["data"]["assigned_object_id"])    
-    get_device_ips = request.json["data"]["address"]
-    get_address_family = request.json["data"]["family"]["value"]
+    get_device_interface = netbox_api.dcim.interfaces.get(request.json["data"]["assigned_object_id"]) # type: ignore
+    get_device_ips = request.json["data"]["address"] # type: ignore
+    get_address_family = request.json["data"]["family"]["value"] # type: ignore
 
-    if get_device_interface.mgmt_only: # проверяем, является ли интерфейс management интерфейсов
+    if get_device_interface.mgmt_only: # type: ignore # проверяем, является ли интерфейс management интерфейсов
         print("\tManagement interface, no changes will be performed...")
     else:
-            if request.json["event"] == "deleted": # IP адрес будет удален
+            if request.json["event"] == "deleted": # type: ignore # IP адрес будет удален
 
                 delete_ip_address(  netbox_interface=get_device_interface,
                                     netbox_ip_address=get_device_ips,
                                     netbox_address_family=get_address_family
                                     )
 
-            elif request.json["event"] == "created": # IP адрес будет добавлен
+            elif request.json["event"] == "created": # type: ignore # IP адрес будет добавлен
 
                 create_ip_address(netbox_interface=get_device_interface,
                                     netbox_ip_address=get_device_ips,
                                     netbox_address_family=get_address_family)
 
-            elif request.json["event"] == "updated": # IP адрес будет добавлен
+            elif request.json["event"] == "updated": # type: ignore # IP адрес будет добавлен
 
                 update_ip_address(  netbox_interface=get_device_interface,
-                                    snapshot_json=request.json.get("snapshots"),
+                                    snapshot_json=request.json.get("snapshots"), # type: ignore
                                     netbox_ip_address=get_device_ips,
                                     netbox_address_family=get_address_family
                                     )
