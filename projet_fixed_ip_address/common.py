@@ -393,104 +393,109 @@ def mng_cable():
     Проверка полученных устройств на соответствие списку (access switch и user device)
     :return: Response(status=204)
     """
-        
-    devices_keys = ['role','device_id','intf_id'] # список ключей для словаря devices
-    devices = []
-    devices_names = []
-    templates_roles = ['access_switch', 'user_device'] # присваиваем значение из netbox ("произвольные" данные)
-    device_roles = []
-    regex = "[a|b]_terminations"
     
-    # Получаем данные через flask от webhook netbox:
-    get_cable = request.json['data'] # type: ignore
-    get_event = request.json["event"] # type: ignore
-    prechange = request.json['snapshots']['prechange'] # type: ignore
-    postchange = request.json['snapshots']['postchange'] # type: ignore
-    
-    global global_id
-    global global_dcim
-    global config_context
-    global_dcim = 'dcim.cable'
-    global_id = get_cable['id']
+    try:    
+        devices_keys = ['role','device_id','intf_id'] # список ключей для словаря devices
+        devices = []
+        devices_names = []
+        #templates_roles = ['access_switch', 'user_device'] # присваиваем значение из netbox ("произвольные" данные)
+        device_roles = []
+        regex = "[a|b]_terminations"
         
-    for key in get_cable.keys(): # заполняем список device_value и объединяем с device_keys в словарь
+        # Получаем данные через flask от webhook netbox:
+        get_cable = request.json['data'] # type: ignore
+        get_event = request.json["event"] # type: ignore
+        prechange = request.json['snapshots']['prechange'] # type: ignore
+        postchange = request.json['snapshots']['postchange'] # type: ignore
+        
+        global global_id
+        global global_dcim
+        global config_context
+        global_dcim = 'dcim.cable'
+        global_id = get_cable['id']
+            
+        for key in get_cable.keys(): # заполняем список device_value и объединяем с device_keys в словарь
 
-        if re.match(regex, key) and len(get_cable[key])==1:  # отбираем нужные ключи из словаря по регулярке
-                                                                # при условии, что интерфейс один на устройство
-            for _ in range(len(get_cable[key])):
-                device_id = get_cable[key][_]['object']['device']['id'] # ID устройства из json
-                devices_values = []
-                devices_names.append(netbox_api.dcim.devices.get(device_id).name) # type: ignore # наименование устройства через netbox_api
-                devices_values.append(netbox_api.dcim.devices.get(device_id).device_role.slug) # type: ignore # роль устройства через netbox_api
-                devices_values.append(device_id) # id устройства
-                devices_values.append(get_cable[key][_]['object']['id']) # ID интерфейса устройства из json
-                devices.append(dict(zip(devices_keys,devices_values))) # получаем список из словарей
-    
-    config_context = SimpleNamespace(**dict(netbox_api.dcim.devices.get(device_id).config_context)) # type: ignore
-    templates_roles = config_context.network_devices_roles
-    templates_roles.extend(config_context.user_devices_roles)
-    
-    for device in devices: # заполняем список ролей
-        device_roles.append(device['role'])
-    
-    print("{} cable ID #{} between {}...".format(get_event.upper(),get_cable['id'], devices_names))
-    
-    if set(device_roles).issubset(set(templates_roles)): # проверяем, что получили устройства с разными ролями и соответствущие списку    
+            if re.match(regex, key) and len(get_cable[key])==1:  # отбираем нужные ключи из словаря по регулярке
+                                                                    # при условии, что интерфейс один на устройство
+                for _ in range(len(get_cable[key])):
+                    device_id = get_cable[key][_]['object']['device']['id'] # ID устройства из json
+                    devices_values = []
+                    devices_names.append(netbox_api.dcim.devices.get(device_id).name) # type: ignore # наименование устройства через netbox_api
+                    devices_values.append(netbox_api.dcim.devices.get(device_id).device_role.slug) # type: ignore # роль устройства через netbox_api
+                    devices_values.append(device_id) # id устройства
+                    devices_values.append(get_cable[key][_]['object']['id']) # ID интерфейса устройства из json
+                    devices.append(dict(zip(devices_keys,devices_values))) # получаем список из словарей
         
-        for device in devices:
-            
-            if device['role'] == templates_roles[0]: # нам нужен access switch
-                device_intf_id = device['intf_id'] # получаем ID интерфейса access switchа из нами созданного словаря            
+        config_context = SimpleNamespace(**dict(netbox_api.dcim.devices.get(device_id).config_context)) # type: ignore
+        templates_roles = config_context.network_devices_roles
+        templates_roles.extend(config_context.user_devices_roles)
         
-        get_device_interface = netbox_api.dcim.interfaces.get(device_intf_id) # type: ignore # по ID находим интерфейс через netbox_api
-        interface_name = get_device_interface.name # type: ignore
-        interface_mode_802_1Q = convert_none_to_str(get_device_interface.mode.value if get_device_interface.mode else None) # type: ignore
-        global_dcim = 'dcim.device'
-        global_id = get_device_interface.device.id # type: ignore
-        config_context = SimpleNamespace(**dict(netbox_api.dcim.devices.get(global_id).config_context)) # type: ignore
-        print("Connection between {} and {}, switch access interface ID: {}...".format(device_roles[0],device_roles[1], device_intf_id)) # type: ignore
+        for device in devices: # заполняем список ролей
+            device_roles.append(device['role'])
         
-        if get_device_interface.mgmt_only: # type: ignore # проверяем, является ли интерфейс management интерфейсов
-            # > добавляем запись в журнал
-            comment,level = '{} is management interface, no changes will be performed'.format(interface_name),'notification'                
-            print(journal_template_fill(comment,level,global_id,global_dcim))
-            # <
+        print("{} cable ID #{} between {}...".format(get_event.upper(),get_cable['id'], devices_names))
         
-        # проверяем, является ли порт транковым (транковый порт не трогаем)
-        elif interface_mode_802_1Q in ['tagged','tagged-all']:
-            # вызываем функцию внесения изменений настроек порта устройства
-            print('Interface {} is mode {}'.format(interface_name,interface_mode_802_1Q))
-        
-        else:
+        if set(device_roles).issubset(set(templates_roles)): # проверяем, что получили устройства с разными ролями и соответствущие списку    
             
-            if get_event == "created": # Конфиг интерфейса будет добавлен
-                mng_connected_interfaces(get_device_interface,event='create',role=templates_roles[0])
-                #change_config_intf(netbox_interface=get_device_interface,event='create')
+            for device in devices:
+                
+                if device['role'] == templates_roles[0]: # нам нужен access switch
+                    device_intf_id = device['intf_id'] # получаем ID интерфейса access switchа из нами созданного словаря            
             
-            elif get_event == "deleted": # Конфиг интерфейса будет удален
-                mng_connected_interfaces(get_device_interface,event='delete',role=templates_roles[0])
-                #change_config_intf(netbox_interface=get_device_interface,event='delete')
+            get_device_interface = netbox_api.dcim.interfaces.get(device_intf_id) # type: ignore # по ID находим интерфейс через netbox_api
+            interface_name = get_device_interface.name # type: ignore
+            interface_mode_802_1Q = convert_none_to_str(get_device_interface.mode.value if get_device_interface.mode else None) # type: ignore
+            global_dcim = 'dcim.device'
+            global_id = get_device_interface.device.id # type: ignore
+            config_context = SimpleNamespace(**dict(netbox_api.dcim.devices.get(global_id).config_context)) # type: ignore
+            print("Connection between {} and {}, switch access interface ID: {}...".format(device_roles[0],device_roles[1], device_intf_id)) # type: ignore
             
-            elif get_device_interface.enabled == False: # type: ignore
-                print('Interface {} was turned off before'.format(interface_name))
-                pass
-            
-            elif get_event == "updated" and compare(prechange,postchange) != None: # Конфиг интерфейса будет изменен
-                change_config_intf(netbox_interface=get_device_interface,event='update') 
-             
-            else:
+            if get_device_interface.mgmt_only: # type: ignore # проверяем, является ли интерфейс management интерфейсов
                 # > добавляем запись в журнал
-                comment,level = 'No data for {} {}'.format(get_event.lower(),interface_name),'informational'
+                comment,level = '{} is management interface, no changes will be performed'.format(interface_name),'notification'                
                 print(journal_template_fill(comment,level,global_id,global_dcim))
                 # <
             
-    else:
-        # > добавляем запись в журнал
-        comment,level = 'Devices must match the list of {}'.format(templates_roles),'notification'                
-        print(comment)
-        # <           
- 
-    return Response(status=204)
+            # проверяем, является ли порт транковым (транковый порт не трогаем)
+            elif interface_mode_802_1Q in ['tagged','tagged-all']:
+                # вызываем функцию внесения изменений настроек порта устройства
+                print('Interface {} is mode {}'.format(interface_name,interface_mode_802_1Q))
+            
+            else:
+                
+                if get_event == "created": # Конфиг интерфейса будет добавлен
+                    mng_connected_interfaces(get_device_interface,event='create',role=templates_roles[0])
+                    #change_config_intf(netbox_interface=get_device_interface,event='create')
+                
+                elif get_event == "deleted": # Конфиг интерфейса будет удален
+                    mng_connected_interfaces(get_device_interface,event='delete',role=templates_roles[0])
+                    #change_config_intf(netbox_interface=get_device_interface,event='delete')
+                
+                elif get_device_interface.enabled == False: # type: ignore
+                    print('Interface {} was turned off before'.format(interface_name))
+                    pass
+                
+                elif get_event == "updated" and compare(prechange,postchange) != None: # Конфиг интерфейса будет изменен
+                    change_config_intf(netbox_interface=get_device_interface,event='update') 
+                
+                else:
+                    # > добавляем запись в журнал
+                    comment,level = 'No data for {} {}'.format(get_event.lower(),interface_name),'informational'
+                    print(journal_template_fill(comment,level,global_id,global_dcim))
+                    # <
+                
+        else:
+            # > добавляем запись в журнал
+            comment,level = 'Devices must match the list of {}'.format(templates_roles),'notification'                
+            print(comment)
+            # <           
+    
+    except ValueError: 
+        print('Something went wrong!')
+    
+    finally:
+        return Response(status=204)
 
 
 # Управление интерфейсом
@@ -500,82 +505,86 @@ def mng_int():
     Проверяем полученые данные на соответствие определенным условиям и передаем их на устройства
     :return: Response(status=204)
     """
+    try:
+        # Получаем данные через flask от webhook netbox:
+        event = request.json["event"] # type: ignore
+        mng_int_id = request.json['data']['id'] # type: ignore
+        prechange = request.json['snapshots']['prechange'] # type: ignore
+        postchange = request.json['snapshots']['postchange'] # type: ignore
 
-    # Получаем данные через flask от webhook netbox:
-    event = request.json["event"] # type: ignore
-    mng_int_id = request.json['data']['id'] # type: ignore
-    prechange = request.json['snapshots']['prechange'] # type: ignore
-    postchange = request.json['snapshots']['postchange'] # type: ignore
+        # Запрашиваем данные через netbox_api:
+        get_device_interface = netbox_api.dcim.interfaces.get(mng_int_id)
+        interface_name = convert_none_to_str(get_device_interface.name) # type: ignore
+        device_role = convert_none_to_str(get_device_interface.device.device_role.slug) # type: ignore
+        interface_mode_802_1Q = convert_none_to_str(get_device_interface.mode.value if get_device_interface.mode else None) # type: ignore
 
-    # Запрашиваем данные через netbox_api:
-    get_device_interface = netbox_api.dcim.interfaces.get(mng_int_id)
-    interface_name = convert_none_to_str(get_device_interface.name) # type: ignore
-    device_role = convert_none_to_str(get_device_interface.device.device_role.slug) # type: ignore
-    interface_mode_802_1Q = convert_none_to_str(get_device_interface.mode.value if get_device_interface.mode else None) # type: ignore
-
-    #global network_devices_roles
-    #global user_devices_roles
-    global global_id
-    global global_dcim
-    global config_context
-    
-    global_dcim = 'dcim.device'
-    global_id = get_device_interface.device.id # type: ignore
-    
-    config_context = SimpleNamespace(**dict(netbox_api.dcim.devices.get(global_id).config_context)) # type: ignore
-    network_devices_roles = config_context.network_devices_roles
-    user_devices_roles = config_context.user_devices_roles
-    
-    print("{} {}...".format(event.upper(), interface_name))
-
-    # проверяем, является ли интерфейс management интерфейсом
-    if get_device_interface.mgmt_only: # type: ignore
-        # > добавляем запись в журнал
-        comment, level = '{} is management interface, no changes will be performed'.format(
-            interface_name), 'notification'
-        print(journal_template_fill(comment, level, global_id, global_dcim))
-        # <
-
-    # проверяем, изменились ли данные
-    elif compare(prechange, postchange) == None:  
-        # > добавляем запись в журнал
-        comment, level = 'No data for {} {}'.format(
-            event.lower(), interface_name), 'informational'
-        print(journal_template_fill(comment, level, global_id, global_dcim))
-        # <
-    
-    # проверяем, соответствует ли изменению ВЫКЛ->ВЫКЛ
-    elif request.json['data']['enabled'] == False and prechange['enabled'] == False: # type: ignore
-        print('Interface {} was turned off before'.format(interface_name))    
+        #global network_devices_roles
+        #global user_devices_roles
+        global global_id
+        global global_dcim
+        global config_context
         
-    # проверяем, является ли устройство сетевым устройством
-    elif device_role in network_devices_roles:  
+        global_dcim = 'dcim.device'
+        global_id = get_device_interface.device.id # type: ignore
         
-        # проверяем, является ли порт транковым (транковый порт не выключаем)
-        if interface_mode_802_1Q in ['tagged','tagged-all']:
-            # вызываем функцию внесения изменений настроек порта устройства
-            print('Interface {} is mode {}'.format(interface_name,interface_mode_802_1Q))
-            change_config_intf(get_device_interface, event='update')
+        config_context = SimpleNamespace(**dict(netbox_api.dcim.devices.get(global_id).config_context)) # type: ignore
+        network_devices_roles = config_context.network_devices_roles
+        user_devices_roles = config_context.user_devices_roles
         
-        else:
-            
-            # проверяем, соответствует ли изменению ВКЛ->ВЫКЛ
-            if request.json['data']['enabled'] == False and prechange['enabled'] == True: # type: ignore
-                # > добавляем запись в журнал
-                comment, level = 'Interface {} is disabled on the device'.format(
-                    interface_name), 'notification'
-                print(journal_template_fill(comment, level, global_id, global_dcim))
-                # <
-                # вызываем функцию выключения порта устройства
-                change_config_intf(get_device_interface, event='shutdown')
-            
-            else: change_config_intf(get_device_interface, event='update')
-            
-    # проверяем, является ли устройство конечным (пользователя)
-    elif device_role in user_devices_roles:
-        # вызываем функцию внесения изменений настроек связанных портов
-        mng_connected_interfaces(get_device_interface, event='update',role=device_role)
-    
-    else: print('Device role is "{}"'.format(device_role))
+        print("{} {}...".format(event.upper(), interface_name))
 
-    return Response(status=204)
+        # проверяем, является ли интерфейс management интерфейсом
+        if get_device_interface.mgmt_only: # type: ignore
+            # > добавляем запись в журнал
+            comment, level = '{} is management interface, no changes will be performed'.format(
+                interface_name), 'notification'
+            print(journal_template_fill(comment, level, global_id, global_dcim))
+            # <
+
+        # проверяем, изменились ли данные
+        elif compare(prechange, postchange) == None:  
+            # > добавляем запись в журнал
+            comment, level = 'No data for {} {}'.format(
+                event.lower(), interface_name), 'informational'
+            print(journal_template_fill(comment, level, global_id, global_dcim))
+            # <
+        
+        # проверяем, соответствует ли изменению ВЫКЛ->ВЫКЛ
+        elif request.json['data']['enabled'] == False and prechange['enabled'] == False: # type: ignore
+            print('Interface {} was turned off before'.format(interface_name))    
+            
+        # проверяем, является ли устройство сетевым устройством
+        elif device_role in network_devices_roles:  
+            
+            # проверяем, является ли порт транковым (транковый порт не выключаем)
+            if interface_mode_802_1Q in ['tagged','tagged-all']:
+                # вызываем функцию внесения изменений настроек порта устройства
+                print('Interface {} is mode {}'.format(interface_name,interface_mode_802_1Q))
+                change_config_intf(get_device_interface, event='update')
+            
+            else:
+                
+                # проверяем, соответствует ли изменению ВКЛ->ВЫКЛ
+                if request.json['data']['enabled'] == False and prechange['enabled'] == True: # type: ignore
+                    # > добавляем запись в журнал
+                    comment, level = 'Interface {} is disabled on the device'.format(
+                        interface_name), 'notification'
+                    print(journal_template_fill(comment, level, global_id, global_dcim))
+                    # <
+                    # вызываем функцию выключения порта устройства
+                    change_config_intf(get_device_interface, event='shutdown')
+                
+                else: change_config_intf(get_device_interface, event='update')
+                
+        # проверяем, является ли устройство конечным (пользователя)
+        elif device_role in user_devices_roles:
+            # вызываем функцию внесения изменений настроек связанных портов
+            mng_connected_interfaces(get_device_interface, event='update',role=device_role)
+        
+        else: print('Device role is "{}"'.format(device_role))
+
+    except ValueError: 
+        print('Something went wrong!')
+    
+    finally:
+        return Response(status=204)
