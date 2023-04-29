@@ -35,7 +35,15 @@ def mng_int():
     
     global_dcim = 'dcim.device'
     global_id = get_device_interface.device.id # type: ignore
+<<<<<<< HEAD:projet_fixed_ip_address/nb_sw_int_api.py
+
+    #local_context = get_device_interface.device.local_context_data
+    config_context = get_device_interface.device.config_context
+    print([config_context.device_password,config_context.device_username])
+    print(get_device_interface.device.config_context)
+=======
     
+>>>>>>> bfa0f857ed944ff587e12f0edc60e831ad9aa85d:projet_fixed_ip_address/test/nb_sw_int_api.p_
     print("{} {}...".format(event.upper(), interface_name))
 
     # проверяем, является ли интерфейс management интерфейсом

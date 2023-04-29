@@ -118,14 +118,17 @@ def push_config_interface(netbox_interface,content,event='None'):
     
 
     if device_role in network_devices_roles:
-        attempts = 3 # количество попыток подключения
-        attempt_timeout = 5 # время ожидания между попытками в секундах
-        fail_count = 0 # количество неудачных попыток
+        global attempts # количество попыток подключения
+        global attempt_timeout # время ожидания между попытками в секундах
+        global fail_count # количество неудачных попыток
+        global timeout
+        global retry
+        global ignore_lookup_errors
         name = netbox_interface.name
         addrs = []
         filter_query = mgmt_address(netbox_interface) # адрес интерфейса управления
         addrs.append(filter_query)
-        responses, no_responses = multi_ping(addrs, timeout=0.5, retry=2,ignore_lookup_errors=True)
+        responses, no_responses = multi_ping(addrs,timeout,retry,ignore_lookup_errors)
         print("icmp ping...")
         
         if filter_query in list(responses.keys()): # если адрес интерфейса управления доступен (icmp ping)
