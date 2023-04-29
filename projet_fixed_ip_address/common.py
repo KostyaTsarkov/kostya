@@ -1,3 +1,7 @@
+from typing import Any, Dict, Optional, Union
+from nornir.core import Nornir
+
+import nornir_netmiko
 from journal import journal_template_fill
 import ipaddress
 import re
@@ -17,251 +21,400 @@ from nornir_netmiko.tasks import netmiko_send_config
 
 
 
-def parse_interface_name(interface_name):
+def parse_interface_name(interface_name: str) -> tuple:
     """
-    Разделяем строку на тип интерфейса и идентификатор интерфейса. 
-    :param interface_name: имя интерфейса
-    :return: interface_type, interface_id
+    Parses an interface name string into its type and ID components.
+
+    Args:
+        interface_name: A string representing the name of the interface to parse.
+
+    Returns:
+        A tuple containing two strings: the type of the interface and its ID.
+
+    Raises:
+        ValueError: If the interface name is invalid and cannot be parsed.
     """
-    interface_pattern = r"^(\D+)(\d+.*)$"
-    interface_regex = re.compile(interface_pattern)
 
-    interface_type, interface_id = interface_regex.match(str(interface_name)).groups()  # type: ignore
 
+    # Define a regular expression pattern to match the interface name
+    # The pattern consists of two groups:
+    #   1. A non-digit character sequence to capture the interface type
+    #   2. A digit sequence followed by any characters to capture the interface ID
+    INTERFACE_PATTERN = r"^(\D+)(\d+.*)$"
+
+    # Compile the regular expression pattern into a regex object
+    interface_regex = re.compile(INTERFACE_PATTERN)
+
+    try:
+        # Attempt to extract the interface type and ID using the regex
+        interface_type, interface_id = interface_regex.fullmatch(interface_name).groups()
+    except AttributeError:
+        # If the regex doesn't match, the interface name is invalid
+        raise ValueError("Invalid interface name")
+
+    # Return the interface type and ID as a tuple
     return interface_type, interface_id
 
 
-def configure_interface_ipv4_address(netbox_ip_address='0.0.0.0'):
+# Define a function called 'extract_ipv4_info' which takes a string argument 'netbox_ip_address' and returns a dictionary
+def extract_ipv4_info(netbox_ip_address: str) -> dict:
     """
-    Извлекаем IPv4 адреса, маски, сети, префикса, шлюза и возвращем словарь
-    :param netbox_ip_address: IPv4 адрес (IP/Prefix)
-    :return: ipv4_dic
-    """
-        
-    ipv4_dic = dict()  # type: ignore
-    
-    global global_dcim
-    global global_id
-    
-    try:
-        ip_cidr = ipaddress.ip_interface(netbox_ip_address)
-        
-        ipv4_dic['ip4_address'] = format(ipaddress.IPv4Interface(ip_cidr).ip)
-        ipv4_dic['ip4_netmask'] = format(ipaddress.IPv4Interface(ip_cidr).netmask)
-        ipv4_dic['ip4_network'] = format(ipaddress.IPv4Interface(ip_cidr).network)
-        ipv4_dic['ip4_prefix'] = format(ipaddress.IPv4Network(ipv4_dic['ip4_network']).prefixlen)
-        ipv4_dic['ip4_broadcast'] = format(ipaddress.IPv4Network(ipv4_dic['ip4_network']).broadcast_address)
-        
-        if (ipaddress.IPv4Network(ipv4_dic['ip4_network']).num_addresses) > 1:
-            ipv4_dic['ip4_gateway'] = format(list(ipaddress.IPv4Network(ipv4_dic['ip4_network']).hosts())[-1])
-        return(ipv4_dic)
-    
-    except ValueError:
-        # > добавляем запись в журнал
-        comment,level = 'address/netmask is invalid for IPv4 {}'.format(netbox_ip_address),'error'                
-        log = (journal_template_fill(comment,level,global_id,global_dcim))
-        return(log)
-        # <
-        
-        
-def mgmt_address(device_interface):
-    """
-    Извлечение IPv4 адреса интерефейса управления.
-    :param device_interface: ссылка на объект интерфейса pynetbox
-    :return: mgmt_ip
+    Extracts IPv4 address, netmask, network, prefix, broadcast, and gateway from a given IP address
+   
+    Args:
+        netbox_ip_address (str): IPv4 address (IP/Prefix)
+   
+    Returns:
+        dict: A dictionary containing the extracted IPv4 address, netmask, network, prefix, broadcast, and gateway
     """    
 
-    interface_type, interface_id = parse_interface_name(device_interface.name)
-    mgmt_ip = configure_interface_ipv4_address(device_interface.device.primary_ip)['ip4_address'] # type: ignore
+
+# Convert the given IP address to CIDR notation
+    ip_cidr = ipaddress.ip_interface(netbox_ip_address)
+
+    # Initialize an empty dictionary called 'ipv4_dic' to store the extracted information
+    ipv4_dic = dict()
+
+    # Extract the IPv4 address and add it to the dictionary
+    ipv4_dic['ip4_address'] = f"{ipaddress.IPv4Interface(ip_cidr).ip}"
+
+    # Extract the IPv4 netmask and add it to the dictionary
+    ipv4_dic['ip4_netmask'] = f"{ipaddress.IPv4Interface(ip_cidr).netmask}"
+
+    # Extract the IPv4 network address and add it to the dictionary
+    ipv4_dic['ip4_network'] = f"{ipaddress.IPv4Interface(ip_cidr).network}"
+
+    # Extract the IPv4 prefix length and add it to the dictionary
+    ipv4_dic['ip4_prefix'] = f"{ipaddress.IPv4Network(ipv4_dic['ip4_network']).prefixlen}"
+
+    # Extract the IPv4 broadcast address and add it to the dictionary
+    ipv4_dic['ip4_broadcast'] = f"{ipaddress.IPv4Network(ipv4_dic['ip4_network']).broadcast_address}"
+
+    # If the IPv4 network has more than one address, extract the IPv4 gateway address and add it to the dictionary
+    if (ipaddress.IPv4Network(ipv4_dic['ip4_network']).num_addresses) > 1:
+        ipv4_dic['ip4_gateway'] = f"{list(ipaddress.IPv4Network(ipv4_dic['ip4_network']).hosts())[-1]}"
+
+    # Return the dictionary containing the extracted information
+    return ipv4_dic
     
-    return(mgmt_ip)
+    
+# This function configures an IPv4 address for an interface using data from Netbox.
+# It takes in a netbox_ip_address in string format (e.g. 192.0.2.1/24) and global_dcim, global_id objects.
+# It returns a dictionary containing the extracted IP address, subnet mask, and broadcast address.
+def configure_interface_ipv4_address(netbox_ip_address: str = '0.0.0.0',global_dcim=None, global_id=None) -> dict:
+    """
+    Configures an IPv4 address for an interface using data from Netbox.
+
+    Args:
+        netbox_ip_address (str): The IP address in Netbox format (e.g. 192.0.2.1/24).
+        global_dcim: The global DCIM object.
+        global_id: The global ID object.
+
+    Returns:
+        ipv4_dict (dict): A dictionary containing the extracted IP address, subnet mask,
+                          and broadcast address.
+
+    """
+    
+    
+    # Create an empty dictionary to store the extracted IP address, subnet mask, and broadcast address.
+    ipv4_dict = {}
+
+    try:
+        # Call a function to extract the IP address, subnet mask, and broadcast address from the netbox_ip_address.
+        ipv4_dict = extract_ipv4_info(netbox_ip_address)
+
+    # If the netbox_ip_address is invalid, log an error and add a journal entry.
+    except ipaddress.AddressValueError:
+        comment, level = f'Invalid address/netmask for IPv4 {netbox_ip_address}', 'error'
+        journal_template_fill(comment, level, global_id, global_dcim)
+        logger.error(comment)
+
+    # Return the dictionary containing the extracted IP address, subnet mask, and broadcast address.
+    return ipv4_dict
+        
+        
+def get_management_address(device_interface: Any) -> Union[str, None]:
+    """
+    This function takes a device interface object and returns the IP address of the device's primary interface,
+    which can be used as the management address. If the device_interface object or its attributes are None, None is returned.
+
+    Args:
+        device_interface (Any): A device interface object.
+
+    Returns:
+        Union[str, None]: The IP address of the device's primary interface, or None if the device_interface object 
+        or its attributes are None.
+    """
+    
+    
+    # Check if the device_interface object or its name attribute are None, and return None if so
+    if not device_interface or not device_interface.name:
+        return None
+
+    # Parse the interface name to determine its type and ID
+    interface_type, interface_id = parse_interface_name(device_interface.name)
+
+    # Check if the device_interface object or its device attribute or its primary_ip attribute are None,
+    # and return None if so
+    if not device_interface.device or not device_interface.device.primary_ip:
+        return None
+
+    # Get the primary IP address of the device
+    primary_ip = device_interface.device.primary_ip
+
+    # Try to configure the interface's IPv4 address using the primary IP address, and return the IP address
+    # if successful. If an error occurs (e.g. the primary IP address is invalid), return None
+    try:
+        return configure_interface_ipv4_address(primary_ip)['ip4_address']
+    except (KeyError, TypeError):
+        return None
 
 
 def compare(prechange, postchange):
-    """ 
-    Сравниваем два объекта и возращаем словарь
-    :param prechange: старые данные 
-    :param prechange: новые данные
-    :return: change
-    """   
-    compare = DeepDiff(prechange,postchange,exclude_paths="root['last_updated']")
-    change = dict()
+    """
+    Compare two dictionaries and return a dictionary of the differences between them.
+
+    Args:
+        prechange (Dict[str, Union[str, int, float]]): The first dictionary to compare.
+        postchange (Dict[str, Union[str, int, float]]): The second dictionary to compare.
+        exclude_paths (Optional[str], optional): Exclude a specific key from the comparison. Defaults to "root['last_updated']".
+
+    Returns:
+        Optional[Dict[str, Union[str, int, float]]]: A dictionary of the differences between the two input dictionaries.
+    """
+    
+
+    # Compare the two dictionaries using the DeepDiff library
+    compare = DeepDiff(prechange, postchange, exclude_paths="root['last_updated']")
+
+    # Initialize an empty dictionary and two empty lists
+    change = {}
     change_key = []
     new_value = []
 
+    # Loop through the keys in the 'compare' dictionary
     for key in compare.keys():
-        
+        # If the key is 'values_changed' or 'type_changes'
         if key == 'values_changed' or key == 'type_changes':
-            
+            # Loop through the keys in the 'values_changed' or 'type_changes' dictionary
             for inkey in compare[key].keys():
+                # Extract the key name from the string using regex and append it to the 'change_key' list
                 change_key.append(re.findall("'([^']*)'", inkey)[0])
+                # Append the new value to the 'new_value' list
                 new_value.append(compare[key][inkey]['new_value'])
 
-    change = dict(zip(change_key,new_value)) # объединяем два списка в словарь
-    
+    # Combine the 'change_key' and 'new_value' lists into a dictionary
+    change = dict(zip(change_key, new_value))
+
+    # If there are no changes, set 'change' to None
     if len(change) == 0:
         change = None
-    
+
+    # Return the 'change' dictionary
     return change
 
 
-def convert_none_to_str(value):
-    """ 
-    Конвертируем None в пустую строку
-    :param value: данные 
-    :return: '' or 'value'
-    """ 
-    return '' if value is None else str(value)
-
-
-def create_nornir_session():
-    """ 
-    Инициализируем nornir, но для "hosts" используем данные из netbox
-    :return: nr_session
+# This function takes in a variable called 'data'
+def convert_none_to_str(data):
     """
-    nr_session = InitNornir(
-        inventory={
-            "plugin": "NetBoxInventory2",
-            "options": {
-                "nb_url": netbox_url,
-                "nb_token": netbox_token,
-                "group_file": "./inventory/groups.yml",
-                "defaults_file": "./inventory/defaults.yml",
-            },
+    Convert None to an empty string.
+
+    Args:
+        data: Any data type.
+
+    Returns:
+        A string representing the input data, or an empty string if the input is None.
+    """
+    return str(data) if data is not None else ''
+
+
+def create_nornir_session(netbox_url: str, netbox_token: str) -> InitNornir:
+    """
+    Creates a Nornir object using the NetBoxInventory2 plugin.
+
+    Args:
+        netbox_url (str): The URL of the NetBox instance.
+        netbox_token (str): The API token to authenticate with NetBox.
+
+    Returns:
+        Nornir: The created Nornir object.
+
+    Raises:
+        TypeError: If netbox_url or netbox_token is not a string.
+        ValueError: If netbox_url does not start with 'http' or 'https'.
+    """
+
+    # Ensure that the arguments are strings
+    if not isinstance(netbox_url, str) or not isinstance(netbox_token, str):
+        raise TypeError("netbox_url and netbox_token must be strings")
+
+    # Ensure that the netbox_url argument starts with 'http' or 'https'
+    if not netbox_url.startswith(("http", "https")):
+        raise ValueError("netbox_url must start with 'http' or 'https'")
+
+    # Define inventory options
+    inventory = {
+        "plugin": "NetBoxInventory2",
+        "options": {
+            "nb_url": netbox_url,
+            "nb_token": netbox_token,
+            "group_file": "./inventory/groups.yml",
+            "defaults_file": "./inventory/defaults.yml",
         },
-    )
-    return nr_session
+    }
+
+    # Try to create a Nornir object using the Netmiko plugin
+    try:
+        nornir = InitNornir(inventory=inventory)
+    except Exception as e:
+        # If the creation of the Nornir object fails, print an error message
+        print(f"Error creating Nornir object: {e}")
+        return None
+
+    # Return the created Nornir object
+    return nornir
 
 
-# Заполняем шаблон
-def cisco_config_interface(j2_interface,event='None'):
-    """ 
-    Заполнение шаблона значениями, если событие "delete", то заполняем по умолчанию
-    :param j2_interface: ссылка на объект интерфейса pynetbox 
-    :param event: событие
-    :return: content
-    """   
+# This function generates a Cisco IOS configuration for a given interface
+# based on a set of templates. It takes in an interface object and an event
+# (optional), which can be used to control what template gets used.
+
+def cisco_config_interface(interface, event='None'):
+    """Fills a Cisco IOS configuration template with data from an interface object.
+
+    Args:
+        interface (Interface): An object representing the interface to configure.
+        event (str): Optional event type that determines which template to use. Default is 'None'.
+
+    Returns:
+        str: The content of the filled template.
+    """
     
     
-    global global_id
-    global global_dcim 
+    # Define global variables for the DCIM device and device ID
+    global global_id, global_dcim 
     global_dcim = 'dcim.device'
-    global_id = j2_interface.device.id
-    
-    def template_fill(*args,**kwargs):
-    
-        environment = Environment(loader=FileSystemLoader(templates_path)) # загружаем шаблон для заполнения
-        template = environment.get_template(template_file)
+    global_id = interface.device.id
+
+    # This is a nested function that fills a given template with a set of
+    # arguments and returns the content. It uses the Jinja2 templating engine.
+    def fill_template(*args, **kwargs):
+        # Set up a Jinja2 environment with a template loader
+        environment = Environment(loader=FileSystemLoader(templates_path))
+        # Get the template file from the kwargs
+        template = environment.get_template(kwargs['template_file'])
+        # Initialize the content to None
         content = None
-        global global_id
-        global global_dcim 
-        global_dcim = 'dcim.device'
-        global_id = j2_interface.device.id
-        
+
+        # Try to render the template with the given arguments
         try:
             if event == 'shutdown':
-                content = template.render( # заполняем шаблон
-                                    interface_name = convert_none_to_str(j2_interface.name)
-                                )
+                # If the event is 'shutdown', only pass in the interface name
+                content = template.render(interface_name=convert_none_to_str(interface.name))
             else:
-                content = template.render( # заполняем шаблон
-                                    interface_name = convert_none_to_str(j2_interface.name),
-                                    descr = convert_none_to_str(j2_interface.description),
-                                    access_vlan = convert_none_to_str(j2_interface.untagged_vlan.vid),
-                                    mode = convert_none_to_str(j2_interface.mode.value)
-                                )
-                return content
-        except: 
-            # > добавляем запись в журнал
-            comment,level =  'Not enough data to fill out the template','warning'                
-            print(journal_template_fill(comment,level,global_id,global_dcim))
-            # <
+                # Otherwise, pass in the interface name, description, VLAN, and mode
+                content = template.render(interface_name=convert_none_to_str(interface.name),
+                                           descr=convert_none_to_str(interface.description),
+                                           access_vlan=convert_none_to_str(interface.untagged_vlan.vid),
+                                           mode=convert_none_to_str(interface.mode.value))
+        # If there's not enough data to fill out the template, log a warning and return None
+        except:
+            comment, level = 'Not enough data to fill out the template', 'warning'
+            print(journal_template_fill(comment, level, global_id, global_dcim))
+        # Otherwise, log that the template is being filled and return the content
         else:
-            #print("Filling in the template...\n{}".format(content)) 
             print("Filling in the template...")
 
-        return content 
-        
+        return content
+
+    # Determine which template file to use based on the event
     if event == 'shutdown':
         template_file = "cisco_ios_shutdown_interface.template"
-        content = template_fill(j2_interface, template_file, event)
-    
-    elif event != 'delete':    
+    elif event != 'delete':
         template_file = "cisco_ios_access_interface.template"
-        content = template_fill(j2_interface, template_file)
-    
     else:
         template_file = "cisco_ios_default_interface.template"
-        content = template_fill(j2_interface, template_file)
 
+    # Fill the template and return the content
+    content = fill_template(interface=interface, template_file=template_file, event=event)
     return content
 
 
-def push_config_interface(netbox_interface,content,event='None'):
-    """  
-    Проверка на доступность устройства (ping)
-    Подключение к устройству по IP адресу, принадлежащему интерфейсу управления
-    Проверка соответствия портов между netbox и реальным устройством
-    Отправка конфигурации на устройство
-    :param netbox_interface: ссылка на объект интерфейса pynetbox
-    :return: None
+def push_config_interface(netbox_interface, content: str, event: str = 'None') -> None:
     """
-    
-    
-    #global network_devices_roles
-    global global_id
-    global global_dcim
-    global config_context
-    
-    global_dcim = 'dcim.device'
-    global_id = netbox_interface.device.id
-    device_role = netbox_interface.device.device_role.slug
-    device_name = netbox_interface.device.name
-    network_devices_roles = config_context.network_devices_roles
+    Pushes configuration to a network interface.
 
+    Parameters:
+        netbox_interface (Interface): the Netbox interface object to be configured
+        content (str): the configuration content to be pushed
+        event (str): not used in the function, just for compatibility with an external system
+
+    Returns:
+        None
+    """
+
+    #global network_devices_roles
+    global global_id, global_dcim, config_context # Define global variables used in the function
+
+    global_dcim = 'dcim.device'
+    global_id = netbox_interface.device.id # Get the ID of the device associated with the interface
+    device_role = netbox_interface.device.device_role.slug # Get the role of the device associated with the interface
+    device_name = netbox_interface.device.name # Get the name of the device associated with the interface
+    network_devices_roles = config_context.network_devices_roles # Get the list of device roles allowed in the configuration context
+
+    # Check that the device role is allowed in the configuration context
     if device_role in network_devices_roles:
-        attempts = config_context.attempts # количество попыток подключения
-        attempt_timeout = config_context.attempt_timeout # время ожидания между попытками в секундах
-        fail_count = config_context.fail_count # количество неудачных попыток
-        name = netbox_interface.name
+        attempts = config_context.attempts # Get the number of connection attempts allowed
+        attempt_timeout = config_context.attempt_timeout # Get the time to wait between connection attempts
+        fail_count = config_context.fail_count # Initialize the number of failed connection attempts to 0
+        name = netbox_interface.name # Get the name of the interface to configure
         addrs = []
-        filter_query = mgmt_address(netbox_interface) # адрес интерфейса управления
+        filter_query = get_management_address(netbox_interface) # Get the management address of the interface
         addrs.append(filter_query)
+
+        # Ping the management address to check if it's available
         responses, no_responses = multi_ping(addrs, 
                                              timeout=config_context.timeout, 
                                              retry=config_context.retry,
                                              ignore_lookup_errors=config_context.ignore_lookup_errors)
         print("icmp ping...")
-        
-        if filter_query in list(responses.keys()): # если адрес интерфейса управления доступен (icmp ping)
+
+        # If the management address is available
+        if filter_query in list(responses.keys()):
             print('{} is available...'.format(addrs))
-            
-            nr = create_nornir_session()
-            sw = nr.filter(hostname = filter_query) # производим отбор по конкретному хосту
-            sw.inventory.hosts[device_name].username = config_context.device_username # имя из Netbox
-            sw.inventory.hosts[device_name].password = config_context.device_password # пароль из Netbox
-            get_int = sw.run(task=napalm_get, getters=['get_interfaces']) # получаем все интерфейсы с устройства в виде словаря
-            
-            for _ in range(attempts): # попытка подключения к устройству
+
+            nr = create_nornir_session(netbox_url, netbox_token) # Create a Nornir session
+            sw = nr.filter(hostname = filter_query) # Filter the Nornir session to only include the device with the management address
+            sw.inventory.hosts[device_name].username = config_context.device_username # Set the device's username to the one in the configuration context
+            sw.inventory.hosts[device_name].password = config_context.device_password # Set the device's password to the one in the configuration context
+
+            # Get all interfaces on the device
+            get_int = sw.run(task=napalm_get, getters=['get_interfaces']) 
+
+            # Try to connect to the device
+            for _ in range(attempts):
                 print('Attempting to connect {}...'.format(_+1))
-        
-                if get_int.failed == True: # попытка не удалась
+
+                # If the connection fails
+                if get_int.failed == True:
                     fail_count += 1
                     time.sleep(attempt_timeout)
-                
-                else: # есть подключение
+
+                # If the connection is successful
+                else:
                     print('Connection state is connected...')
-            
+
                     for device in get_int.values():
-                        
-                        interfaces = device.result['get_interfaces'].keys() # получаем интерфейсы как ключи словаря  
+
+                        interfaces = device.result['get_interfaces'].keys() # Get the interfaces as keys in a dictionary  
                         if name in (intf for intf in list(interfaces)):
                             print("Find {} for device {}...".format(name, device.host))              
                             result = sw.run(netmiko_send_config,name="Configuration interface.../",config_commands=content)
-                            # > добавляем запись в журнал
+                            # Add an entry to the journal
                             comment,level = 'All operations are performed','success'                
                             print(journal_template_fill(comment,level,global_id,global_dcim))
-                            # <
+
                     break
             if fail_count>=attempts:
                 # > добавляем запись в журнал

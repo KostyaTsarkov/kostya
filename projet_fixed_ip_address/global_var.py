@@ -1,4 +1,5 @@
 import pathlib
+import logging
 
 #global_id = 0 # ID устройства, нужен для логирования
 #global_dcim = 'dcim.device' # нужен для логирования (зависит от настроек webhook 'Content types')
@@ -7,6 +8,7 @@ parent_path = str(pathlib.PurePath(__file__).parent)
 templates_path = parent_path+"/templates/"
 log = ''
 
+logger = logging.getLogger(__name__)
 # присваиваем значение из netbox ("произвольные" данные)
 #network_devices_roles = ['access_switch']
 # присваиваем значение из netbox ("произвольные" данные)
