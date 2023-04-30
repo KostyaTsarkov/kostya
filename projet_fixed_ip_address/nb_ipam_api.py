@@ -1,5 +1,5 @@
 
-from typing import Optional
+from typing import Dict, Any, Optional
 from flask import request, Response
 from config import netbox_api
 import ipaddress
@@ -25,7 +25,7 @@ def extract_ipv4_info(netbox_ip_address: str) -> dict:
     """    
 
 
-# Convert the given IP address to CIDR notation
+    # Convert the given IP address to CIDR notation
     ip_cidr = ipaddress.ip_interface(netbox_ip_address)
 
     # Initialize an empty dictionary called 'ipv4_dic' to store the extracted information
@@ -165,7 +165,7 @@ def delete_config_file(device_name: str, parent_path: str) -> None:
                             print(f"'{device_name}' configuration deleted...")
                         else:
                             # If the starting and ending indexes are not valid, print an error message
-                            print("Configuration file does not contain '{}'...".format(device_name))
+                            print(f"Configuration file does not contain '{device_name}'...")
                         # Exit the loop once the ending line is found
                         break
 
@@ -282,135 +282,163 @@ def dhcpd_config_file(ip_address: str, interface, event: str = 'None') -> None:
             print("MAC address isn’t compared...")
 
 
-# Удаляем IP-адрес
-
-def delete_ip_address(netbox_interface,netbox_ip_address,netbox_address_family):
-    
-    """  
-    Удаление ip адреса
-    :param netbox_interface: ссылка на объект интерфейса pynetbox
-    :param netbox_ip_address: IPv4 адрес (IP/Prefix)
-    :param netbox_address_family: Версия IP (4|6)
-    :return: None
+def delete_ip_address(interface, ip_address, address_family: int) -> None:
     """
-    ip_address = ''
-    interface = ''
-    
-    print(f"Removing address {netbox_ip_address} "
-          f"from interface '{netbox_interface.name}' "
-          f"on device '{netbox_interface.device.name}'...")
+    Deletes an IP address from a network interface.
 
-    if netbox_address_family == 4:
-        ip_address = configure_interface_ipv4_address(netbox_ip_address)
-        interface = netbox_interface
+    Args:
+    - interface: An object representing a network interface.
+    - ip_address: A string representing the IP address to be deleted.
+    - address_family: An integer representing the address family of the IP address (4 for IPv4, 6 for IPv6).
+
+    Returns:
+    - None
+
+    Raises:
+    - None
+
+    Deletes the specified IP address from the specified network interface. If the specified address is an IPv4 address,
+    it is first formatted using the configure_interface_ipv4_address() function. If the specified address is an IPv6
+    address, an error message is printed and the function returns without deleting the address.
+
+    After formatting the IP address (if necessary), the function prints a message indicating that it is removing the
+    specified address from the specified interface on the specified device. Finally, the function calls the
+    dhcpd_config_file() function with the specified interface, IP address, and event set to 'delete'.
+    """
+    
+    
+    # Check if the address family is IPv4
+    if address_family == 4:
+        # If it is, format the IP address using the configure_interface_ipv4_address() function
+        ip_address = configure_interface_ipv4_address(ip_address)
     else:
-        print("IPv6")
-    
-    """
-    Удаляем запись из конфигурационного файла DHCPd-службы
-    """
-    dhcpd_config_file(interface,ip_address,event='delete')
+        # If it's not IPv4, print an error message and return without deleting the address
+        print("IPv6 not supported")
+        return
 
-# Новый IP-адрес
+    # Print a message indicating that the specified address is being removed from the specified interface on the
+    # specified device
+    print(f"Removing address {ip_address} from interface '{interface.name}' on device '{interface.device.name}'...")
 
-def create_ip_address(netbox_interface,netbox_ip_address,netbox_address_family):
-    
-    """  
-    Создание ip адреса
-    :param netbox_interface: ссылка на объект интерфейса pynetbox
-    :param netbox_ip_address: IPv4 адрес (IP/Prefix)
-    :param netbox_address_family: Версия IP (4|6)
-    :return: None
+    # Call the dhcpd_config_file() function with the specified interface, IP address, and event set to 'delete'
+    dhcpd_config_file(interface, ip_address, event='delete')
+
+
+def create_ip_address(interface, ip_address, address_family: int) -> None:
     """
-    ip_address = ''
-    interface = ''
-    
-    print(f"Assigning address {netbox_ip_address} "
-          f"to interface '{netbox_interface.name}' "
-          f"on device '{netbox_interface.device.name}'...")
-    
-    if netbox_address_family == 4:
-        ip_address = configure_interface_ipv4_address(netbox_ip_address)
-        interface = netbox_interface
+    This function creates an IP address for a given interface.
+
+    Args:
+        interface: The interface to assign the IP address to.
+        ip_address: The IP address to assign.
+        address_family: The address family (4 for IPv4, 6 for IPv6).
+
+    Returns:
+        None
+    """
+
+    # Check if the address family is IPv4.
+    if address_family == 4:
+        # If so, configure the interface with an IPv4 address.
+        ip_address = configure_interface_ipv4_address(ip_address)
     else:
-        print("IPv6")
-    
-    """
-    Добавляем запись в конфигурационный файл DHCPd-службы
-    """
-    dhcpd_config_file(interface,ip_address,event='create')
+        # If not, print a message saying IPv6 is not supported and return.
+        print("IPv6 not supported.")
+        return
 
-# Изменяем IP-адрес
+    # Print a message indicating the IP address is being assigned to the interface.
+    print(f"Assigning address {ip_address} to interface '{interface.name}' on device '{interface.device.name}'...")
 
-def update_ip_address(netbox_interface,snapshot_json,netbox_ip_address,netbox_address_family):
-    """  
-    Изменение ip адреса
-    :param netbox_interface: ссылка на объект интерфейса pynetbox
-    :param netbox_ip_address: IPv4 адрес (IP/Prefix)
-    :param netbox_address_family: Версия IP (4|6)
-    :return: None
+    # Call the dhcpd_config_file function, passing in the interface, IP address, and event.
+    dhcpd_config_file(interface, ip_address, event='create')
+
+
+def update_ip_address(interface, snapshot_json: Dict[str, Any], ip_address, address_family: int) -> None:
     """
-    ip_address = ''
-    interface = ''
+    Update the IP address of the given interface based on the given snapshot JSON.
+
+    Args:
+        interface (object): The interface to update.
+        snapshot_json (Dict[str, Any]): A JSON snapshot of the interface before the update.
+        ip_address (str): The IP address to assign to the interface.
+        address_family (int): The IP address family (4 for IPv4, 6 for IPv6).
+
+    Returns:
+        None
+    """
     
+     
     print("Updating IP address...")
+
+    # If there is a snapshot JSON available, try to get the old interface ID
     if snapshot_json:
         try:
             old_interface_id = snapshot_json["prechange"]["assigned_object_id"]
-
-            if old_interface_id != netbox_interface.id: # если старое назначение принадлежит другому интерфейсу
-                old_interface_data = netbox_api.dcim.interfaces.get(old_interface_id) # измененияем конфигурацию перед настройкой нового устройства
-                if not old_interface_data.mgmt_only: # type: ignore # если интерфейс не используется для управления! 
-                    delete_ip_address(  netbox_interface,
-                                        netbox_ip_address,
-                                        netbox_address_family)
+            # If the old interface ID is not the same as the current interface ID, delete the old IP address
+            if old_interface_id != interface.id:
+                old_interface_data = netbox_api.dcim.interfaces.get(old_interface_id)
+                # If the old interface is not management-only, delete the IP address
+                if not old_interface_data.mgmt_only: #type: ignore
+                    delete_ip_address(interface, ip_address, address_family)
         except (AttributeError, ValueError) as e:
-            logger.error("Address not previously assigned: {e}")
+            # Log an error message if the address was not previously assigned
+            logger.error(f"Address not previously assigned: {e}")
 
-    if netbox_address_family == 4:
-        ip_address = configure_interface_ipv4_address(netbox_ip_address)
-        interface = netbox_interface
+    # If the address family is IPv4, configure the interface with an IPv4 address
+    if address_family == 4:
+        ip_address = configure_interface_ipv4_address(ip_address)
         print("IP address V4...")
     else:
+        # Otherwise, assume it's IPv6
         print("IPv6")
+
+    # Update the DHCP configuration file for the interface
+    dhcpd_config_file(interface, ip_address, event='update')
+
+
+def manage_ip() -> Response:
+    """
+    Manage IP address based on the event type, and update it on NetBox.
+
+    Args:
+        None
+
+    Returns:
+        Response: A Flask Response object with a status code of 204.
+    """
+
     
-    """
-    Изменяем запись в конфигурационном файле DHCPd-службы
-    """
-    dhcpd_config_file(interface,ip_address,event='update')
+    # Get data from the webhook sent by NetBox via Flask
+    if request.json:
+        # Get the ID of the assigned object from the request JSON.
+        assigned_object_id = request.json["data"]["assigned_object_id"]
 
-# Создаем функцию для манипулирования IP адресами
+        # Use the NetBox API to get information about the device interface associated with the assigned object.
+        device_interface = netbox_api.dcim.interfaces.get(assigned_object_id)
 
-def mng_ip() -> Response:
+        # Get the IP address from the request JSON.
+        device_ips = request.json["data"]["address"]
 
+        # Get the address family (IPv4 or IPv6) from the request JSON.
+        ADDRESS_FAMILY_IPV4 = 4
+        ADDRESS_FAMILY_IPV6 = 6
+        address_family = request.json["data"]["family"]["value"]
+        if address_family == ADDRESS_FAMILY_IPV4:
+            # If the device interface is marked as management only, log a message and don't make any changes.
+            if device_interface.mgmt_only: # type: ignore
+                logger.info("Management interface, no changes will be performed.")
+            else:
+                # If the event type is "deleted", delete the IP address associated with the device interface.
+                if request.json["event"] == "deleted":
+                    delete_ip_address(device_interface, device_ips, address_family)
+                # If the event type is "created", create a new IP address associated with the device interface.
+                elif request.json["event"] == "created":
+                    create_ip_address(device_interface, device_ips, address_family)
+                # If the event type is "updated", update the IP address associated with the device interface.
+                elif request.json["event"] == "updated":
+                    update_ip_address(device_interface, request.json.get("snapshots"), device_ips, address_family)
+        elif address_family == ADDRESS_FAMILY_IPV6:
+            pass
         
-    get_device_interface = netbox_api.dcim.interfaces.get(request.json["data"]["assigned_object_id"]) # type: ignore
-    get_device_ips = request.json["data"]["address"] # type: ignore
-    get_address_family = request.json["data"]["family"]["value"] # type: ignore
-
-    if get_device_interface.mgmt_only: # type: ignore # проверяем, является ли интерфейс management интерфейсов
-        #print("\tManagement interface, no changes will be performed...")
-        logger.info("Management interface, no changes will be performed.")
-    else:
-            if request.json["event"] == "deleted": # type: ignore # IP адрес будет удален
-
-                delete_ip_address(  netbox_interface=get_device_interface,
-                                    netbox_ip_address=get_device_ips,
-                                    netbox_address_family=get_address_family
-                                    )
-
-            elif request.json["event"] == "created": # type: ignore # IP адрес будет добавлен
-
-                create_ip_address(netbox_interface=get_device_interface,
-                                    netbox_ip_address=get_device_ips,
-                                    netbox_address_family=get_address_family)
-
-            elif request.json["event"] == "updated": # type: ignore # IP адрес будет добавлен
-
-                update_ip_address(  netbox_interface=get_device_interface,
-                                    snapshot_json=request.json.get("snapshots"), # type: ignore
-                                    netbox_ip_address=get_device_ips,
-                                    netbox_address_family=get_address_family
-                                    )
-    
+    # Return a Flask Response object with a status code of 204 (no content).
     return Response(status=204)
