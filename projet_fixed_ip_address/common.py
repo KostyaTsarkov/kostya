@@ -17,7 +17,7 @@ from nornir_netmiko.tasks import netmiko_send_config
 
 
 
-def parse_interface_name(interface_name):
+def parse_interface_name(interface_name: str) -> tuple[str, str]:
     """
     Разделяем строку на тип интерфейса и идентификатор интерфейса. 
     :param interface_name: имя интерфейса
@@ -25,8 +25,12 @@ def parse_interface_name(interface_name):
     """
     interface_pattern = r"^(\D+)(\d+.*)$"
     interface_regex = re.compile(interface_pattern)
-
-    interface_type, interface_id = interface_regex.match(str(interface_name)).groups()  # type: ignore
+    
+    try:
+        interface_type, interface_id = interface_regex.match(str(interface_name)).groups() # type: ignore
+    except AttributeError:
+        raise ValueError("Invalid interface name format. The interface name should start with a letter followed by one or more digits and/or letters.") from None
+    #interface_type, interface_id = interface_regex.match(str(interface_name)).groups()  # type: ignore
 
     return interface_type, interface_id
 

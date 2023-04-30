@@ -6,7 +6,10 @@ from jinja2 import Environment, FileSystemLoader
 import macaddress
 from pydhcpdparser import parser
 from global_var import( parent_path,
-                        templates_path)
+                        templates_path,
+                        logger)
+
+
 
 # Создаем функцию проверки None
 
@@ -23,11 +26,11 @@ def configure_interface_ipv4_address(netbox_ip_address):
     """
 
     ip4_address = format(ipaddress.IPv4Interface(netbox_ip_address).ip)
-    #ip4_netmask = format(ipaddress.IPv4Interface(netbox_ip_address).netmask)
-    #ip4_network = format(ipaddress.IPv4Interface(netbox_ip_address).network)
-    #ip4_prefix = format(ipaddress.IPv4Network(ip4_network).prefixlen)
-    #ip4_broadcast = format(ipaddress.IPv4Network(ip4_network).broadcast_address)
-    #ip4_gateway = format(list(ipaddress.IPv4Network(ip4_network).hosts())[-1])
+    ip4_netmask = format(ipaddress.IPv4Interface(netbox_ip_address).netmask)
+    ip4_network = format(ipaddress.IPv4Interface(netbox_ip_address).network)
+    ip4_prefix = format(ipaddress.IPv4Network(ip4_network).prefixlen)
+    ip4_broadcast = format(ipaddress.IPv4Network(ip4_network).broadcast_address)
+    ip4_gateway = format(list(ipaddress.IPv4Network(ip4_network).hosts())[-1])
 
     return(ip4_address)
 
@@ -238,10 +241,8 @@ def update_ip_address(netbox_interface,snapshot_json,netbox_ip_address,netbox_ad
                     delete_ip_address(  netbox_interface,
                                         netbox_ip_address,
                                         netbox_address_family)
-        except AttributeError:
-            print("Address not previously assigned")
-        except ValueError:
-            print("Address not previously assigned")
+        except (AttributeError, ValueError) as e:
+            logger.error("Address not previously assigned: {e}")
 
     if netbox_address_family == 4:
         ip_address = configure_interface_ipv4_address(netbox_ip_address)
@@ -257,14 +258,16 @@ def update_ip_address(netbox_interface,snapshot_json,netbox_ip_address,netbox_ad
 
 # Создаем функцию для манипулирования IP адресами
 
-def mng_ip():
+def mng_ip() -> Response:
+
         
     get_device_interface = netbox_api.dcim.interfaces.get(request.json["data"]["assigned_object_id"]) # type: ignore
     get_device_ips = request.json["data"]["address"] # type: ignore
     get_address_family = request.json["data"]["family"]["value"] # type: ignore
 
     if get_device_interface.mgmt_only: # type: ignore # проверяем, является ли интерфейс management интерфейсов
-        print("\tManagement interface, no changes will be performed...")
+        #print("\tManagement interface, no changes will be performed...")
+        logger.info("Management interface, no changes will be performed.")
     else:
             if request.json["event"] == "deleted": # type: ignore # IP адрес будет удален
 
