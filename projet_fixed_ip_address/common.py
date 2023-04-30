@@ -1,7 +1,6 @@
 from typing import Any, Dict, List, Optional, Union
 from nornir.core import Nornir
 
-import nornir_netmiko
 from journal import journal_template_fill
 import ipaddress
 import re
@@ -299,11 +298,29 @@ def get_cisco_interface_config(interface, event='None'):
 
     # This is a nested function that fills a given template with a set of
     # arguments and returns the content. It uses the Jinja2 templating engine.
-    def fill_template(*args, **kwargs):
+    def fill_template(*args: Any, **kwargs: str) -> Optional[str]:
+        """
+        This function takes in a Jinja2 template file and fills it with the given arguments.
+
+        Args:
+            *args: Variable length argument list.
+            **kwargs: Arbitrary keyword arguments.
+
+        Keyword Args:
+            template_file (str): The filename of the Jinja2 template to be used.
+
+        Returns:
+            Optional[str]: The rendered template content, or None if there was not enough
+            data to fill out the template.
+        """
+
+
         # Set up a Jinja2 environment with a template loader
         environment = Environment(loader=FileSystemLoader(templates_path))
+
         # Get the template file from the kwargs
         template = environment.get_template(kwargs['template_file'])
+
         # Initialize the content to None
         content = None
 
@@ -315,15 +332,15 @@ def get_cisco_interface_config(interface, event='None'):
             else:
                 # Otherwise, pass in the interface name, description, VLAN, and mode
                 content = template.render(interface_name=convert_none_to_str(interface.name),
-                                           descr=convert_none_to_str(interface.description),
-                                           access_vlan=convert_none_to_str(interface.untagged_vlan.vid),
-                                           mode=convert_none_to_str(interface.mode.value))
-        # If there's not enough data to fill out the template, log a warning and return None
+                                        descr=convert_none_to_str(interface.description),
+                                        access_vlan=convert_none_to_str(interface.untagged_vlan.vid),
+                                        mode=convert_none_to_str(interface.mode.value))
         except:
+            # If there's not enough data to fill out the template, log a warning and return None
             comment, level = 'Not enough data to fill out the template', 'warning'
             print(journal_template_fill(comment, level, global_id, global_dcim))
-        # Otherwise, log that the template is being filled and return the content
         else:
+            # Otherwise, log that the template is being filled and return the content
             print(f"Filling in the template...")
 
         return content
