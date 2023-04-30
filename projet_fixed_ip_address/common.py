@@ -522,15 +522,20 @@ def manage_connected_interfaces(intf: Dict[str, Any], event: str, role: str) -> 
         Returns:
             List[Dict[Any, Union[Any, Any]]]: A list of dictionaries representing the changes to be made
         """ 
-        changes = {'id': network_device_id} # add the neighboring device's ID as the key
+        
+        changes = {}
+        change_key = ['id']
+        new_value = [network_device_id] # add the neighboring device's ID as the key
         # Loop through the user_intf and add any values that exist in the predefined list and are not empty
         for value in user_intf:
             if value[0] in config_context.interface and value[1] not in ['', None]:
+                change_key.append(value[0])
                 # If the value is a dictionary, convert it to a list
                 if isinstance(value[1], dict):
-                    changes[list(value[1].keys())[0]] = list(value[1].values())[0]
+                    new_value.append(list(value[1].values())[0])
                 else:
-                    changes[value[0]] = value[1]
+                    new_value.append(value[1])
+        changes = dict(zip(change_key,new_value))
         return [changes]
 
     # If the role is a user device and the event is not 'delete'
@@ -732,8 +737,8 @@ def mng_int() -> Response:
             # Extract relevant information from the JSON data
             data = request.json['data']
             event_type = request.json['event']
-            pre_change_snapshot = data['snapshots']['prechange']
-            post_change_snapshot = data['snapshots']['postchange']
+            pre_change_snapshot = request.json['snapshots']['prechange']
+            post_change_snapshot = request.json['snapshots']['postchange']
 
             # Get interface data from NetBox API
             intf_id = data['id']
