@@ -750,7 +750,7 @@ def mng_cable() -> Response:
                 global_id = get_device_interface.device.id  # type: ignore
 
                 # Create a namespace from the device's config context
-                config_context = SimpleNamespace(**dict(netbox_api.dcim.devices.get(global_id).config_context)) # type: ignore
+                config_context = SimpleNamespace(**dict(netbox_api.dcim.devices.get(global_id).config_context))  # type: ignore
 
                 # Print a message indicating the connection between the two devices
                 print(f"Connection between {device_roles[0]} and {device_roles[1]}, switch access interface ID: {device_intf_id}...")
