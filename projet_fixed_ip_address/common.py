@@ -742,8 +742,10 @@ def mng_cable() -> Response:
                 get_device_interface = netbox_api.dcim.interfaces.get(device_intf_id)
 
                 # Get interface name and mode, as well as device ID
-                interface_name =  convert_none_to_str(get_device_interface.name if get_device_interface.name else None) # type: ignore
-                interface_mode_802_1Q = convert_none_to_str(get_device_interface.mode.value if get_device_interface.mode else None) # type: ignore
+                interface_name = convert_none_to_str(
+                    get_device_interface.name if get_device_interface.name else None)  # type: ignore
+                interface_mode_802_1Q = convert_none_to_str(
+                    get_device_interface.mode.value if get_device_interface.mode else None)  # type: ignore
                 global_dcim = 'dcim.device'
                 global_id = get_device_interface.device.id  # type: ignore
 
