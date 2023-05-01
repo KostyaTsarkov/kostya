@@ -223,7 +223,7 @@ def check_for_delete(mac_address: str, device_name: str, ip_address: str, parent
 
     
     
-def dhcpd_config_file(ip_address: str, interface, event: str = 'None') -> None:
+def dhcpd_config_file(interface, ip_address, event: str = 'None') -> None:
     """
     This function generates a configuration file for the DHCP server based on the provided parameters.
     The function takes in an IP address, an Interface object, and an optional event type string.
@@ -238,8 +238,8 @@ def dhcpd_config_file(ip_address: str, interface, event: str = 'None') -> None:
     If the MAC address is not successfully configured, the function prints a message indicating this.
 
     Args:
-        ip_address (str): The IP address to be assigned to the device
-        interface (Interface): An Interface object containing the necessary details for the configuration
+        ip_address: The IP address to be assigned to the device
+        interface: An Interface object containing the necessary details for the configuration
         event (str): An optional event type string. Defaults to 'None'.
 
     Returns:
@@ -253,6 +253,7 @@ def dhcpd_config_file(ip_address: str, interface, event: str = 'None') -> None:
     host_name = interface.device.name
     mac_address = interface.mac_address
     interface_name = interface.name.replace(' ', '_')
+    ip_address = ip_address['ip4_address']
 
     # Construct the hostname for the device
     j2_host = f"{host_name}.{interface_name}"

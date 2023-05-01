@@ -742,13 +742,13 @@ def mng_cable() -> Response:
                 get_device_interface = netbox_api.dcim.interfaces.get(device_intf_id)
 
                 # Get interface name and mode, as well as device ID
-                interface_name = get_device_interface.name if get_device_interface.name else ''  # type: ignore
-                interface_mode_802_1Q = get_device_interface.mode.value if get_device_interface.mode.value else ''  # type: ignore
+                interface_name =  convert_none_to_str(get_device_interface.name if get_device_interface.name else None) # type: ignore
+                interface_mode_802_1Q = convert_none_to_str(get_device_interface.mode.value if get_device_interface.mode else None) # type: ignore
                 global_dcim = 'dcim.device'
                 global_id = get_device_interface.device.id  # type: ignore
 
                 # Create a namespace from the device's config context
-                config_context = SimpleNamespace(**dict(netbox_api.dcim.devices.get(global_id).config_context))  # type: ignore
+                config_context = SimpleNamespace(**dict(netbox_api.dcim.devices.get(global_id).config_context)) # type: ignore
 
                 # Print a message indicating the connection between the two devices
                 print(f"Connection between {device_roles[0]} and {device_roles[1]}, switch access interface ID: {device_intf_id}...")
@@ -832,8 +832,8 @@ def mng_int() -> Response:
             global_dcim = 'dcim.device'
             global_id = intf.device.id # type: ignore
             config_context = SimpleNamespace(**dict(netbox_api.dcim.devices.get(global_id).config_context))
-            network_devices_roles = config_context.network_devices_roles
-            user_devices_roles = config_context.user_devices_roles
+            network_devices_roles = convert_none_to_str(config_context.network_devices_roles)
+            user_devices_roles = convert_none_to_str(config_context.user_devices_roles)
 
             # Print out the event type and interface name
             print("{} {}...".format(event_type.upper(), intf_name))
@@ -849,45 +849,37 @@ def mng_int() -> Response:
                 comment = 'No data for {} {}'.format(event_type.lower(), intf_name)
                 level = 'informational'
                 print(journal_template_fill(comment, level, global_id, global_dcim))
-
-            # Check if the change is from enabled to disabled
-            elif data['enabled'] is False and pre_change_snapshot['enabled'] is True:
-                # Check if device is a network device
-                if device_role in network_devices_roles:
-                    comment = 'Interface {} is disabled on the device'.format(intf_name)
-                    level = 'notification'
-                    print(journal_template_fill(comment, level, global_id, global_dcim))
-                    change_config_intf(intf, event='shutdown')
-                # Check if device is a user device
-                elif device_role in user_devices_roles and intf is not None:
-                    manage_connected_interfaces(intf, event='update', role=device_role)
-                else:
-                    print('Device role is "{}"'.format(device_role))
-
             # Check if the change is from disabled to disabled
             elif data['enabled'] is False and pre_change_snapshot['enabled'] is False:
                 print('Interface {} was turned off before'.format(intf_name))
-
             # Check if device is a network device
             elif device_role in network_devices_roles:
                 # Check if interface is a trunk
                 if intf_mode_802_1Q in ['tagged', 'tagged-all']:
                     print('Interface {} is mode {}'.format(intf_name, intf_mode_802_1Q))
                     change_config_intf(intf, event='update')
-                else:
-                    change_config_intf(intf, event='update')
-
+                else:   
+                    # Check if the change is from enabled to disabled
+                    if data['enabled'] is False and pre_change_snapshot['enabled'] is True:
+                        comment = 'Interface {} is disabled on the device'.format(intf_name)
+                        level = 'notification'
+                        print(journal_template_fill(comment, level, global_id, global_dcim))
+                        change_config_intf(intf, event='shutdown')
+                    else:
+                        change_config_intf(intf, event='update')
             # Check if device is a user device
             elif device_role in user_devices_roles and intf is not None:
                 manage_connected_interfaces(intf, event='update', role=device_role)
-
             else:
                 print('Device role is "{}"'.format(device_role))
     # Catch any errors that occur during execution
     except ValueError:
         print('Something went wrong!')
+        except KeyError:
+        print('Something went wrong!')
     except KeyError:
         print('Something went wrong!')
-    # Return a 204 (No Content) response to the webhook
+    
     finally:
         return Response(status=204)
+    
