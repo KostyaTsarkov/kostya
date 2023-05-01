@@ -839,7 +839,7 @@ def mng_int() -> Response:
             print("{} {}...".format(event_type.upper(), intf_name))
 
             # Check if interface is a management interface
-            if intf.mgmt_only: # type: ignore
+            if intf.mgmt_only:  # type: ignore
                 comment = '{} is management interface, no changes will be performed'.format(intf_name)
                 level = 'notification'
                 print(journal_template_fill(comment, level, global_id, global_dcim))
@@ -875,11 +875,8 @@ def mng_int() -> Response:
     # Catch any errors that occur during execution
     except ValueError:
         print('Something went wrong!')
-        except KeyError:
-        print('Something went wrong!')
     except KeyError:
         print('Something went wrong!')
-    
+    # Return a 204 (No Content) response to the webhook
     finally:
         return Response(status=204)
-    
