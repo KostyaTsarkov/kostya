@@ -1,3 +1,4 @@
+from logging import Logger
 from typing import Any, Dict, List, Optional, Union
 from nornir.core import Nornir
 from journal import journal_template_fill
@@ -143,7 +144,7 @@ def configure_interface_ipv4_address(netbox_ip_address: str = '0.0.0.0',
                               level,
                               global_id,
                               global_dcim)
-        logger.error(comment)
+        Logger.error(comment)
 
     # Return the dictionary containing the extracted IP address, subnet mask,
     # and broadcast address.
@@ -649,7 +650,7 @@ def manage_connected_interfaces(intf: Dict[str, Any], event: str,
 
 
 def mng_cable() -> Response:
-    """  
+    """
     Receives a POST json with the keys 'data' and 'event' containing
     information about a cable connection.
     Verifies that the connection is point-to-point between

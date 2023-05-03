@@ -1,34 +1,50 @@
-# Create a Flask instance
 from flask import Flask
 from nb_ipam_api import manage_ip
 from common import mng_cable, mng_int
 
-# Create a Flask instance
 app = Flask(__name__)
+
 """
-Webhook POST
-    Name:'Fixed IP into DHCPd'
-    Content types: 'IPAM > IP Address'
+Decorator that routes requests to '/api/fixed_ip' URI to this function
+with POST method.
+
+Returns:
+    The value returned by calling the 'manage_ip' function.
 """
-app.add_url_rule("/api/fixed_ip",
-                 methods=["POST"],
-                 view_func=manage_ip)
+
+
+@app.route("/api/fixed_ip", methods=["POST"])
+def fixed_ip():
+    return manage_ip()
+
+
 """
-Webhook POST
-    Name:'Change the cable'
-    Content types: 'DCIM > Cable'
+Decorator that routes requests to '/api/cable_change' URI to this function
+with POST method.
+
+Returns:
+    The value returned by calling the 'mng_cable' function.
 """
-app.add_url_rule("/api/cable_change",
-                 methods=['POST'],
-                 view_func=mng_cable)
+
+
+@app.route("/api/cable_change", methods=["POST"])
+def cable_change():
+    return mng_cable()
+
+
 """
-Webhook POST
-    Name:'Update the interface'
-    Content types: 'DCIM > Interfaces'
+Decorator that routes requests to '/api/int_update' URI to this function
+with POST method.
+
+Returns:
+    The value returned by calling the 'mng_int' function.
 """
-app.add_url_rule("/api/int_update",
-                 methods=['POST'],
-                 view_func=mng_int)
+
+
+@app.route("/api/int_update", methods=["POST"])
+def int_update():
+    return mng_int()
+
 
 if __name__ == "__main__":
-    app.run(host='0.0.0.0', port=8080)
+    app.run(host="0.0.0.0", port=8080)
