@@ -536,7 +536,7 @@ def change_config_intf(netbox_interface, event: str) -> None:
         content = get_cisco_interface_config(netbox_interface, event)
         if content is not None:
             # Join the list of strings into a single string
-            content = '\n'.join(content)
+            #content = '\n'.join(content)
             print(f"{event.capitalize()} interface {netbox_interface} config...")
             push_interface_config(netbox_interface, content, event)
         else:
