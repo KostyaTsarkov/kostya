@@ -16247,3 +16247,283 @@ You can also look at the Netmiko session_log or debug log for more information.
 2023-05-10 15:07:48,580 -  nornir.core -     INFO -        run() - Running task 'close_connections_task' with args {} on 1 hosts
 2023-05-10 15:07:48,693 -  nornir.core -     INFO -        run() - Running task 'close_connections_task' with args {} on 78 hosts
 2023-05-10 15:07:48,777 -  nornir.core -     INFO -        run() - Running task 'close_connections_task' with args {} on 1 hosts
+2023-05-10 15:08:33,884 -  nornir.core -     INFO -        run() - Running task 'napalm_get' with args {'getters': ['get_interfaces']} on 1 hosts
+2023-05-10 15:08:35,202 -  nornir.core -     INFO -        run() - Running task 'Configuration interface.../' with args {'config_commands': 'interface FastEthernet0/1\n    shutdown'} on 1 hosts
+2023-05-10 15:08:46,246 - nornir.core.task -    ERROR -      start() - Host 'DC-SW-MNG-1': task 'Configuration interface.../' failed with traceback:
+Traceback (most recent call last):
+  File "C:\Users\kcarkov\AppData\Roaming\Python\Python37\site-packages\nornir\core\task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "C:\Users\kcarkov\AppData\Roaming\Python\Python37\site-packages\nornir_netmiko\tasks\netmiko_send_config.py", line 38, in netmiko_send_config
+    result = net_connect.send_config_set(config_commands=config_commands, **kwargs)
+  File "C:\Users\kcarkov\AppData\Roaming\Python\Python37\site-packages\netmiko\base_connection.py", line 2202, in send_config_set
+    output += self.read_until_pattern(pattern=re.escape(cmd.strip()))
+  File "C:\Users\kcarkov\AppData\Roaming\Python\Python37\site-packages\netmiko\base_connection.py", line 672, in read_until_pattern
+    raise ReadTimeout(msg)
+netmiko.exceptions.ReadTimeout: 
+
+Pattern not detected: 'interface\\ FastEthernet0/1\\\n\\ \\ \\ \\ shutdown' in output.
+
+Things you might try to fix this:
+1. Adjust the regex pattern to better identify the terminating string. Note, in
+many situations the pattern is automatically based on the network device's prompt.
+2. Increase the read_timeout to a larger value.
+
+You can also look at the Netmiko session_log or debug log for more information.
+
+
+
+2023-05-10 15:08:46,383 -  nornir.core -     INFO -        run() - Running task 'close_connections_task' with args {} on 1 hosts
+2023-05-10 15:08:46,507 -  nornir.core -     INFO -        run() - Running task 'close_connections_task' with args {} on 78 hosts
+2023-05-10 15:08:46,507 -  nornir.core -     INFO -        run() - Running task 'close_connections_task' with args {} on 1 hosts
+2023-05-10 15:09:06,602 -  nornir.core -     INFO -        run() - Running task 'napalm_get' with args {'getters': ['get_interfaces']} on 1 hosts
+2023-05-10 15:09:07,944 -  nornir.core -     INFO -        run() - Running task 'Configuration interface.../' with args {'config_commands': 'interface FastEthernet0/1\n    description DC-UPS-1\n    switchport access vlan 1\n    switchport mode access\n    no shutdown'} on 1 hosts
+2023-05-10 15:09:19,007 - nornir.core.task -    ERROR -      start() - Host 'DC-SW-MNG-1': task 'Configuration interface.../' failed with traceback:
+Traceback (most recent call last):
+  File "C:\Users\kcarkov\AppData\Roaming\Python\Python37\site-packages\nornir\core\task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "C:\Users\kcarkov\AppData\Roaming\Python\Python37\site-packages\nornir_netmiko\tasks\netmiko_send_config.py", line 38, in netmiko_send_config
+    result = net_connect.send_config_set(config_commands=config_commands, **kwargs)
+  File "C:\Users\kcarkov\AppData\Roaming\Python\Python37\site-packages\netmiko\base_connection.py", line 2202, in send_config_set
+    output += self.read_until_pattern(pattern=re.escape(cmd.strip()))
+  File "C:\Users\kcarkov\AppData\Roaming\Python\Python37\site-packages\netmiko\base_connection.py", line 672, in read_until_pattern
+    raise ReadTimeout(msg)
+netmiko.exceptions.ReadTimeout: 
+
+Pattern not detected: 'interface\\ FastEthernet0/1\\\n\\ \\ \\ \\ description\\ DC\\-UPS\\-1\\\n\\ \\ \\ \\ switchport\\ access\\ vlan\\ 1\\\n\\ \\ \\ \\ switchport\\ mode\\ access\\\n\\ \\ \\ \\ no\\ shutdown' in output.
+
+Things you might try to fix this:
+1. Adjust the regex pattern to better identify the terminating string. Note, in
+many situations the pattern is automatically based on the network device's prompt.
+2. Increase the read_timeout to a larger value.
+
+You can also look at the Netmiko session_log or debug log for more information.
+
+
+
+2023-05-10 15:09:19,243 -  nornir.core -     INFO -        run() - Running task 'close_connections_task' with args {} on 1 hosts
+2023-05-10 15:09:19,374 -  nornir.core -     INFO -        run() - Running task 'close_connections_task' with args {} on 78 hosts
+2023-05-10 15:09:19,374 -  nornir.core -     INFO -        run() - Running task 'close_connections_task' with args {} on 1 hosts
+2023-05-10 15:13:32,953 -  nornir.core -     INFO -        run() - Running task 'napalm_get' with args {'getters': ['get_interfaces']} on 1 hosts
+2023-05-10 15:13:35,156 -  nornir.core -     INFO -        run() - Running task 'Configuration interface.../' with args {'config_commands': 'interface FastEthernet0/1\n    shutdown'} on 1 hosts
+2023-05-10 15:13:47,183 - nornir.core.task -    ERROR -      start() - Host 'DC-SW-MNG-2': task 'Configuration interface.../' failed with traceback:
+Traceback (most recent call last):
+  File "C:\Users\kcarkov\AppData\Roaming\Python\Python37\site-packages\nornir\core\task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "C:\Users\kcarkov\AppData\Roaming\Python\Python37\site-packages\nornir_netmiko\tasks\netmiko_send_config.py", line 38, in netmiko_send_config
+    result = net_connect.send_config_set(config_commands=config_commands, **kwargs)
+  File "C:\Users\kcarkov\AppData\Roaming\Python\Python37\site-packages\netmiko\base_connection.py", line 2202, in send_config_set
+    output += self.read_until_pattern(pattern=re.escape(cmd.strip()))
+  File "C:\Users\kcarkov\AppData\Roaming\Python\Python37\site-packages\netmiko\base_connection.py", line 672, in read_until_pattern
+    raise ReadTimeout(msg)
+netmiko.exceptions.ReadTimeout: 
+
+Pattern not detected: 'interface\\ FastEthernet0/1\\\n\\ \\ \\ \\ shutdown' in output.
+
+Things you might try to fix this:
+1. Adjust the regex pattern to better identify the terminating string. Note, in
+many situations the pattern is automatically based on the network device's prompt.
+2. Increase the read_timeout to a larger value.
+
+You can also look at the Netmiko session_log or debug log for more information.
+
+
+
+2023-05-10 15:13:54,853 -  nornir.core -     INFO -        run() - Running task 'close_connections_task' with args {} on 1 hosts
+2023-05-10 15:13:54,971 -  nornir.core -     INFO -        run() - Running task 'close_connections_task' with args {} on 78 hosts
+2023-05-10 15:13:54,971 -  nornir.core -     INFO -        run() - Running task 'close_connections_task' with args {} on 1 hosts
+2023-05-10 15:13:57,016 -  nornir.core -     INFO -        run() - Running task 'napalm_get' with args {'getters': ['get_interfaces']} on 1 hosts
+2023-05-10 15:13:59,851 -  nornir.core -     INFO -        run() - Running task 'Configuration interface.../' with args {'config_commands': 'interface FastEthernet0/1\n    description DC-UPS-2\n    switchport access vlan 1\n    switchport mode access\n    no shutdown'} on 1 hosts
+2023-05-10 15:14:11,868 - nornir.core.task -    ERROR -      start() - Host 'DC-SW-MNG-2': task 'Configuration interface.../' failed with traceback:
+Traceback (most recent call last):
+  File "C:\Users\kcarkov\AppData\Roaming\Python\Python37\site-packages\nornir\core\task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "C:\Users\kcarkov\AppData\Roaming\Python\Python37\site-packages\nornir_netmiko\tasks\netmiko_send_config.py", line 38, in netmiko_send_config
+    result = net_connect.send_config_set(config_commands=config_commands, **kwargs)
+  File "C:\Users\kcarkov\AppData\Roaming\Python\Python37\site-packages\netmiko\base_connection.py", line 2202, in send_config_set
+    output += self.read_until_pattern(pattern=re.escape(cmd.strip()))
+  File "C:\Users\kcarkov\AppData\Roaming\Python\Python37\site-packages\netmiko\base_connection.py", line 672, in read_until_pattern
+    raise ReadTimeout(msg)
+netmiko.exceptions.ReadTimeout: 
+
+Pattern not detected: 'interface\\ FastEthernet0/1\\\n\\ \\ \\ \\ description\\ DC\\-UPS\\-2\\\n\\ \\ \\ \\ switchport\\ access\\ vlan\\ 1\\\n\\ \\ \\ \\ switchport\\ mode\\ access\\\n\\ \\ \\ \\ no\\ shutdown' in output.
+
+Things you might try to fix this:
+1. Adjust the regex pattern to better identify the terminating string. Note, in
+many situations the pattern is automatically based on the network device's prompt.
+2. Increase the read_timeout to a larger value.
+
+You can also look at the Netmiko session_log or debug log for more information.
+
+
+
+2023-05-10 15:14:12,051 -  nornir.core -     INFO -        run() - Running task 'close_connections_task' with args {} on 1 hosts
+2023-05-10 15:14:12,154 -  nornir.core -     INFO -        run() - Running task 'close_connections_task' with args {} on 78 hosts
+2023-05-10 15:14:12,154 -  nornir.core -     INFO -        run() - Running task 'close_connections_task' with args {} on 1 hosts
+2023-05-10 16:11:30,834 -  nornir.core -     INFO -        run() - Running task 'napalm_get' with args {'getters': ['get_interfaces']} on 1 hosts
+2023-05-10 16:11:34,861 -  nornir.core -     INFO -        run() - Running task 'Configuration interface.../' with args {'config_commands': 'interface FastEthernet0/13\n    shutdown'} on 1 hosts
+2023-05-10 16:11:46,909 - nornir.core.task -    ERROR -      start() - Host 'DC-SW-MNG-2': task 'Configuration interface.../' failed with traceback:
+Traceback (most recent call last):
+  File "C:\Users\kcarkov\AppData\Roaming\Python\Python37\site-packages\nornir\core\task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "C:\Users\kcarkov\AppData\Roaming\Python\Python37\site-packages\nornir_netmiko\tasks\netmiko_send_config.py", line 38, in netmiko_send_config
+    result = net_connect.send_config_set(config_commands=config_commands, **kwargs)
+  File "C:\Users\kcarkov\AppData\Roaming\Python\Python37\site-packages\netmiko\base_connection.py", line 2202, in send_config_set
+    output += self.read_until_pattern(pattern=re.escape(cmd.strip()))
+  File "C:\Users\kcarkov\AppData\Roaming\Python\Python37\site-packages\netmiko\base_connection.py", line 672, in read_until_pattern
+    raise ReadTimeout(msg)
+netmiko.exceptions.ReadTimeout: 
+
+Pattern not detected: 'interface\\ FastEthernet0/13\\\n\\ \\ \\ \\ shutdown' in output.
+
+Things you might try to fix this:
+1. Adjust the regex pattern to better identify the terminating string. Note, in
+many situations the pattern is automatically based on the network device's prompt.
+2. Increase the read_timeout to a larger value.
+
+You can also look at the Netmiko session_log or debug log for more information.
+
+
+
+2023-05-10 16:11:47,026 -  nornir.core -     INFO -        run() - Running task 'close_connections_task' with args {} on 1 hosts
+2023-05-10 16:11:47,118 -  nornir.core -     INFO -        run() - Running task 'close_connections_task' with args {} on 78 hosts
+2023-05-10 16:11:47,119 -  nornir.core -     INFO -        run() - Running task 'close_connections_task' with args {} on 1 hosts
+2023-05-10 16:13:32,999 -  nornir.core -     INFO -        run() - Running task 'napalm_get' with args {'getters': ['get_interfaces']} on 1 hosts
+2023-05-10 16:13:35,473 -  nornir.core -     INFO -        run() - Running task 'Configuration interface.../' with args {'config_commands': 'interface FastEthernet0/14\n    shutdown'} on 1 hosts
+2023-05-10 16:13:47,463 - nornir.core.task -    ERROR -      start() - Host 'DC-SW-MNG-2': task 'Configuration interface.../' failed with traceback:
+Traceback (most recent call last):
+  File "C:\Users\kcarkov\AppData\Roaming\Python\Python37\site-packages\nornir\core\task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "C:\Users\kcarkov\AppData\Roaming\Python\Python37\site-packages\nornir_netmiko\tasks\netmiko_send_config.py", line 38, in netmiko_send_config
+    result = net_connect.send_config_set(config_commands=config_commands, **kwargs)
+  File "C:\Users\kcarkov\AppData\Roaming\Python\Python37\site-packages\netmiko\base_connection.py", line 2202, in send_config_set
+    output += self.read_until_pattern(pattern=re.escape(cmd.strip()))
+  File "C:\Users\kcarkov\AppData\Roaming\Python\Python37\site-packages\netmiko\base_connection.py", line 672, in read_until_pattern
+    raise ReadTimeout(msg)
+netmiko.exceptions.ReadTimeout: 
+
+Pattern not detected: 'interface\\ FastEthernet0/14\\\n\\ \\ \\ \\ shutdown' in output.
+
+Things you might try to fix this:
+1. Adjust the regex pattern to better identify the terminating string. Note, in
+many situations the pattern is automatically based on the network device's prompt.
+2. Increase the read_timeout to a larger value.
+
+You can also look at the Netmiko session_log or debug log for more information.
+
+
+
+2023-05-10 16:13:47,619 -  nornir.core -     INFO -        run() - Running task 'close_connections_task' with args {} on 1 hosts
+2023-05-10 16:13:47,696 -  nornir.core -     INFO -        run() - Running task 'close_connections_task' with args {} on 78 hosts
+2023-05-10 16:13:47,702 -  nornir.core -     INFO -        run() - Running task 'close_connections_task' with args {} on 1 hosts
+2023-05-10 16:15:26,402 -  nornir.core -     INFO -        run() - Running task 'napalm_get' with args {'getters': ['get_interfaces']} on 1 hosts
+2023-05-10 16:15:28,643 -  nornir.core -     INFO -        run() - Running task 'Configuration interface.../' with args {'config_commands': 'interface FastEthernet0/14\n    description DC-RK-02-PDU-02\n    switchport access vlan 1\n    switchport mode access\n    no shutdown'} on 1 hosts
+2023-05-10 16:15:40,698 - nornir.core.task -    ERROR -      start() - Host 'DC-SW-MNG-2': task 'Configuration interface.../' failed with traceback:
+Traceback (most recent call last):
+  File "C:\Users\kcarkov\AppData\Roaming\Python\Python37\site-packages\nornir\core\task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "C:\Users\kcarkov\AppData\Roaming\Python\Python37\site-packages\nornir_netmiko\tasks\netmiko_send_config.py", line 38, in netmiko_send_config
+    result = net_connect.send_config_set(config_commands=config_commands, **kwargs)
+  File "C:\Users\kcarkov\AppData\Roaming\Python\Python37\site-packages\netmiko\base_connection.py", line 2202, in send_config_set
+    output += self.read_until_pattern(pattern=re.escape(cmd.strip()))
+  File "C:\Users\kcarkov\AppData\Roaming\Python\Python37\site-packages\netmiko\base_connection.py", line 672, in read_until_pattern
+    raise ReadTimeout(msg)
+netmiko.exceptions.ReadTimeout: 
+
+Pattern not detected: 'interface\\ FastEthernet0/14\\\n\\ \\ \\ \\ description\\ DC\\-RK\\-02\\-PDU\\-02\\\n\\ \\ \\ \\ switchport\\ access\\ vlan\\ 1\\\n\\ \\ \\ \\ switchport\\ mode\\ access\\\n\\ \\ \\ \\ no\\ shutdown' in output.
+
+Things you might try to fix this:
+1. Adjust the regex pattern to better identify the terminating string. Note, in
+many situations the pattern is automatically based on the network device's prompt.
+2. Increase the read_timeout to a larger value.
+
+You can also look at the Netmiko session_log or debug log for more information.
+
+
+
+2023-05-10 16:15:40,813 -  nornir.core -     INFO -        run() - Running task 'close_connections_task' with args {} on 1 hosts
+2023-05-10 16:15:40,907 -  nornir.core -     INFO -        run() - Running task 'close_connections_task' with args {} on 78 hosts
+2023-05-10 16:15:40,912 -  nornir.core -     INFO -        run() - Running task 'close_connections_task' with args {} on 1 hosts
+2023-05-10 16:18:59,955 -  nornir.core -     INFO -        run() - Running task 'napalm_get' with args {'getters': ['get_interfaces']} on 1 hosts
+2023-05-10 16:19:02,485 -  nornir.core -     INFO -        run() - Running task 'Configuration interface.../' with args {'config_commands': 'interface FastEthernet0/13\n    description DC-RK-02-PDU-01\n    switchport access vlan 1\n    switchport mode access\n    no shutdown'} on 1 hosts
+2023-05-10 16:19:14,302 - nornir.core.task -    ERROR -      start() - Host 'DC-SW-MNG-2': task 'Configuration interface.../' failed with traceback:
+Traceback (most recent call last):
+  File "C:\Users\kcarkov\AppData\Roaming\Python\Python37\site-packages\nornir\core\task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "C:\Users\kcarkov\AppData\Roaming\Python\Python37\site-packages\nornir_netmiko\tasks\netmiko_send_config.py", line 38, in netmiko_send_config
+    result = net_connect.send_config_set(config_commands=config_commands, **kwargs)
+  File "C:\Users\kcarkov\AppData\Roaming\Python\Python37\site-packages\netmiko\base_connection.py", line 2202, in send_config_set
+    output += self.read_until_pattern(pattern=re.escape(cmd.strip()))
+  File "C:\Users\kcarkov\AppData\Roaming\Python\Python37\site-packages\netmiko\base_connection.py", line 672, in read_until_pattern
+    raise ReadTimeout(msg)
+netmiko.exceptions.ReadTimeout: 
+
+Pattern not detected: 'interface\\ FastEthernet0/13\\\n\\ \\ \\ \\ description\\ DC\\-RK\\-02\\-PDU\\-01\\\n\\ \\ \\ \\ switchport\\ access\\ vlan\\ 1\\\n\\ \\ \\ \\ switchport\\ mode\\ access\\\n\\ \\ \\ \\ no\\ shutdown' in output.
+
+Things you might try to fix this:
+1. Adjust the regex pattern to better identify the terminating string. Note, in
+many situations the pattern is automatically based on the network device's prompt.
+2. Increase the read_timeout to a larger value.
+
+You can also look at the Netmiko session_log or debug log for more information.
+
+
+
+2023-05-10 16:19:14,433 -  nornir.core -     INFO -        run() - Running task 'close_connections_task' with args {} on 1 hosts
+2023-05-10 16:19:14,544 -  nornir.core -     INFO -        run() - Running task 'close_connections_task' with args {} on 78 hosts
+2023-05-10 16:19:14,547 -  nornir.core -     INFO -        run() - Running task 'close_connections_task' with args {} on 1 hosts
+2023-05-10 16:27:12,567 -  nornir.core -     INFO -        run() - Running task 'napalm_get' with args {'getters': ['get_interfaces']} on 1 hosts
+2023-05-10 16:27:14,830 -  nornir.core -     INFO -        run() - Running task 'Configuration interface.../' with args {'config_commands': 'interface FastEthernet0/15\n    description DC-KVM\n    switchport access vlan 1\n    switchport mode access\n    no shutdown'} on 1 hosts
+2023-05-10 16:27:26,848 - nornir.core.task -    ERROR -      start() - Host 'DC-SW-MNG-2': task 'Configuration interface.../' failed with traceback:
+Traceback (most recent call last):
+  File "C:\Users\kcarkov\AppData\Roaming\Python\Python37\site-packages\nornir\core\task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "C:\Users\kcarkov\AppData\Roaming\Python\Python37\site-packages\nornir_netmiko\tasks\netmiko_send_config.py", line 38, in netmiko_send_config
+    result = net_connect.send_config_set(config_commands=config_commands, **kwargs)
+  File "C:\Users\kcarkov\AppData\Roaming\Python\Python37\site-packages\netmiko\base_connection.py", line 2202, in send_config_set
+    output += self.read_until_pattern(pattern=re.escape(cmd.strip()))
+  File "C:\Users\kcarkov\AppData\Roaming\Python\Python37\site-packages\netmiko\base_connection.py", line 672, in read_until_pattern
+    raise ReadTimeout(msg)
+netmiko.exceptions.ReadTimeout: 
+
+Pattern not detected: 'interface\\ FastEthernet0/15\\\n\\ \\ \\ \\ description\\ DC\\-KVM\\\n\\ \\ \\ \\ switchport\\ access\\ vlan\\ 1\\\n\\ \\ \\ \\ switchport\\ mode\\ access\\\n\\ \\ \\ \\ no\\ shutdown' in output.
+
+Things you might try to fix this:
+1. Adjust the regex pattern to better identify the terminating string. Note, in
+many situations the pattern is automatically based on the network device's prompt.
+2. Increase the read_timeout to a larger value.
+
+You can also look at the Netmiko session_log or debug log for more information.
+
+
+
+2023-05-10 16:27:27,011 -  nornir.core -     INFO -        run() - Running task 'close_connections_task' with args {} on 1 hosts
+2023-05-10 16:27:27,147 -  nornir.core -     INFO -        run() - Running task 'close_connections_task' with args {} on 78 hosts
+2023-05-10 16:27:27,151 -  nornir.core -     INFO -        run() - Running task 'close_connections_task' with args {} on 1 hosts
+2023-05-10 16:47:14,917 -  nornir.core -     INFO -        run() - Running task 'napalm_get' with args {'getters': ['get_interfaces']} on 1 hosts
+2023-05-10 16:47:17,136 -  nornir.core -     INFO -        run() - Running task 'Configuration interface.../' with args {'config_commands': 'interface FastEthernet0/15\n    shutdown'} on 1 hosts
+2023-05-10 16:47:29,141 - nornir.core.task -    ERROR -      start() - Host 'DC-SW-MNG-2': task 'Configuration interface.../' failed with traceback:
+Traceback (most recent call last):
+  File "C:\Users\kcarkov\AppData\Roaming\Python\Python37\site-packages\nornir\core\task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "C:\Users\kcarkov\AppData\Roaming\Python\Python37\site-packages\nornir_netmiko\tasks\netmiko_send_config.py", line 38, in netmiko_send_config
+    result = net_connect.send_config_set(config_commands=config_commands, **kwargs)
+  File "C:\Users\kcarkov\AppData\Roaming\Python\Python37\site-packages\netmiko\base_connection.py", line 2202, in send_config_set
+    output += self.read_until_pattern(pattern=re.escape(cmd.strip()))
+  File "C:\Users\kcarkov\AppData\Roaming\Python\Python37\site-packages\netmiko\base_connection.py", line 672, in read_until_pattern
+    raise ReadTimeout(msg)
+netmiko.exceptions.ReadTimeout: 
+
+Pattern not detected: 'interface\\ FastEthernet0/15\\\n\\ \\ \\ \\ shutdown' in output.
+
+Things you might try to fix this:
+1. Adjust the regex pattern to better identify the terminating string. Note, in
+many situations the pattern is automatically based on the network device's prompt.
+2. Increase the read_timeout to a larger value.
+
+You can also look at the Netmiko session_log or debug log for more information.
+
+
+
+2023-05-10 16:47:29,332 -  nornir.core -     INFO -        run() - Running task 'close_connections_task' with args {} on 1 hosts
+2023-05-10 16:47:29,425 -  nornir.core -     INFO -        run() - Running task 'close_connections_task' with args {} on 78 hosts
+2023-05-10 16:47:29,429 -  nornir.core -     INFO -        run() - Running task 'close_connections_task' with args {} on 1 hosts
